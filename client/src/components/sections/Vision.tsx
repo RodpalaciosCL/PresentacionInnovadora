@@ -27,11 +27,11 @@ const Vision: React.FC = () => {
             Nuestra Visión
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-            Transformando el Patrimonio<br className="hidden md:block" /> 
+            Transformando Terrenos<br className="hidden md:block" /> 
             <span className="text-primary">en Oportunidades de Inversión</span>
           </h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            Convertimos activos ferroviarios históricos en centros estratégicos de innovación y desarrollo económico sustentable con alto retorno para inversionistas.
+            Desarrollamos terrenos estratégicos en el norte de Chile para crear centros de innovación y desarrollo económico sustentable con alto retorno para inversionistas.
           </p>
         </motion.div>
         
@@ -45,7 +45,7 @@ const Vision: React.FC = () => {
             <div className="space-y-8">
               <div className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/10 shadow-sm">
                 <p className="text-xl font-medium text-neutral-800 italic">
-                  "Construimos una plataforma que potencia las ciudades del norte a través de la reactivación estratégica de sus estaciones ferroviarias, generando valor compartido entre comunidades e inversionistas."
+                  "Desarrollamos una plataforma que potencia las ciudades del norte a través de la activación estratégica de terrenos de alto valor, generando retorno para inversionistas y desarrollo para las comunidades."
                 </p>
               </div>
               
@@ -64,7 +64,7 @@ const Vision: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-neutral-900 mb-2">Solución Estratégica</h3>
                     <p className="text-lg text-neutral-700">
-                      Transformamos estaciones ferroviarias en desuso para crear valor inmobiliario con múltiples usos comerciales y alta rentabilidad.
+                      Desarrollamos terrenos estratégicos para crear valor inmobiliario con múltiples usos comerciales y alta rentabilidad.
                     </p>
                   </div>
                 </motion.div>

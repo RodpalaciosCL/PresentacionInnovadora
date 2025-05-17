@@ -136,10 +136,10 @@ const Hero: React.FC = () => {
             className="lg:col-span-5 mt-2 lg:mt-0"
           >
             <div className="relative w-full h-auto aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/80 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/70 z-10"></div>
               <img 
                 src="/images/hero-map.jpg" 
-                alt="Mapa de Estaciones Ferroviarias" 
+                alt="Mapa de Terrenos Estratégicos" 
                 className="object-cover w-full h-full" 
               />
               
