@@ -133,15 +133,15 @@ const BusinessModel: React.FC = () => {
               <div className="flex justify-center">
                 <div className="relative w-full max-w-3xl">
                   {/* Flow diagram */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ delay: 0.3 }}
                       className="border border-neutral-200 rounded-xl p-4 text-center"
                     >
-                      <div className="text-lg font-medium">{t("model.flow.clients")}</div>
-                      <div className="text-sm text-neutral-500">{t("model.flow.clients.subtitle")}</div>
+                      <div className="text-lg font-medium">Inversiones del Norte</div>
+                      <div className="text-sm text-neutral-500">Gestión de activos estratégicos</div>
                       <ChevronRight className="mx-auto my-2 text-neutral-400 transform rotate-90" />
                     </motion.div>
                     <motion.div
@@ -150,19 +150,38 @@ const BusinessModel: React.FC = () => {
                       transition={{ delay: 0.5 }}
                       className="border border-neutral-200 rounded-xl p-4 text-center transform translate-y-6"
                     >
-                      <div className="text-lg font-medium">{t("model.flow.inversiones")}</div>
-                      <div className="text-sm text-neutral-500">{t("model.flow.inversiones.subtitle")}</div>
-                      <ChevronRight className="mx-auto my-2 text-neutral-400 transform rotate-90" />
+                      <div className="text-lg font-medium">Socio Estratégico</div>
+                      <div className="text-sm text-neutral-500">15% de participación en el negocio</div>
                     </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ delay: 0.7 }}
-                      className="border border-neutral-200 rounded-xl p-4 text-center transform translate-y-12"
-                    >
-                      <div className="text-lg font-medium">{t("model.flow.distribution")}</div>
-                      <div className="text-sm text-neutral-500">{t("model.flow.distribution.subtitle")}</div>
-                    </motion.div>
+                  </div>
+                  
+                  {/* Alternativas estratégicas */}
+                  <div className="mt-8 bg-neutral-50 p-5 rounded-xl border border-neutral-100">
+                    <h4 className="font-semibold text-neutral-800 mb-4">Alternativas Estratégicas</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ delay: 0.6 }}
+                        className="bg-white rounded-lg p-4 border border-neutral-200"
+                      >
+                        <div className="text-lg font-medium text-primary">Broker Inmobiliario</div>
+                        <div className="text-sm text-neutral-600 my-2">
+                          Contratar servicios de broker especializado para gestionar arriendos de terrenos estratégicos.
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ delay: 0.7 }}
+                        className="bg-white rounded-lg p-4 border border-neutral-200"
+                      >
+                        <div className="text-lg font-medium text-primary">Private Equity</div>
+                        <div className="text-sm text-neutral-600 my-2">
+                          Transferencia completa del proyecto a un fondo de inversión para maximizar su valor y escala.
+                        </div>
+                      </motion.div>
+                    </div>
                   </div>
                   
                   {/* Arrows - hidden on mobile, visible on desktop */}
@@ -180,23 +199,23 @@ const BusinessModel: React.FC = () => {
               >
                 <motion.div variants={fadeIn} className="bg-neutral-50 rounded-lg p-4">
                   <div className="text-center mb-3">
-                    <p className="text-sm text-neutral-500">{t("model.income.title")}</p>
+                    <p className="text-sm text-neutral-500">Ingreso Mensual Total</p>
                     <p className="text-2xl font-mono font-bold text-primary">$358.140.150</p>
                     <p className="text-xs text-neutral-500">CLP</p>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeIn} className="bg-neutral-50 rounded-lg p-4">
                   <div className="text-center mb-3">
-                    <p className="text-sm text-neutral-500">{t("model.inversiones.profit")}</p>
-                    <p className="text-2xl font-mono font-bold text-secondary">$71.628.030</p>
-                    <p className="text-xs text-neutral-500">CLP (20%)</p>
+                    <p className="text-sm text-neutral-500">Utilidad Inversiones del Norte</p>
+                    <p className="text-2xl font-mono font-bold text-secondary">$304.419.128</p>
+                    <p className="text-xs text-neutral-500">CLP (85%)</p>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeIn} className="bg-neutral-50 rounded-lg p-4">
                   <div className="text-center mb-3">
-                    <p className="text-sm text-neutral-500">{t("model.investor.profit")}</p>
-                    <p className="text-2xl font-mono font-bold text-accent">$7.162.803</p>
-                    <p className="text-xs text-neutral-500">CLP (10% of the above)</p>
+                    <p className="text-sm text-neutral-500">Utilidad Socio Estratégico</p>
+                    <p className="text-2xl font-mono font-bold text-accent">$53.721.022</p>
+                    <p className="text-xs text-neutral-500">CLP (15% del negocio)</p>
                   </div>
                 </motion.div>
               </motion.div>

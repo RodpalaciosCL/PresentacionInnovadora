@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { pageTransition } from "@/lib/animations";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import Hero from "@/components/sections/Hero";
 import Vision from "@/components/sections/Vision";
 import Map from "@/components/sections/Map";
@@ -11,6 +12,7 @@ import BusinessModel from "@/components/sections/BusinessModel";
 import Financial from "@/components/sections/Financial";
 import Projects from "@/components/sections/Projects";
 import Timeline from "@/components/sections/Timeline";
+import HubNorte from "@/components/sections/HubNorte";
 import NextSteps from "@/components/sections/NextSteps";
 import Contact from "@/components/sections/Contact";
 
@@ -62,11 +64,13 @@ const Home: React.FC = () => {
         <Financial />
         <Projects />
         <Timeline />
+        <HubNorte />
         <NextSteps />
         <Contact />
       </main>
       
       <Footer />
+      <ScrollToTop />
     </motion.div>
   );
 };
