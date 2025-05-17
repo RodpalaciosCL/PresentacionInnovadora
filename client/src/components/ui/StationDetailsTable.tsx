@@ -48,7 +48,7 @@ export const StationDetailsTable: React.FC<StationDetailsTableProps> = ({ classN
       animate="visible"
       className={`overflow-hidden ${className}`}
     >
-      <h3 className="text-xl font-semibold mb-4">Top 10 Estaciones más Atractivas</h3>
+      <h3 className="text-xl font-semibold mb-4">Top 10 Terrenos más Atractivos</h3>
       
       <div className="overflow-x-auto">
         <Table>

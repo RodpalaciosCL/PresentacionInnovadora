@@ -278,7 +278,7 @@ export const EnhancedFinancialSimulator: React.FC = () => {
                 <CardHeader>
                   <CardTitle>Ingresos proyectados</CardTitle>
                   <CardDescription>
-                    Para {stationCount} estaciones de {stationAreas.find(a => a.id === selectedArea)?.m2.toLocaleString()} m²
+                    Para {stationCount} terrenos de {stationAreas.find(a => a.id === selectedArea)?.m2.toLocaleString()} m²
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
