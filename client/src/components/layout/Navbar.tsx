@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
           <div className="flex">
             <Link href="/">
               <a className="flex-shrink-0 flex items-center">
-                <span className="font-montserrat font-bold text-primary text-xl">Inversiones del Norte</span>
+                <img src={import.meta.env.BASE_URL + "src/assets/logo.png"} alt="Invenor Logo" className="h-12" />
               </a>
             </Link>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
