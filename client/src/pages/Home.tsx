@@ -11,6 +11,7 @@ import BusinessModel from "@/components/sections/BusinessModel";
 import Financial from "@/components/sections/Financial";
 import Projects from "@/components/sections/Projects";
 import Timeline from "@/components/sections/Timeline";
+import NextSteps from "@/components/sections/NextSteps";
 import Contact from "@/components/sections/Contact";
 
 const Home: React.FC = () => {
@@ -61,6 +62,7 @@ const Home: React.FC = () => {
         <Financial />
         <Projects />
         <Timeline />
+        <NextSteps />
         <Contact />
       </main>
       

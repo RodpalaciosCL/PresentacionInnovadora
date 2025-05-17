@@ -23,13 +23,13 @@ interface StationArea {
 
 // Define station area data
 const stationAreas: StationArea[] = [
-  { id: 1, m2: 3000, lease: 5850, leasePeriod: 12, monthlyValue: 2633 },
-  { id: 2, m2: 5000, lease: 9750, leasePeriod: 12, monthlyValue: 5850 },
-  { id: 3, m2: 10000, lease: 19500, leasePeriod: 24, monthlyValue: 11700 },
-  { id: 4, m2: 20000, lease: 39000, leasePeriod: 24, monthlyValue: 11700 },
-  { id: 5, m2: 30000, lease: 58500, leasePeriod: 24, monthlyValue: 26325 },
-  { id: 6, m2: 40000, lease: 97500, leasePeriod: 36, monthlyValue: 29250, additionalInfo: "PARTICIPACIÓN" },
-  { id: 7, m2: 50000, lease: 136500, leasePeriod: 36, monthlyValue: 40950, additionalInfo: "PARTICIPACIÓN" }
+  { id: 1, m2: 3000, lease: 5850, leasePeriod: 240, monthlyValue: 2633 },
+  { id: 2, m2: 5000, lease: 9750, leasePeriod: 240, monthlyValue: 5850 },
+  { id: 3, m2: 10000, lease: 19500, leasePeriod: 240, monthlyValue: 11700 },
+  { id: 4, m2: 20000, lease: 39000, leasePeriod: 240, monthlyValue: 11700 },
+  { id: 5, m2: 30000, lease: 58500, leasePeriod: 240, monthlyValue: 26325 },
+  { id: 6, m2: 40000, lease: 97500, leasePeriod: 240, monthlyValue: 29250, additionalInfo: "PARTICIPACIÓN" },
+  { id: 7, m2: 50000, lease: 136500, leasePeriod: 240, monthlyValue: 40950, additionalInfo: "PARTICIPACIÓN" }
 ];
 
 // Define investment structure types
@@ -103,13 +103,13 @@ interface UseCase {
 }
 
 const useCases: UseCase[] = [
-  { id: 1, name: "Hotel Minero", leasePeriod: 120, monthlyLease: 1500000, annualTotal: 18000000, total10Years: 180000000, total20Years: 360000000 },
-  { id: 2, name: "Estación de Servicio", leasePeriod: 120, monthlyLease: 70000, annualTotal: 840000, total10Years: 8400000, total20Years: 16800000 },
-  { id: 3, name: "Centro Logístico", leasePeriod: 120, monthlyLease: 40000, annualTotal: 480000, total10Years: 4800000, total20Years: 9600000 },
-  { id: 4, name: "Supermercado", leasePeriod: 120, monthlyLease: 50000, annualTotal: 600000, total10Years: 6000000, total20Years: 12000000 },
-  { id: 5, name: "Data Center", leasePeriod: 120, monthlyLease: 1500000, annualTotal: 18000000, total10Years: 180000000, total20Years: 360000000 },
-  { id: 6, name: "Energía Solar", leasePeriod: 120, monthlyLease: 500000, annualTotal: 6000000, total10Years: 60000000, total20Years: 120000000 },
-  { id: 7, name: "Maquinaria (Finning)", leasePeriod: 120, monthlyLease: 35000, annualTotal: 420000, total10Years: 4200000, total20Years: 8400000 }
+  { id: 1, name: "Hotel Minero", leasePeriod: 240, monthlyLease: 1500000, annualTotal: 18000000, total10Years: 180000000, total20Years: 360000000 },
+  { id: 2, name: "Estación de Servicio", leasePeriod: 240, monthlyLease: 70000, annualTotal: 840000, total10Years: 8400000, total20Years: 16800000 },
+  { id: 3, name: "Centro Logístico", leasePeriod: 240, monthlyLease: 40000, annualTotal: 480000, total10Years: 4800000, total20Years: 9600000 },
+  { id: 4, name: "Supermercado", leasePeriod: 240, monthlyLease: 50000, annualTotal: 600000, total10Years: 6000000, total20Years: 12000000 },
+  { id: 5, name: "Data Center", leasePeriod: 240, monthlyLease: 1500000, annualTotal: 18000000, total10Years: 180000000, total20Years: 360000000 },
+  { id: 6, name: "Energía Solar", leasePeriod: 240, monthlyLease: 500000, annualTotal: 6000000, total10Years: 60000000, total20Years: 120000000 },
+  { id: 7, name: "Desarrollo Comercial", leasePeriod: 240, monthlyLease: 35000, annualTotal: 420000, total10Years: 4200000, total20Years: 8400000 }
 ];
 
 export const EnhancedFinancialSimulator: React.FC = () => {

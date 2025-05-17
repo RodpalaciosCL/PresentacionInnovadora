@@ -38,30 +38,30 @@ const BusinessModel: React.FC = () => {
               initial="hidden"
               animate={isIntersecting ? "visible" : "hidden"}
             >
-              {/* Ferronor Card */}
+              {/* Propietarios Card */}
               <motion.div 
                 variants={fadeIn}
                 className="rounded-xl bg-primary/5 p-6 border border-primary/10"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Train className="text-2xl text-primary h-8 w-8" />
+                  <Building2 className="text-2xl text-primary h-8 w-8" />
                 </div>
-                <h3 className="font-montserrat font-bold text-xl mb-3 text-primary">{t("model.ferronor.title")}</h3>
+                <h3 className="font-montserrat font-bold text-xl mb-3 text-primary">Propietarios de Terrenos</h3>
                 <p className="text-neutral-600 mb-4">
-                  {t("model.ferronor.description")}
+                  Entidades que poseen los derechos de los terrenos estratégicos en ubicaciones premium
                 </p>
                 <ul className="space-y-3 text-neutral-700">
                   <li className="flex items-start">
                     <div className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 mr-3"></div>
-                    <span>{t("model.ferronor.point1")}</span>
+                    <span>Titulares legales de los terrenos estratégicos</span>
                   </li>
                   <li className="flex items-start">
                     <div className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 mr-3"></div>
-                    <span>{t("model.ferronor.point2")}</span>
+                    <span>Reciben ingresos por arriendo (UF mensual por m²)</span>
                   </li>
                   <li className="flex items-start">
                     <div className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 mr-3"></div>
-                    <span>{t("model.ferronor.point3")}</span>
+                    <span>Mantienen derechos legales sobre los terrenos</span>
                   </li>
                 </ul>
               </motion.div>
@@ -211,7 +211,7 @@ const BusinessModel: React.FC = () => {
           className="mt-10 text-center"
         >
           <p className="text-lg mb-6">
-            <span className="font-medium">{t("model.contracts")}</span>
+            <span className="font-medium">Todos los contratos de arriendo se estructuran a largo plazo (mínimo 20+ años), con cláusulas de reajuste y consolidación.</span>
           </p>
           <Link href="#financiero">
             <a className="inline-flex items-center text-primary hover:text-primary-dark font-medium">
