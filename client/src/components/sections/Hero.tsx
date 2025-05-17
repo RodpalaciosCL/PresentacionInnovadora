@@ -61,15 +61,15 @@ const Hero: React.FC = () => {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
             >
               Inversiones del Norte
-              <span className="text-secondary block mt-1">Activos Ferroviarios</span>
+              <span className="text-secondary block mt-1">Oportunidad Estratégica</span>
             </motion.h1>
             
             <motion.p 
               variants={fadeIn}
               className="text-xl sm:text-2xl font-light mb-8 text-white/80 max-w-3xl"
             >
-              Transformando el patrimonio ferroviario del norte de Chile en oportunidades 
-              de inversión estratégica con alto retorno y bajo riesgo.
+              Desarrollando terrenos estratégicos en el norte de Chile para crear 
+              oportunidades de inversión con alto retorno y bajo riesgo.
             </motion.p>
             
             <motion.div 
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
                   variant="outline" 
                   className="bg-transparent hover:bg-white/10 text-white border-white/30 hover:border-white/50 px-8 py-7 h-auto text-lg font-semibold"
                 >
-                  Ver Estaciones <MapPin className="ml-2 h-5 w-5" />
+                  Ver Terrenos <MapPin className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </motion.div>
@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
                   <Compass className="text-secondary mr-3 h-6 w-6" />
                   <span className="text-xl font-semibold text-white">{stationsCount}</span>
                 </div>
-                <p className="text-white/60 text-sm">Estaciones ferroviarias</p>
+                <p className="text-white/60 text-sm">Terrenos estratégicos</p>
               </div>
               <div>
                 <div className="flex items-center mb-2">
@@ -147,10 +147,10 @@ const Hero: React.FC = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20 z-20"
+                className="absolute bottom-6 left-6 right-6 bg-black/50 backdrop-blur-md rounded-lg p-4 border border-white/20 z-20"
               >
                 <h3 className="text-white font-semibold mb-2">$15.2 millones USD</h3>
-                <p className="text-white/80 text-sm">Valor Actual Neto (VAN) proyectado para la inversión total en 20 años.</p>
+                <p className="text-white/90 text-sm">Valor Actual Neto (VAN) proyectado para la inversión total en 20 años.</p>
               </motion.div>
             </div>
           </motion.div>
