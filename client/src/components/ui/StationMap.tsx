@@ -6,7 +6,7 @@ import { Map, Search, Sliders } from "lucide-react";
 import mapboxgl from "mapbox-gl";
 
 // Mapbox access token
-const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN || "pk.eyJ1IjoiZGVtby1hY2NvdW50IiwiYSI6ImNrbmhuNHpncjA2eHcycG55aG0wNWs3MHAifQ.u9f04rjFo0NNBJaWNHcjdw";
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN || "pk.eyJ1IjoiZGVtby1hY2NvdW50IiwiYSI6ImNrbmhuNHpncjA2eHcycG55aG0wNWs3MHAifQ.u9f04rjFo0NNBJaWNHcjdw";
 
 // Interface for station data
 interface Station {
