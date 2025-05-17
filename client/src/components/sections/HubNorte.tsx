@@ -238,9 +238,21 @@ const HubNorte: React.FC = () => {
           animate={isIntersecting ? "visible" : "hidden"}
           className="text-center"
         >
-          <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 h-auto text-lg font-semibold">
-            Solicitar Información Detallada
-          </Button>
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-neutral-800">Descubre nuestros proyectos en detalle</h3>
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <a href="/hub-innovacion" className="inline-block">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 h-auto text-lg font-semibold">
+                  Ver Hub de Innovación
+                </Button>
+              </a>
+              <a href="/puchuncavi" className="inline-block">
+                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 h-auto text-lg font-semibold">
+                  Ver Terreno Puchuncaví
+                </Button>
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
