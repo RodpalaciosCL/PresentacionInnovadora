@@ -7,6 +7,8 @@ import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "./context/LanguageContext";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Puchuncavi from "@/pages/Puchuncavi";
+import HubInnovacion from "@/pages/HubInnovacion";
 import { ProgressBar } from "./components/ui/ProgressBar";
 import { AnimatePresence } from "framer-motion";
 
@@ -15,6 +17,8 @@ function Router() {
     <AnimatePresence mode="wait">
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/puchuncavi" component={Puchuncavi} />
+        <Route path="/hub-innovacion" component={HubInnovacion} />
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

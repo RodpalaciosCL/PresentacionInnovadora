@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 const HubNorte: React.FC = () => {
   const { t } = useLanguage();
@@ -89,9 +90,11 @@ const HubNorte: React.FC = () => {
                 </ul>
               </div>
               
-              <Button className="bg-primary hover:bg-primary/90 text-white">
-                Ver Detalles del Terreno
-              </Button>
+              <a href="/puchuncavi">
+                <Button className="bg-primary hover:bg-primary/90 text-white">
+                  Ver Detalles del Terreno
+                </Button>
+              </a>
             </div>
             
             <motion.div
