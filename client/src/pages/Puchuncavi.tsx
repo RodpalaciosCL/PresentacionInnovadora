@@ -33,12 +33,13 @@ const Puchuncavi: React.FC = () => {
         {/* Hero Section */}
         <section className="pt-24 pb-16 bg-gradient-to-br from-primary to-primary-dark text-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-            <Link href="/">
-              <a className="flex items-center text-white/80 hover:text-white mb-6 inline-block">
-                <ArrowLeft className="h-5 w-5 mr-2" />
-                Volver a Inicio
-              </a>
-            </Link>
+            <button 
+              onClick={() => window.location.href = '/'}
+              className="flex items-center text-white/80 hover:text-white mb-6 inline-block border-none bg-transparent cursor-pointer"
+            >
+              <ArrowLeft className="h-5 w-5 mr-2" />
+              Volver a Inicio
+            </button>
             
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 text-white font-medium text-sm mb-6">
               <MapPin className="h-4 w-4 mr-2" /> MEGATERRENO
@@ -369,11 +370,13 @@ const Puchuncavi: React.FC = () => {
               <Button className="bg-white text-primary hover:bg-white/90 px-8 py-6 h-auto text-lg font-semibold">
                 Contactar Ahora
               </Button>
-              <Link href="/">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 h-auto text-lg font-semibold">
-                  Volver al Inicio
-                </Button>
-              </Link>
+              <Button 
+                variant="outline" 
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 h-auto text-lg font-semibold"
+                onClick={() => window.location.href = '/'}
+              >
+                Volver al Inicio
+              </Button>
             </div>
           </div>
         </section>
