@@ -243,28 +243,30 @@ export const EnhancedFinancialSimulator: React.FC = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Superficie</TableHead>
-                        <TableHead>Valor Arriendo</TableHead>
-                        <TableHead>Plazo Contrato</TableHead>
-                        <TableHead>Valor Mensual</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {stationAreas
-                        .filter(area => area.id === selectedArea)
-                        .map(area => (
-                        <TableRow key={area.id}>
-                          <TableCell className="font-medium">{area.m2.toLocaleString()} m²</TableCell>
-                          <TableCell>{formatCurrency(area.lease)}</TableCell>
-                          <TableCell>{area.leasePeriod} meses</TableCell>
-                          <TableCell>{formatCurrency(area.monthlyValue)}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                  <div className="overflow-hidden border rounded-md">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-neutral-100">
+                          <th className="px-4 py-3 text-left font-medium text-neutral-600 border-b border-r">Superficie</th>
+                          <th className="px-4 py-3 text-right font-medium text-neutral-600 border-b border-r">Valor Arriendo</th>
+                          <th className="px-4 py-3 text-right font-medium text-neutral-600 border-b border-r">Plazo Contrato</th>
+                          <th className="px-4 py-3 text-right font-medium text-neutral-600 border-b">Valor Mensual</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {stationAreas
+                          .filter(area => area.id === selectedArea)
+                          .map(area => (
+                          <tr key={area.id} className="bg-white hover:bg-blue-50 transition-colors">
+                            <td className="px-4 py-3 font-medium text-neutral-700 border-r">{area.m2.toLocaleString()} m²</td>
+                            <td className="px-4 py-3 text-right font-mono text-neutral-700 border-r">{formatCurrency(area.lease)}</td>
+                            <td className="px-4 py-3 text-right font-mono text-neutral-700 border-r">{area.leasePeriod} meses</td>
+                            <td className="px-4 py-3 text-right font-mono font-semibold text-primary">{formatCurrency(area.monthlyValue)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                   
                   {stationAreas.find(a => a.id === selectedArea)?.additionalInfo && (
                     <div className="mt-4 p-3 bg-secondary/10 rounded-md text-sm">
@@ -282,28 +284,33 @@ export const EnhancedFinancialSimulator: React.FC = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-neutral-50 rounded-lg">
-                      <div className="text-sm text-neutral-500 mb-1">Ingreso Mensual</div>
-                      <div className="text-2xl font-mono font-bold text-primary">{formatCurrency(monthlyRevenue)}</div>
-                    </div>
-                    
-                    <div className="p-4 bg-neutral-50 rounded-lg">
-                      <div className="text-sm text-neutral-500 mb-1">Ingreso Anual</div>
-                      <div className="text-2xl font-mono font-bold text-primary">{formatCurrency(annualRevenue)}</div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 bg-neutral-50 rounded-lg">
-                        <div className="text-sm text-neutral-500 mb-1">10 Años</div>
-                        <div className="text-xl font-mono font-bold text-primary">{formatCurrency(years10Revenue)}</div>
-                      </div>
-                      
-                      <div className="p-4 bg-neutral-50 rounded-lg">
-                        <div className="text-sm text-neutral-500 mb-1">20 Años</div>
-                        <div className="text-xl font-mono font-bold text-primary">{formatCurrency(years20Revenue)}</div>
-                      </div>
-                    </div>
+                  <div className="overflow-hidden border rounded-md">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-neutral-100">
+                          <th className="px-4 py-3 text-left font-medium text-neutral-600 border-b border-r">Período</th>
+                          <th className="px-4 py-3 text-right font-medium text-neutral-600 border-b">Proyección de Ingresos</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="bg-white hover:bg-blue-50 transition-colors">
+                          <td className="px-4 py-3 font-medium text-neutral-700 border-r border-b">Ingreso Mensual</td>
+                          <td className="px-4 py-3 text-right font-mono font-semibold text-primary border-b">{formatCurrency(monthlyRevenue)}</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-blue-50 transition-colors">
+                          <td className="px-4 py-3 font-medium text-neutral-700 border-r border-b">Ingreso Anual</td>
+                          <td className="px-4 py-3 text-right font-mono font-semibold text-primary border-b">{formatCurrency(annualRevenue)}</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-blue-50 transition-colors">
+                          <td className="px-4 py-3 font-medium text-neutral-700 border-r border-b">Proyección 10 Años</td>
+                          <td className="px-4 py-3 text-right font-mono font-semibold text-primary border-b">{formatCurrency(years10Revenue)}</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-blue-50 transition-colors">
+                          <td className="px-4 py-3 font-medium text-neutral-700 border-r">Proyección 20 Años</td>
+                          <td className="px-4 py-3 text-right font-mono font-semibold text-primary">{formatCurrency(years20Revenue)}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </CardContent>
               </Card>
@@ -320,24 +327,35 @@ export const EnhancedFinancialSimulator: React.FC = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Concepto</TableHead>
-                        <TableHead>Valor</TableHead>
-                        <TableHead>Distribución</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {investmentStructure.map(item => (
-                        <TableRow key={item.id} className={item.id === "total" ? "bg-neutral-50 font-medium" : ""}>
-                          <TableCell>{item.name}</TableCell>
-                          <TableCell>{formatCurrency(item.value)}</TableCell>
-                          <TableCell>{item.description}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                  <div className="overflow-hidden border rounded-md">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-neutral-100">
+                          <th className="px-4 py-3 text-left font-medium text-neutral-600 border-b border-r">Concepto</th>
+                          <th className="px-4 py-3 text-right font-medium text-neutral-600 border-b border-r">Valor</th>
+                          <th className="px-4 py-3 text-left font-medium text-neutral-600 border-b">Distribución</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {investmentStructure.map((item, index) => (
+                          <tr 
+                            key={item.id} 
+                            className={`${item.id === "total" ? "bg-neutral-50 font-medium" : "bg-white hover:bg-blue-50"} transition-colors`}
+                          >
+                            <td className="px-4 py-3 font-medium text-neutral-700 border-r border-b">
+                              {item.name}
+                            </td>
+                            <td className="px-4 py-3 text-right font-mono text-neutral-700 border-r border-b">
+                              {formatCurrency(item.value)}
+                            </td>
+                            <td className="px-4 py-3 text-neutral-700 border-b">
+                              {item.description}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </CardContent>
               </Card>
               
