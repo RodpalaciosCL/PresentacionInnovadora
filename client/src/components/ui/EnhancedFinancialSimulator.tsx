@@ -199,7 +199,7 @@ export const EnhancedFinancialSimulator: React.FC = () => {
               </div>
               
               <div>
-                <Label htmlFor="station-count">Cantidad de estaciones</Label>
+                <Label htmlFor="station-count">Cantidad de terrenos</Label>
                 <div className="flex items-center space-x-4">
                   <Slider
                     id="station-count"
@@ -237,7 +237,7 @@ export const EnhancedFinancialSimulator: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Detalles del área seleccionada</CardTitle>
+                  <CardTitle>Detalles del terreno seleccionado</CardTitle>
                   <CardDescription>
                     Información sobre superficie de {stationAreas.find(a => a.id === selectedArea)?.m2.toLocaleString()} m²
                   </CardDescription>

@@ -232,10 +232,8 @@ const BusinessModel: React.FC = () => {
           <p className="text-lg mb-6">
             <span className="font-medium">Todos los contratos de arriendo se estructuran a largo plazo (mínimo 20+ años), con cláusulas de reajuste y consolidación.</span>
           </p>
-          <Link href="#financiero">
-            <a className="inline-flex items-center text-primary hover:text-primary-dark font-medium">
-              {t("model.financial")} <ChevronRight className="ml-2 h-4 w-4" />
-            </a>
+          <Link href="#financiero" className="inline-flex items-center text-primary hover:text-primary-dark font-medium">
+            {t("model.financial")} <ChevronRight className="ml-2 h-4 w-4" />
           </Link>
         </motion.div>
       </div>

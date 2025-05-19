@@ -42,24 +42,18 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-medium text-lg mb-4">{t("footer.links")}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#vision">
-                  <a className="hover:text-white transition-colors">
-                    {t("footer.links.vision")}
-                  </a>
+                <Link href="#vision" className="hover:text-white transition-colors">
+                  {t("footer.links.vision")}
                 </Link>
               </li>
               <li>
-                <Link href="#activos">
-                  <a className="hover:text-white transition-colors">
-                    {t("footer.links.assets")}
-                  </a>
+                <Link href="#activos" className="hover:text-white transition-colors">
+                  {t("footer.links.assets")}
                 </Link>
               </li>
               <li>
-                <Link href="#modelo">
-                  <a className="hover:text-white transition-colors">
-                    {t("footer.links.model")}
-                  </a>
+                <Link href="#modelo" className="hover:text-white transition-colors">
+                  {t("footer.links.model")}
                 </Link>
               </li>
               <li>
