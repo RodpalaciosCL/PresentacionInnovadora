@@ -37,8 +37,8 @@ const Assets: React.FC = () => {
             className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
             <img 
-              src="https://pixabay.com/get/gfa54f5e9224579990934e18b0e891cac21806cdcc33b30d6f8ab5313ef874e69636c84e0636c4508b339830499ccd5481aebfb9b873cbdb6a3cc92e056ae4a35_1280.jpg" 
-              alt="Terreno ferroviario con infraestructura de carga" 
+              src="/attached_assets/IMG_1767.jpeg" 
+              alt="Terreno estratégico para desarrollo industrial" 
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
@@ -69,7 +69,7 @@ const Assets: React.FC = () => {
             className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
             <img 
-              src="https://pixabay.com/get/g6444a0147b8e24ef52336d794c8594d5546f9d87207d87493dd516e318ac3d6a90896a9efa1bda04a6d695dfed2453404a537e822b356055196ca86c1e4b56b3_1280.jpg" 
+              src="/attached_assets/IMG_1768.jpeg" 
               alt="Centro logístico moderno con opciones de transporte intermodal" 
               className="w-full h-48 object-cover"
             />
@@ -101,7 +101,7 @@ const Assets: React.FC = () => {
             className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
             <img 
-              src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+              src="/attached_assets/IMG_1769.jpeg" 
               alt="Zona de desarrollo industrial con instalaciones modernas" 
               className="w-full h-48 object-cover"
             />
@@ -132,29 +132,29 @@ const Assets: React.FC = () => {
           variants={fadeIn}
           initial="hidden"
           animate={isIntersecting ? "visible" : "hidden"}
-          className="mt-16 bg-gradient-to-r from-primary to-primary-light rounded-xl overflow-hidden shadow-xl"
+          className="mt-16 bg-white rounded-xl overflow-hidden shadow-xl border border-primary/20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 lg:p-12 flex flex-col justify-center">
-              <h3 className="text-white text-2xl font-montserrat font-bold mb-4">{t("assets.transformation.title")}</h3>
-              <p className="text-white/80 mb-6">
+              <h3 className="text-primary text-2xl font-montserrat font-bold mb-4">{t("assets.transformation.title")}</h3>
+              <p className="text-neutral-700 mb-6">
                 {t("assets.transformation.description")}
               </p>
-              <div className="space-y-4 text-white">
+              <div className="space-y-4 text-neutral-700">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-white text-primary mt-0.5">
+                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <Repeat className="h-4 w-4" />
                   </div>
                   <p className="ml-3">{t("assets.transformation.point1")}</p>
                 </div>
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-white text-primary mt-0.5">
+                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <Repeat className="h-4 w-4" />
                   </div>
                   <p className="ml-3">{t("assets.transformation.point2")}</p>
                 </div>
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-white text-primary mt-0.5">
+                  <div className="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 text-primary mt-0.5">
                     <Repeat className="h-4 w-4" />
                   </div>
                   <p className="ml-3">{t("assets.transformation.point3")}</p>
