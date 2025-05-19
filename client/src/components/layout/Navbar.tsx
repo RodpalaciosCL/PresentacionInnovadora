@@ -165,21 +165,27 @@ const Navbar: React.FC = () => {
               >
                 {t("nav.model")}
               </a>
-              <Link href="#financiero">
-                <a onClick={() => setMobileMenuOpen(false)} className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium">
-                  {t("nav.financial")}
-                </a>
-              </Link>
-              <Link href="#proyectos">
-                <a onClick={() => setMobileMenuOpen(false)} className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium">
-                  {t("nav.projects")}
-                </a>
-              </Link>
-              <Link href="#contacto">
-                <a onClick={() => setMobileMenuOpen(false)} className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium">
-                  {t("nav.contact")}
-                </a>
-              </Link>
+              <a 
+                href="#financiero" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium"
+              >
+                {t("nav.financial")}
+              </a>
+              <a 
+                href="#proyectos" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium"
+              >
+                {t("nav.projects")}
+              </a>
+              <a 
+                href="#contacto" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="text-neutral-700 hover:bg-primary/10 hover:text-primary block px-4 py-3 text-base font-medium"
+              >
+                {t("nav.contact")}
+              </a>
             </div>
             <div className="pt-4 pb-5 border-t border-neutral-200 bg-white">
               <div className="px-4 mb-4">
@@ -194,11 +200,13 @@ const Navbar: React.FC = () => {
                 </button>
               </div>
               <div className="px-4">
-                <Link href="#financiero">
-                  <a onClick={() => setMobileMenuOpen(false)} className="flex w-full items-center justify-center bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-md text-base font-semibold shadow-md">
-                    {t("nav.simulator")} <Calculator className="ml-2 h-5 w-5" />
-                  </a>
-                </Link>
+                <a 
+                  href="#financiero"
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="flex w-full items-center justify-center bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-md text-base font-semibold shadow-md"
+                >
+                  {t("nav.simulator")} <Calculator className="ml-2 h-5 w-5" />
+                </a>
               </div>
             </div>
           </motion.div>
