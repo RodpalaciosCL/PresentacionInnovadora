@@ -90,23 +90,25 @@ const HubNorte: React.FC = () => {
                 </ul>
               </div>
               
-              <a href="/puchuncavi">
-                <Button className="bg-primary hover:bg-primary/90 text-white">
-                  Ver Detalles del Terreno
-                </Button>
-              </a>
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white"
+                onClick={() => window.location.href = '/puchuncavi'}
+              >
+                Ver Detalles del Terreno
+              </Button>
             </div>
             
             <motion.div
               variants={slideInRight}
               initial="hidden"
               animate={isIntersecting ? "visible" : "hidden"}
-              className="rounded-2xl overflow-hidden shadow-xl h-[400px] bg-gradient-to-br from-neutral-200 to-neutral-300 flex items-center justify-center"
+              className="rounded-2xl overflow-hidden shadow-xl h-[400px]"
             >
-              <div className="text-center p-6">
-                <Building className="h-16 w-16 text-primary mx-auto mb-4" />
-                <p className="text-neutral-600">Imagen del Terreno de Puchuncaví</p>
-              </div>
+              <img 
+                src="/attached_assets/7b8cb1febbe739305e41631e61a3bd15alrzu.jpeg" 
+                alt="Terreno de Puchuncaví" 
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -241,16 +243,18 @@ const HubNorte: React.FC = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-neutral-800">Descubre nuestros proyectos en detalle</h3>
             <div className="flex flex-wrap items-center justify-center gap-6">
-              <a href="/hub-innovacion" className="inline-block">
-                <Button className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 h-auto text-lg font-semibold">
-                  Ver Hub de Innovación
-                </Button>
-              </a>
-              <a href="/puchuncavi" className="inline-block">
-                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 h-auto text-lg font-semibold">
-                  Ver Terreno Puchuncaví
-                </Button>
-              </a>
+              <Button 
+                className="bg-secondary hover:bg-secondary/90 text-white px-8 py-6 h-auto text-lg font-semibold"
+                onClick={() => window.location.href = '/hub-innovacion'}
+              >
+                Ver Hub de Innovación
+              </Button>
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 h-auto text-lg font-semibold"
+                onClick={() => window.location.href = '/puchuncavi'}
+              >
+                Ver Terreno Puchuncaví
+              </Button>
             </div>
           </div>
         </motion.div>

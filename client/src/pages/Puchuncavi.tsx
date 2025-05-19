@@ -145,12 +145,13 @@ const Puchuncavi: React.FC = () => {
                 variants={slideInRight}
                 initial="hidden"
                 animate="visible"
-                className="rounded-2xl overflow-hidden h-[500px] bg-neutral-200 shadow-xl"
+                className="rounded-2xl overflow-hidden h-[500px] shadow-xl"
               >
-                {/* Placeholder for terrain image */}
-                <div className="w-full h-full bg-neutral-300 flex items-center justify-center">
-                  <Mountain className="h-20 w-20 text-neutral-500" />
-                </div>
+                <img 
+                  src="/attached_assets/7b8cb1febbe739305e41631e61a3bd15alrzu.jpeg" 
+                  alt="Terreno de Puchuncaví - Vista aérea" 
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             </div>
           </div>

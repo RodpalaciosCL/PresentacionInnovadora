@@ -149,7 +149,7 @@ const HubInnovacion: React.FC = () => {
                 className="rounded-2xl overflow-hidden h-[500px] shadow-xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                  src="/attached_assets/Captura de pantalla 2025-05-16 a la(s) 23.24.54.png" 
                   alt="Hub de Innovación - Espacio moderno de trabajo colaborativo" 
                   className="w-full h-full object-cover"
                 />
