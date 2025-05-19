@@ -57,17 +57,13 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#financiero">
-                  <a className="hover:text-white transition-colors">
-                    {t("footer.links.financial")}
-                  </a>
+                <Link href="#financiero" className="hover:text-white transition-colors">
+                  {t("footer.links.financial")}
                 </Link>
               </li>
               <li>
-                <Link href="#proyectos">
-                  <a className="hover:text-white transition-colors">
-                    {t("footer.links.projects")}
-                  </a>
+                <Link href="#proyectos" className="hover:text-white transition-colors">
+                  {t("footer.links.projects")}
                 </Link>
               </li>
             </ul>

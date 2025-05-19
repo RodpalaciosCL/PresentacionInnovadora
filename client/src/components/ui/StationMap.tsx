@@ -2,11 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { Map, Search, Sliders } from "lucide-react";
-import mapboxgl from "mapbox-gl";
-
-// Mapbox access token
-const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN || "pk.eyJ1IjoiZGVtby1hY2NvdW50IiwiYSI6ImNrbmhuNHpncjA2eHcycG55aG0wNWs3MHAifQ.u9f04rjFo0NNBJaWNHcjdw";
+import { Map, Search, Sliders, MapPin } from "lucide-react";
 
 // Interface for station data
 interface Station {
@@ -39,87 +35,149 @@ const sampleStations: Station[] = [
 const StationMap: React.FC = () => {
   const { t } = useLanguage();
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const [activeStation, setActiveStation] = useState<Station | null>(null);
   const [hoverStation, setHoverStation] = useState<Station | null>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const { ref, isIntersecting } = useIntersectionObserver({ triggerOnce: true });
 
-  // Initialize map when component mounts
-  useEffect(() => {
-    if (!mapContainerRef.current || map) return;
-
-    mapboxgl.accessToken = MAPBOX_TOKEN;
+  // Generate positions for the stations in the visual map
+  const calculateStationPosition = (station: Station) => {
+    // Convert lat/lng to a relative position in the container
+    // Normalize latitude between -35 and -20 (roughly northern Chile) to 0-100%
+    const y = ((station.lat + 35) / 15) * 100;
+    // Normalize longitude between -72 and -69 to 0-100%
+    const x = ((station.lng + 72) / 3) * 100;
     
-    const newMap = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/light-v11",
-      center: [-70.5, -27.0], // Center of Chile
-      zoom: 4,
-    });
-
-    newMap.on("load", () => {
-      setMap(newMap);
-    });
-
-    return () => {
-      newMap.remove();
-    };
-  }, [map]);
-
-  // Add station markers when map is loaded
+    return { x, y };
+  };
+  
+  // Initialize the static map visualization
   useEffect(() => {
-    if (!map) return;
-
-    // Add station markers
-    sampleStations.forEach((station) => {
-      const markerEl = document.createElement("div");
-      markerEl.className = "map-dot w-3 h-3 rounded-full shadow-lg cursor-pointer";
-      markerEl.style.backgroundColor = station.status === "available" ? "#00529B" : "#FF8200";
-      markerEl.style.transition = "transform 0.3s, opacity 0.3s";
+    if (!mapContainerRef.current) return;
+    
+    // Create the static map container
+    mapContainerRef.current.innerHTML = '';
+    mapContainerRef.current.className = "absolute inset-0 bg-neutral-100 rounded-md overflow-hidden";
+    
+    // Add a stylized map background - simplified outline of northern Chile
+    const mapBackground = document.createElement('div');
+    mapBackground.className = "absolute inset-0";
+    mapBackground.style.background = "linear-gradient(135deg, #e9f5f8 0%, #edf2f7 100%)";
+    mapContainerRef.current.appendChild(mapBackground);
+    
+    // Add region outlines (stylized)
+    const regionOutline = document.createElement('div');
+    regionOutline.className = "absolute inset-0";
+    regionOutline.innerHTML = `
+      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M30,95 C35,85 40,70 45,60 C50,50 55,35 60,25 C65,15 70,5 75,0 L85,0 L90,10 L95,20 L100,30 L100,100 L0,100 L0,90 Z" 
+              fill="#dde9f3" stroke="#c2d5e5" stroke-width="0.5" />
+        <path d="M0,85 L10,85 L20,80 L30,75" stroke="#c2d5e5" stroke-width="0.3" fill="none" stroke-dasharray="1,1" />
+        <line x1="0" y1="70" x2="15" y2="65" stroke="#c2d5e5" stroke-width="0.3" stroke-dasharray="1,1" />
+      </svg>
+    `;
+    mapContainerRef.current.appendChild(regionOutline);
+    
+    // Add city markers
+    const markersContainer = document.createElement('div');
+    markersContainer.className = "absolute inset-0";
+    
+    sampleStations.forEach(station => {
+      const { x, y } = calculateStationPosition(station);
       
-      markerEl.addEventListener("mouseenter", () => {
-        markerEl.style.transform = "scale(1.5)";
-        markerEl.style.zIndex = "10";
+      // Create marker container
+      const marker = document.createElement('div');
+      marker.className = "absolute cursor-pointer group";
+      marker.style.left = `${x}%`;
+      marker.style.top = `${y}%`;
+      marker.style.transform = "translate(-50%, -50%)";
+      
+      // Create marker dot
+      const dot = document.createElement('div');
+      dot.className = `w-3 h-3 rounded-full shadow-md transition-transform duration-200 
+                        group-hover:scale-150 group-hover:z-10
+                        ${station.status === "available" ? "bg-primary" : "bg-secondary"}`;
+      
+      // Create marker label
+      const label = document.createElement('div');
+      label.className = "absolute top-full left-1/2 transform -translate-x-1/2 mt-1 text-xs font-medium text-neutral-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity";
+      label.textContent = station.name;
+      
+      // Add event listeners
+      marker.addEventListener('mouseenter', () => {
         setHoverStation(station);
       });
       
-      markerEl.addEventListener("mouseleave", () => {
-        markerEl.style.transform = "scale(1)";
-        markerEl.style.zIndex = "1";
+      marker.addEventListener('mouseleave', () => {
         setHoverStation(null);
       });
       
-      markerEl.addEventListener("click", () => {
+      marker.addEventListener('click', () => {
         setActiveStation(station);
-        map.flyTo({
-          center: [station.lng, station.lat],
-          zoom: 8,
-          duration: 1500,
-        });
       });
       
-      new mapboxgl.Marker(markerEl)
-        .setLngLat([station.lng, station.lat])
-        .addTo(map);
-    });
-
-    // Add reset control
-    const resetButton = document.createElement("button");
-    resetButton.className = "bg-white p-2 rounded shadow-md";
-    resetButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>';
-    resetButton.addEventListener("click", () => {
-      map.flyTo({
-        center: [-70.5, -27.0],
-        zoom: 4,
-        duration: 1500,
-      });
-      setActiveStation(null);
+      // Assemble and add to container
+      marker.appendChild(dot);
+      marker.appendChild(label);
+      markersContainer.appendChild(marker);
     });
     
-    const resetControl = new mapboxgl.NavigationControl();
-    map.addControl(resetControl, "top-right");
-  }, [map]);
+    mapContainerRef.current.appendChild(markersContainer);
+    
+    // Add a compass rose
+    const compass = document.createElement('div');
+    compass.className = "absolute top-4 right-4 w-16 h-16 bg-white bg-opacity-80 rounded-full shadow-md flex items-center justify-center p-1";
+    compass.innerHTML = `
+      <svg viewBox="0 0 24 24" width="100%" height="100%">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#64748b" stroke-width="0.5"></circle>
+        <path d="M12,2 L12,22" stroke="#64748b" stroke-width="0.5"></path>
+        <path d="M2,12 L22,12" stroke="#64748b" stroke-width="0.5"></path>
+        <text x="12" y="5" text-anchor="middle" font-size="3" fill="#334155">N</text>
+        <text x="12" y="21" text-anchor="middle" font-size="3" fill="#334155">S</text>
+        <text x="5" y="12.5" text-anchor="middle" font-size="3" fill="#334155">O</text>
+        <text x="19" y="12.5" text-anchor="middle" font-size="3" fill="#334155">E</text>
+      </svg>
+    `;
+    mapContainerRef.current.appendChild(compass);
+    
+    // Add region labels
+    const regions = [
+      { name: "Antofagasta", x: 60, y: 30 },
+      { name: "Atacama", x: 55, y: 50 },
+      { name: "Coquimbo", x: 50, y: 70 },
+      { name: "Valparaíso", x: 40, y: 85 }
+    ];
+    
+    const regionsContainer = document.createElement('div');
+    regionsContainer.className = "absolute inset-0 pointer-events-none";
+    
+    regions.forEach(region => {
+      const label = document.createElement('div');
+      label.className = "absolute text-neutral-500 text-xs font-light italic";
+      label.style.left = `${region.x}%`;
+      label.style.top = `${region.y}%`;
+      label.textContent = region.name;
+      regionsContainer.appendChild(label);
+    });
+    
+    mapContainerRef.current.appendChild(regionsContainer);
+    
+    // Add ocean
+    const ocean = document.createElement('div');
+    ocean.className = "absolute left-0 top-0 bottom-0 w-1/4";
+    ocean.style.background = "linear-gradient(90deg, #a8dadc 0%, rgba(168, 218, 220, 0) 100%)";
+    ocean.style.opacity = "0.5";
+    mapContainerRef.current.appendChild(ocean);
+    
+    const oceanLabel = document.createElement('div');
+    oceanLabel.className = "absolute text-blue-800 text-sm italic font-light opacity-50";
+    oceanLabel.style.left = "5%";
+    oceanLabel.style.top = "50%";
+    oceanLabel.style.transform = "translateY(-50%) rotate(-90deg)";
+    oceanLabel.textContent = "Océano Pacífico";
+    mapContainerRef.current.appendChild(oceanLabel);
+    
+  }, []);
 
   // Update tooltip position on hover
   useEffect(() => {
@@ -165,7 +223,7 @@ const StationMap: React.FC = () => {
         </div>
       </div>
       
-      <div className="relative h-screen-70">
+      <div className="relative h-[500px]">
         <div ref={mapContainerRef} className="absolute inset-0" />
         
         {/* Map legend */}
@@ -173,11 +231,11 @@ const StationMap: React.FC = () => {
           <div className="text-sm font-semibold mb-2">{t("map.legend")}</div>
           <div className="flex items-center mb-1">
             <div className="w-3 h-3 bg-primary rounded-full mr-2"></div>
-            <span className="text-xs">{t("map.available")}</span>
+            <span className="text-xs">Terrenos disponibles</span>
           </div>
           <div className="flex items-center">
             <div className="w-3 h-3 bg-secondary rounded-full mr-2"></div>
-            <span className="text-xs">{t("map.rented")}</span>
+            <span className="text-xs">Terrenos arrendados</span>
           </div>
         </div>
         
