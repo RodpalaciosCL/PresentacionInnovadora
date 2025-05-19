@@ -44,7 +44,7 @@ const BusinessModel: React.FC = () => {
                 className="rounded-xl bg-primary/5 p-6 border border-primary/10"
               >
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Building2 className="text-2xl text-primary h-8 w-8" />
+                  <Building2 className="text-primary h-8 w-8" />
                 </div>
                 <h3 className="font-montserrat font-bold text-xl mb-3 text-primary">Propietarios de Terrenos</h3>
                 <p className="text-neutral-600 mb-4">
@@ -72,7 +72,7 @@ const BusinessModel: React.FC = () => {
                 className="rounded-xl bg-secondary/5 p-6 border border-secondary/10"
               >
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                  <Building2 className="text-2xl text-secondary h-8 w-8" />
+                  <Handshake className="text-secondary h-8 w-8" />
                 </div>
                 <h3 className="font-montserrat font-bold text-xl mb-3 text-secondary">{t("model.inversiones.title")}</h3>
                 <p className="text-neutral-600 mb-4">
@@ -100,7 +100,7 @@ const BusinessModel: React.FC = () => {
                 className="rounded-xl bg-accent/5 p-6 border border-accent/10"
               >
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                  <Handshake className="text-2xl text-accent h-8 w-8" />
+                  <ChevronRight className="text-accent h-8 w-8" />
                 </div>
                 <h3 className="font-montserrat font-bold text-xl mb-3 text-accent">{t("model.investor.title")}</h3>
                 <p className="text-neutral-600 mb-4">
