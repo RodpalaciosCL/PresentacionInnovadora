@@ -24,7 +24,9 @@ const HubNorte: React.FC = () => {
   const { ref, isIntersecting } = useIntersectionObserver({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="hub-norte" ref={ref} className="py-24 bg-neutral-50 relative">
+    <section id="hub-norte" className="py-24 bg-neutral-50 relative" ref={(element) => {
+      if (element) ref.current = element;
+    }}>
       {/* Background decorations */}
       <div className="absolute right-0 top-0 w-1/3 h-64 bg-primary/5 rounded-bl-[100px] -z-10"></div>
       <div className="absolute left-0 bottom-0 w-1/4 h-48 bg-primary/5 rounded-tr-[100px] -z-10"></div>

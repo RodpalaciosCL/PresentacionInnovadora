@@ -51,11 +51,9 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link href="/">
-              <a className="flex-shrink-0 flex items-center">
-                <img src="/images/logo.png" alt="Invenor Logo" className="h-14" />
-              </a>
-            </Link>
+            <a href="/" className="flex-shrink-0 flex items-center">
+              <img src="/images/logo.png" alt="Invenor Logo" className="h-14" />
+            </a>
             <div className="hidden sm:ml-10 sm:flex sm:space-x-9">
               <Link href="#vision">
                 <a className="text-neutral-700 hover:text-primary border-transparent hover:border-primary inline-flex items-center px-2 pt-1 border-b-2 text-base font-medium transition-colors duration-200">
