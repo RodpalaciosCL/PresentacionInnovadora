@@ -6,15 +6,46 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
+import { ChevronRight, ArrowDown, Target, TrendingUp, Building, Play, Shield, Zap, Globe } from "lucide-react";
+import { useCounter } from "@/hooks/use-counter";
+import { businessMetrics } from "@/data/company";
 
 const Home: React.FC = () => {
+  const [showVideoModal, setShowVideoModal] = React.useState(false);
+
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/20" />
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-96 h-96 rounded-full bg-emerald-400/5"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                x: [0, 100, -50, 0],
+                y: [0, -100, 50, 0],
+                scale: [1, 1.2, 0.8, 1],
+              }}
+              transition={{
+                duration: 20 + i * 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-slate-900/40" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -34,7 +65,7 @@ const Home: React.FC = () => {
               transformando infraestructura en oportunidades de inversión sostenibles y rentables.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/opportunities">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -45,6 +76,19 @@ const Home: React.FC = () => {
                   <ChevronRight className="h-5 w-5" />
                 </motion.button>
               </Link>
+              
+              {/* Video Demo Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowVideoModal(true)}
+                className="flex items-center space-x-3 text-white hover:text-emerald-400 transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Play className="h-5 w-5 ml-1" />
+                </div>
+                <span className="font-medium">Ver Demo</span>
+              </motion.button>
               
               <Link href="/projections">
                 <motion.button
@@ -74,6 +118,37 @@ const Home: React.FC = () => {
             </motion.div>
           </motion.div>
         </div>
+        
+        {/* Video Modal */}
+        {showVideoModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setShowVideoModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              className="bg-slate-800 rounded-xl p-8 max-w-2xl w-full text-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">Demo de Invenor</h3>
+              <div className="aspect-video bg-slate-700 rounded-lg flex items-center justify-center mb-4">
+                <Play className="h-16 w-16 text-emerald-400" />
+              </div>
+              <p className="text-slate-300 mb-4">
+                Descubre cómo transformamos infraestructura en oportunidades de inversión rentables.
+              </p>
+              <button
+                onClick={() => setShowVideoModal(false)}
+                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg transition-colors"
+              >
+                Cerrar
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
       </section>
 
       {/* Nuestro Propósito Section */}
@@ -158,28 +233,40 @@ const Home: React.FC = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "500+", label: "Estaciones Gestionadas", suffix: "" },
-              { number: "2,500", label: "Hectáreas Desarrolladas", suffix: "+" },
-              { number: "1,200", label: "Kilómetros de Fibra", suffix: " km" },
-              { number: "US$85M", label: "En Activos Gestionados", suffix: "" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-emerald-400 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-slate-300 font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
+            {businessMetrics.map((metric, index) => {
+              const numericValue = parseInt(metric.value.replace(/[^\d]/g, '')) || 0;
+              const count = useCounter({ target: numericValue, duration: 2000 });
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-center group"
+                >
+                  <motion.div 
+                    className="text-4xl md:text-5xl font-bold text-emerald-400 mb-2"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {metric.value.includes('US$') ? `US$${Math.round(count)}M` : 
+                     metric.value.includes('+') ? `${Math.round(count)}+` :
+                     metric.value.includes('km') ? `${Math.round(count)} km` :
+                     Math.round(count)}
+                  </motion.div>
+                  <div className="text-slate-300 font-medium mb-2">
+                    {metric.label}
+                  </div>
+                  {metric.description && (
+                    <div className="text-slate-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                      {metric.description}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
