@@ -77,93 +77,53 @@ const Contact: React.FC = () => {
     },
     {
       icon: Phone,
-      title: "Línea Directa",
-      value: COMPANY_INFO.phone,
-      description: "Lunes a Viernes, 9:00 - 18:00",
-      action: `tel:${COMPANY_INFO.phone}`
+      title: "Teléfono",
+      value: "+56 2 2XXX XXXX",
+      description: "Lun-Vie 9:00-18:00",
+      action: "tel:+56222XXXXXX"
     },
     {
       icon: MapPin,
-      title: "Oficinas",
-      value: COMPANY_INFO.address,
-      description: "Reuniones por cita previa",
-      action: null
+      title: "Oficina Principal",
+      value: "Santiago, Chile",
+      description: "Reuniones presenciales",
+      action: "#"
     }
   ];
 
-  const investmentRanges = [
-    { value: "500k-1m", label: "US$ 500K - 1M" },
-    { value: "1m-5m", label: "US$ 1M - 5M" },
-    { value: "5m-10m", label: "US$ 5M - 10M" },
-    { value: "10m+", label: "US$ 10M+" }
-  ];
-
-  const projects = [
-    { value: "estaciones", label: "500+ Estaciones" },
-    { value: "puchuncavi", label: "Puchuncaví" },
-    { value: "hub-norte", label: "Hub Norte" },
-    { value: "fibra-oscura", label: "Fibra Oscura" },
-    { value: "portafolio", label: "Portafolio Completo" }
+  const teamMembers = [
+    {
+      name: "Carlos Mendoza",
+      role: "CEO & Fundador",
+      linkedin: "https://linkedin.com/in/carlos-mendoza"
+    },
+    {
+      name: "Ana Rodríguez",
+      role: "Directora de Inversiones",
+      linkedin: "https://linkedin.com/in/ana-rodriguez"
+    }
   ];
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto px-4"
+          className="text-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-12 border border-slate-700"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-            className="w-24 h-24 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8"
-          >
-            <CheckCircle className="h-12 w-12 text-white" />
-          </motion.div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            ¡Mensaje <span className="text-emerald-400">Enviado!</span>
-          </h1>
-          
-          <p className="text-xl text-slate-300 mb-8">
-            Gracias por tu interés en Invenor. Nuestro equipo revisará tu consulta y 
-            se pondrá en contacto contigo dentro de las próximas 24 horas.
+          <CheckCircle className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h2>
+          <p className="text-slate-300 mb-8">
+            Gracias por tu interés en Invenor. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
           </p>
-          
-          <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 mb-8">
-            <h3 className="text-lg font-semibold text-white mb-4">Próximos pasos:</h3>
-            <div className="space-y-3 text-left">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                <span className="text-slate-300">Revisión de tu consulta (2-4 horas)</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                <span className="text-slate-300">Contacto personalizado (24 horas)</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                <span className="text-slate-300">Agendamiento de reunión inicial</span>
-              </div>
-            </div>
-          </div>
-          
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              setIsSubmitted(false);
-              setFormData({
-                name: "", email: "", phone: "", company: "",
-                investmentRange: "", projectInterest: "", message: "", preferredContact: "email"
-              });
-            }}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+            onClick={() => setIsSubmitted(false)}
+            className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
-            Enviar Otra Consulta
+            Enviar Otro Mensaje
           </motion.button>
         </motion.div>
       </div>
@@ -171,90 +131,95 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-emerald-900/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Conecta con <span className="text-emerald-400">Nosotros</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Estamos aquí para responder tus consultas y ayudarte a encontrar 
-              la oportunidad de inversión perfecta para tu portafolio
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">
+            Contacto
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Conecta con nuestro equipo de expertos en inversiones inmobiliarias. 
+            Estamos aquí para ayudarte a maximizar tu patrimonio.
+          </p>
+        </motion.div>
 
-      {/* Contact Methods */}
-      <section className="py-16 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {contactMethods.map((method, index) => {
-              const Icon = method.icon;
-              return (
-                <motion.div
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">Información de Contacto</h2>
+              <p className="text-slate-300 mb-8">
+                Nuestro equipo está disponible para responder todas tus consultas sobre 
+                inversiones inmobiliarias estratégicas.
+              </p>
+            </div>
+
+            {/* Contact Methods */}
+            <div className="space-y-6">
+              {contactMethods.map((method, index) => (
+                <motion.a
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 text-center group"
+                  href={method.action}
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-emerald-400 transition-all group"
                 >
-                  <div className="bg-emerald-500/20 p-4 rounded-lg w-fit mx-auto mb-6 group-hover:bg-emerald-500/30 transition-colors">
-                    <Icon className="h-8 w-8 text-emerald-400" />
+                  <div className="bg-emerald-500/20 p-3 rounded-lg group-hover:bg-emerald-500/30 transition-colors">
+                    <method.icon className="h-6 w-6 text-emerald-400" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-3">{method.title}</h3>
-                  
-                  {method.action ? (
-                    <a
-                      href={method.action}
-                      className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors"
-                    >
-                      {method.value}
-                    </a>
-                  ) : (
-                    <div className="text-emerald-400 font-semibold">{method.value}</div>
-                  )}
-                  
-                  <p className="text-slate-300 text-sm mt-2">{method.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                  <div className="ml-4">
+                    <h3 className="text-white font-semibold">{method.title}</h3>
+                    <p className="text-emerald-400">{method.value}</p>
+                    <p className="text-slate-400 text-sm">{method.description}</p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
 
-      {/* Contact Form */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Solicita una <span className="text-emerald-400">Reunión</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Completa el formulario y nos pondremos en contacto contigo para agendar una reunión personalizada
-            </p>
+            {/* Team Members */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-4">Nuestro Equipo</h3>
+              <div className="space-y-4">
+                {teamMembers.map((member, index) => (
+                  <motion.a
+                    key={index}
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center p-4 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-emerald-400 transition-all group"
+                  >
+                    <div className="bg-emerald-500/20 p-2 rounded-lg group-hover:bg-emerald-500/30 transition-colors">
+                      <Linkedin className="h-5 w-5 text-emerald-400" />
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="text-white font-medium">{member.name}</h4>
+                      <p className="text-slate-400 text-sm">{member.role}</p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               {/* Personal Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -262,14 +227,14 @@ const Contact: React.FC = () => {
                     Nombre Completo *
                   </label>
                   <input
+                    {...form.register("name")}
                     type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
                     placeholder="Juan Pérez"
                   />
+                  {form.formState.errors.name && (
+                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.name.message}</p>
+                  )}
                 </div>
                 
                 <div>
@@ -277,30 +242,31 @@ const Contact: React.FC = () => {
                     Email *
                   </label>
                   <input
+                    {...form.register("email")}
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
                     placeholder="juan@empresa.com"
                   />
+                  {form.formState.errors.email && (
+                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.email.message}</p>
+                  )}
                 </div>
               </div>
-
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Teléfono
+                    Teléfono *
                   </label>
                   <input
+                    {...form.register("phone")}
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
                     placeholder="+56 9 XXXX XXXX"
                   />
+                  {form.formState.errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.phone.message}</p>
+                  )}
                 </div>
                 
                 <div>
@@ -308,140 +274,145 @@ const Contact: React.FC = () => {
                     Empresa
                   </label>
                   <input
+                    {...form.register("company")}
                     type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
-                    placeholder="Nombre de tu empresa"
+                    placeholder="Nombre de la empresa"
                   />
                 </div>
               </div>
-
-              {/* Investment Details */}
+              
+              {/* Investment Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Rango de Inversión
+                    Rango de Inversión *
                   </label>
                   <select
-                    name="investmentRange"
-                    value={formData.investmentRange}
-                    onChange={handleInputChange}
+                    {...form.register("investmentRange")}
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
                   >
                     <option value="">Seleccionar rango</option>
-                    {investmentRanges.map((range) => (
-                      <option key={range.value} value={range.value}>
-                        {range.label}
-                      </option>
-                    ))}
+                    <option value="100k-500k">US$100K - US$500K</option>
+                    <option value="500k-1m">US$500K - US$1M</option>
+                    <option value="1m-5m">US$1M - US$5M</option>
+                    <option value="5m+">US$5M+</option>
                   </select>
+                  {form.formState.errors.investmentRange && (
+                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.investmentRange.message}</p>
+                  )}
                 </div>
                 
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Proyecto de Interés
+                    Proyecto de Interés *
                   </label>
                   <select
-                    name="projectInterest"
-                    value={formData.projectInterest}
-                    onChange={handleInputChange}
+                    {...form.register("projectInterest")}
                     className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
                   >
                     <option value="">Seleccionar proyecto</option>
-                    {projects.map((project) => (
-                      <option key={project.value} value={project.value}>
-                        {project.label}
-                      </option>
-                    ))}
+                    <option value="puchuncavi">Puchuncaví</option>
+                    <option value="hub-norte">Hub Norte</option>
+                    <option value="portfolio">Portfolio Completo</option>
+                    <option value="custom">Proyecto Personalizado</option>
                   </select>
+                  {form.formState.errors.projectInterest && (
+                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.projectInterest.message}</p>
+                  )}
                 </div>
               </div>
-
+              
               {/* Message */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-2">
-                  Mensaje
+                  Mensaje *
                 </label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
-                  placeholder="Cuéntanos sobre tus objetivos de inversión, timeline y cualquier pregunta específica..."
+                  {...form.register("message")}
+                  rows={5}
+                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors resize-none"
+                  placeholder="Describe tu interés en los proyectos de Invenor..."
                 />
+                {form.formState.errors.message && (
+                  <p className="text-red-400 text-sm mt-1">{form.formState.errors.message.message}</p>
+                )}
               </div>
-
-              {/* Preferred Contact Method */}
+              
+              {/* Contact Preference */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-3">
                   Método de Contacto Preferido
                 </label>
-                <div className="flex space-x-4">
-                  {[
-                    { value: "email", label: "Email", icon: Mail },
-                    { value: "phone", label: "Teléfono", icon: Phone },
-                    { value: "whatsapp", label: "WhatsApp", icon: MessageSquare }
-                  ].map((method) => {
-                    const Icon = method.icon;
-                    return (
-                      <label
-                        key={method.value}
-                        className={`flex items-center space-x-2 p-3 rounded-lg border cursor-pointer transition-all ${
-                          formData.preferredContact === method.value
-                            ? "border-emerald-400 bg-emerald-500/10 text-emerald-400"
-                            : "border-slate-600 bg-slate-700/50 text-slate-300 hover:border-slate-500"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="preferredContact"
-                          value={method.value}
-                          checked={formData.preferredContact === method.value}
-                          onChange={handleInputChange}
-                          className="sr-only"
-                        />
-                        <Icon className="h-4 w-4" />
-                        <span className="text-sm">{method.label}</span>
-                      </label>
-                    );
-                  })}
+                <div className="flex flex-wrap gap-4">
+                  <label className="flex items-center">
+                    <input
+                      {...form.register("preferredContact")}
+                      type="radio"
+                      value="email"
+                      className="text-emerald-500 focus:ring-emerald-400 border-slate-600 bg-slate-700"
+                    />
+                    <span className="ml-2 text-slate-300">Email</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      {...form.register("preferredContact")}
+                      type="radio"
+                      value="phone"
+                      className="text-emerald-500 focus:ring-emerald-400 border-slate-600 bg-slate-700"
+                    />
+                    <span className="ml-2 text-slate-300">Teléfono</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      {...form.register("preferredContact")}
+                      type="radio"
+                      value="both"
+                      className="text-emerald-500 focus:ring-emerald-400 border-slate-600 bg-slate-700"
+                    />
+                    <span className="ml-2 text-slate-300">Ambos</span>
+                  </label>
                 </div>
               </div>
-
+              
               {/* Submit Button */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-500/50 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                disabled={form.formState.isSubmitting}
+                className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-600 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Enviando...</span>
-                  </>
+                {form.formState.isSubmitting ? (
+                  <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
                 ) : (
                   <>
                     <Send className="h-5 w-5" />
-                    <span>Enviar Solicitud</span>
+                    <span>Enviar Consulta</span>
                   </>
                 )}
               </motion.button>
             </form>
-
-            <div className="mt-6 pt-6 border-t border-slate-600">
-              <p className="text-slate-400 text-sm text-center">
-                Al enviar este formulario, aceptas que un representante de Invenor se ponga en contacto contigo 
-                para discutir oportunidades de inversión. Respetamos tu privacidad y no compartimos tu información.
-              </p>
-            </div>
           </motion.div>
         </div>
-      </section>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl p-8 border border-emerald-400/30">
+            <Clock className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-white mb-2">Respuesta Garantizada</h3>
+            <p className="text-slate-300">
+              Nuestro equipo se compromete a responder todas las consultas en menos de 24 horas.
+              Para inversiones superiores a US$1M, contacto inmediato con ejecutivos senior.
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
