@@ -1,0 +1,119 @@
+# Rol del asistente
+Eres un **desarrollador full-stack senior**.  
+Stack ya presente en el repo: **React 18 + TypeScript + Vite · Tailwind CSS + shadcn/ui · Framer Motion · Wouter**.  
+Backend ligero: **Node.js + Express + Drizzle ORM (SQLite in-memory en dev)**.
+
+> **Flujo de trabajo**
+> 1. Trabaja **por bloques** (abajo).  
+> 2. Al terminar cada bloque responde — **sin avanzar**:
+>    ✅ <Nombre del bloque> listo. ¿Avanzamos con el siguiente?  
+> 3. Espera mi “Sí” para continuar.
+
+---
+
+## BLOQUES A DESARROLLAR
+
+### 1 · Setup & Hardening
+1. ESLint + Prettier + Husky (pre-commit) · configuración compartida.  
+2. **TanStack Query** como capa de data-fetch global (+ React Context provider).  
+3. Code-splitting por ruta en `vite.config.ts` y `React.lazy`.  
+4. **React Helmet** básico en `Layout.tsx` (título + metadescripción dinámicos).  
+5. **Modo oscuro / claro**  
+   - `ThemeProvider` (Context + Tailwind `class`)   
+   - Persistencia en `localStorage`.  
+   - Toggle en `Header`.  
+6. **PWA**  
+   - `manifest.json`, `serviceWorker.ts`, icons 192/512 px.  
+   - Vite plugin `vite-plugin-pwa`.  
+7. **Lazy Image** componente con blur-placeholder (CSS filter) + `loading="lazy"`.  
+8. **Skeleton Loader** generics (`<Skeleton className="h-4 w-full" />`).  
+9. Ajustar alias `@/` y añadir `paths` en `tsconfig.json`.
+
+---
+
+### 2 · Home (Landing)
+- Hero fullscreen (vídeo loop + fallback jpg).  
+- Claim: **“Invenor — Infraestructura que se convierte en rentabilidad.”**  
+- CTA primario “Explorar Oportunidades”.  
+- “En números” (contadores animados).  
+- Scroll-reveal de propósito y valores (Framer Motion).  
+- Demonstra las Skeletons + LazyImage en práctica.
+
+---
+
+### 3 · Quiénes Somos (`/about`)
+- `FounderCard` (foto, bio, logros).  
+- Timeline animado de hitos (Framer).  
+- Grid “Valores” con iconografía minimal.
+
+---
+
+### 4 · Oportunidades (`/opportunities`)
+Tabs (shadcn) → sub-secciones:
+
+1. **Estaciones (500+/250 Hotspots)**  
+   - Mapa SVG interactivo + filtro región (zustand o state local).  
+   - DataTable KPI: m², fee medio, contrato tipo.
+
+2. **Terreno Puchuncaví**  
+   - Carrusel 3D (Framer Motion) comparador “actual / masterplan”.  
+   - Tabla de valorización y escenarios de retorno.
+
+3. **Hub Norte**  
+   - Roadmap vertical (Framer).  
+   - KPIs: NPV, TIR, VAN (mini-charts recharts).
+
+4. **Fibra Oscura**  
+   - Canvas con trazado de 1 200 km.  
+   - Slider “pares de fibra” → ingreso mensual calculado.
+
+---
+
+### 5 · Proyecciones Financieras (`/projections`)
+- Form inputs → hook `useFinancials.ts` calcula **ROI, Payback, VAN, TIR**.  
+- Visualización recharts (bar/line) + tabla estilo Excel.  
+- Export CSV / PDF (jsPDF mock).
+
+---
+
+### 6 · Buscador Global
+- Indexa títulos + contenido de projects, blog posts, FAQs.  
+- Implementa con **Fuse.js**; abre modal `Cmd + K`.  
+- Resultado enlaza con `Wouter` a la ruta correspondiente.
+
+---
+
+### 7 · Contacto (`/contact`)
+- Form (React-Hook-Form) validado → endpoint `/api/contact`.  
+- Toast shadcn de éxito.  
+- Links LinkedIn y correo.  
+- **Chat widget** mock: botón flotante que abre Offcanvas con formulario rápido; si amount > 1 000 000 dispara webhook placeholder (`/api/high-ticket`).
+
+---
+
+### 8 · Área Privada (opcional)
+- Login mínimo (bcrypt + express-sessions).  
+- Dashboard KPI mensual (subir CSV → grafica).  
+- Descarga documentos (data room).
+
+---
+
+### 9 · Optimización & Deploy
+- Lighthouse ≥ 90 (perf, a11y, best-pract).  
+- Sitemap y `robots.txt`.  
+- Script `npm run deploy` (Replit Web Hosting).
+
+---
+
+## Pautas generales
+* **Tailwind** (`@apply`) y clase semántica; dark:prefijo donde aplique.  
+* Animaciones suaves, 60 fps; respeta prefers-reduced-motion.  
+* A11y: roles, aria-labels, contraste ≥ 4.5 : 1.  
+* LazyImage y Skeletons en cualquier lista o galería de datos.  
+* Usa `import("@/components/…")` con alias.  
+
+---
+
+### Comienza por el **Bloque 1 – Setup & Hardening**  
+Al terminar, responde:  
+`✅ Setup & Hardening listo. ¿Avanzamos con el siguiente?`
