@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [searchOpen, setSearchOpen] = React.useState(false);
-  const { theme, setTheme, actualTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   // Handle Cmd+K shortcut
   React.useEffect(() => {
@@ -109,15 +109,15 @@ const Layout: React.FC<LayoutProps> = ({
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
               
-              {/* Fix 3: Theme Toggle mejorado */}
+              {/* Theme Toggle corregido */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                onClick={() => setTheme(actualTheme === "dark" ? "light" : "dark")}
+                onClick={toggleTheme}
                 className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
-                aria-label={`Cambiar a modo ${actualTheme === "dark" ? "claro" : "oscuro"}`}
+                aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
               >
-                {actualTheme === "dark" ? (
+                {theme === "dark" ? (
                   <Sun className="h-4 w-4 text-yellow-400" />
                 ) : (
                   <Moon className="h-4 w-4 text-slate-400 dark:text-slate-300" />
@@ -137,15 +137,15 @@ const Layout: React.FC<LayoutProps> = ({
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
               
-              {/* Fix 3: Theme Toggle para móvil */}
+              {/* Theme Toggle para móvil */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                onClick={() => setTheme(actualTheme === "dark" ? "light" : "dark")}
+                onClick={toggleTheme}
                 className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
-                aria-label={`Cambiar a modo ${actualTheme === "dark" ? "claro" : "oscuro"}`}
+                aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
               >
-                {actualTheme === "dark" ? (
+                {theme === "dark" ? (
                   <Sun className="h-4 w-4 text-yellow-400" />
                 ) : (
                   <Moon className="h-4 w-4 text-slate-400 dark:text-slate-300" />

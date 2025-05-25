@@ -2,19 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fix 3: Estilos base para modo claro/oscuro */
+/* Fix 3: Theme Toggle CSS - Estilos base para modo claro/oscuro */
+
+/* Asegurar que el body use las variables CSS */
 body {
-  @apply bg-background text-foreground;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Clases para theme light */
 .light {
   --background: 0 0% 100%;
   --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
 }
 
+/* Clases para theme dark */
 .dark {
   --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
 }
 
 :root {

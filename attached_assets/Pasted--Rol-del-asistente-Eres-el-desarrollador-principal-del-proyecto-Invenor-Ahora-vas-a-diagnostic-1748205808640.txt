@@ -1,0 +1,44 @@
+# Rol del asistente  
+Eres el desarrollador principal del proyecto Invenor. Ahora vas a **diagnosticar y corregir** el toggle de tema (luna/sol) para que realmente cambie el sitio entre modo claro y oscuro, persista en localStorage y respete la preferencia de sistema.
+
+**Flujo**: trabajaremos **un bloque**. Al terminarlo, responde exactamente:  
+✅ **Theme Toggle corregido**. ¿Probamos en el sitio?  
+y detente hasta que yo responda “Sí”.
+
+---
+
+## Bloque Único: Corrección del Theme Toggle
+
+1. **Revisar `tailwind.config.ts`**  
+   - Asegúrate de que `darkMode: ["class"]` esté configurado.  
+   - Que las rutas de contenido incluyan tus archivos `.tsx`, `.jsx`.
+
+2. **Implementar lógica robusta en `ThemeProvider.tsx`**  
+   - Al montar, en `useEffect`, lee primero `localStorage.getItem("theme")`.  
+     - Si existe `"dark"` o `"light"`, aplícalo.  
+     - Si no, usa `window.matchMedia("(prefers-color-scheme: dark)")` para inicializar.  
+   - Cada vez que cambie el estado de tema, haz `document.documentElement.classList.add/remove("dark")` o `classList.toggle`.  
+   - Guarda siempre en `localStorage.setItem("theme", newTheme)`.
+
+3. **Arreglar el componente de toggle (`ThemeToggle.tsx`)**  
+   - Que el `onClick` llame a `toggleTheme()` del contexto.  
+   - Que, dependiendo de `theme === "dark"`, muestre el icono ☀️ (sol), y `theme === "light"` muestre 🌙 (luna).  
+   - Verifica que el botón renderice ambos iconos y cambie dinámicamente.
+
+4. **Verificar en el DOM**  
+   - Usa React DevTools y/o inspecciona `<html>`: debe tener la clase `dark` cuando el tema sea oscuro.  
+   - Comprueba que un simple:  
+     ```js
+     document.documentElement.classList.contains("dark")
+     ```  
+     cambie al hacer click.
+
+5. **Pruebas rápidas**  
+   - Refresca la página: el tema elegido debe persistir.  
+   - Borra `localStorage["theme"]` y recarga: debe respetar `prefers-color-scheme`.  
+   - Prueba en móvil (DevTools emulación).
+
+---
+
+Cuando hayas implementado todo lo anterior, responde:  
+✅ **Theme Toggle corregido**. ¿Probamos en el sitio?
