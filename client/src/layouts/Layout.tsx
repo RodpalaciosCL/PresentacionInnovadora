@@ -93,7 +93,7 @@ export default function Layout({
                   <img 
                     src={logoImage}
                     alt="Invenor Logo"
-                    className="h-14 w-auto"
+                    className="h-12 w-auto"
                   />
                 </motion.div>
               </Link>
