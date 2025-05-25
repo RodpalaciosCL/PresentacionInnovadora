@@ -1,0 +1,92 @@
+# Rol del asistente  
+Eres el desarrollador principal del proyecto **Invenor**. En esta tarea debes **eliminar** el toggle de modo claro/oscuro y **sustituirlo** por un selector de idioma **Inglés/Español**, asegurándote de que **todos** los textos del sitio se traduzcan sin dejar ni una sola cadena hard-coded.
+
+---
+
+## Tareas a implementar de una sola vez
+
+1. **Instalar y configurar i18n**  
+   - Añade `i18next` y `react-i18next`:  
+     ```bash
+     npm install i18next react-i18next
+     ```  
+   - Crea `src/i18n.ts` con:
+     ```ts
+     import i18n from 'i18next';
+     import { initReactI18next } from 'react-i18next';
+     import en from '@/locales/en.json';
+     import es from '@/locales/es.json';
+
+     i18n
+       .use(initReactI18next)
+       .init({
+         resources: { en: { translation: en }, es: { translation: es } },
+         lng: 'es',
+         fallbackLng: 'es',
+         interpolation: { escapeValue: false },
+       });
+
+     export default i18n;
+     ```
+
+2. **Envolver la App en el proveedor de i18n**  
+   - En `src/main.tsx` (o `App.tsx`), importa `import './i18n';` al inicio.  
+   - Envuelve tu `<App />` en `<I18nextProvider i18n={i18n}>` y elimina cualquier lógica o importación relacionada con el theme toggle.
+
+3. **Crear los archivos de traducción completos**  
+   - Crea `src/locales/es.json` y `src/locales/en.json`.  
+   - Traslada **absolutamente todo** el texto hard-coded del sitio (Home, About, Opportunities, Projections, Contact, Footer, botones, placeholders, mensajes de validación, títulos, descripciones…) a claves de traducción.  
+   - Estructura las claves de forma jerárquica, p. ej.:
+     ```jsonc
+     {
+       "home": {
+         "hero": {
+           "title": "Invenor — Infraestructura que se convierte en rentabilidad",
+           "subtitle": "Desarrollamos activos estratégicos en el norte de Chile..."
+         },
+         "cta": "Explorar Oportunidades"
+       },
+       "footer": {
+         "contact": "Contacto",
+         "email": "contacto@invenor.cl"
+       },
+       // …
+     }
+     ```
+   - Reemplaza cada texto en tus componentes con el hook `const { t } = useTranslation()` y `t('clave')`.
+
+4. **Eliminar el theme toggle y añadir el selector de idioma**  
+   - Quita el componente o lógica de theme toggle (`ThemeToggle.tsx`, `ThemeProvider`, imports, etc.).  
+   - Crea `components/LanguageToggle.tsx` con dos botones o un `<select>` para cambiar entre `'es'` y `'en'`:  
+     ```tsx
+     import { useTranslation } from 'react-i18next';
+
+     export function LanguageToggle() {
+       const { i18n } = useTranslation();
+       return (
+         <div className="flex space-x-2">
+           {['es','en'].map(lang => (
+             <button
+               key={lang}
+               onClick={() => i18n.changeLanguage(lang)}
+               className={i18n.language === lang ? 'font-bold underline' : ''}
+             >
+               {lang.toUpperCase()}
+             </button>
+           ))}
+         </div>
+       );
+     }
+     ```
+   - Inserta `<LanguageToggle />` en el **Header**, justo donde estaba el theme toggle.
+
+5. **Validación final**  
+   - Recorre todas las rutas en **modo Español** y **modo Inglés**, asegurándote de que **cada** texto cambia según el idioma seleccionado.  
+   - Verifica que no quede ningún texto en hard-coded.  
+   - Asegúrate de que las traducciones no provoquen desbordes: ajusta tamaños y espaciados donde sea necesario.  
+   - (Opcional) Añade un pequeño test en `LanguageToggle.test.tsx` que compruebe que `i18n.changeLanguage()` actualiza `document.documentElement.lang`.
+
+---
+
+**Cuando hayas completado todas estas tareas**, responde exactamente:  
+✅ **Internacionalización y LanguageToggle integrados, no queda texto hard-coded.**  

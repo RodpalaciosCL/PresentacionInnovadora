@@ -2,15 +2,17 @@
  * Layout.tsx - Main layout component for Invenor 2.0
  * Provides consistent header, footer and page structure
  */
-
-import React from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sun, Moon, Search } from "lucide-react";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { Search, Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
-import { GlobalSearch } from "@/components/ui/GlobalSearch";
-import { ChatWidget } from "@/components/ui/ChatWidget";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
+import GlobalSearch from "@/components/ui/GlobalSearch";
+import ChatWidget from "@/components/ui/ChatWidget";
 import logoImage from "@assets/Invenor (Instagram Post (45)).png";
 
 interface LayoutProps {
@@ -19,40 +21,48 @@ interface LayoutProps {
   description?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ 
+export default function Layout({ 
   children, 
-  title = "Invenor — Infraestructura que se convierte en rentabilidad",
-  description = "Desarrollamos activos estratégicos en el norte de Chile. Inversiones inmobiliarias con proyecciones financieras sólidas y retornos atractivos."
-}) => {
-  const [location] = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [searchOpen, setSearchOpen] = React.useState(false);
+  title = "Invenor | Inversiones Estratégicas en el Norte de Chile",
+  description = "Desarrollamos activos estratégicos en el norte de Chile, transformando infraestructura en oportunidades de inversión sostenibles y rentables."
+}: LayoutProps) {
   const { theme, toggleTheme } = useTheme();
+  const [location] = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
-  // Handle Cmd+K shortcut
-  React.useEffect(() => {
+  const navItems = [
+    { label: "Inicio", href: "/" },
+    { label: "Quiénes Somos", href: "/about" },
+    { label: "Oportunidades", href: "/opportunities" },
+    { label: "Proyecciones", href: "/projections" },
+    { label: "Contacto", href: "/contact" }
+  ];
+
+  // Cerrar menú mobile al cambiar de ruta
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  // Manejar teclas de acceso rápido
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         setSearchOpen(true);
       }
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setMobileMenuOpen(false);
+      }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Navigation items
-  const navItems = [
-    { href: "/", label: "Inicio" },
-    { href: "/about", label: "Quiénes Somos" },
-    { href: "/opportunities", label: "Oportunidades" },
-    { href: "/projections", label: "Proyecciones" },
-    { href: "/contact", label: "Contacto" }
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -63,8 +73,9 @@ const Layout: React.FC<LayoutProps> = ({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
       </Helmet>
+
       {/* Header */}
-      <motion.header 
+      <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -72,37 +83,42 @@ const Layout: React.FC<LayoutProps> = ({
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <Link href="/">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="cursor-pointer mr-8"
-              >
-                <img 
-                  src={logoImage}
-                  alt="Invenor Logo"
-                  className="h-14 w-auto"
-                />
-              </motion.div>
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <motion.span
-                    whileHover={{ y: -2 }}
-                    className={`cursor-pointer transition-colors duration-200 ${
-                      location === item.href 
-                        ? "text-emerald-400 font-semibold" 
-                        : "text-slate-300 hover:text-emerald-400"
-                    }`}
-                  >
-                    {item.label}
-                  </motion.span>
-                </Link>
-              ))}
+            {/* Logo y menú juntos */}
+            <div className="flex items-center space-x-4">
+              <Link href="/">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="cursor-pointer"
+                >
+                  <img 
+                    src={logoImage}
+                    alt="Invenor Logo"
+                    className="h-14 w-auto"
+                  />
+                </motion.div>
+              </Link>
               
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <motion.span
+                      whileHover={{ y: -2 }}
+                      className={`cursor-pointer transition-colors duration-200 ${
+                        location === item.href 
+                          ? "text-emerald-400 font-semibold" 
+                          : "text-slate-300 hover:text-emerald-400"
+                      }`}
+                    >
+                      {item.label}
+                    </motion.span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            {/* Botones de acción */}
+            <div className="hidden md:flex items-center space-x-2">
               {/* Search Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -114,12 +130,12 @@ const Layout: React.FC<LayoutProps> = ({
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
               
-              {/* Theme Toggle corregido */}
+              {/* Theme Toggle */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
                 aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
               >
                 {theme === "dark" ? (
@@ -142,34 +158,36 @@ const Layout: React.FC<LayoutProps> = ({
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
               
-              {/* Theme Toggle para móvil */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
                 aria-label={`Cambiar a modo ${theme === "dark" ? "claro" : "oscuro"}`}
               >
                 {theme === "dark" ? (
                   <Sun className="h-4 w-4 text-yellow-400" />
                 ) : (
-                  <Moon className="h-4 w-4 text-slate-400 dark:text-slate-300" />
+                  <Moon className="h-4 w-4 text-slate-400" />
                 )}
               </motion.button>
               
-              <button 
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-slate-300 hover:text-emerald-400 transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+                aria-label="Menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5 text-slate-400" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5 text-slate-400" />
                 )}
-              </button>
+              </motion.button>
             </div>
           </div>
-          
+
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <motion.div
@@ -178,14 +196,13 @@ const Layout: React.FC<LayoutProps> = ({
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden border-t border-slate-700 py-4"
             >
-              <div className="space-y-4">
+              <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Link key={item.href} href={item.href}>
                     <div
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`block px-4 py-2 text-base font-medium cursor-pointer transition-colors ${
-                        location === item.href 
-                          ? "text-emerald-400 bg-emerald-500/10" 
+                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                        location === item.href
+                          ? "text-emerald-400 bg-slate-800"
                           : "text-slate-300 hover:text-emerald-400 hover:bg-slate-800"
                       }`}
                     >
@@ -205,57 +222,15 @@ const Layout: React.FC<LayoutProps> = ({
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-700 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Brand */}
-            <div className="col-span-1 md:col-span-2">
-              <div className="text-emerald-400 font-bold text-2xl mb-4">
-                Invenor
-              </div>
-              <p className="text-slate-300 mb-4 max-w-md">
-                Infraestructura que se convierte en rentabilidad. 
-                Desarrollamos activos estratégicos en el norte de Chile.
-              </p>
-              <div className="text-slate-400 text-sm">
-                © 2024 Invenor. Todos los derechos reservados.
-              </div>
-            </div>
-            
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Enlaces Rápidos</h3>
-              <div className="space-y-2">
-                {navItems.slice(1).map((item) => (
-                  <Link key={item.href} href={item.href}>
-                    <div className="text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer">
-                      {item.label}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Contacto</h3>
-              <div className="space-y-2 text-slate-300">
-                <div>contacto@invenor.cl</div>
-                <div>+56 2 2XXX XXXX</div>
-                <div>Santiago, Chile</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       
-      {/* Global Search Modal */}
-      <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
-      
-      {/* Chat Widget */}
+      {/* Global Components */}
+      <ScrollToTop />
+      <GlobalSearch 
+        isOpen={searchOpen} 
+        onClose={() => setSearchOpen(false)} 
+      />
       <ChatWidget />
     </div>
   );
-};
-
-export default Layout;
+}
