@@ -6,46 +6,66 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowDown, Target, TrendingUp, Building, Play, Shield, Zap, Globe } from "lucide-react";
+import { ChevronRight, ArrowDown, Target, TrendingUp, Building, Play } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { businessMetrics } from "@/data/company";
+import { LazyImage } from "@/components/ui/LazyImage";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Home: React.FC = () => {
   const [showVideoModal, setShowVideoModal] = React.useState(false);
+  const [showImageGallery, setShowImageGallery] = React.useState(false);
 
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/20" />
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster="/hero-fallback.jpg"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+            {/* Fallback image */}
+            <LazyImage
+              src="/hero-fallback.jpg"
+              alt="Infraestructura del norte de Chile"
+              className="w-full h-full object-cover"
+              priority
+            />
+          </video>
+        </div>
         
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-10">
-          {[...Array(6)].map((_, i) => (
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-slate-900/60" />
+        
+        {/* Animated background elements (optional) */}
+        <div className="absolute inset-0 opacity-5">
+          {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-96 h-96 rounded-full bg-emerald-400/5"
+              className="absolute w-96 h-96 rounded-full bg-emerald-400/10"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${20 + Math.random() * 60}%`,
+                top: `${20 + Math.random() * 60}%`,
               }}
               animate={{
-                x: [0, 100, -50, 0],
-                y: [0, -100, 50, 0],
-                scale: [1, 1.2, 0.8, 1],
+                scale: [1, 1.2, 1],
+                opacity: [0.1, 0.3, 0.1],
               }}
               transition={{
-                duration: 20 + i * 5,
+                duration: 8 + i * 2,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
             />
           ))}
         </div>
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/40" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -267,6 +287,91 @@ const Home: React.FC = () => {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Proyectos Destacados Section - Demo LazyImage y Skeletons */}
+      <section className="py-20 bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Proyectos <span className="text-emerald-400">Destacados</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+              Descubre nuestros activos estratégicos en desarrollo
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowImageGallery(!showImageGallery)}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg transition-colors"
+            >
+              {showImageGallery ? 'Ocultar Galería' : 'Ver Galería de Proyectos'}
+            </motion.button>
+          </motion.div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {showImageGallery ? (
+              // Mostrar imágenes reales con LazyImage
+              [
+                { title: "Hub Norte", description: "Centro logístico estratégico" },
+                { title: "Estaciones Ferroviarias", description: "Red de 500+ estaciones" },
+                { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
+                { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
+                { title: "Zona Franca", description: "Complejo comercial internacional" },
+                { title: "Puerto Seco", description: "Terminal multimodal" }
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-700/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
+                >
+                  <LazyImage
+                    src={`https://picsum.photos/400/300?random=${index + 1}`}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-300">
+                      {project.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              // Mostrar Skeletons
+              [...Array(6)].map((_, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-700/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-600"
+                >
+                  <Skeleton className="w-full h-48" />
+                  <div className="p-6 space-y-3">
+                    <Skeleton className="h-6 w-3/4" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-2/3" />
+                  </div>
+                </motion.div>
+              ))
+            )}
           </div>
         </div>
       </section>
