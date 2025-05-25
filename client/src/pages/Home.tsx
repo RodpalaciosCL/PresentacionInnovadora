@@ -72,12 +72,17 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              <span className="text-emerald-400">Invenor:</span>
-              <br />
+            <div className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              <div className="flex justify-center items-center mb-4">
+                <img 
+                  src="/attached_assets/Invenor (Instagram Post (45)).png"
+                  alt="Invenor"
+                  className="h-20 md:h-24"
+                />
+              </div>
               infraestructura que se convierte en{" "}
               <span className="text-emerald-400">rentabilidad</span>
-            </h1>
+            </div>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto">
               Desarrollamos activos estratégicos en el norte de Chile, 
