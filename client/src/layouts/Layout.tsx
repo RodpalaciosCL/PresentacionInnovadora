@@ -81,7 +81,7 @@ const Layout: React.FC<LayoutProps> = ({
                 <img 
                   src={logoImage}
                   alt="Invenor Logo"
-                  className="h-8 w-auto"
+                  className="h-12 w-auto"
                 />
               </motion.div>
             </Link>
