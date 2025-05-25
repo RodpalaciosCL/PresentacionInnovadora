@@ -75,9 +75,13 @@ const Layout: React.FC<LayoutProps> = ({
             <Link href="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-2xl font-bold text-emerald-400 cursor-pointer"
+                className="cursor-pointer"
               >
-                Invenor
+                <img 
+                  src="/attached_assets/Invenor (Instagram Post (45)).png"
+                  alt="Invenor Logo"
+                  className="h-8 w-auto"
+                />
               </motion.div>
             </Link>
             
