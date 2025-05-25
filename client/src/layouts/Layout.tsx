@@ -82,9 +82,9 @@ export default function Layout({
         className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700"
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo y menú */}
-            <div className="flex items-center space-x-6">
+          <div className="flex justify-center items-center h-16 relative">
+            {/* Logo y menú centrados */}
+            <div className="flex items-center space-x-8">
               <Link href="/">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
@@ -117,8 +117,8 @@ export default function Layout({
               </div>
             </div>
             
-            {/* Botones de acción */}
-            <div className="hidden md:flex items-center space-x-2">
+            {/* Botones de acción - posición absoluta derecha */}
+            <div className="hidden md:flex items-center space-x-2 absolute right-0">
               {/* Search Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
