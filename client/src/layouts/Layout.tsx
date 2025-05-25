@@ -76,12 +76,12 @@ const Layout: React.FC<LayoutProps> = ({
             <Link href="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="cursor-pointer"
+                className="cursor-pointer mr-8"
               >
                 <img 
                   src={logoImage}
                   alt="Invenor Logo"
-                  className="h-12 w-auto"
+                  className="h-14 w-auto"
                 />
               </motion.div>
             </Link>
