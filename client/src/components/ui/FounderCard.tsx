@@ -1,11 +1,13 @@
 /**
  * FounderCard.tsx - Founder profile card component
- * Displays founder information with photo, bio and achievements
+ * Displays founder photo, bio, achievements and contact links
  */
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Award, TrendingUp } from "lucide-react";
+import { Linkedin, CheckCircle } from "lucide-react";
+import { LazyImage } from "./LazyImage";
+import { Skeleton } from "./skeleton";
 import type { Founder } from "@/data/company";
 
 interface FounderCardProps {
@@ -14,73 +16,95 @@ interface FounderCardProps {
 }
 
 export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
+      className="bg-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 group"
     >
-      {/* Profile Image Placeholder */}
+      {/* Profile Photo */}
       <div className="relative mb-6">
-        <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-3xl font-bold">
-          {founder.name.split(' ').map(n => n[0]).join('')}
+        <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-emerald-400/20 group-hover:border-emerald-400/50 transition-colors">
+          {!imageLoaded && (
+            <Skeleton className="w-full h-full rounded-full" />
+          )}
+          <LazyImage
+            src={`https://picsum.photos/200/200?random=${index + 10}`}
+            alt={`${founder.name} - ${founder.role}`}
+            className="w-full h-full object-cover"
+            onLoad={() => setImageLoaded(true)}
+          />
         </div>
         
-        {/* LinkedIn Badge */}
-        {founder.linkedin && (
+        {/* Role Badge */}
+        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+          <div className="bg-emerald-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+            Fundador
+          </div>
+        </div>
+      </div>
+
+      {/* Name and Title */}
+      <div className="text-center mb-6">
+        <h3 className="text-2xl font-bold text-white mb-2">
+          {founder.name}
+        </h3>
+        <p className="text-emerald-400 font-semibold text-lg">
+          {founder.role}
+        </p>
+      </div>
+
+      {/* Bio */}
+      <div className="mb-6">
+        <p className="text-slate-300 leading-relaxed text-center">
+          {founder.bio}
+        </p>
+      </div>
+
+      {/* Achievements */}
+      <div className="mb-6">
+        <h4 className="text-white font-semibold mb-3 text-center">
+          Logros Destacados
+        </h4>
+        <div className="space-y-2">
+          {founder.achievements.map((achievement, achievementIndex) => (
+            <motion.div
+              key={achievementIndex}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: achievementIndex * 0.1 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-3"
+            >
+              <CheckCircle className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+              <span className="text-slate-300 text-sm leading-relaxed">
+                {achievement}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Link */}
+      {founder.linkedin && (
+        <div className="text-center">
           <motion.a
             href={founder.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
-            className="absolute -bottom-2 -right-2 bg-blue-600 p-2 rounded-full text-white hover:bg-blue-700 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
           >
             <Linkedin className="h-4 w-4" />
+            <span>LinkedIn</span>
           </motion.a>
-        )}
-      </div>
-
-      {/* Name and Role */}
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
-        <p className="text-emerald-400 font-semibold">{founder.role}</p>
-      </div>
-
-      {/* Bio */}
-      <p className="text-slate-300 text-center mb-6 leading-relaxed">
-        {founder.bio}
-      </p>
-
-      {/* Achievements */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-center text-emerald-400 mb-4">
-          <Award className="h-5 w-5 mr-2" />
-          <span className="font-semibold">Logros Destacados</span>
         </div>
-        
-        {founder.achievements.map((achievement, achievementIndex) => (
-          <motion.div
-            key={achievementIndex}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 + achievementIndex * 0.1 }}
-            viewport={{ once: true }}
-            className="flex items-start space-x-3"
-          >
-            <div className="flex-shrink-0 w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
-            <p className="text-slate-300 text-sm">{achievement}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Hover Effect */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl bg-emerald-400/5 opacity-0 pointer-events-none"
-        whileHover={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      />
+      )}
     </motion.div>
   );
 };

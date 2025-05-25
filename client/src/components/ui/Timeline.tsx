@@ -1,16 +1,17 @@
 /**
- * Timeline.tsx - Animated company timeline component
- * Shows company milestones and achievements over time
+ * Timeline.tsx - Animated timeline component for company milestones
+ * Displays company history with smooth animations
  */
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Star, TrendingUp } from "lucide-react";
+import { Calendar, TrendingUp } from "lucide-react";
 
 interface TimelineItem {
   year: string;
   title: string;
   description: string;
+  highlight?: boolean;
 }
 
 interface TimelineProps {
@@ -20,67 +21,91 @@ interface TimelineProps {
 export const Timeline: React.FC<TimelineProps> = ({ items }) => {
   return (
     <div className="relative">
-      {/* Timeline Line */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-400/30"></div>
-      
+      {/* Timeline line */}
+      <motion.div
+        initial={{ height: 0 }}
+        whileInView={{ height: "100%" }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-full"
+      />
+
+      {/* Timeline items */}
       <div className="space-y-12">
         {items.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="relative flex items-start space-x-8"
+            className={`relative flex items-center ${
+              index % 2 === 0 ? "justify-start" : "justify-end"
+            }`}
           >
-            {/* Timeline Dot */}
-            <div className="relative flex-shrink-0">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: index * 0.2 + 0.3 }}
-                viewport={{ once: true }}
-                className="w-4 h-4 bg-emerald-400 rounded-full border-4 border-slate-900"
+            {/* Timeline dot */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+              viewport={{ once: true }}
+              className="absolute left-1/2 transform -translate-x-1/2 z-10"
+            >
+              <div
+                className={`w-6 h-6 rounded-full border-4 ${
+                  item.highlight
+                    ? "bg-emerald-400 border-emerald-300"
+                    : "bg-slate-700 border-emerald-400"
+                } shadow-lg`}
               />
-              
-              {/* Pulse Animation */}
-              <motion.div
-                className="absolute inset-0 w-4 h-4 bg-emerald-400/30 rounded-full"
-                animate={{ scale: [1, 2, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: index * 0.4 }}
-              />
-            </div>
-            
-            {/* Content */}
-            <div className="flex-1 pb-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 + 0.4 }}
-                viewport={{ once: true }}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
-              >
-                {/* Year Badge */}
-                <div className="inline-flex items-center space-x-2 bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                  <Calendar className="h-4 w-4" />
-                  <span>{item.year}</span>
+            </motion.div>
+
+            {/* Content card */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className={`bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 max-w-md ${
+                index % 2 === 0 ? "mr-8" : "ml-8"
+              }`}
+            >
+              {/* Year badge */}
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="bg-emerald-500/20 p-2 rounded-lg">
+                  <Calendar className="h-4 w-4 text-emerald-400" />
                 </div>
-                
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 flex items-center">
-                  <Star className="h-5 w-5 text-emerald-400 mr-2" />
-                  {item.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-slate-300 leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            </div>
+                <span className="text-emerald-400 font-bold text-lg">
+                  {item.year}
+                </span>
+                {item.highlight && (
+                  <div className="bg-emerald-500/20 p-1 rounded-lg">
+                    <TrendingUp className="h-4 w-4 text-emerald-400" />
+                  </div>
+                )}
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-white mb-3">
+                {item.title}
+              </h3>
+              <p className="text-slate-300 leading-relaxed">
+                {item.description}
+              </p>
+            </motion.div>
           </motion.div>
         ))}
       </div>
+
+      {/* End marker */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: items.length * 0.1 }}
+        viewport={{ once: true }}
+        className="relative flex justify-center mt-12"
+      >
+        <div className="bg-emerald-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+          Presente
+        </div>
+      </motion.div>
     </div>
   );
 };
