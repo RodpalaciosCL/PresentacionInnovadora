@@ -6,15 +6,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import { useTheme } from "@/context/ThemeContext";
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
+  description?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ 
+  children, 
+  title = "Invenor — Infraestructura que se convierte en rentabilidad",
+  description = "Desarrollamos activos estratégicos en el norte de Chile. Inversiones inmobiliarias con proyecciones financieras sólidas y retornos atractivos."
+}) => {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const { theme, setTheme, actualTheme } = useTheme();
 
   // Navigation items
   const navItems = [
@@ -27,6 +36,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+      </Helmet>
       {/* Header */}
       <motion.header 
         initial={{ y: -100, opacity: 0 }}
@@ -47,7 +66,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <motion.span
@@ -62,6 +81,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   </motion.span>
                 </Link>
               ))}
+              
+              {/* Theme Toggle */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setTheme(actualTheme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {actualTheme === "dark" ? (
+                  <Sun className="h-4 w-4 text-yellow-400" />
+                ) : (
+                  <Moon className="h-4 w-4 text-slate-600" />
+                )}
+              </motion.button>
             </div>
             
             {/* Mobile menu button */}

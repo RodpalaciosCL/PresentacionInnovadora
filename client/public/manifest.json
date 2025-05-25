@@ -1,0 +1,25 @@
+{
+  "name": "Invenor — Infraestructura que se convierte en rentabilidad",
+  "short_name": "Invenor",
+  "description": "Desarrollamos activos estratégicos en el norte de Chile. Inversiones inmobiliarias con proyecciones financieras sólidas y retornos atractivos.",
+  "theme_color": "#10b981",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
