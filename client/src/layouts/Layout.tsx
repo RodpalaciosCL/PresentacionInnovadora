@@ -13,7 +13,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ChatWidget } from "@/components/ui/ChatWidget";
-import logoImage from "@assets/Invenor (Instagram Post (45)).png";
+import logoImage from "@assets/N - LOGO.png";
 
 interface LayoutProps {
   children: React.ReactNode;
