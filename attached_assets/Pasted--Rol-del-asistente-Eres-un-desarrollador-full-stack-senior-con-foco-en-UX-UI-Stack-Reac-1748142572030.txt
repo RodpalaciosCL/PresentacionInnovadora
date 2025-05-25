@@ -1,0 +1,108 @@
+# Rol del asistente  
+Eres un **desarrollador full-stack senior** con foco en UX/UI.  
+Stack: **React 18 + TypeScript + Vite · Tailwind CSS + shadcn/ui · Framer Motion · Wouter**.  
+Backend ligero: **Node.js + Express + Drizzle ORM (SQLite in-memory en dev)**.  
+Objetivo: construir un **website corporativo “Invenor 2.0”** que presente nuestros negocios a inversionistas de forma dinámica y ultra-profesional.
+
+> ⚠️ **IMPORTANTE**  
+> - **Trabajaremos por bloques.** Al terminar cada bloque debes escribir:  
+>   **✅ \<Nombre del bloque> listo. ¿Avanzamos con el siguiente?**  
+>   y **detenerte** hasta recibir “Sí”.  
+> - Usa **comentarios claros** en cada archivo generado.  
+> - Todo debe ser **responsive** y **accesible** (WAI-ARIA friendly).  
+> - Mantén el diseño limpio: paleta base **gris oscuro #1e1e1e, verde #10946e y blanco #f9f9f9**.  
+> - Anima suavemente, sin sobrecargar.  
+
+---
+
+## BLOQUES A DESARROLLAR
+
+### 1 · Setup & Layout
+1. Crea el proyecto base con Vite + React + TS.  
+2. Configura Tailwind con shadcn/ui.  
+3. Estructura carpetas: `pages/` · `components/` · `layouts/` · `data/` · `lib/`.  
+4. Implementa **Layout.tsx** con Header sticky (logo + navbar) y Footer.  
+5. Añade ruta raíz `/` y placeholder para las demás.  
+6. Configura ESLint + Prettier y alias `@/`.  
+
+*(al terminar: ✅ Setup & Layout listo. ¿Avanzamos con el siguiente?)*
+
+---
+
+### 2 · Home (Landing)
+- Hero de altura completa con vídeo o imagen looping (fallback estático).  
+- Claim: **“Invenor: infraestruc­tura que se convierte en rentabilidad.”**  
+- CTA primario “Explorar Oportunidades”.  
+- Scroll reveal (Framer Motion) de “Nuestro propósito” con iconografía minimal.  
+- “En números” → contador animado (n.º de proyectos, Ha gestionadas, km de fibra, etc.).  
+
+---
+
+### 3 · Quiénes Somos
+- Sub-página `/about`.  
+- Componentes **FounderCard** (foto, bio corta, logros).  
+- Timeline animado con hitos del track record.  
+- Sección “Nuestros valores” (grid con íconos).  
+
+---
+
+### 4 · Negocios & Oportunidades
+Ruta `/opportunities` con tabs o pills (shadcn/ui).  
+**Sub-secciones** (cada una scroll-snap o acordeón):
+
+1. **Estaciones (500 +/250 Hotspots)**  
+   - Mapa SVG interactivo + filtro por región.  
+   - Tabla resumida (DataTable) con KPI: m², fee medio, contrato tipo.  
+
+2. **Terreno Puchuncaví**  
+   - Carrusel 3D (Framer Motion) comparador “actual / masterplan”.  
+   - Cards de usos posibles y escenario de valorización (excel-style table).  
+
+3. **Hub Norte**  
+   - Roadmap vertical (Framer) + mockup renders (placeholders).  
+   - Resumen de NPV, TIR, VAN (con mini gráficos line).  
+
+4. **Fibra Oscura**  
+   - Gráfico lineal del trazado dentro de un canvas Tailwind.  
+   - Pricing widget: slider de pares de fibra → ingreso mensual proyectado.  
+
+---
+
+### 5 · Proyecciones Financieras
+- Página `/projections`.  
+- Form de inputs (monto, plazo, escenario) → hooks que calculan **ROI, Payback, VAN, TIR**.  
+- Visualizar con recharts (bar/line) + tabla estilo Excel.  
+- Exportar CSV/PDF (usa `jsPDF` para mock).  
+
+---
+
+### 6 · Blog / Insights (opcional pero recomendado)
+- Ruta `/insights`.  
+- Markdown → MDX parser para posts de actualización de proyectos.  
+- Tag system y buscador full-text simple (Fuse.js).  
+
+---
+
+### 7 · Contacto
+- Ruta `/contact`.  
+- Formulario validado (React-Hook-Form) → endpoint `/api/contact` que simula envío.  
+- Info de correo y enlaces LinkedIn.  
+- Toast de éxito animado.  
+
+---
+
+### 8 · Optimización & Deploy
+- Lighthouse ≥ 90 (perf, a11y, best-practices).  
+- SEO tags dinámicos (react-helmet).  
+- Sitemap y `robots.txt`.  
+- Script `npm run deploy` para Replit Web Hosting.
+
+---
+
+## FLUJO DE TRABAJO
+1. **Comienza con el Bloque 1** siguiendo los pasos arriba.  
+2. Al terminar, responde:  
+   `✅ Setup & Layout listo. ¿Avanzamos con el siguiente?`  
+3. Espera mi confirmación “Sí” para continuar con el Bloque 2 y así sucesivamente.
+
+Gracias. ¡Manos a la obra!

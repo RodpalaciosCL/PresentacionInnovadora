@@ -1,0 +1,164 @@
+/**
+ * Layout.tsx - Main layout component for Invenor 2.0
+ * Provides consistent header, footer and page structure
+ */
+
+import React from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "wouter";
+import { Menu, X } from "lucide-react";
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [location] = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  // Navigation items
+  const navItems = [
+    { href: "/", label: "Inicio" },
+    { href: "/about", label: "Quiénes Somos" },
+    { href: "/opportunities", label: "Oportunidades" },
+    { href: "/projections", label: "Proyecciones" },
+    { href: "/contact", label: "Contacto" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Header */}
+      <motion.header 
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700"
+      >
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link href="/">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="text-2xl font-bold text-emerald-400 cursor-pointer"
+              >
+                Invenor
+              </motion.div>
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  <motion.span
+                    whileHover={{ y: -2 }}
+                    className={`cursor-pointer transition-colors duration-200 ${
+                      location === item.href 
+                        ? "text-emerald-400 font-semibold" 
+                        : "text-slate-300 hover:text-emerald-400"
+                    }`}
+                  >
+                    {item.label}
+                  </motion.span>
+                </Link>
+              ))}
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-slate-300 hover:text-emerald-400 transition-colors"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
+          </div>
+          
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-slate-700 py-4"
+            >
+              <div className="space-y-4">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <div
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-4 py-2 text-base font-medium cursor-pointer transition-colors ${
+                        location === item.href 
+                          ? "text-emerald-400 bg-emerald-500/10" 
+                          : "text-slate-300 hover:text-emerald-400 hover:bg-slate-800"
+                      }`}
+                    >
+                      {item.label}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </nav>
+      </motion.header>
+
+      {/* Main Content */}
+      <main className="flex-1">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 border-t border-slate-700 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Brand */}
+            <div className="col-span-1 md:col-span-2">
+              <div className="text-emerald-400 font-bold text-2xl mb-4">
+                Invenor
+              </div>
+              <p className="text-slate-300 mb-4 max-w-md">
+                Infraestructura que se convierte en rentabilidad. 
+                Desarrollamos activos estratégicos en el norte de Chile.
+              </p>
+              <div className="text-slate-400 text-sm">
+                © 2024 Invenor. Todos los derechos reservados.
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Enlaces Rápidos</h3>
+              <div className="space-y-2">
+                {navItems.slice(1).map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <div className="text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer">
+                      {item.label}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Contacto</h3>
+              <div className="space-y-2 text-slate-300">
+                <div>contacto@invenor.cl</div>
+                <div>+56 2 2XXX XXXX</div>
+                <div>Santiago, Chile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
