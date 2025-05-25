@@ -74,15 +74,17 @@ const Home: React.FC = () => {
             transition={{ duration: 1 }}
           >
             <div className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              <div className="flex justify-center items-center mb-4">
+              <div className="flex justify-center items-center mb-6">
                 <img 
                   src={logoInvenor}
                   alt="Invenor"
                   className="h-40 md:h-48"
                 />
               </div>
-              infraestructura que se convierte en{" "}
-              <span className="text-emerald-400">rentabilidad</span>
+              <div className="text-center">
+                infraestructura que se convierte en{" "}
+                <span className="text-emerald-400">rentabilidad</span>
+              </div>
             </div>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto">
