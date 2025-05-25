@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
+import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -75,7 +76,7 @@ const Home: React.FC = () => {
             <div className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
               <div className="flex justify-center items-center mb-4">
                 <img 
-                  src="/attached_assets/Invenor (Instagram Post (45)).png"
+                  src={logoInvenor}
                   alt="Invenor"
                   className="h-20 md:h-24"
                 />
