@@ -6,9 +6,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Search } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useTheme } from "@/context/ThemeContext";
+import { GlobalSearch } from "@/components/ui/GlobalSearch";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,7 +24,21 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [searchOpen, setSearchOpen] = React.useState(false);
   const { theme, setTheme, actualTheme } = useTheme();
+
+  // Handle Cmd+K shortcut
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Navigation items
   const navItems = [
@@ -81,6 +96,17 @@ const Layout: React.FC<LayoutProps> = ({
                   </motion.span>
                 </Link>
               ))}
+              
+              {/* Search Button */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setSearchOpen(true)}
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+                aria-label="Search"
+              >
+                <Search className="h-4 w-4 text-slate-400" />
+              </motion.button>
               
               {/* Theme Toggle */}
               <motion.button
