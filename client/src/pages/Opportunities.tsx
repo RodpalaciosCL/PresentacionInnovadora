@@ -16,9 +16,9 @@ const Opportunities: React.FC = () => {
   const tabs = [
     { 
       id: "estaciones", 
-      label: "500+ Estaciones", 
+      label: "Ver Terrenos", 
       icon: MapPin,
-      description: "Red de estaciones estratégicas en el norte de Chile"
+      description: "500+ terrenos estratégicos en el norte de Chile"
     },
     { 
       id: "puchuncavi", 
@@ -233,25 +233,327 @@ const Opportunities: React.FC = () => {
 
             {/* Hub Norte Tab */}
             {activeTab === "hub-norte" && (
-              <div className="text-center py-20">
-                <Building className="h-24 w-24 text-emerald-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Hub Norte</h3>
-                <p className="text-slate-300 max-w-2xl mx-auto">
-                  Centro tecnológico en desarrollo para empresas mineras e innovación.
-                  Información detallada próximamente disponible.
-                </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Roadmap Vertical */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-6"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <Building className="h-6 w-6 text-emerald-400 mr-3" />
+                    Hub Norte - Roadmap
+                  </h3>
+                  
+                  <div className="relative space-y-8">
+                    {/* Timeline line */}
+                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-emerald-400"></div>
+                    
+                    {[
+                      {
+                        phase: "Fase 1",
+                        title: "Adquisición de Terreno",
+                        status: "completed",
+                        timeline: "Q1 2024",
+                        description: "15 hectáreas en zona industrial de Antofagasta"
+                      },
+                      {
+                        phase: "Fase 2", 
+                        title: "Infraestructura Base",
+                        status: "in-progress",
+                        timeline: "Q2-Q3 2024",
+                        description: "Servicios básicos, caminos y telecomunicaciones"
+                      },
+                      {
+                        phase: "Fase 3",
+                        title: "Centros de Datos",
+                        status: "planned",
+                        timeline: "Q4 2024",
+                        description: "Construcción de 2 data centers especializados"
+                      },
+                      {
+                        phase: "Fase 4",
+                        title: "Laboratorios I+D",
+                        status: "planned", 
+                        timeline: "Q1 2025",
+                        description: "Espacios para innovación minera y tecnológica"
+                      }
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.2 }}
+                        className="relative flex items-start space-x-4"
+                      >
+                        <div className={`w-4 h-4 rounded-full border-2 z-10 ${
+                          item.status === "completed" ? "bg-emerald-400 border-emerald-400" :
+                          item.status === "in-progress" ? "bg-yellow-400 border-yellow-400" :
+                          "bg-slate-600 border-slate-400"
+                        }`}></div>
+                        
+                        <div className="bg-slate-800 rounded-xl p-4 flex-1 border border-slate-700">
+                          <div className="flex justify-between items-start mb-2">
+                            <h4 className="font-semibold text-white">{item.title}</h4>
+                            <span className="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">
+                              {item.phase}
+                            </span>
+                          </div>
+                          <p className="text-slate-300 text-sm mb-2">{item.description}</p>
+                          <div className="text-emerald-400 text-xs font-semibold">{item.timeline}</div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* KPIs y Mini Charts */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-6"
+                >
+                  <h4 className="text-xl font-semibold text-white">Métricas del Proyecto</h4>
+                  
+                  {/* KPI Cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="text-2xl font-bold text-emerald-400">US$28M</div>
+                      <div className="text-slate-300 text-sm">VAN Proyectado</div>
+                    </div>
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="text-2xl font-bold text-emerald-400">32%</div>
+                      <div className="text-slate-300 text-sm">TIR Esperada</div>
+                    </div>
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="text-2xl font-bold text-emerald-400">4.2 años</div>
+                      <div className="text-slate-300 text-sm">Payback</div>
+                    </div>
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="text-2xl font-bold text-emerald-400">85%</div>
+                      <div className="text-slate-300 text-sm">Ocupación Est.</div>
+                    </div>
+                  </div>
+
+                  {/* Revenue Breakdown */}
+                  <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                    <h5 className="text-white font-semibold mb-4">Fuentes de Ingresos Proyectadas</h5>
+                    <div className="space-y-3">
+                      {[
+                        { source: "Arriendo Data Centers", percentage: 45, value: "US$2.1M/año" },
+                        { source: "Laboratorios I+D", percentage: 30, value: "US$1.4M/año" },
+                        { source: "Oficinas Tech", percentage: 20, value: "US$950K/año" },
+                        { source: "Servicios Adicionales", percentage: 5, value: "US$240K/año" }
+                      ].map((item, index) => (
+                        <div key={index} className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <span className="text-slate-300">{item.source}</span>
+                            <span className="text-emerald-400 font-semibold">{item.value}</span>
+                          </div>
+                          <div className="w-full bg-slate-700 rounded-full h-2">
+                            <motion.div
+                              initial={{ width: 0 }}
+                              animate={{ width: `${item.percentage}%` }}
+                              transition={{ duration: 1, delay: index * 0.2 }}
+                              className="bg-emerald-400 h-2 rounded-full"
+                            ></motion.div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             )}
 
             {/* Fibra Oscura Tab */}
             {activeTab === "fibra-oscura" && (
-              <div className="text-center py-20">
-                <Network className="h-24 w-24 text-emerald-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Fibra Oscura</h3>
-                <p className="text-slate-300 max-w-2xl mx-auto">
-                  Red de telecomunicaciones de 1,200 km con potencial de ingresos recurrentes.
-                  Detalles técnicos y comerciales en desarrollo.
-                </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Canvas con Trazado de Red */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-6"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                    <Network className="h-6 w-6 text-emerald-400 mr-3" />
+                    Red de Fibra Oscura - 1,200 km
+                  </h3>
+                  
+                  {/* Interactive Network Map */}
+                  <div className="bg-slate-800 rounded-xl p-6 border border-slate-700 h-80">
+                    <svg viewBox="0 0 400 300" className="w-full h-full">
+                      {/* Background Grid */}
+                      <defs>
+                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#334155" strokeWidth="0.5"/>
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#grid)" />
+                      
+                      {/* Network Routes */}
+                      <motion.path
+                        d="M50,50 Q150,20 250,60 T350,80"
+                        stroke="#10b981"
+                        strokeWidth="3"
+                        fill="none"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 2 }}
+                      />
+                      <motion.path
+                        d="M50,150 L150,120 L250,140 L350,160"
+                        stroke="#10b981"
+                        strokeWidth="3"
+                        fill="none"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 2, delay: 0.5 }}
+                      />
+                      <motion.path
+                        d="M50,250 Q150,220 250,240 T350,220"
+                        stroke="#10b981"
+                        strokeWidth="3"
+                        fill="none"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 2, delay: 1 }}
+                      />
+                      
+                      {/* Network Nodes */}
+                      {[
+                        { x: 50, y: 50, label: "Arica" },
+                        { x: 150, y: 80, label: "Iquique" },
+                        { x: 250, y: 120, label: "Antofagasta" },
+                        { x: 350, y: 140, label: "Copiapó" },
+                        { x: 200, y: 200, label: "La Serena" }
+                      ].map((node, index) => (
+                        <motion.g key={index}>
+                          <motion.circle
+                            cx={node.x}
+                            cy={node.y}
+                            r="8"
+                            fill="#10b981"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: index * 0.3 + 1 }}
+                          />
+                          <motion.text
+                            x={node.x}
+                            y={node.y - 15}
+                            textAnchor="middle"
+                            fill="white"
+                            fontSize="12"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: index * 0.3 + 1.5 }}
+                          >
+                            {node.label}
+                          </motion.text>
+                        </motion.g>
+                      ))}
+                    </svg>
+                  </div>
+
+                  {/* Network Stats */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-slate-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-emerald-400">1,200</div>
+                      <div className="text-slate-300 text-sm">Kilómetros</div>
+                    </div>
+                    <div className="bg-slate-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-emerald-400">144</div>
+                      <div className="text-slate-300 text-sm">Pares de Fibra</div>
+                    </div>
+                    <div className="bg-slate-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-emerald-400">99.9%</div>
+                      <div className="text-slate-300 text-sm">Uptime</div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Simulador de Ingresos */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-6"
+                >
+                  <h4 className="text-xl font-semibold text-white">Simulador de Ingresos</h4>
+                  
+                  {/* Fiber Pairs Slider */}
+                  <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                    <label className="block text-white font-semibold mb-4">
+                      Pares de Fibra a Comercializar
+                    </label>
+                    <input
+                      type="range"
+                      min="12"
+                      max="144"
+                      defaultValue="72"
+                      className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                      onChange={(e) => {
+                        const pairs = parseInt(e.target.value);
+                        const monthlyRevenue = pairs * 850; // US$850 per pair/month
+                        document.getElementById('fiber-pairs')!.textContent = pairs.toString();
+                        document.getElementById('monthly-revenue')!.textContent = `US$${monthlyRevenue.toLocaleString()}`;
+                        document.getElementById('annual-revenue')!.textContent = `US$${(monthlyRevenue * 12).toLocaleString()}`;
+                      }}
+                    />
+                    <div className="flex justify-between text-sm text-slate-400 mt-2">
+                      <span>12 pares</span>
+                      <span>144 pares</span>
+                    </div>
+                  </div>
+
+                  {/* Revenue Calculation */}
+                  <div className="space-y-4">
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-300">Pares Seleccionados:</span>
+                        <span id="fiber-pairs" className="text-emerald-400 font-bold">72</span>
+                      </div>
+                    </div>
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-300">Ingreso Mensual:</span>
+                        <span id="monthly-revenue" className="text-emerald-400 font-bold">US$61,200</span>
+                      </div>
+                    </div>
+                    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-300">Ingreso Anual:</span>
+                        <span id="annual-revenue" className="text-emerald-400 font-bold">US$734,400</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Investment Details */}
+                  <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                    <h5 className="text-white font-semibold mb-4">Detalles de Inversión</h5>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-300">Inversión por par:</span>
+                        <span className="text-white">US$5,200</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-300">Contrato típico:</span>
+                        <span className="text-white">5-10 años</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-300">ROI anual:</span>
+                        <span className="text-emerald-400 font-semibold">16.4%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-300">Payback:</span>
+                        <span className="text-emerald-400 font-semibold">6.1 años</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             )}
           </motion.div>

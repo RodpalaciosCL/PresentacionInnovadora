@@ -20,14 +20,14 @@ interface StationData {
 export const EstacionesTab: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState("all");
   
-  // Station data based on real Invenor portfolio
+  // Station data based on company portfolio
   const stationsData: StationData[] = [
-    { id: 1, name: "Estación Antofagasta Norte", region: "Antofagasta", area: 2500, monthlyFee: 8500, contractType: "20 años", status: "available" },
-    { id: 2, name: "Estación Calama Industrial", region: "Antofagasta", area: 3200, monthlyFee: 12000, contractType: "15 años", status: "rented" },
-    { id: 3, name: "Estación Iquique Puerto", region: "Tarapacá", area: 1800, monthlyFee: 6500, contractType: "25 años", status: "available" },
-    { id: 4, name: "Estación Atacama Central", region: "Atacama", area: 2800, monthlyFee: 9500, contractType: "20 años", status: "development" },
-    { id: 5, name: "Estación Coquimbo Hub", region: "Coquimbo", area: 2200, monthlyFee: 7800, contractType: "18 años", status: "available" },
-    { id: 6, name: "Estación Arica Frontera", region: "Arica y Parinacota", area: 1600, monthlyFee: 5500, contractType: "22 años", status: "rented" }
+    { id: 1, name: "Terreno Antofagasta Norte", region: "Antofagasta", area: 2500, monthlyFee: 8500, contractType: "20 años", status: "available" },
+    { id: 2, name: "Terreno Calama Industrial", region: "Antofagasta", area: 3200, monthlyFee: 12000, contractType: "15 años", status: "rented" },
+    { id: 3, name: "Terreno Iquique Puerto", region: "Tarapacá", area: 1800, monthlyFee: 6500, contractType: "25 años", status: "available" },
+    { id: 4, name: "Terreno Atacama Central", region: "Atacama", area: 2800, monthlyFee: 9500, contractType: "20 años", status: "development" },
+    { id: 5, name: "Terreno Coquimbo Hub", region: "Coquimbo", area: 2200, monthlyFee: 7800, contractType: "18 años", status: "available" },
+    { id: 6, name: "Terreno Arica Frontera", region: "Arica y Parinacota", area: 1600, monthlyFee: 5500, contractType: "22 años", status: "rented" }
   ];
 
   const regions = ["all", "Antofagasta", "Tarapacá", "Atacama", "Coquimbo", "Arica y Parinacota"];
