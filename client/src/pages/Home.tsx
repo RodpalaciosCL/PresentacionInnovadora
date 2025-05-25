@@ -78,7 +78,7 @@ const Home: React.FC = () => {
                 <img 
                   src={logoInvenor}
                   alt="Invenor"
-                  className="h-20 md:h-24"
+                  className="h-40 md:h-48"
                 />
               </div>
               infraestructura que se convierte en{" "}
