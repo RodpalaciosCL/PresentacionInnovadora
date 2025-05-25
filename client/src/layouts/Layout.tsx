@@ -125,7 +125,17 @@ const Layout: React.FC<LayoutProps> = ({
             </div>
             
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-2">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setSearchOpen(true)}
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+                aria-label="Search"
+              >
+                <Search className="h-4 w-4 text-slate-400" />
+              </motion.button>
+              
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-slate-300 hover:text-emerald-400 transition-colors"
@@ -217,6 +227,9 @@ const Layout: React.FC<LayoutProps> = ({
           </div>
         </div>
       </footer>
+      
+      {/* Global Search Modal */}
+      <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 };
