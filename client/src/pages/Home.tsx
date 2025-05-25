@@ -6,14 +6,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowDown, Target, TrendingUp, Building, Play } from "lucide-react";
+import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Home: React.FC = () => {
-  const [showVideoModal, setShowVideoModal] = React.useState(false);
   const [showImageGallery, setShowImageGallery] = React.useState(false);
 
   return (
@@ -85,38 +84,16 @@ const Home: React.FC = () => {
               transformando infraestructura en oportunidades de inversión sostenibles y rentables.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* Fix 1: CTA único centrado */}
+            <div className="flex justify-center mb-16">
               <Link href="/opportunities">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors flex items-center space-x-2 text-lg"
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-10 py-5 rounded-lg transition-colors flex items-center space-x-3 text-xl shadow-2xl shadow-emerald-500/25"
                 >
                   <span>Explorar Oportunidades</span>
-                  <ChevronRight className="h-5 w-5" />
-                </motion.button>
-              </Link>
-              
-              {/* Video Demo Button */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setShowVideoModal(true)}
-                className="flex items-center space-x-3 text-white hover:text-emerald-400 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Play className="h-5 w-5 ml-1" />
-                </div>
-                <span className="font-medium">Ver Demo</span>
-              </motion.button>
-              
-              <Link href="/projections">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
-                >
-                  Ver Proyecciones
+                  <ChevronRight className="h-6 w-6" />
                 </motion.button>
               </Link>
             </div>
@@ -138,37 +115,7 @@ const Home: React.FC = () => {
             </motion.div>
           </motion.div>
         </div>
-        
-        {/* Video Modal */}
-        {showVideoModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setShowVideoModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              className="bg-slate-800 rounded-xl p-8 max-w-2xl w-full text-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h3 className="text-2xl font-bold text-white mb-4">Demo de Invenor</h3>
-              <div className="aspect-video bg-slate-700 rounded-lg flex items-center justify-center mb-4">
-                <Play className="h-16 w-16 text-emerald-400" />
-              </div>
-              <p className="text-slate-300 mb-4">
-                Descubre cómo transformamos infraestructura en oportunidades de inversión rentables.
-              </p>
-              <button
-                onClick={() => setShowVideoModal(false)}
-                className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg transition-colors"
-              >
-                Cerrar
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
+
       </section>
 
       {/* Nuestro Propósito Section */}

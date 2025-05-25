@@ -1,0 +1,68 @@
+# Rol del asistente  
+Eres el dev principal del proyecto Invenor.  
+Corrige los siguientes **5 puntos de UI/UX** sobre la base del repo actual.  
+**Trabaja uno por uno**.  
+Al terminar cada punto escribe:
+
+✅ Punto <nº> listo. ¿Avanzamos con el siguiente?
+
+y detente hasta que yo responda “Sí”.
+
+---
+
+## Puntos a corregir
+
+### 1 · CTA único en Hero
+- En `pages/Home.tsx` (o donde esté el Hero) **elimina** los botones “Ver Demo” y “Ver Proyecciones”.  
+- Mantén solo **`<Button>` “Explorar Oportunidades”** centrado (alineación intacta en xs-lg).  
+- Ajusta espaciado para que el botón no flote demasiado abajo en pantallas altas.
+
+---
+
+### 2 · Formulario “Consulta Rápida” cortado
+- Archivo/component: `components/QuickInquiryDrawer.tsx` (o similar).  
+- Asegúrate de que:
+  1. El contenedor tenga `max-h-screen` y `overflow-y-auto`.  
+  2. El botón **Enviar / Submit** sea visible siempre (usa `sticky bottom-0` o padding extra).  
+  3. Test responsivo a 375 px y 768 px de ancho.
+
+---
+
+### 3 · Toggle Modo Claro/Oscuro inactivo
+- Revisa `providers/ThemeProvider.tsx` y el componente del icono (`ThemeToggle.tsx`).  
+- Soluciona:  
+  1. El click debe alternar `class="dark"` en `<html>` y persistir en `localStorage`.  
+  2. Cambia el ícono (sol 🌞 / luna 🌙) según el estado.  
+  3. Respeta `prefers-color-scheme` si no hay valor guardado.
+
+---
+
+### 4 · Galería “Guía de proyectos” vacía
+- Fichero probable `components/ProjectsGallery.tsx`.  
+- Lógica:  
+  1. Carga data desde `data/projects.ts` o `api/projects`.  
+  2. Si la lista está vacía, muestra un mensaje placeholder “Próximamente…” (no skeleton infinito).  
+  3. Card básica: imagen LazyImage + título + descripción corta.  
+  4. Deja prop `showSkeleton` false por defecto.
+
+---
+
+### 5 · Sección “Proyectos Destacados” vacía
+- Archivo `components/FeaturedProjects.tsx`.  
+- Similar a punto 4; usa los tres primeros proyectos del mismo dataset.  
+- Si no hay data, oculta la sección mediante un `return null` en vez de un bloque vacío.
+
+---
+
+### 6 · Footer — eliminar “Enlaces Rápidos”
+*(Extra rápido, no requiere confirmación aparte)*  
+- En `components/Footer.tsx` quita la columna `Enlaces Rápidos` y re-balancea el grid a dos columnas (branding + contacto).
+
+---
+
+## Reglas de código
+* Usa Tailwind, respeta variantes `dark:`.  
+* Mantén tipos estrictos (TypeScript).  
+* Incluye comentarios `// Fix <nº>` en cada diff para rastrear.  
+
+Comienza con el **Punto 1 – CTA único en Hero**.
