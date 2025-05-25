@@ -5,7 +5,8 @@
 
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Calculator, DollarSign, TrendingUp, Clock, BarChart3 } from "lucide-react";
+import { Calculator, DollarSign, TrendingUp, Clock, BarChart3, Download, FileText } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
 
 interface CalculatorInputs {
   project: string;
@@ -305,30 +306,104 @@ export const FinancialCalculator: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* ROI Progress Bar */}
+        {/* Interactive Chart */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="bg-slate-800 rounded-xl p-6 border border-slate-700"
         >
-          <h4 className="text-lg font-semibold text-white mb-4">Progreso de ROI</h4>
-          <div className="space-y-3">
-            <div className="flex justify-between text-sm">
-              <span className="text-slate-300">ROI Proyectado</span>
-              <span className="text-emerald-400 font-semibold">{calculateMetrics.roi}%</span>
-            </div>
-            <div className="w-full bg-slate-600 rounded-full h-3">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${Math.min(calculateMetrics.roi, 100)}%` }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="h-3 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500"
-              />
-            </div>
-            <div className="text-xs text-slate-400 text-center">
-              Comparado con inversiones tradicionales (5-10% anual)
-            </div>
+          <h4 className="text-lg font-semibold text-white mb-4">Proyección de Flujo de Caja</h4>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={Array.from({ length: inputs.term }, (_, i) => {
+                const year = i + 1;
+                const cumulativeReturn = calculateMetrics.monthlyReturn * 12 * year;
+                return {
+                  año: year,
+                  retorno: Math.round(cumulativeReturn),
+                  acumulado: Math.round(inputs.amount + cumulativeReturn)
+                };
+              })}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                <XAxis dataKey="año" stroke="#94a3b8" />
+                <YAxis stroke="#94a3b8" />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #475569',
+                    borderRadius: '8px',
+                    color: '#f8fafc'
+                  }}
+                />
+                <Line 
+                  type="monotone" 
+                  dataKey="retorno" 
+                  stroke="#10b981" 
+                  strokeWidth={3}
+                  name="Retorno Anual"
+                />
+                <Line 
+                  type="monotone" 
+                  dataKey="acumulado" 
+                  stroke="#3b82f6" 
+                  strokeWidth={2}
+                  name="Valor Acumulado"
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </motion.div>
+
+        {/* Export Options */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="bg-slate-800 rounded-xl p-6 border border-slate-700"
+        >
+          <h4 className="text-lg font-semibold text-white mb-4">Exportar Análisis</h4>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                // Mock CSV export
+                const csvData = [
+                  ['Proyecto', projects.find(p => p.id === inputs.project)?.name],
+                  ['Inversión', `$${inputs.amount.toLocaleString()}`],
+                  ['ROI', `${calculateMetrics.roi}%`],
+                  ['TIR', `${calculateMetrics.tir}%`],
+                  ['VAN', `$${Math.round(calculateMetrics.van).toLocaleString()}`],
+                  ['Payback', `${calculateMetrics.payback} años`]
+                ].map(row => row.join(',')).join('\n');
+                
+                const blob = new Blob([csvData], { type: 'text/csv' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'proyeccion-financiera.csv';
+                a.click();
+                window.URL.revokeObjectURL(url);
+              }}
+              className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-4 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2"
+            >
+              <Download className="h-4 w-4" />
+              <span>Descargar CSV</span>
+            </motion.button>
+            
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                // Mock PDF export
+                alert('Función de exportación PDF disponible próximamente. Los datos actuales se pueden descargar en formato CSV.');
+              }}
+              className="flex-1 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 font-semibold px-4 py-3 rounded-lg transition-colors flex items-center justify-center space-x-2"
+            >
+              <FileText className="h-4 w-4" />
+              <span>Generar PDF</span>
+            </motion.button>
           </div>
         </motion.div>
       </motion.div>
