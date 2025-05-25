@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 import { useTheme } from "@/context/ThemeContext";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ChatWidget } from "@/components/ui/ChatWidget";
+import logoImage from "@assets/Invenor (Instagram Post (45)).png";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -78,7 +79,7 @@ const Layout: React.FC<LayoutProps> = ({
                 className="cursor-pointer"
               >
                 <img 
-                  src="/attached_assets/Invenor (Instagram Post (45)).png"
+                  src={logoImage}
                   alt="Invenor Logo"
                   className="h-8 w-auto"
                 />
