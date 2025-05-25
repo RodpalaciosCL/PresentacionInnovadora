@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowDown, Users, Award, Target, TrendingUp, Building, Zap, MapPin, Wifi, Truck, Factory, DollarSign, Calendar, BarChart3, Network, Calculator, PieChart, LineChart, Percent } from "lucide-react";
+import { ChevronRight, ArrowDown, Users, Award, Target, TrendingUp, Building, Zap, MapPin, Wifi, Truck, Factory, DollarSign, Calendar, BarChart3, Network, Calculator, PieChart, LineChart, Percent, Mail, Phone, MessageSquare, Send } from "lucide-react";
 
 const InvenorHome: React.FC = () => {
   const [activeTab, setActiveTab] = useState("estaciones");
@@ -1304,6 +1304,273 @@ const InvenorHome: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section id="contacto" className="py-20 bg-gradient-to-br from-slate-900 to-emerald-900/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Únete a la <span className="text-emerald-400">Transformación</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Forma parte de la nueva era de inversiones estratégicas en el norte de Chile. 
+              Conecta con nosotros para explorar oportunidades exclusivas.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Información de Contacto</h3>
+              
+              {/* Contact Cards */}
+              <div className="space-y-6">
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700"
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-emerald-500/20 p-3 rounded-lg">
+                      <Mail className="h-6 w-6 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Email Corporativo</h4>
+                      <p className="text-slate-300">contacto@invenor.cl</p>
+                      <p className="text-slate-400 text-sm">Respuesta en 24 horas</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700"
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-emerald-500/20 p-3 rounded-lg">
+                      <Phone className="h-6 w-6 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Línea Directa</h4>
+                      <p className="text-slate-300">+56 2 2XXX XXXX</p>
+                      <p className="text-slate-400 text-sm">Lunes a Viernes, 9:00 - 18:00</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700"
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-emerald-500/20 p-3 rounded-lg">
+                      <MessageSquare className="h-6 w-6 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">WhatsApp Business</h4>
+                      <p className="text-slate-300">+56 9 XXXX XXXX</p>
+                      <p className="text-slate-400 text-sm">Consultas inmediatas</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Investment Minimums */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-emerald-500/10 border border-emerald-400/30 rounded-xl p-6"
+              >
+                <h4 className="text-lg font-semibold text-emerald-400 mb-4">Mínimos de Inversión</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">Estaciones</span>
+                    <span className="text-white font-semibold">US$ 500K</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">Puchuncaví</span>
+                    <span className="text-white font-semibold">US$ 2M</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">Hub Norte</span>
+                    <span className="text-white font-semibold">US$ 1.5M</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">Fibra Oscura</span>
+                    <span className="text-white font-semibold">US$ 750K</span>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Contact Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Solicita una Reunión</h3>
+              
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-slate-300 text-sm font-medium mb-2">
+                      Nombre Completo
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
+                      placeholder="Juan Pérez"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-300 text-sm font-medium mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
+                      placeholder="juan@empresa.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-slate-300 text-sm font-medium mb-2">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
+                      placeholder="+56 9 XXXX XXXX"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-slate-300 text-sm font-medium mb-2">
+                      Monto de Inversión
+                    </label>
+                    <select className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors">
+                      <option value="">Seleccionar rango</option>
+                      <option value="500k-1m">US$ 500K - 1M</option>
+                      <option value="1m-5m">US$ 1M - 5M</option>
+                      <option value="5m-10m">US$ 5M - 10M</option>
+                      <option value="10m+">US$ 10M+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-slate-300 text-sm font-medium mb-2">
+                    Proyecto de Interés
+                  </label>
+                  <select className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors">
+                    <option value="">Seleccionar proyecto</option>
+                    <option value="estaciones">500+ Estaciones</option>
+                    <option value="puchuncavi">Puchuncaví</option>
+                    <option value="hub-norte">Hub Norte</option>
+                    <option value="fibra">Fibra Oscura</option>
+                    <option value="portafolio">Portafolio Completo</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-slate-300 text-sm font-medium mb-2">
+                    Mensaje
+                  </label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
+                    placeholder="Cuéntanos sobre tus objetivos de inversión y preferencias..."
+                  />
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                >
+                  <Send className="h-5 w-5" />
+                  <span>Enviar Solicitud</span>
+                </motion.button>
+              </form>
+
+              <div className="mt-6 pt-6 border-t border-slate-600">
+                <p className="text-slate-400 text-sm text-center">
+                  Al enviar este formulario, aceptas que un representante de Invenor se ponga en contacto contigo 
+                  para discutir oportunidades de inversión.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Final CTA */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl p-8 border border-emerald-400/30">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                ¿Listo para Transformar tu Portafolio?
+              </h3>
+              <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+                Únete a los inversionistas visionarios que están construyendo el futuro del norte de Chile. 
+                Oportunidades limitadas disponibles.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+                >
+                  Agendar Reunión
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-slate-900 font-semibold py-3 px-8 rounded-lg transition-colors"
+                >
+                  Descargar Executive Summary
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 border-t border-slate-700 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-emerald-400 font-bold text-xl mb-4 md:mb-0">
+              Invenor
+            </div>
+            <div className="text-slate-400 text-sm">
+              © 2024 Invenor. Todos los derechos reservados. | Inversiones Estratégicas del Norte
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
