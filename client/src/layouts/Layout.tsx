@@ -10,6 +10,7 @@ import { Menu, X, Sun, Moon, Search } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useTheme } from "@/context/ThemeContext";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
+import { ChatWidget } from "@/components/ui/ChatWidget";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -230,6 +231,9 @@ const Layout: React.FC<LayoutProps> = ({
       
       {/* Global Search Modal */}
       <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      
+      {/* Chat Widget */}
+      <ChatWidget />
     </div>
   );
 };

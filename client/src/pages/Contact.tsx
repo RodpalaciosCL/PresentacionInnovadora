@@ -5,38 +5,66 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Calendar, CheckCircle } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Calendar, CheckCircle, Linkedin } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+
+// Contact form validation schema
+const contactFormSchema = z.object({
+  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
+  email: z.string().email("Email inválido"),
+  phone: z.string().min(8, "Teléfono inválido"),
+  company: z.string().optional(),
+  investmentRange: z.string().min(1, "Selecciona un rango de inversión"),
+  projectInterest: z.string().min(1, "Selecciona un proyecto de interés"),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
+  preferredContact: z.enum(["email", "phone", "both"])
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    investmentRange: "",
-    projectInterest: "",
-    message: "",
-    preferredContact: "email"
-  });
-  
+  const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      investmentRange: "",
+      projectInterest: "",
+      message: "",
+      preferredContact: "email"
+    }
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await apiRequest("/contact", {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+
+      setIsSubmitted(true);
+      form.reset();
+      toast({
+        title: "¡Mensaje enviado!",
+        description: "Nos pondremos en contacto contigo en menos de 24 horas.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error al enviar",
+        description: "Por favor intenta nuevamente o contáctanos directamente.",
+        variant: "destructive"
+      });
+    }
   };
 
   const contactMethods = [
