@@ -1,0 +1,82 @@
+Quiero que actuemos paso a paso.
+
+Vamos a construir una presentación web interactiva y profesional para captar inversionistas estratégicos en torno a los proyectos de Invenor. Usa React 18 + TypeScript, Tailwind CSS, Framer Motion, Wouter (para el ruteo), y backend Express.js (puede ser simulado si es necesario).
+
+⚠️ Solo quiero que avances con un punto a la vez. Una vez que completes bien un bloque, **pregúntame si seguimos con el siguiente**.
+
+---
+
+🚀 PRIMER BLOQUE: **Home Page con impacto visual y narrativa potente**
+
+Desarrolla la página principal con:
+
+- Hero Section con animación suave (Framer Motion) y fondo relacionado con infraestructura / desarrollo / energía
+- Frase central: “Invenor – Transformamos infraestructura en oportunidades de inversión”
+- CTA destacado: “Descubre nuestras oportunidades”
+- Menú superior sticky con links a: Quiénes Somos, Oportunidades, Proyecciones, Contacto
+- Estilo visual moderno, elegante, con diseño responsive y uso sobrio de verdes y grises oscuros
+
+Una vez que termines este bloque, dime: “✅ Home Page lista. ¿Continuamos con la sección Quiénes Somos?”
+
+NO AVANCES HASTA QUE YO CONFIRME.
+
+---
+(Después seguirán estas instrucciones para los siguientes bloques:)
+
+🧑‍💼 SEGUNDO BLOQUE: **Quiénes Somos**
+- Presentación detallada de los 2 socios fundadores: nombres, trayectoria, industrias donde han trabajado, track record
+- Cards con Framer Motion o animaciones suaves para destacar logros
+- Espacio para foto o avatar
+- Enfatizar visión, propósito de Invenor, valores y diferenciadores frente a otros fondos / desarrolladores
+
+---
+
+🌐 TERCER BLOQUE: **Oportunidades Actuales**
+Incluye 4 subbloques con diseño de pestañas, sliders o secciones diferenciadas:
+
+1. **500+ Estaciones Disponibles**
+   - Mapa con hotspots diferenciados por color
+   - Cards por tipo de estación
+   - Visualización de ingresos proyectados, contratos promedio y análisis de demanda
+
+2. **Puchuncaví**
+   - Showcase visual
+   - Cards con: superficie, uso posible, valor actual y futuro, modelo de negocio (venta o arriendo)
+   - Métricas de retorno esperadas
+
+3. **Hub Norte**
+   - Línea de tiempo
+   - Público objetivo: mineras, centros de innovación
+   - Proyección financiera, espacio disponible, tipo de empresas objetivo
+
+4. **Fibra Oscura**
+   - Representación gráfica del trazado (1.200 km)
+   - Cards con: clientes potenciales (telcos, mineras, gobierno), modelo de arriendo, pricing referencial
+   - Monto estimado mensual por cliente
+
+---
+
+📊 CUARTO BLOQUE: **Proyecciones Financieras**
+- Simuladores para ROI, TIR, VAN, PAYBACK
+- Inputs por tipo de proyecto o por monto
+- Resultados con gráficos animados y tablas estilo Excel
+- Escenarios: conservador, moderado, agresivo
+
+---
+
+🗺️ QUINTO BLOQUE: **Mapa General**
+- Mapa estilizado de norte de Chile (sin usar API externa)
+- Marcadores por tipo de proyecto (estación, hub, fibra, terreno)
+- Hover con detalle técnico y financiero
+
+---
+
+📞 SEXTO BLOQUE: **Contacto**
+- Formulario con campos: nombre, email, mensaje, monto de inversión esperado
+- Opción de agendar reunión o solicitar más info
+- Integración con backend simulado o redirigir a correo
+
+---
+
+Por favor comienza **solo con el primer bloque (Home Page)**. Cuando lo termines, confirma así:  
+**✅ Home Page lista. ¿Continuamos con la sección Quiénes Somos?**
