@@ -11,8 +11,8 @@ import { useTheme } from "@/context/ThemeContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
-import GlobalSearch from "@/components/ui/GlobalSearch";
-import ChatWidget from "@/components/ui/ChatWidget";
+import { GlobalSearch } from "@/components/ui/GlobalSearch";
+import { ChatWidget } from "@/components/ui/ChatWidget";
 import logoImage from "@assets/Invenor (Instagram Post (45)).png";
 
 interface LayoutProps {
