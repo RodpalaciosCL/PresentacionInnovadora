@@ -48,6 +48,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     };
 
+    // Fix 3: Corregir aplicación de clases theme en HTML
     const applyTheme = (currentTheme: Theme) => {
       root.classList.remove("light", "dark");
       
@@ -59,7 +60,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         resolvedTheme = currentTheme;
       }
       
+      // Asegurar que la clase se aplique correctamente
       root.classList.add(resolvedTheme);
+      root.setAttribute("data-theme", resolvedTheme);
       setActualTheme(resolvedTheme);
     };
 

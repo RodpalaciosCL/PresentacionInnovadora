@@ -109,18 +109,18 @@ const Layout: React.FC<LayoutProps> = ({
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
               
-              {/* Theme Toggle */}
+              {/* Fix 3: Theme Toggle mejorado */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setTheme(actualTheme === "dark" ? "light" : "dark")}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
-                aria-label="Toggle theme"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                aria-label={`Cambiar a modo ${actualTheme === "dark" ? "claro" : "oscuro"}`}
               >
                 {actualTheme === "dark" ? (
                   <Sun className="h-4 w-4 text-yellow-400" />
                 ) : (
-                  <Moon className="h-4 w-4 text-slate-600" />
+                  <Moon className="h-4 w-4 text-slate-400 dark:text-slate-300" />
                 )}
               </motion.button>
             </div>
@@ -135,6 +135,21 @@ const Layout: React.FC<LayoutProps> = ({
                 aria-label="Search"
               >
                 <Search className="h-4 w-4 text-slate-400" />
+              </motion.button>
+              
+              {/* Fix 3: Theme Toggle para móvil */}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setTheme(actualTheme === "dark" ? "light" : "dark")}
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 transition-colors"
+                aria-label={`Cambiar a modo ${actualTheme === "dark" ? "claro" : "oscuro"}`}
+              >
+                {actualTheme === "dark" ? (
+                  <Sun className="h-4 w-4 text-yellow-400" />
+                ) : (
+                  <Moon className="h-4 w-4 text-slate-400 dark:text-slate-300" />
+                )}
               </motion.button>
               
               <button 
