@@ -107,7 +107,7 @@ export const ChatWidget: React.FC = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 bg-slate-800 rounded-2xl border border-slate-600 shadow-2xl w-80 max-h-96 overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 bg-slate-800 rounded-2xl border border-slate-600 shadow-2xl w-80 max-h-screen overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-emerald-500 p-4 flex items-center justify-between">
@@ -123,8 +123,9 @@ export const ChatWidget: React.FC = () => {
               </button>
             </div>
 
-            {/* Form */}
-            <form onSubmit={form.handleSubmit(onSubmit)} className="p-4 space-y-4">
+            {/* Fix 2: Form container con scroll y botón sticky */}
+            <div className="flex-1 overflow-y-auto">
+              <form id="quick-contact-form" onSubmit={form.handleSubmit(onSubmit)} className="p-4 space-y-4">
               {/* Name */}
               <div>
                 <div className="relative">
@@ -202,15 +203,20 @@ export const ChatWidget: React.FC = () => {
                 )}
               </div>
 
-              {/* Submit Button */}
+            </form>
+            </div>
+            
+            {/* Submit Button Sticky */}
+            <div className="sticky bottom-0 bg-slate-800 p-4 border-t border-slate-600">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-600 text-white font-semibold py-2 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                form="quick-contact-form"
+                disabled={form.formState.isSubmitting}
+                className="w-full bg-emerald-500 hover:bg-emerald-600 disabled:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2"
               >
-                {isSubmitting ? (
+                {form.formState.isSubmitting ? (
                   <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
                 ) : (
                   <>
@@ -219,7 +225,7 @@ export const ChatWidget: React.FC = () => {
                   </>
                 )}
               </motion.button>
-            </form>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
