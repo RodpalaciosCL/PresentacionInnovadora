@@ -30,7 +30,7 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
 }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
@@ -39,7 +39,15 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     return defaultTheme;
   });
 
-  const [actualTheme, setActualTheme] = useState<"dark" | "light">("dark");
+  const [actualTheme, setActualTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme") as Theme;
+      if (stored === "light") return "light";
+      if (stored === "dark") return "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    return "dark";
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -48,11 +56,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     };
 
-    // Fix 3: Simplificar aplicación de tema
+    // Fix 3: Toggle de tema simplificado y forzado
     const applyTheme = (currentTheme: Theme) => {
-      // Limpiar clases existentes
-      root.classList.remove("light", "dark");
-      
       let resolvedTheme: "dark" | "light";
       
       if (currentTheme === "system") {
@@ -61,15 +66,26 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         resolvedTheme = currentTheme;
       }
       
-      // Aplicar la nueva clase
-      if (resolvedTheme === "dark") {
-        root.classList.add("dark");
-      } else {
-        root.classList.add("light");
-      }
+      // Forzar eliminación y aplicación de clases
+      root.classList.remove("light", "dark");
+      
+      // Pequeño delay para asegurar que se aplique
+      requestAnimationFrame(() => {
+        if (resolvedTheme === "dark") {
+          root.classList.add("dark");
+        } else {
+          root.classList.add("light");
+        }
+        
+        // Forzar repaint
+        root.style.colorScheme = resolvedTheme;
+      });
       
       setActualTheme(resolvedTheme);
       localStorage.setItem("theme", currentTheme);
+      
+      // Debug: verificar que se aplicó
+      console.log(`Aplicando tema: ${resolvedTheme}, clases HTML:`, root.classList.toString());
     };
 
     applyTheme(theme);
