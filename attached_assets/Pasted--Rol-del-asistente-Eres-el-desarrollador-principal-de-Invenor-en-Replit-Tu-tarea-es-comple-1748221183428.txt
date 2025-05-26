@@ -1,0 +1,51 @@
+# Rol del asistente  
+Eres el desarrollador principal de **Invenor** en Replit. Tu tarea es **completar manualmente** la internacionalización de **TODAS** las páginas restantes: Home, Opportunities, Projections, Contact (y Footer), de modo que al pulsar ES/EN **cada** texto cambie. Olvida cualquier automatismo previo: haremos ajustes puntuales en cada archivo.
+
+---
+
+## Tareas (único bloque)
+
+1. **Importar `useTranslation` y `t`**  
+   - En la parte superior de **cada** página y componente con texto (Home.tsx, Opportunities.tsx, Projections.tsx, Contact.tsx, Footer.tsx), añade:
+     ```ts
+     import { useTranslation } from 'react-i18next';
+     ```
+   - Dentro de tu componente principal:
+     ```ts
+     const { t } = useTranslation();
+     ```
+
+2. **Reemplazar texto en Home.tsx**  
+   - Sustituye **todos** los textos (títulos, subtítulos, botones, labels, placeholders) por llamadas a `t('clave')`.  
+   - Ejemplo:
+     ```diff
+     - <h1>En Números</h1>
+     + <h1>{t('home.stats.title')}</h1>
+     ```
+   - Crea las claves correspondientes en `src/locales/es.json` y `en.json`.
+
+3. **Reemplazar texto en Opportunities.tsx**  
+   - Haz lo mismo con todos los encabezados de sección (“Estaciones Gestionadas”, “Puchuncaví”, etc.), descripciones y botones.  
+   - Usa claves como `opportunities.stations.title`, `opportunities.puchuncavi.desc`, etc.
+
+4. **Reemplazar texto en Projections.tsx**  
+   - Sustituye todos los labels de formulario, títulos de gráficas y leyendas por `t('projections.form.investment')`, `t('projections.chart.roi')`, etc.
+
+5. **Reemplazar texto en Contact.tsx**  
+   - Cambia **cada** placeholder, label de campo, botón de envío y mensaje de validación por `t('contact.form.name')`, `t('contact.form.submit')`, `t('contact.success')`, etc.
+
+6. **Reemplazar texto en Footer.tsx**  
+   - Quita la columna “Enlaces Rápidos” y asegúrate de que footer-branding y contacto estén traducidos con `t('footer.branding')`, `t('footer.contact.email')`, etc.
+
+7. **Verificar JSON de traducciones**  
+   - Asegúrate de que **en** y **es** tienen todas las claves usadas.  
+   - En `en.json`, reemplaza `"TODO: translate"` por traducciones reales antes de terminar.
+
+8. **Prueba final**  
+   - Ejecuta la app, cambia a EN y ES con tu LanguageToggle y recorre **todas** las páginas.  
+   - Confirma que **cada** texto (incluidos placeholders y mensajes de validación) cambia sin dejar cadena hard-coded.
+
+---
+
+**Cuando completes todo esto de una sola vez**, responde EXACTO:  
+✅ **Internacionalización manual completada: todas las páginas bajo `t()`, ES/EN funcionando.**

@@ -197,10 +197,10 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              En <span className="text-emerald-400">Números</span>
+              {t('home.stats.title')}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Nuestro track record habla por sí solo
+              {t('home.stats.subtitle')}
             </p>
           </motion.div>
 

@@ -54,11 +54,10 @@ const Opportunities: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Negocios & <span className="text-emerald-400">Oportunidades</span>
+              {t('opportunities.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Portafolio diversificado de activos estratégicos con potencial de crecimiento 
-              sostenible y retornos atractivos para inversionistas
+              {t('opportunities.hero.subtitle')}
             </p>
           </motion.div>
 
