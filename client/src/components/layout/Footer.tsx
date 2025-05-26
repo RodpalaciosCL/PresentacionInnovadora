@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <AtSign className="mr-2 h-4 w-4" />
-                <span>contacto@inversionesdelnorte.cl</span>
+                <span>contacto@invenor.group</span>
               </div>
             </div>
           </motion.div>
