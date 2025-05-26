@@ -38,7 +38,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
             src={founder.id === 'founder-1' ? robertoPhoto : rodrigoPhoto}
             alt={`${founder.name} - ${founder.role}`}
             className="w-full h-full object-cover"
-            style={{ objectPosition: founder.id === 'founder-2' ? '60% center' : 'center center' }}
+            style={{ objectPosition: founder.id === 'founder-2' ? '75% center' : 'center center' }}
             onLoad={() => setImageLoaded(true)}
           />
         </div>
