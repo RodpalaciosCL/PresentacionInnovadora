@@ -6,6 +6,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Building, TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
 import hubNorteProjectImage from "@assets/Captura de pantalla 2025-05-26 a la(s) 15.46.12.png";
+import dataCenterImage from "@assets/image_1748283427285.png";
+import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 
 const OpportunitiesClean: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
@@ -78,42 +80,42 @@ const OpportunitiesClean: React.FC = () => {
               { 
                 title: "Terrenos disponibles", 
                 description: "Lotes industriales estratégicos",
-                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                image: "https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
               },
               { 
-                title: "Centro Logístico Norte", 
-                description: "Hub de distribución regional",
-                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Puchuncaví", 
+                description: "+300 hectáreas para desarrollo inmobiliario Premium",
+                image: puchuncaviMap
               },
               { 
-                title: "Parque Tecnológico", 
-                description: "Ecosistema de innovación",
-                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Fibra Oscura", 
+                description: "Infraestructura de telecomunicaciones",
+                image: "https://www.kei-ind.com/wp-content/uploads/2023/05/underground-power-cable-blog.jpg"
               },
               { 
-                title: "Terminal Portuario", 
-                description: "Conexión marítima estratégica",
-                image: "https://images.unsplash.com/photo-1494003284902-647fb9498ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Data Center", 
+                description: "Centro de datos de alta tecnología",
+                image: dataCenterImage
               },
               { 
-                title: "Zona Franca", 
-                description: "Beneficios tributarios especiales",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Energía Solar", 
+                description: "Proyectos de energía renovable",
+                image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
               },
               { 
-                title: "Planta Solar", 
-                description: "Energía renovable a gran escala",
-                image: "https://images.unsplash.com/photo-1613391277941-0e2851b5730f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Storage de Baterías Industriales", 
+                description: "Almacenamiento de energía a gran escala",
+                image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
               },
               { 
-                title: "Complejo Habitacional", 
-                description: "Viviendas para trabajadores",
-                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Puerto Seco", 
+                description: "Terminal ferroviaria multimodal",
+                image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
               },
               { 
-                title: "Centro de Datos", 
-                description: "Infraestructura digital avanzada",
-                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                title: "Estaciones de Servicio", 
+                description: "Red de estaciones combustible",
+                image: "https://creagermerc.com/wp-content/uploads/2021/02/33808902_s.jpg"
               }
             ].map((project, index) => (
               <motion.div
