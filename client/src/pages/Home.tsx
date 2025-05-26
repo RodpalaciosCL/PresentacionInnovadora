@@ -79,8 +79,8 @@ const Home: React.FC = () => {
               <div className="flex justify-center items-center mb-6">
                 <img 
                   src={logoInvenor}
-                  alt="Inversiones del Norte"
-                  className="h-40 md:h-48"
+                  alt="Invenor"
+                  className="h-56 md:h-68"
                 />
               </div>
               <div className="text-center">
