@@ -254,10 +254,10 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Proyectos <span className="text-emerald-400">Destacados</span>
+              {t('home.projects.title')}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Descubre nuestros activos estratégicos en desarrollo
+              {t('home.projects.subtitle')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -265,7 +265,7 @@ const Home: React.FC = () => {
               onClick={() => setShowImageGallery(!showImageGallery)}
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg transition-colors"
             >
-              {showImageGallery ? 'Ocultar Galería' : 'Ver Galería de Proyectos'}
+              {showImageGallery ? t('home.projects.hide') : t('home.projects.show')}
             </motion.button>
           </motion.div>
 

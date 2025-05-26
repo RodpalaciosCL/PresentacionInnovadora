@@ -77,7 +77,7 @@ const Opportunities: React.FC = () => {
                 </div>
                 <p className="text-slate-300 text-sm mb-4">{opportunity.description}</p>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-slate-400">Inversión mín.</span>
+                  <span className="text-slate-400">{t('opportunities.investment.min')}</span>
                   <span className="text-emerald-400 font-semibold">
                     US${(opportunity.investment / 1000)}K
                   </span>

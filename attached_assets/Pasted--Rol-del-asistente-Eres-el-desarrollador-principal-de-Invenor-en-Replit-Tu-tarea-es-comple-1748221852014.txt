@@ -1,0 +1,48 @@
+# Rol del asistente  
+Eres el desarrollador principal de **Invenor** en Replit. Tu tarea es **completar** la internacionalización de **todas** las secciones que aún faltan traducir en Home, Opportunities, Projections y Contact, y verificar que **cualquier** texto en pantalla (títulos, subtítulos, cards, labels, placeholders, botones, mensajes de validación, leyendas de gráficas, notificaciones, copyright, etc.) cambie al presionar ES/EN.
+
+---
+
+## Instrucciones (único bloque)
+
+1. **Repasar JSON de traducciones**  
+   - Abre `src/locales/es.json` y `en.json` y confirma que existen claves para **todas** las secciones:  
+     - Home: hero, stats, featured projects, gallery button.  
+     - Opportunities: títulos de cards (Hub Norte, Estaciones, Puchuncaví, Fibra Oscura…), descripciones.  
+     - Projections: headers (“Simulador de Inversiones”, “Calculadora de Inversión”, labels de inputs, títulos de resultados, nombres de columnas de tabla, leyendas de gráficas, botones “Descargar…”, “Ver Due Diligence”).  
+     - Contact: encabezados (“Contacto”, “Información de Contacto”, “Nuestro Equipo”), labels/placeholder de cada campo, botón “Enviar Consulta”, método de contacto, mensajes de éxito.  
+     - Footer: texto de marca, email, ubicación, “© YEAR Invenor. All rights reserved.” con YEAR dinámico.  
+   - Si falta alguna clave, añádela en ambos archivos (en.json con placeholder `"TODO"`).
+
+2. **Importar y usar `useTranslation` en cada componente**  
+   - En **cada** página y componente que muestre texto (Home.tsx, Opportunities.tsx, Projections.tsx, Contact.tsx, Footer.tsx, ProjectsGallery.tsx, FeaturedProjects.tsx, etc.):
+     ```ts
+     import { useTranslation } from 'react-i18next';
+     …
+     const { t } = useTranslation();
+     ```
+   - Sustituye **toda** cadena literal por `t('clave')`. Asegúrate de cubrir:
+     - Encabezados y sub-encabezados.
+     - Texto de botones y enlaces.
+     - Labels y placeholders de inputs.
+     - Leyendas de tablas y charts.
+     - Mensajes estáticos en el UI (e.g. “Próximamente…”, “Ningún proyecto disponible”).
+
+3. **Verificar dinámicamente YEAR en Footer**  
+   - Reemplaza el copyright hard-coded:
+     ```diff
+     - © 2024 Invenor. All rights reserved.
+     + © {new Date().getFullYear()} Invenor. {t('footer.copyright')}
+     ```
+   - Añade clave `footer: { copyright: "All rights reserved." }`.
+
+4. **Probar exhaustivamente**  
+   - Arranca la app en modo dev.  
+   - Navega a **todas** las rutas/fragments (incluyendo modales o Drawers).  
+   - Cambia a EN y ES con el LanguageToggle **en cada página**.  
+   - Asegúrate de que **ningún** texto permanezca en hard-coded.  
+   - Ajusta espaciados/clamp/overflow donde alguna traducción inglesa desborde.
+
+5. **Responder al finalizar**  
+   Cuando todo esté cubierto, responde exactamente:  
+   ✅ **Internacionalización 100% completada: todo el sitio traduce al ES/EN.**  
