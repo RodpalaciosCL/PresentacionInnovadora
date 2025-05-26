@@ -183,7 +183,7 @@ const Opportunities: React.FC = () => {
             className="text-center mb-16"
           >
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              selecciona cualquier proyecto para ver información detallada
+              Selecciona cualquier proyecto para ver información detallada
             </p>
           </motion.div>
 
@@ -240,18 +240,18 @@ const Opportunities: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
+                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 flex flex-col"
               >
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
+                <div className="p-6 flex flex-col h-full">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-slate-300 mb-4">
+                  <p className="text-slate-300 mb-4 flex-grow min-h-[3rem]">
                     {project.description}
                   </p>
                   <button 
