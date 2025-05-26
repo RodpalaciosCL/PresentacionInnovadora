@@ -44,51 +44,6 @@ const Home: React.FC = () => {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-slate-900/60" />
         
-        {/* Rieles de tren como fondo */}
-        <div className="absolute inset-0 opacity-10">
-          {/* Líneas horizontales simulando rieles */}
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute left-0 right-0 h-0.5 bg-emerald-400"
-              style={{
-                top: `${20 + i * 12}%`,
-                transform: `rotate(${-2 + Math.random() * 4}deg)`
-              }}
-              animate={{
-                opacity: [0.3, 0.7, 0.3],
-              }}
-              transition={{
-                duration: 3 + i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-          
-          {/* Puntos simulando clavos/fijaciones de rieles */}
-          {[...Array(40)].map((_, i) => (
-            <motion.div
-              key={`dot-${i}`}
-              className="absolute w-1 h-1 bg-white rounded-full"
-              style={{
-                left: `${5 + (i % 10) * 9}%`,
-                top: `${15 + Math.floor(i / 10) * 15}%`
-              }}
-              animate={{
-                opacity: [0.2, 0.8, 0.2],
-                scale: [0.8, 1.2, 0.8]
-              }}
-              transition={{
-                duration: 2 + (i % 3),
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.1
-              }}
-            />
-          ))}
-        </div>
-        
         {/* Animated background elements (optional) */}
         <div className="absolute inset-0 opacity-5">
           {[...Array(3)].map((_, i) => (
