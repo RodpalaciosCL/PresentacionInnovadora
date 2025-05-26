@@ -129,7 +129,7 @@ const About: React.FC = () => {
           {/* Interactive Timeline */}
           <div className="relative max-w-4xl mx-auto">
             {/* Central connecting line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-purple-500 rounded-full opacity-30"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-emerald-400 rounded-full opacity-40"></div>
             
             {companyApproach.map((approach, index) => {
               const IconComponent = approach.icon === 'Target' ? Target : 
@@ -138,10 +138,10 @@ const About: React.FC = () => {
               
               const isLeft = index % 2 === 0;
               const colors = [
-                'from-emerald-500 to-teal-600',
-                'from-blue-500 to-cyan-600', 
-                'from-purple-500 to-pink-600',
-                'from-orange-500 to-red-600'
+                'from-emerald-500 to-emerald-600',
+                'from-blue-500 to-blue-600', 
+                'from-emerald-400 to-blue-500',
+                'from-blue-400 to-emerald-500'
               ];
               
               return (
@@ -155,17 +155,25 @@ const About: React.FC = () => {
                 >
                   {/* Content Card */}
                   <motion.div
-                    whileHover={{ scale: 1.05, rotateY: 5 }}
-                    className={`relative bg-gradient-to-br ${colors[index]} p-1 rounded-2xl shadow-2xl max-w-md ${isLeft ? 'mr-8' : 'ml-8'}`}
+                    whileHover={{ scale: 1.03, y: -5 }}
+                    className={`relative group max-w-lg ${isLeft ? 'mr-12' : 'ml-12'}`}
                   >
-                    <div className="bg-slate-900/95 backdrop-blur-sm rounded-2xl p-6">
-                      <div className="flex items-center mb-4">
-                        <div className={`w-12 h-12 bg-gradient-to-br ${colors[index]} rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
-                          <IconComponent className="h-6 w-6 text-white" />
+                    <div className="relative bg-slate-800/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/50 shadow-2xl group-hover:border-emerald-400/50 transition-all duration-500">
+                      {/* Glow effect */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-start mb-6">
+                          <div className={`w-14 h-14 bg-gradient-to-br ${colors[index]} rounded-2xl flex items-center justify-center mr-4 shadow-xl transform group-hover:scale-110 transition-transform duration-300`}>
+                            <IconComponent className="h-7 w-7 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">{approach.title}</h3>
+                            <div className={`w-12 h-1 bg-gradient-to-r ${colors[index]} rounded-full`}></div>
+                          </div>
                         </div>
-                        <h3 className="text-xl font-bold text-white">{approach.title}</h3>
+                        <p className="text-slate-300 leading-relaxed text-lg">{approach.description}</p>
                       </div>
-                      <p className="text-slate-300 leading-relaxed">{approach.description}</p>
                     </div>
                   </motion.div>
                   
