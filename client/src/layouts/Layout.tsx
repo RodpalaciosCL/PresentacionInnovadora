@@ -13,7 +13,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ChatWidget } from "@/components/ui/ChatWidget";
-import logoImage from "@assets/N - LOGO.png";
+// Logo SVG removido - usando componente inline
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -88,11 +88,9 @@ export default function Layout({
                 whileHover={{ scale: 1.05 }}
                 className="cursor-pointer relative"
               >
-                <img 
-                  src={logoImage}
-                  alt="Inversiones del Norte Logo"
-                  className="h-12 w-auto"
-                />
+                <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" className="h-12 w-auto">
+                  <path id="rail-logo" d="M10,4 L10,44 L24,4 L24,44 L38,4" stroke="#fff" strokeWidth="4" fill="none"/>
+                </svg>
                 {/* Punto que recorre la línea del ferrocarril siguiendo la forma de la N */}
                 <motion.div
                   className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-sm"
