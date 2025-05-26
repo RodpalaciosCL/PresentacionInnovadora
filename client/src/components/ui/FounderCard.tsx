@@ -34,7 +34,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
           {!imageLoaded && (
             <Skeleton className="w-full h-full rounded-full" />
           )}
-          <LazyImage
+          <img
             src={founder.id === 'founder-1' ? robertoPhoto : rodrigoPhoto}
             alt={`${founder.name} - ${founder.role}`}
             className="w-full h-full object-cover"
