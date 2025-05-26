@@ -143,10 +143,15 @@ const Projections: React.FC = () => {
                 </thead>
                 <tbody className="divide-y divide-slate-700">
                   {[
-                    { name: "500+ Estaciones", roi: "22%", tir: "25%", payback: "3.1 años", minInv: "US$500K", risk: "Bajo" },
-                    { name: "Puchuncaví", roi: "67%", tir: "35%", payback: "2.2 años", minInv: "US$2M", risk: "Medio" },
                     { name: "Hub Norte", roi: "28%", tir: "32%", payback: "2.9 años", minInv: "US$1.5M", risk: "Medio" },
-                    { name: "Fibra Oscura", roi: "38%", tir: "42%", payback: "2.4 años", minInv: "US$750K", risk: "Bajo" }
+                    { name: "Terrenos disponibles", roi: "22%", tir: "25%", payback: "3.1 años", minInv: "US$500K", risk: "Bajo" },
+                    { name: "Puchuncaví", roi: "67%", tir: "35%", payback: "2.2 años", minInv: "US$2M", risk: "Medio" },
+                    { name: "Fibra Oscura", roi: "38%", tir: "42%", payback: "2.4 años", minInv: "US$750K", risk: "Bajo" },
+                    { name: "Data Center", roi: "32%", tir: "36%", payback: "2.7 años", minInv: "US$3M", risk: "Medio" },
+                    { name: "Energía Solar", roi: "34%", tir: "38%", payback: "2.5 años", minInv: "US$2.5M", risk: "Bajo" },
+                    { name: "Storage de Baterías", roi: "36%", tir: "42%", payback: "2.3 años", minInv: "US$4M", risk: "Medio" },
+                    { name: "Puerto Seco", roi: "26%", tir: "30%", payback: "3.2 años", minInv: "US$8M", risk: "Alto" },
+                    { name: "Estaciones de Servicio", roi: "24%", tir: "28%", payback: "3.4 años", minInv: "US$1.2M", risk: "Bajo" }
                   ].map((project, index) => (
                     <motion.tr
                       key={index}
@@ -169,7 +174,9 @@ const Projections: React.FC = () => {
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                           project.risk === "Bajo" 
                             ? "bg-emerald-100 text-emerald-800" 
-                            : "bg-yellow-100 text-yellow-800"
+                            : project.risk === "Medio"
+                            ? "bg-yellow-100 text-yellow-800"
+                            : "bg-red-100 text-red-800"
                         }`}>
                           {project.risk}
                         </span>
