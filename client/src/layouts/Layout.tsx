@@ -86,6 +86,15 @@ export default function Layout({
             <Link href="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
+                animate={{ 
+                  opacity: [1, 0.7, 1],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
                 className="cursor-pointer"
               >
                 <img 
