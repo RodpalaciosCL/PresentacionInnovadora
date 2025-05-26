@@ -284,13 +284,13 @@ const Opportunities: React.FC = () => {
 
       {/* Project Details Section - Shows when a project is selected */}
       {selectedProject && (
-        <section id="project-details" className="py-20 bg-slate-900">
+        <section id="project-details" className="py-20 bg-gradient-to-br from-slate-900 via-emerald-900/10 to-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden"
+              className="bg-gradient-to-br from-slate-800/80 via-slate-900/90 to-emerald-900/20 rounded-3xl border border-emerald-500/20 overflow-hidden backdrop-blur-sm shadow-2xl"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
                 {/* Left Side - Map/Visual */}
