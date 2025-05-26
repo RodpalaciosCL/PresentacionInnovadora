@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           className="mt-6 pt-4 border-t border-white/10 text-center"
         >
           <p className="text-xs text-slate-400">
-            © {new Date().getFullYear()} Invenor. {t('footer.copyright')}
+            © {new Date().getFullYear()} Invenor. {t('footer.rights')}
           </p>
         </motion.div>
       </div>
