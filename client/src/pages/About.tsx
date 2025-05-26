@@ -193,9 +193,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('about.values.title')}
-            </h2>
+            <h2 
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+              dangerouslySetInnerHTML={{ __html: t('about.values.title') }}
+            />
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {t('about.values.subtitle')}
             </p>

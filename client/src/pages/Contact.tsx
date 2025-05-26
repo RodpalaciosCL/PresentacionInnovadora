@@ -225,7 +225,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Nombre Completo *
+                    {t('contact.form.name')} *
                   </label>
                   <input
                     {...form.register("name")}
@@ -240,7 +240,7 @@ const Contact: React.FC = () => {
                 
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Email *
+                    {t('contact.form.email')} *
                   </label>
                   <input
                     {...form.register("email")}

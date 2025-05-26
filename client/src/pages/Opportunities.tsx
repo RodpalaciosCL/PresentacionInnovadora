@@ -18,27 +18,27 @@ const Opportunities: React.FC = () => {
   const tabs = [
     { 
       id: "estaciones", 
-      label: "Ver Terrenos", 
+      label: t('opportunities.tabs.terrains.label'), 
       icon: MapPin,
-      description: "500+ terrenos estratégicos en el norte de Chile"
+      description: t('opportunities.tabs.terrains.description')
     },
     { 
       id: "puchuncavi", 
-      label: "Puchuncaví", 
+      label: t('opportunities.tabs.puchuncavi.label'), 
       icon: Factory,
-      description: "250 hectáreas para desarrollo industrial"
+      description: t('opportunities.tabs.puchuncavi.description')
     },
     { 
       id: "hub-norte", 
-      label: "Hub Norte", 
+      label: t('opportunities.tabs.hub.label'), 
       icon: Building,
-      description: "Centro tecnológico para empresas mineras"
+      description: t('opportunities.tabs.hub.description')
     },
     { 
       id: "fibra-oscura", 
-      label: "Fibra Oscura", 
+      label: t('opportunities.tabs.fiber.label'), 
       icon: Network,
-      description: "1,200 km de red de telecomunicaciones"
+      description: t('opportunities.tabs.fiber.description')
     }
   ];
 
