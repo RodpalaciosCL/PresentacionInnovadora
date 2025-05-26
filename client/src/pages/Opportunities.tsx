@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3 } from "lucide-react";
+import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3, ChevronRight } from "lucide-react";
 import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
 import { investmentOpportunities } from "@/data/company";
 import dataCenterImage from "@assets/image_1748283427285.png";
@@ -243,8 +243,7 @@ const Opportunities: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedProject(project.title)}
+                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
               >
                 <img
                   src={project.image}
@@ -255,9 +254,18 @@ const Opportunities: React.FC = () => {
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-slate-300">
+                  <p className="text-slate-300 mb-4">
                     {project.description}
                   </p>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProject(project.title);
+                    }}
+                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                  >
+                    Ver Detalle →
+                  </button>
                 </div>
               </motion.div>
             ))}
