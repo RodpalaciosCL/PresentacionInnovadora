@@ -8,12 +8,14 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
+import { useTranslation } from 'react-i18next';
 import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   const [showImageGallery, setShowImageGallery] = React.useState(false);
 
   return (
@@ -82,14 +84,12 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-center">
-                infraestructura que se<br />
-                convierte en <span className="text-emerald-400">rentabilidad</span>
+                {t('home.hero.title')}
               </div>
             </div>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto">
-              Desarrollamos activos estratégicos en el norte de Chile, 
-              transformando infraestructura en oportunidades de inversión sostenibles y rentables.
+              {t('home.hero.subtitle')}
             </p>
             
             {/* Fix 1: CTA único centrado */}
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-10 py-5 rounded-lg transition-colors flex items-center space-x-3 text-xl shadow-2xl shadow-emerald-500/25"
                 >
-                  <span>Explorar Oportunidades</span>
+                  <span>{t('home.cta')}</span>
                   <ChevronRight className="h-6 w-6" />
                 </motion.button>
               </Link>
