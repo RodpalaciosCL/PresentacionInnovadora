@@ -264,7 +264,10 @@ const Home: React.FC = () => {
               { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
               { title: "Data Center", description: "Centro de datos de alta tecnología" },
-              { title: "Energía Solar", description: "Proyectos de energía renovable" }
+              { title: "Energía Solar", description: "Proyectos de energía renovable" },
+              { title: "Storage de Baterías Industriales", description: "Almacenamiento de energía a gran escala" },
+              { title: "Puerto Seco", description: "Terminal ferroviaria multimodal" },
+              { title: "Estaciones de Servicio", description: "Red de estaciones combustible" }
             ].map((project, index) => (
               <div
                 key={index}
@@ -303,6 +306,24 @@ const Home: React.FC = () => {
                 ) : project.title === "Energía Solar" ? (
                   <img
                     src="https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Storage de Baterías Industriales" ? (
+                  <img
+                    src="https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Puerto Seco" ? (
+                  <img
+                    src="https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Estaciones de Servicio" ? (
+                  <img
+                    src="https://creagermerc.com/wp-content/uploads/2021/02/33808902_s.jpg"
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
