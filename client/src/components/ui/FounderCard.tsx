@@ -9,6 +9,8 @@ import { Linkedin, CheckCircle } from "lucide-react";
 import { LazyImage } from "./LazyImage";
 import { Skeleton } from "./skeleton";
 import type { Founder } from "@/data/company";
+import robertoPhoto from "@assets/roberto.jpeg";
+import rodrigoPhoto from "@assets/Rodrigo_Palacios_Foto.jpg";
 
 interface FounderCardProps {
   founder: Founder;
@@ -33,7 +35,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
             <Skeleton className="w-full h-full rounded-full" />
           )}
           <LazyImage
-            src={`https://picsum.photos/200/200?random=${index + 10}`}
+            src={founder.id === 'founder-1' ? robertoPhoto : rodrigoPhoto}
             alt={`${founder.name} - ${founder.role}`}
             className="w-full h-full object-cover"
             onLoad={() => setImageLoaded(true)}

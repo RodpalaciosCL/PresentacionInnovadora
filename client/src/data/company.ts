@@ -32,25 +32,17 @@ export interface ProjectData {
 export const founders: Founder[] = [
   {
     id: 'founder-1',
-    name: 'Socio Fundador 1',
+    name: 'Roberto Pirazzoli Bunster',
     role: 'CEO & Co-Fundador',
     bio: 'Más de 15 años de experiencia en desarrollo de infraestructura y gestión de activos estratégicos.',
-    achievements: [
-      'Gestión de más de US$50M en activos inmobiliarios',
-      'Desarrollo de 25+ proyectos de infraestructura',
-      'Ex-ejecutivo en empresas Fortune 500'
-    ]
+    achievements: []
   },
   {
     id: 'founder-2', 
-    name: 'Socio Fundador 2',
+    name: 'Rodrigo Palacios del Campo',
     role: 'COO & Co-Fundador',
     bio: 'Especialista en finanzas corporativas e inversiones con track record en el sector minero y energético.',
-    achievements: [
-      'Estructuración de US$200M+ en financiamientos',
-      'Asesoría a 15+ empresas mineras del norte',
-      'MBA en Finanzas Corporativas'
-    ]
+    achievements: []
   }
 ];
 
