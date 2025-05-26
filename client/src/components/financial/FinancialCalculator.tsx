@@ -26,7 +26,7 @@ interface FinancialResults {
 
 export const FinancialCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
-    project: "estaciones",
+    project: "hubnorte",
     amount: 1000000,
     term: 5,
     scenario: "moderado"
@@ -35,7 +35,12 @@ export const FinancialCalculator: React.FC = () => {
   // Financial calculation logic based on real project data
   const calculateMetrics = useMemo((): FinancialResults => {
     const projectRates = {
-      estaciones: {
+      hubnorte: {
+        conservador: { roi: 18, tir: 22, vanMultiplier: 1.3, payback: 3.8 },
+        moderado: { roi: 28, tir: 32, vanMultiplier: 2.0, payback: 2.9 },
+        agresivo: { roi: 42, tir: 48, vanMultiplier: 3.2, payback: 2.1 }
+      },
+      terrenos: {
         conservador: { roi: 15, tir: 18, vanMultiplier: 1.2, payback: 4.2 },
         moderado: { roi: 22, tir: 25, vanMultiplier: 1.8, payback: 3.1 },
         agresivo: { roi: 35, tir: 38, vanMultiplier: 2.5, payback: 2.3 }
@@ -45,15 +50,35 @@ export const FinancialCalculator: React.FC = () => {
         moderado: { roi: 67, tir: 35, vanMultiplier: 2.1, payback: 2.2 },
         agresivo: { roi: 167, tir: 55, vanMultiplier: 3.8, payback: 1.5 }
       },
-      hubnorte: {
-        conservador: { roi: 18, tir: 22, vanMultiplier: 1.3, payback: 3.8 },
-        moderado: { roi: 28, tir: 32, vanMultiplier: 2.0, payback: 2.9 },
-        agresivo: { roi: 42, tir: 48, vanMultiplier: 3.2, payback: 2.1 }
-      },
       fibra: {
         conservador: { roi: 25, tir: 28, vanMultiplier: 1.6, payback: 3.2 },
         moderado: { roi: 38, tir: 42, vanMultiplier: 2.4, payback: 2.4 },
         agresivo: { roi: 55, tir: 62, vanMultiplier: 3.6, payback: 1.8 }
+      },
+      datacenter: {
+        conservador: { roi: 20, tir: 24, vanMultiplier: 1.4, payback: 3.5 },
+        moderado: { roi: 32, tir: 36, vanMultiplier: 2.2, payback: 2.7 },
+        agresivo: { roi: 48, tir: 54, vanMultiplier: 3.4, payback: 1.9 }
+      },
+      solar: {
+        conservador: { roi: 22, tir: 26, vanMultiplier: 1.5, payback: 3.3 },
+        moderado: { roi: 34, tir: 38, vanMultiplier: 2.3, payback: 2.5 },
+        agresivo: { roi: 52, tir: 58, vanMultiplier: 3.5, payback: 1.7 }
+      },
+      baterias: {
+        conservador: { roi: 24, tir: 28, vanMultiplier: 1.6, payback: 3.1 },
+        moderado: { roi: 36, tir: 42, vanMultiplier: 2.4, payback: 2.3 },
+        agresivo: { roi: 56, tir: 64, vanMultiplier: 3.7, payback: 1.6 }
+      },
+      puerto: {
+        conservador: { roi: 16, tir: 20, vanMultiplier: 1.3, payback: 4.0 },
+        moderado: { roi: 26, tir: 30, vanMultiplier: 1.9, payback: 3.2 },
+        agresivo: { roi: 40, tir: 46, vanMultiplier: 3.1, payback: 2.2 }
+      },
+      estaciones: {
+        conservador: { roi: 14, tir: 18, vanMultiplier: 1.2, payback: 4.5 },
+        moderado: { roi: 24, tir: 28, vanMultiplier: 1.8, payback: 3.4 },
+        agresivo: { roi: 38, tir: 44, vanMultiplier: 2.8, payback: 2.4 }
       }
     };
 
@@ -74,10 +99,15 @@ export const FinancialCalculator: React.FC = () => {
   }, [inputs]);
 
   const projects = [
-    { id: "estaciones", name: "500+ Estaciones", minInvestment: 500000 },
-    { id: "puchuncavi", name: "Puchuncaví", minInvestment: 2000000 },
     { id: "hubnorte", name: "Hub Norte", minInvestment: 1500000 },
-    { id: "fibra", name: "Fibra Oscura", minInvestment: 750000 }
+    { id: "terrenos", name: "Terrenos disponibles", minInvestment: 500000 },
+    { id: "puchuncavi", name: "Puchuncaví", minInvestment: 2000000 },
+    { id: "fibra", name: "Fibra Oscura", minInvestment: 750000 },
+    { id: "datacenter", name: "Data Center", minInvestment: 3000000 },
+    { id: "solar", name: "Energía Solar", minInvestment: 2500000 },
+    { id: "baterias", name: "Storage de Baterías Industriales", minInvestment: 4000000 },
+    { id: "puerto", name: "Puerto Seco", minInvestment: 8000000 },
+    { id: "estaciones", name: "Estaciones de Servicio", minInvestment: 1200000 }
   ];
 
   return (
