@@ -124,16 +124,16 @@ const Opportunities: React.FC = () => {
               { 
                 title: "Hub Norte", 
                 description: "Centro de Innovación Minera",
-                image: "https://images.unsplash.com/photo-1595239244991-fa6ad1acf554?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
               },
               { 
                 title: "Terrenos disponibles", 
                 description: "Red de +500 predios disponibles en 1.200kms de extensión",
-                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                image: "https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
               },
               { 
                 title: "Puchuncaví", 
-                description: "250 hectáreas para desarrollo inmobiliario",
+                description: "+300 hectáreas para desarrollo Inmobiliario Premium",
                 image: puchuncaviMap
               },
               { 
@@ -153,13 +153,13 @@ const Opportunities: React.FC = () => {
               },
               { 
                 title: "Storage de Baterías Industriales", 
-                description: "Almacenamiento de energía y gas natural",
+                description: "Almacenamiento de energía a gran escala",
                 image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
               },
               { 
                 title: "Puerto Seco", 
-                description: "Terminal terrestre multimodal",
-                image: "https://creagermerc.com/wp-content/uploads/2021/02/33808902_s.jpg"
+                description: "Terminal ferroviaria multimodal",
+                image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
               },
               { 
                 title: "Estaciones de Servicio", 
