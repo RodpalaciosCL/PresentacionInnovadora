@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
+import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -277,6 +278,12 @@ const Home: React.FC = () => {
                 ) : project.title === "Estaciones Ferroviarias" ? (
                   <img
                     src="https://static1.gensler.com/uploads/image/96748/wsu-master-plan-proposed-demo-existing-2000x_1741040231.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Puchuncaví" ? (
+                  <img
+                    src={puchuncaviMap}
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
