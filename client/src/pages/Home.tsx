@@ -266,13 +266,21 @@ const Home: React.FC = () => {
             ].map((project, index) => (
               <div
                 key={index}
-                className="bg-slate-700/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
+                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
               >
-                <LazyImage
-                  src={project.image || `https://picsum.photos/400/300?random=${index + 1}`}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
+                {project.title === "Hub Norte" ? (
+                  <img
+                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : (
+                  <LazyImage
+                    src={`https://picsum.photos/400/300?random=${index + 1}`}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
