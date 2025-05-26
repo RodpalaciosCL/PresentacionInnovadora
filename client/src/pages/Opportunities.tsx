@@ -75,6 +75,77 @@ const Opportunities: React.FC = () => {
           { name: "Centro Procesamiento Calama", location: "Calama", area: "1,500", fee: "US$22,000", status: "En Desarrollo", statusColor: "orange" },
           { name: "Hub Digital Iquique", location: "Iquique", area: "1,500", fee: "US$23,000", status: "Disponible", statusColor: "emerald" }
         ]
+      },
+      "Fibra Oscura": {
+        title: "Red de Fibra Oscura Nacional",
+        subtitle: "Infraestructura de Telecomunicaciones",
+        fee: "US$12,500",
+        feeLabel: "Arriendo km/Mes",
+        area: "1,200",
+        areaLabel: "km de Red",
+        stations: [
+          { name: "Tramo Arica-Iquique", location: "Norte", area: "300", fee: "US$15,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Tramo Iquique-Antofagasta", location: "Norte", area: "450", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
+          { name: "Tramo Antofagasta-Calama", location: "Norte", area: "200", fee: "US$10,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Tramo Copiapó-La Serena", location: "Norte", area: "250", fee: "US$13,500", status: "En Desarrollo", statusColor: "orange" }
+        ]
+      },
+      "Energía Solar": {
+        title: "Parques Solares del Norte",
+        subtitle: "Energía Renovable",
+        fee: "US$85,000",
+        feeLabel: "Ingresos MW/Mes",
+        area: "2,500",
+        areaLabel: "Hectáreas Totales",
+        stations: [
+          { name: "Parque Solar Atacama", location: "Atacama", area: "800", fee: "US$95,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Central Solar Antofagasta", location: "Antofagasta", area: "600", fee: "US$78,000", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Planta Solar Tarapacá", location: "Tarapacá", area: "700", fee: "US$88,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Parque Solar Coquimbo", location: "Coquimbo", area: "400", fee: "US$75,000", status: "Arrendado", statusColor: "yellow" }
+        ]
+      },
+      "Storage de Baterías Industriales": {
+        title: "Sistema de Almacenamiento",
+        subtitle: "Storage de Energía Industrial",
+        fee: "US$45,000",
+        feeLabel: "Arriendo MWh/Mes",
+        area: "150",
+        areaLabel: "MWh Capacidad",
+        stations: [
+          { name: "Storage Antofagasta Norte", location: "Antofagasta", area: "50", fee: "US$48,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Battery Hub Calama", location: "Calama", area: "40", fee: "US$42,000", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Centro Storage Iquique", location: "Iquique", area: "35", fee: "US$45,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Storage Copiapó", location: "Copiapó", area: "25", fee: "US$40,000", status: "Arrendado", statusColor: "yellow" }
+        ]
+      },
+      "Puerto Seco": {
+        title: "Terminal Multimodal Norte",
+        subtitle: "Logística y Transporte",
+        fee: "US$18,500",
+        feeLabel: "Arriendo/Container",
+        area: "85,000",
+        areaLabel: "m² Terminal",
+        stations: [
+          { name: "Terminal Antofagasta", location: "Antofagasta", area: "35,000", fee: "US$20,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Hub Logístico Calama", location: "Calama", area: "25,000", fee: "US$17,500", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Puerto Seco Iquique", location: "Iquique", area: "15,000", fee: "US$18,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Terminal Copiapó", location: "Copiapó", area: "10,000", fee: "US$16,000", status: "Arrendado", statusColor: "yellow" }
+        ]
+      },
+      "Estaciones de Servicio": {
+        title: "Red de Estaciones Combustible",
+        subtitle: "Infraestructura Energética",
+        fee: "US$8,750",
+        feeLabel: "Ingresos/Estación/Mes",
+        area: "45",
+        areaLabel: "Estaciones Activas",
+        stations: [
+          { name: "Estación Ruta 5 Norte", location: "Antofagasta", area: "1,200", fee: "US$9,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Estación Calama Centro", location: "Calama", area: "800", fee: "US$8,200", status: "Arrendado", statusColor: "yellow" },
+          { name: "Estación Iquique Puerto", location: "Iquique", area: "1,000", fee: "US$8,800", status: "Disponible", statusColor: "emerald" },
+          { name: "Estación Copiapó Sur", location: "Copiapó", area: "900", fee: "US$8,500", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Estación La Serena", location: "Coquimbo", area: "1,100", fee: "US$9,000", status: "Disponible", statusColor: "emerald" }
+        ]
       }
     };
     
