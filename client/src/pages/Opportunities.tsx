@@ -6,10 +6,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
 import { investmentOpportunities } from "@/data/company";
 
 const Opportunities: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("estaciones");
 
   // Tab configuration

@@ -149,18 +149,15 @@ const Home: React.FC = () => {
             {[
               {
                 icon: Target,
-                title: "Visión Estratégica",
-                description: "Identificamos y desarrollamos activos de alto potencial en ubicaciones estratégicas del norte de Chile."
+                key: "strategic"
               },
               {
                 icon: TrendingUp,
-                title: "Rentabilidad Sostenible",
-                description: "Generamos retornos consistentes a través de modelos de negocio probados y diversificados."
+                key: "profitable"
               },
               {
                 icon: Building,
-                title: "Infraestructura Clave",
-                description: "Desarrollamos activos esenciales para el crecimiento económico regional y nacional."
+                key: "innovative"
               }
             ].map((item, index) => {
               const Icon = item.icon;
@@ -177,10 +174,10 @@ const Home: React.FC = () => {
                     <Icon className="h-8 w-8 text-emerald-400" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4 text-center">
-                    {item.title}
+                    {t(`home.features.${item.key}.title`)}
                   </h3>
                   <p className="text-slate-300 text-center">
-                    {item.description}
+                    {t(`home.features.${item.key}.description`)}
                   </p>
                 </motion.div>
               );
@@ -341,10 +338,10 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              ¿Listo para formar parte del futuro?
+              {t('home.team.title')}
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Descubre cómo nuestros activos estratégicos pueden transformar tu portafolio de inversiones.
+              {t('home.team.subtitle')}
             </p>
             <Link href="/contact">
               <motion.button
@@ -352,7 +349,7 @@ const Home: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
               >
-                Contacta con Nosotros
+                {t('home.team.cta')}
               </motion.button>
             </Link>
           </motion.div>
