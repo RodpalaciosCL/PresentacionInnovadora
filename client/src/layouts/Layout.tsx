@@ -101,12 +101,12 @@ export default function Layout({
                     transform: 'translateY(-50%)'
                   }}
                   animate={{
-                    x: [44, 8]
+                    x: [8, 44, 8]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 4,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "easeInOut"
                   }}
                 />
               </motion.div>
