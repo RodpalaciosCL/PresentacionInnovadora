@@ -93,20 +93,18 @@ export default function Layout({
                   alt="Inversiones del Norte Logo"
                   className="h-12 w-auto"
                 />
-                {/* Punto que recorre la línea del ferrocarril */}
+                {/* Punto que recorre la línea del ferrocarril siguiendo la forma de la N */}
                 <motion.div
-                  className="absolute top-1/2 left-0 w-2 h-2 bg-emerald-400 rounded-full shadow-lg"
+                  className="absolute w-2 h-2 bg-emerald-400 rounded-full shadow-lg"
                   animate={{
-                    x: [0, 48, 0],
-                    y: [0, -8, 0]
+                    x: [4, 16, 32, 44],
+                    y: [32, 8, 28, 4]
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  style={{
-                    transform: "translateY(-50%)"
+                    ease: "linear",
+                    times: [0, 0.33, 0.66, 1]
                   }}
                 />
               </motion.div>
