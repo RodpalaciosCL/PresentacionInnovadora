@@ -306,8 +306,11 @@ const Opportunities: React.FC = () => {
                   <div className="bg-slate-700 rounded-xl p-6 min-h-[400px] relative">
                     <div className="text-center">
                       <img 
-                        src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                        alt="Mapa del Norte de Chile"
+                        src={selectedProject === "Hub Norte" 
+                          ? "https://media.licdn.com/dms/image/v2/C4E12AQHTZ7pyTmCfEw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1541423067327?e=2147483647&v=beta&t=9abkfOQ8EpfquDBzmeLUFCXCEUxTEm2GtpvaBMOOEnw"
+                          : "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                        }
+                        alt={selectedProject === "Hub Norte" ? "Hub de Innovación Minera" : "Mapa del Norte de Chile"}
                         className="w-full h-60 object-cover rounded-lg opacity-80"
                       />
                       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
