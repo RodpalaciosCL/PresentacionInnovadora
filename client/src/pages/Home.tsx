@@ -287,6 +287,12 @@ const Home: React.FC = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
+                ) : project.title === "Fibra Oscura" ? (
+                  <img
+                    src="https://www.kei-ind.com/wp-content/uploads/2023/05/underground-power-cable-blog.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
                 ) : (
                   <LazyImage
                     src={`https://picsum.photos/400/300?random=${index + 1}`}
