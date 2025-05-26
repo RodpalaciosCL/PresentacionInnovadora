@@ -8,9 +8,65 @@ import { motion } from "framer-motion";
 import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3 } from "lucide-react";
 import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
 import { investmentOpportunities } from "@/data/company";
+import dataCenterImage from "@assets/image_1748283427285.png";
+import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 
 const Opportunities: React.FC = () => {
   const [activeTab, setActiveTab] = useState("estaciones");
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  // Project details data
+  const getProjectDetails = (projectTitle: string) => {
+    const projectData = {
+      "Hub Norte": {
+        title: "Mapa Interactivo - Norte de Chile",
+        subtitle: "Detalles por Estación",
+        fee: "US$8,300",
+        feeLabel: "Fee Promedio/Mes",
+        area: "14,100",
+        areaLabel: "m² Totales",
+        stations: [
+          { name: "Terreno Antofagasta Norte", location: "Antofagasta", area: "2,500", fee: "US$8,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Calama Industrial", location: "Antofagasta", area: "3,200", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
+          { name: "Terreno Iquique Puerto", location: "Tarapacá", area: "1,800", fee: "US$6,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Atacama Central", location: "Atacama", area: "2,800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Terreno Coquimbo Hub", location: "Coquimbo", area: "2,200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Arica Frontera", location: "Arica y Parinacota", area: "1,600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
+        ]
+      },
+      "Terrenos disponibles": {
+        title: "Mapa Interactivo - Norte de Chile",
+        subtitle: "Detalles por Estación",
+        fee: "US$8,300",
+        feeLabel: "Fee Promedio/Mes",
+        area: "14,100",
+        areaLabel: "m² Totales",
+        stations: [
+          { name: "Terreno Antofagasta Norte", location: "Antofagasta", area: "2,500", fee: "US$8,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Calama Industrial", location: "Antofagasta", area: "3,200", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
+          { name: "Terreno Iquique Puerto", location: "Tarapacá", area: "1,800", fee: "US$6,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Atacama Central", location: "Atacama", area: "2,800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Terreno Coquimbo Hub", location: "Coquimbo", area: "2,200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Arica Frontera", location: "Arica y Parinacota", area: "1,600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
+        ]
+      },
+      "Puchuncaví": {
+        title: "Terreno Puchuncaví Premium",
+        subtitle: "Desarrollo Inmobiliario",
+        fee: "US$15,000",
+        feeLabel: "Precio por Hectárea/Mes",
+        area: "300",
+        areaLabel: "Hectáreas Totales",
+        stations: [
+          { name: "Sector Norte Premium", location: "Puchuncaví", area: "80", fee: "US$18,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Sector Central Industrial", location: "Puchuncaví", area: "120", fee: "US$15,000", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Sector Sur Residencial", location: "Puchuncaví", area: "100", fee: "US$12,000", status: "Disponible", statusColor: "emerald" }
+        ]
+      }
+    };
+    
+    return projectData[projectTitle as keyof typeof projectData] || projectData["Hub Norte"];
+  };
 
   // Tab configuration
   const tabs = [
@@ -86,7 +142,7 @@ const Opportunities: React.FC = () => {
               { 
                 title: "Data Center", 
                 description: "Centro de datos de alta tecnología",
-                image: "/assets/image_1748283427285.png"
+                image: dataCenterImage
               },
               { 
                 title: "Energía Solar", 
@@ -114,7 +170,8 @@ const Opportunities: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
+                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedProject(project.title)}
               >
                 <img
                   src={project.image}
