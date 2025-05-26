@@ -261,7 +261,7 @@ const Home: React.FC = () => {
                 image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
               },
               { title: "Terrenos disponibles", description: "Red de +500 predios disponibles en 1.200kms de extensión" },
-              { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
+              { title: "Puchuncaví", description: "+300 hectáreas para desarrollo Inmobiliario Premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
               { title: "Data Center", description: "Centro de datos de alta tecnología" },
               { title: "Energía Solar", description: "Proyectos de energía renovable" },
