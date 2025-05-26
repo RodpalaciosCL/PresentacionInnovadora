@@ -257,7 +257,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Teléfono *
+                    {t('contact.form.phone')} *
                   </label>
                   <input
                     {...form.register("phone")}
@@ -272,7 +272,7 @@ const Contact: React.FC = () => {
                 
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Empresa
+                    {t('contact.form.company')}
                   </label>
                   <input
                     {...form.register("company")}
@@ -287,7 +287,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Proyecto de Interés *
+                    {t('contact.form.project')} *
                   </label>
                   <select
                     {...form.register("projectInterest")}
@@ -308,7 +308,7 @@ const Contact: React.FC = () => {
               {/* Message */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-2">
-                  Mensaje *
+                  {t('contact.form.message')} *
                 </label>
                 <textarea
                   {...form.register("message")}
@@ -324,7 +324,7 @@ const Contact: React.FC = () => {
               {/* Contact Preference */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-3">
-                  Método de Contacto Preferido
+                  {t('contact.form.preferred')}
                 </label>
                 <div className="flex flex-wrap gap-4">
                   <label className="flex items-center">
@@ -370,7 +370,7 @@ const Contact: React.FC = () => {
                 ) : (
                   <>
                     <Send className="h-5 w-5" />
-                    <span>Enviar Consulta</span>
+                    <span>{t('contact.form.submit')}</span>
                   </>
                 )}
               </motion.button>
