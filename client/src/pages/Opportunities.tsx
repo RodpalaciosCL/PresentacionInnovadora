@@ -258,6 +258,16 @@ const Opportunities: React.FC = () => {
                     onClick={(e) => {
                       e.stopPropagation();
                       setSelectedProject(project.title);
+                      // Scroll suave hacia la sección de detalles
+                      setTimeout(() => {
+                        const detailsSection = document.getElementById('project-details');
+                        if (detailsSection) {
+                          detailsSection.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                          });
+                        }
+                      }, 100);
                     }}
                     className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
                   >
@@ -272,7 +282,7 @@ const Opportunities: React.FC = () => {
 
       {/* Project Details Section - Shows when a project is selected */}
       {selectedProject && (
-        <section className="py-20 bg-slate-900">
+        <section id="project-details" className="py-20 bg-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
