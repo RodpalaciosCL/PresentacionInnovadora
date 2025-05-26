@@ -82,8 +82,8 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-center">
-                infraestructura que se convierte en{" "}
-                <span className="text-emerald-400">rentabilidad</span>
+                infraestructura que se <br className="hidden md:block" />
+                convierte en <span className="text-emerald-400">rentabilidad</span>
               </div>
             </div>
             
