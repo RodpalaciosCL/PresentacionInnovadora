@@ -126,31 +126,94 @@ const About: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Interactive Timeline */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Central connecting line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-purple-500 rounded-full opacity-30"></div>
+            
             {companyApproach.map((approach, index) => {
               const IconComponent = approach.icon === 'Target' ? Target : 
                                    approach.icon === 'Zap' ? Zap :
                                    approach.icon === 'Network' ? Network : TrendingUp;
               
+              const isLeft = index % 2 === 0;
+              const colors = [
+                'from-emerald-500 to-teal-600',
+                'from-blue-500 to-cyan-600', 
+                'from-purple-500 to-pink-600',
+                'from-orange-500 to-red-600'
+              ];
+              
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  initial={{ opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.3, type: "spring", bounce: 0.3 }}
                   viewport={{ once: true }}
-                  className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
+                  className={`relative flex items-center mb-16 ${isLeft ? 'justify-start' : 'justify-end flex-row-reverse'}`}
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mr-4">
-                      <IconComponent className="h-6 w-6 text-emerald-400" />
+                  {/* Content Card */}
+                  <motion.div
+                    whileHover={{ scale: 1.05, rotateY: 5 }}
+                    className={`relative bg-gradient-to-br ${colors[index]} p-1 rounded-2xl shadow-2xl max-w-md ${isLeft ? 'mr-8' : 'ml-8'}`}
+                  >
+                    <div className="bg-slate-900/95 backdrop-blur-sm rounded-2xl p-6">
+                      <div className="flex items-center mb-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${colors[index]} rounded-xl flex items-center justify-center mr-4 shadow-lg`}>
+                          <IconComponent className="h-6 w-6 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white">{approach.title}</h3>
+                      </div>
+                      <p className="text-slate-300 leading-relaxed">{approach.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-white">{approach.title}</h3>
-                  </div>
-                  <p className="text-slate-300 leading-relaxed">{approach.description}</p>
+                  </motion.div>
+                  
+                  {/* Central Node */}
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.3 + 0.2 }}
+                    whileHover={{ scale: 1.3, rotate: 360 }}
+                    className={`absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br ${colors[index]} rounded-full flex items-center justify-center shadow-2xl border-4 border-slate-900 z-10`}
+                  >
+                    <IconComponent className="h-8 w-8 text-white" />
+                  </motion.div>
+                  
+                  {/* Connecting Line */}
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: index * 0.3 + 0.4 }}
+                    className={`absolute top-1/2 w-8 h-1 bg-gradient-to-r ${colors[index]} rounded-full ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'} transform -translate-y-1/2`}
+                  ></motion.div>
                 </motion.div>
               );
             })}
+            
+            {/* Floating particles effect */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-emerald-400 rounded-full opacity-20"
+                  animate={{
+                    y: [-20, -100, -20],
+                    x: [Math.random() * 100, Math.random() * 200, Math.random() * 100],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 4 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 3,
+                  }}
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
