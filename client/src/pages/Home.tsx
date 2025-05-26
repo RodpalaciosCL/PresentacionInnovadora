@@ -10,6 +10,7 @@ import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-re
 import { useCounter } from "@/hooks/use-counter";
 import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
+import dataCenterImage from "@assets/image_1748283427285.png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -262,7 +263,7 @@ const Home: React.FC = () => {
               { title: "Estaciones Ferroviarias", description: "Red de 500+ estaciones" },
               { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
-              { title: "Zona Franca", description: "Complejo comercial internacional" },
+              { title: "Data Center", description: "Centro de datos de alta tecnología" },
               { title: "Puerto Seco", description: "Terminal multimodal" }
             ].map((project, index) => (
               <div
@@ -290,6 +291,12 @@ const Home: React.FC = () => {
                 ) : project.title === "Fibra Oscura" ? (
                   <img
                     src="https://www.kei-ind.com/wp-content/uploads/2023/05/underground-power-cable-blog.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Data Center" ? (
+                  <img
+                    src={dataCenterImage}
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
