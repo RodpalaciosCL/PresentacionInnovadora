@@ -110,31 +110,26 @@ export const investmentOpportunities: ProjectData[] = [
   }
 ];
 
-// Company timeline
-export const companyTimeline = [
+// Company approach and methodology
+export const companyApproach = [
   {
-    year: '2020',
-    title: 'Fundación de Invenor',
-    description: 'Inicio de operaciones con foco en activos estratégicos del norte'
+    icon: 'Target',
+    title: 'Identificación Estratégica',
+    description: 'Análisis de mercado para identificar activos con alto potencial de crecimiento en sectores clave como Mining, Oil&Gas, y energías renovables.'
   },
   {
-    year: '2021', 
-    title: 'Primera Adquisición',
-    description: 'Adquisición de 150 estaciones ferroviarias estratégicas'
+    icon: 'Zap',
+    title: 'Innovación Tecnológica',
+    description: 'Integración de tecnologías emergentes: IoT, data centers, desalinizadoras, y sistemas de conectividad avanzada para maximizar el valor de los activos.'
   },
   {
-    year: '2022',
-    title: 'Expansión del Portafolio',
-    description: 'Incorporación de terrenos industriales y red de fibra óptica'
+    icon: 'Network',
+    title: 'Conectividad Inteligente',
+    description: 'Desarrollo de infraestructura de piping, fibra óptica y logística inteligente que conecta sectores estratégicos del norte de Chile.'
   },
   {
-    year: '2023',
-    title: 'Hub de Innovación',
-    description: 'Desarrollo del proyecto Hub Norte para empresas tecnológicas'
-  },
-  {
-    year: '2024',
-    title: 'Consolidación',
-    description: 'US$85M en activos gestionados y expansión a nuevos sectores'
+    icon: 'TrendingUp',
+    title: 'Escalabilidad Sostenible',
+    description: 'Modelo de crecimiento basado en energías limpias, eficiencia operacional y tecnologías que impulsan la transformación digital del sector industrial.'
   }
 ];

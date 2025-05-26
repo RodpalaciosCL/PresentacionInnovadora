@@ -5,10 +5,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Users, Target, Lightbulb, Handshake, Globe } from "lucide-react";
+import { Shield, Users, Target, Lightbulb, Handshake, Globe, Zap, Network, TrendingUp } from "lucide-react";
 import { FounderCard } from "@/components/ui/FounderCard";
-import { Timeline } from "@/components/ui/Timeline";
-import { founders, companyTimeline } from "@/data/company";
+import { founders, companyApproach } from "@/data/company";
 
 const About: React.FC = () => {
   // Company values
@@ -109,9 +108,9 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Company Timeline */}
+      {/* Company Approach */}
       <section className="py-20 bg-slate-900">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -120,14 +119,39 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Nuestro <span className="text-emerald-400">Recorrido</span>
+              Nuestro <span className="text-emerald-400">Enfoque</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Un track record sólido de crecimiento y desarrollo en el sector de activos estratégicos
+              Metodología y estrategia de inversión en sectores innovadores y tecnológicos
             </p>
           </motion.div>
 
-          <Timeline items={companyTimeline} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {companyApproach.map((approach, index) => {
+              const IconComponent = approach.icon === 'Target' ? Target : 
+                                   approach.icon === 'Zap' ? Zap :
+                                   approach.icon === 'Network' ? Network : TrendingUp;
+              
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mr-4">
+                      <IconComponent className="h-6 w-6 text-emerald-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{approach.title}</h3>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">{approach.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
