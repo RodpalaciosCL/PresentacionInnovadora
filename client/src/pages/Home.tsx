@@ -253,7 +253,11 @@ const Home: React.FC = () => {
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Hub Norte", description: "Centro logístico estratégico" },
+              { 
+                title: "Hub Norte", 
+                description: "Centro logístico estratégico",
+                image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
+              },
               { title: "Estaciones Ferroviarias", description: "Red de 500+ estaciones" },
               { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
@@ -265,7 +269,7 @@ const Home: React.FC = () => {
                 className="bg-slate-700/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
               >
                 <LazyImage
-                  src={`https://picsum.photos/400/300?random=${index + 1}`}
+                  src={project.image || `https://picsum.photos/400/300?random=${index + 1}`}
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />

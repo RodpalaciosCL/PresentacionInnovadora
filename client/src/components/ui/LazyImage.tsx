@@ -55,7 +55,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
       {/* Blur placeholder */}
       {!isLoaded && (
         <div
-          className="absolute inset-0 bg-slate-200 dark:bg-slate-700 animate-pulse"
+          className="absolute inset-0 bg-slate-200 dark:bg-slate-700"
           style={{
             backgroundImage: blurDataURL ? `url(${blurDataURL})` : undefined,
             backgroundSize: "cover",
@@ -74,7 +74,6 @@ export const LazyImage: React.FC<LazyImageProps> = ({
           loading={priority ? "eager" : "lazy"}
           onLoad={handleLoad}
           className={cn(
-            "transition-opacity duration-500",
             isLoaded ? "opacity-100" : "opacity-0",
             className
           )}
