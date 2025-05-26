@@ -277,7 +277,7 @@ const Home: React.FC = () => {
                   />
                 ) : project.title === "Estaciones Ferroviarias" ? (
                   <img
-                    src="https://static1.gensler.com/uploads/image/96748/wsu-master-plan-proposed-demo-existing-2000x_1741040231.jpg"
+                    src="https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
