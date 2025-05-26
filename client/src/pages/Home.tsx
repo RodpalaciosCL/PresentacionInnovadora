@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
-import logoInvenor from "@assets/Invenor (Instagram Post (45)) (4).png";
+import logoInvenor from "@assets/logo1.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 import dataCenterImage from "@assets/image_1748283427285.png";
 import { businessMetrics } from "@/data/company";
@@ -76,11 +76,11 @@ const Home: React.FC = () => {
             transition={{ duration: 1 }}
           >
             <div className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              <div className="flex justify-center items-center mb-6">
+              <div className="flex justify-center items-center mb-2">
                 <img 
                   src={logoInvenor}
                   alt="Invenor"
-                  className="h-56 md:h-68"
+                  className="h-48 md:h-56"
                 />
               </div>
               <div className="text-center">
