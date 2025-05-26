@@ -131,14 +131,14 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">
             Contacto
@@ -377,22 +377,7 @@ const Contact: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-2xl p-8 border border-emerald-400/30">
-            <Clock className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">Respuesta Garantizada</h3>
-            <p className="text-slate-300">
-              Nuestro equipo se compromete a responder todas las consultas en menos de 24 horas.
-              Para inversiones superiores a US$1M, contacto inmediato con ejecutivos senior.
-            </p>
-          </div>
-        </motion.div>
+
       </div>
     </div>
   );
