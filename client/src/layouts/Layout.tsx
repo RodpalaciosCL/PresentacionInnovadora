@@ -86,21 +86,28 @@ export default function Layout({
             <Link href="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                animate={{ 
-                  opacity: [1, 0.3, 1],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="cursor-pointer"
+                className="cursor-pointer relative"
               >
                 <img 
                   src={logoImage}
                   alt="Inversiones del Norte Logo"
                   className="h-12 w-auto"
+                />
+                {/* Punto que recorre la línea del ferrocarril */}
+                <motion.div
+                  className="absolute top-1/2 left-0 w-2 h-2 bg-emerald-400 rounded-full shadow-lg"
+                  animate={{
+                    x: [0, 48, 0],
+                    y: [0, -8, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    transform: "translateY(-50%)"
+                  }}
                 />
               </motion.div>
             </Link>
