@@ -65,29 +65,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
         </p>
       </div>
 
-      {/* Achievements */}
-      <div className="mb-6">
-        <h4 className="text-white font-semibold mb-3 text-center">
-          Logros Destacados
-        </h4>
-        <div className="space-y-2">
-          {founder.achievements.map((achievement, achievementIndex) => (
-            <motion.div
-              key={achievementIndex}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: achievementIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="flex items-start space-x-3"
-            >
-              <CheckCircle className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <span className="text-slate-300 text-sm leading-relaxed">
-                {achievement}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+
 
       {/* Contact Link */}
       {founder.linkedin && (
