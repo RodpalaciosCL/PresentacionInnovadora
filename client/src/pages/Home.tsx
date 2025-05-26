@@ -203,7 +203,7 @@ const Home: React.FC = () => {
               En <span className="text-emerald-400">Números</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Nuestro track record habla por sí solo
+              Disponemos de algo único en el mercado
             </p>
           </motion.div>
 

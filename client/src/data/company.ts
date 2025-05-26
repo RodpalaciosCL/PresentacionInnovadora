@@ -50,22 +50,22 @@ export const founders: Founder[] = [
 export const businessMetrics: BusinessMetric[] = [
   {
     value: '500+',
-    label: 'Estaciones Gestionadas',
+    label: 'predios disponibles',
     description: 'Puntos estratégicos en operación'
   },
   {
-    value: '2,500+',
-    label: 'Hectáreas Desarrolladas', 
+    value: '300,000+',
+    label: 'hectáreas', 
     description: 'Superficie total en gestión'
   },
   {
-    value: '1,200',
-    label: 'Kilómetros de Fibra',
+    value: '1,200kms',
+    label: 'para piping y fibra',
     description: 'Red de telecomunicaciones'
   },
   {
-    value: 'US$85M',
-    label: 'En Activos Gestionados',
+    value: '+ de 10',
+    label: 'industrias posibles',
     description: 'Valor total del portafolio'
   }
 ];
