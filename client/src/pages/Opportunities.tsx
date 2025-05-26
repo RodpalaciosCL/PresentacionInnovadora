@@ -19,19 +19,22 @@ const Opportunities: React.FC = () => {
   const getProjectDetails = (projectTitle: string) => {
     const projectData = {
       "Hub Norte": {
-        title: "Centro de Innovación Minera",
-        subtitle: "Hub Norte - Tecnología",
-        fee: "US$25,000",
+        title: "Hub de Innovación Minera",
+        subtitle: "Primer hub de innovación minera del desierto más árido del mundo",
+        fee: "Desde US$2,500",
         feeLabel: "Arriendo/Módulo/Mes",
-        area: "5,000",
-        areaLabel: "m² Centro",
+        area: "15,000",
+        areaLabel: "m² de Innovación",
+        description: "Oportunidad única para participar en la creación y desarrollo del primer hub de innovación minera de la región, emplazado en el desierto más árido del mundo donde confluyen las mineras más grandes del planeta.",
         stations: [
-          { name: "Laboratorio I+D Minero", location: "Antofagasta", area: "1,200", fee: "US$28,000", status: "Disponible", statusColor: "emerald" },
-          { name: "Centro de Pruebas", location: "Antofagasta", area: "800", fee: "US$22,000", status: "En Desarrollo", statusColor: "orange" },
-          { name: "Oficinas Corporativas", location: "Antofagasta", area: "1,500", fee: "US$26,000", status: "Disponible", statusColor: "emerald" },
-          { name: "Área de Capacitación", location: "Antofagasta", area: "900", fee: "US$20,000", status: "Arrendado", statusColor: "yellow" },
-          { name: "Centro de Innovación", location: "Antofagasta", area: "600", fee: "US$30,000", status: "Disponible", statusColor: "emerald" }
-        ]
+          { name: "Centro de Convenciones", location: "Desierto de Atacama", area: "2,000", fee: "Desde US$8,000", status: "En Desarrollo", statusColor: "orange" },
+          { name: "3 Espacios de Cowork", location: "Desierto de Atacama", area: "900", fee: "Desde US$1,800", status: "Disponible", statusColor: "emerald" },
+          { name: "5 Laboratorios de Innovación", location: "Desierto de Atacama", area: "1,500", fee: "Desde US$4,500", status: "Disponible", statusColor: "emerald" },
+          { name: "+100 Oficinas Modulares", location: "Desierto de Atacama", area: "8,000", fee: "Desde US$2,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Cafetería, Restaurant, Gimnasio", location: "Desierto de Atacama", area: "1,200", fee: "Desde US$3,200", status: "En Desarrollo", statusColor: "orange" },
+          { name: "200 Estacionamientos", location: "Desierto de Atacama", area: "1,400", fee: "Incluido", status: "Planificado", statusColor: "blue" }
+        ],
+        specialNote: "Un hub donde confluyen mineras, compañías de oil&gas, de energía, universidades y otros, donde se respirará y vivirá la innovación."
       },
       "Terrenos disponibles": {
         title: "Red de Terrenos Estratégicos",
@@ -348,6 +351,22 @@ const Opportunities: React.FC = () => {
                     </h3>
                   </div>
                   
+                  {/* Description and Special Note */}
+                  {getProjectDetails(selectedProject).description && (
+                    <div className="bg-slate-800/50 rounded-xl p-6 mb-6">
+                      <p className="text-slate-300 leading-relaxed mb-4">
+                        {getProjectDetails(selectedProject).description}
+                      </p>
+                      {getProjectDetails(selectedProject).specialNote && (
+                        <div className="border-l-4 border-emerald-400 pl-4">
+                          <p className="text-emerald-300 italic">
+                            {getProjectDetails(selectedProject).specialNote}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
                   {/* Summary Stats */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-700 rounded-xl p-6">
@@ -394,6 +413,8 @@ const Opportunities: React.FC = () => {
                                   ? "bg-emerald-100 text-emerald-800" 
                                   : station.statusColor === "yellow"
                                   ? "bg-yellow-100 text-yellow-800"
+                                  : station.statusColor === "blue"
+                                  ? "bg-blue-100 text-blue-800"
                                   : "bg-orange-100 text-orange-800"
                               }`}>
                                 {station.status}
