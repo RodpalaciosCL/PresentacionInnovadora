@@ -117,8 +117,8 @@ export default function Layout({
               </div>
             </div>
             
-            {/* Botones de acción - posición absoluta derecha */}
-            <div className="hidden md:flex items-center space-x-2 absolute right-0">
+            {/* Botones de acción */}
+            <div className="hidden md:flex items-center space-x-2">
               {/* Search Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
