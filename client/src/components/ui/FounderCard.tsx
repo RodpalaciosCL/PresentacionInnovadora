@@ -10,7 +10,7 @@ import { LazyImage } from "./LazyImage";
 import { Skeleton } from "./skeleton";
 import type { Founder } from "@/data/company";
 import robertoPhoto from "../../assets/roberto.jpeg";
-import rodrigoPhoto from "../../assets/Rodrigo_Palacios_Foto.jpg";
+import rodrigoPhoto from "../../../attached_assets/Sin título.png";
 
 interface FounderCardProps {
   founder: Founder;
@@ -38,7 +38,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ founder, index }) => {
             src={founder.id === 'founder-1' ? robertoPhoto : rodrigoPhoto}
             alt={`${founder.name} - ${founder.role}`}
             className="w-full h-full object-cover"
-            style={{ objectPosition: founder.id === 'founder-2' ? '85% center' : 'center center' }}
+            style={{ objectPosition: 'center center' }}
             onLoad={() => setImageLoaded(true)}
           />
         </div>
