@@ -61,7 +61,7 @@ const About: React.FC = () => {
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Somos un equipo de profesionales con más de 20 años de experiencia 
-              en desarrollo de infraestructura, inversiones y gestión de activos estratégicos.
+              en desarrollo de proyectos de alta rentabilidad, para distintas industrias alrededor de todo el mundo.
             </p>
           </motion.div>
 
@@ -96,8 +96,7 @@ const About: React.FC = () => {
               Socios <span className="text-emerald-400">Fundadores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Líderes con experiencia comprobada en desarrollo de proyectos de infraestructura 
-              y gestión de inversiones en el sector minero y energético.
+              Un equipo de primer nivel para escalar de manera estratégica la cartera de inversiones de grupos de Chile, la región y el mundo, en oportunidades controladas y únicas en el mercado.
             </p>
           </motion.div>
 
