@@ -274,6 +274,12 @@ const Home: React.FC = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
+                ) : project.title === "Estaciones Ferroviarias" ? (
+                  <img
+                    src="https://static1.gensler.com/uploads/image/96748/wsu-master-plan-proposed-demo-existing-2000x_1741040231.jpg"
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
                 ) : (
                   <LazyImage
                     src={`https://picsum.photos/400/300?random=${index + 1}`}
