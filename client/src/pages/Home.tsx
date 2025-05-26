@@ -107,21 +107,7 @@ const Home: React.FC = () => {
             </div>
           </motion.div>
           
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-slate-400"
-            >
-              <ArrowDown className="h-6 w-6" />
-            </motion.div>
-          </motion.div>
+
         </div>
 
       </section>
