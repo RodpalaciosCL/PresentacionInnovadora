@@ -257,10 +257,10 @@ const Home: React.FC = () => {
             {[
               { 
                 title: "Hub Norte", 
-                description: "Centro logístico estratégico",
+                description: "Centro de Innovación Minera",
                 image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
               },
-              { title: "Estaciones Ferroviarias", description: "Red de 500+ estaciones" },
+              { title: "Terrenos disponibles", description: "Red de +500 predios disponibles en 1.200kms de extensión" },
               { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
               { title: "Data Center", description: "Centro de datos de alta tecnología" },
@@ -279,7 +279,7 @@ const Home: React.FC = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
-                ) : project.title === "Estaciones Ferroviarias" ? (
+                ) : project.title === "Terrenos disponibles" ? (
                   <img
                     src="https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
                     alt={project.title}
