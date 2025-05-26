@@ -247,11 +247,11 @@ const Opportunities: React.FC = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6 flex flex-col h-full">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-slate-300 mb-4 flex-grow min-h-[3rem]">
+                  <p className="text-slate-300 mb-4 flex-grow">
                     {project.description}
                   </p>
                   <button 
