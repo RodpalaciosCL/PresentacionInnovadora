@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "opportunities": "Opportunities",
+    "projections": "Projections",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "infrastructure that becomes profitability",
+      "subtitle": "We develop strategic assets in northern Chile that generate sustainable value for investors and communities."
+    },
+    "cta": "Explore Opportunities",
+    "metrics": {
+      "managed": "In Managed Assets",
+      "roi": "Average Annual ROI",
+      "projects": "Active Projects",
+      "growth": "Projected Growth"
+    },
+    "features": {
+      "strategic": {
+        "title": "Strategic Assets",
+        "description": "Key infrastructure located in high-growth potential areas."
+      },
+      "profitable": {
+        "title": "Profitable Investments",
+        "description": "Attractive returns with proven and scalable business model."
+      },
+      "innovative": {
+        "title": "Innovative Technology",
+        "description": "Integration of technological solutions to maximize efficiency."
+      }
+    },
+    "team": {
+      "title": "Want to learn more about our team?",
+      "subtitle": "Schedule a meeting to learn in detail about our experience and business vision.",
+      "cta": "Schedule Meeting"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "We are a team of professionals with over 20 years of experience in infrastructure development, investments and strategic asset management."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Transform strategic infrastructure into profitable and sustainable investment opportunities, connecting capital with high-potential assets in northern Chile to generate shared value between investors, communities and regional economic development."
+    },
+    "founders": {
+      "title": "Founding Partners",
+      "subtitle": "Leaders with proven experience in infrastructure project development and investment management in the mining and energy sector."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "subtitle": "Investment methodology and strategy in innovative and technological sectors",
+      "items": {
+        "strategic": {
+          "title": "Strategic Identification",
+          "description": "Market analysis to identify assets with high growth potential in key sectors such as Mining, Oil&Gas, and renewable energy."
+        },
+        "innovation": {
+          "title": "Technological Innovation",
+          "description": "Integration of emerging technologies: IoT, data centers, desalination plants, and advanced connectivity systems to maximize asset value."
+        },
+        "connectivity": {
+          "title": "Smart Connectivity",
+          "description": "Development of piping, fiber optic and smart logistics infrastructure that connects strategic sectors in northern Chile."
+        },
+        "scalability": {
+          "title": "Sustainable Scalability",
+          "description": "Growth model based on clean energy, operational efficiency and technologies that drive digital transformation of the industrial sector."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide every decision and define our corporate culture",
+      "items": {
+        "transparency": {
+          "title": "Transparency",
+          "description": "Clear and honest communication in all our operations and interactions with investors."
+        },
+        "excellence": {
+          "title": "Operational Excellence",
+          "description": "Constant pursuit of continuous improvement in the management and development of our assets."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Adoption of emerging technologies to create additional value in our projects."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "description": "Responsible development that considers the long-term environmental and social impact."
+        },
+        "partnership": {
+          "title": "Strategic Partnerships",
+          "description": "Building strong relationships with key stakeholders in the industrial ecosystem."
+        },
+        "impact": {
+          "title": "Regional Impact",
+          "description": "Active contribution to the economic and social development of northern Chile."
+        }
+      }
+    },
+    "cta": {
+      "title": "Want to learn more about our team?",
+      "subtitle": "Schedule a meeting to learn in detail about our experience and business vision.",
+      "button": "Schedule Meeting"
+    }
+  },
+  "opportunities": {
+    "title": "Business & Opportunities",
+    "subtitle": "Discover investment opportunities in strategic infrastructure in northern Chile"
+  },
+  "projections": {
+    "title": "Financial Projections",
+    "subtitle": "Detailed analysis of returns and investment projections"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us to learn more about our investment opportunities",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully",
+      "error": "Error sending message"
+    }
+  },
+  "footer": {
+    "description": "Transforming infrastructure into investment opportunities",
+    "contact": "Contact",
+    "location": "Santiago, Chile",
+    "email": "contacto@inversionesdelnorte.cl",
+    "copyright": "© 2024 Invenor. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close"
+  }
+}

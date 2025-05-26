@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "opportunities": "Oportunidades",
+    "projections": "Proyecciones",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "title": "infraestructura que se convierte en rentabilidad",
+      "subtitle": "Desarrollamos activos estratégicos en el norte de Chile que generan valor sostenible para inversionistas y comunidades."
+    },
+    "cta": "Explorar Oportunidades",
+    "metrics": {
+      "managed": "En Activos Gestionados",
+      "roi": "ROI Promedio Anual",
+      "projects": "Proyectos Activos",
+      "growth": "Crecimiento Proyectado"
+    },
+    "features": {
+      "strategic": {
+        "title": "Activos Estratégicos",
+        "description": "Infraestructura clave ubicada en zonas de alto potencial de crecimiento."
+      },
+      "profitable": {
+        "title": "Inversiones Rentables",
+        "description": "Retornos atractivos con modelo de negocio probado y escalable."
+      },
+      "innovative": {
+        "title": "Tecnología Innovadora",
+        "description": "Integración de soluciones tecnológicas para maximizar eficiencia."
+      }
+    },
+    "team": {
+      "title": "¿Quieres conocer más sobre nuestro equipo?",
+      "subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
+      "cta": "Agendar Reunión"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Quiénes Somos",
+      "subtitle": "Somos un equipo de profesionales con más de 20 años de experiencia en desarrollo de infraestructura, inversiones y gestión de activos estratégicos."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, conectando capital con activos de alto potencial en el norte de Chile para generar valor compartido entre inversionistas, comunidades y el desarrollo económico regional."
+    },
+    "founders": {
+      "title": "Socios Fundadores",
+      "subtitle": "Líderes con experiencia comprobada en desarrollo de proyectos de infraestructura y gestión de inversiones en el sector minero y energético."
+    },
+    "approach": {
+      "title": "Nuestro Enfoque",
+      "subtitle": "Metodología y estrategia de inversión en sectores innovadores y tecnológicos",
+      "items": {
+        "strategic": {
+          "title": "Identificación Estratégica",
+          "description": "Análisis de mercado para identificar activos con alto potencial de crecimiento en sectores clave como Mining, Oil&Gas, y energías renovables."
+        },
+        "innovation": {
+          "title": "Innovación Tecnológica",
+          "description": "Integración de tecnologías emergentes: IoT, data centers, desalinizadoras, y sistemas de conectividad avanzada para maximizar el valor de los activos."
+        },
+        "connectivity": {
+          "title": "Conectividad Inteligente",
+          "description": "Desarrollo de infraestructura de piping, fibra óptica y logística inteligente que conecta sectores estratégicos del norte de Chile."
+        },
+        "scalability": {
+          "title": "Escalabilidad Sostenible",
+          "description": "Modelo de crecimiento basado en energías limpias, eficiencia operacional y tecnologías que impulsan la transformación digital del sector industrial."
+        }
+      }
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "subtitle": "Los principios que guían cada decisión y definen nuestra cultura corporativa",
+      "items": {
+        "transparency": {
+          "title": "Transparencia",
+          "description": "Comunicación clara y honesta en todas nuestras operaciones e interacciones con inversionistas."
+        },
+        "excellence": {
+          "title": "Excelencia Operacional",
+          "description": "Búsqueda constante de la mejora continua en la gestión y desarrollo de nuestros activos."
+        },
+        "innovation": {
+          "title": "Innovación",
+          "description": "Adopción de tecnologías emergentes para crear valor adicional en nuestros proyectos."
+        },
+        "sustainability": {
+          "title": "Sostenibilidad",
+          "description": "Desarrollo responsable que considera el impacto ambiental y social de largo plazo."
+        },
+        "partnership": {
+          "title": "Alianzas Estratégicas",
+          "description": "Construcción de relaciones sólidas con stakeholders clave del ecosistema industrial."
+        },
+        "impact": {
+          "title": "Impacto Regional",
+          "description": "Contribución activa al desarrollo económico y social del norte de Chile."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Quieres conocer más sobre nuestro equipo?",
+      "subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
+      "button": "Agendar Reunión"
+    }
+  },
+  "opportunities": {
+    "title": "Negocios & Oportunidades",
+    "subtitle": "Descubre las oportunidades de inversión en infraestructura estratégica del norte de Chile"
+  },
+  "projections": {
+    "title": "Proyecciones Financieras",
+    "subtitle": "Análisis detallado de retornos y proyecciones de inversión"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Ponte en contacto con nosotros para conocer más sobre nuestras oportunidades de inversión",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Email",
+      "company": "Empresa",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "Mensaje enviado correctamente",
+      "error": "Error al enviar el mensaje"
+    }
+  },
+  "footer": {
+    "description": "Transformando infraestructura en oportunidades de inversión",
+    "contact": "Contacto",
+    "location": "Santiago, Chile",
+    "email": "contacto@inversionesdelnorte.cl",
+    "copyright": "© 2024 Invenor. Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "view": "Ver",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar"
+  }
+}
