@@ -140,16 +140,15 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">
-            Contacto
+          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-3">
+            Información de Contacto
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Conecta con nuestro equipo de expertos en inversiones inmobiliarias. 
-            Estamos aquí para ayudarte a maximizar tu patrimonio.
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+            Nuestro equipo está disponible para responder todas tus consultas sobre inversiones inmobiliarias estratégicas.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -172,7 +171,7 @@ const Contact: React.FC = () => {
                   key={index}
                   href={method.action}
                   whileHover={{ scale: 1.02 }}
-                  className="flex items-center p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-emerald-400 transition-all group"
+                  className="flex items-center p-4 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-emerald-400 transition-all group"
                 >
                   <div className="bg-emerald-500/20 p-3 rounded-lg group-hover:bg-emerald-500/30 transition-colors">
                     <method.icon className="h-6 w-6 text-emerald-400" />
@@ -217,9 +216,9 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+            className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700"
           >
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               {/* Personal Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
