@@ -200,10 +200,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Nuestros <span className="text-emerald-400">Valores</span>
+              {t('about.values.title')}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Los principios que guían cada decisión y definen nuestra cultura corporativa
+              {t('about.values.subtitle')}
             </p>
           </motion.div>
 
@@ -245,10 +245,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              ¿Quieres conocer más sobre nuestro equipo?
+              {t('about.cta.title')}
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.
+              {t('about.cta.subtitle')}
             </p>
             <Link href="/contact">
               <motion.button
@@ -256,7 +256,7 @@ const About: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
               >
-                Agendar Reunión
+                {t('about.cta.button')}
               </motion.button>
             </Link>
           </motion.div>

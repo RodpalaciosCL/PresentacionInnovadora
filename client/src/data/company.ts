@@ -114,21 +114,25 @@ export const investmentOpportunities: ProjectData[] = [
 export const companyApproach = [
   {
     icon: 'Target',
+    key: 'strategic',
     title: 'Identificación Estratégica',
     description: 'Análisis de mercado para identificar activos con alto potencial de crecimiento en sectores clave como Mining, Oil&Gas, y energías renovables.'
   },
   {
     icon: 'Zap',
+    key: 'innovation',
     title: 'Innovación Tecnológica',
     description: 'Integración de tecnologías emergentes: IoT, data centers, desalinizadoras, y sistemas de conectividad avanzada para maximizar el valor de los activos.'
   },
   {
     icon: 'Network',
+    key: 'connectivity',
     title: 'Conectividad Inteligente',
     description: 'Desarrollo de infraestructura de piping, fibra óptica y logística inteligente que conecta sectores estratégicos del norte de Chile.'
   },
   {
     icon: 'TrendingUp',
+    key: 'scalability',
     title: 'Escalabilidad Sostenible',
     description: 'Modelo de crecimiento basado en energías limpias, eficiencia operacional y tecnologías que impulsan la transformación digital del sector industrial.'
   }
