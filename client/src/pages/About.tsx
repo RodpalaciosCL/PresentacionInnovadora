@@ -126,17 +126,13 @@ const About: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Interactive Timeline */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Central connecting line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-400 via-blue-500 to-emerald-400 rounded-full opacity-40"></div>
-            
+          {/* Approach Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {companyApproach.map((approach, index) => {
               const IconComponent = approach.icon === 'Target' ? Target : 
                                    approach.icon === 'Zap' ? Zap :
                                    approach.icon === 'Network' ? Network : TrendingUp;
               
-              const isLeft = index % 2 === 0;
               const colors = [
                 'from-emerald-500 to-emerald-600',
                 'from-blue-500 to-blue-600', 
@@ -147,81 +143,48 @@ const About: React.FC = () => {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: isLeft ? -100 : 100, scale: 0.8 }}
-                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.3, type: "spring", bounce: 0.3 }}
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  className={`relative flex items-center mb-16 ${isLeft ? 'justify-start' : 'justify-end flex-row-reverse'}`}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group relative"
                 >
-                  {/* Content Card */}
-                  <motion.div
-                    whileHover={{ scale: 1.03, y: -5 }}
-                    className={`relative group max-w-lg ${isLeft ? 'mr-12' : 'ml-12'}`}
-                  >
-                    <div className="relative bg-slate-800/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/50 shadow-2xl group-hover:border-emerald-400/50 transition-all duration-500">
-                      {/* Glow effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`}></div>
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-start mb-6">
-                          <div className={`w-14 h-14 bg-gradient-to-br ${colors[index]} rounded-2xl flex items-center justify-center mr-4 shadow-xl transform group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="h-7 w-7 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">{approach.title}</h3>
-                            <div className={`w-12 h-1 bg-gradient-to-r ${colors[index]} rounded-full`}></div>
-                          </div>
+                  <div className="relative bg-slate-800/70 backdrop-blur-sm rounded-3xl p-8 border border-slate-600/50 shadow-2xl group-hover:border-emerald-400/60 transition-all duration-500 overflow-hidden">
+                    {/* Background gradient on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                    
+                    {/* Top accent line */}
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${colors[index]}`}></div>
+                    
+                    <div className="relative z-10">
+                      {/* Icon and Title */}
+                      <div className="flex items-center mb-6">
+                        <div className={`w-16 h-16 bg-gradient-to-br ${colors[index]} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="h-8 w-8 text-white" />
                         </div>
-                        <p className="text-slate-300 leading-relaxed text-lg">{approach.description}</p>
+                        <div className="ml-4">
+                          <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
+                            {approach.title}
+                          </h3>
+                          <div className={`w-16 h-1 bg-gradient-to-r ${colors[index]} rounded-full mt-2`}></div>
+                        </div>
                       </div>
+                      
+                      {/* Description */}
+                      <p className="text-slate-300 leading-relaxed text-base">
+                        {approach.description}
+                      </p>
                     </div>
-                  </motion.div>
-                  
-                  {/* Central Node */}
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.3 + 0.2 }}
-                    whileHover={{ scale: 1.3, rotate: 360 }}
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br ${colors[index]} rounded-full flex items-center justify-center shadow-2xl border-4 border-slate-900 z-10`}
-                  >
-                    <IconComponent className="h-8 w-8 text-white" />
-                  </motion.div>
-                  
-                  {/* Connecting Line */}
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{ duration: 0.8, delay: index * 0.3 + 0.4 }}
-                    className={`absolute top-1/2 w-8 h-1 bg-gradient-to-r ${colors[index]} rounded-full ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'} transform -translate-y-1/2`}
-                  ></motion.div>
+                    
+                    {/* Subtle corner decoration */}
+                    <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                      <IconComponent className="h-12 w-12 text-emerald-400" />
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}
-            
-            {/* Floating particles effect */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-emerald-400 rounded-full opacity-20"
-                  animate={{
-                    y: [-20, -100, -20],
-                    x: [Math.random() * 100, Math.random() * 200, Math.random() * 100],
-                    opacity: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 4 + Math.random() * 2,
-                    repeat: Infinity,
-                    delay: Math.random() * 3,
-                  }}
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                  }}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
