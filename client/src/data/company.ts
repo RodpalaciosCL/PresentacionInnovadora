@@ -106,7 +106,7 @@ export const investmentOpportunities: ProjectData[] = [
     status: 'active',
     investment: 750000,
     roi: 38,
-    description: 'Red de fibra óptica de 1,200 km'
+    description: 'Red de fibra óptica de 1.200 km'
   }
 ];
 
