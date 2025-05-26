@@ -264,7 +264,7 @@ const Home: React.FC = () => {
               { title: "Puchuncaví", description: "Desarrollo inmobiliario premium" },
               { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
               { title: "Data Center", description: "Centro de datos de alta tecnología" },
-              { title: "Puerto Seco", description: "Terminal multimodal" }
+              { title: "Energía Solar", description: "Proyectos de energía renovable" }
             ].map((project, index) => (
               <div
                 key={index}
@@ -297,6 +297,12 @@ const Home: React.FC = () => {
                 ) : project.title === "Data Center" ? (
                   <img
                     src={dataCenterImage}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : project.title === "Energía Solar" ? (
+                  <img
+                    src="https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
