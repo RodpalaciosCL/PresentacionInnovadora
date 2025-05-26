@@ -95,13 +95,13 @@ export default function Layout({
                 />
                 {/* Punto que recorre la línea del ferrocarril siguiendo la forma de la N */}
                 <motion.div
-                  className="absolute w-2 h-2 bg-emerald-400 rounded-full shadow-lg"
+                  className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-sm"
                   animate={{
-                    x: [4, 16, 32, 44],
-                    y: [32, 8, 28, 4]
+                    x: [8, 15, 28, 40],
+                    y: [4, 12, 8, 16]
                   }}
                   transition={{
-                    duration: 5,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "linear",
                     times: [0, 0.33, 0.66, 1]
