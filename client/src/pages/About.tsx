@@ -9,8 +9,11 @@ import { Shield, Users, Target, Lightbulb, Handshake, Globe, Zap, Network, Trend
 import { Link } from "wouter";
 import { FounderCard } from "@/components/ui/FounderCard";
 import { founders, companyApproach } from "@/data/company";
+import { useLanguage } from "@/context/LanguageContext";
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+  
   // Company values
   const companyValues = [
     {
@@ -57,11 +60,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Quiénes <span className="text-emerald-400">Somos</span>
+              {t('about.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Somos un equipo de profesionales con más de 20 años de experiencia 
-              en desarrollo de infraestructura, inversiones y gestión de activos estratégicos.
+              {t('about.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -72,11 +74,9 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 max-w-5xl mx-auto"
           >
-            <h2 className="text-2xl font-bold text-emerald-400 mb-4 text-center">Nuestra Misión</h2>
+            <h2 className="text-2xl font-bold text-emerald-400 mb-4 text-center">{t('about.mission.title')}</h2>
             <p className="text-lg text-slate-300 text-center leading-relaxed">
-              Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, 
-              conectando capital con activos de alto potencial en el norte de Chile para generar valor 
-              compartido entre inversionistas, comunidades y el desarrollo económico regional.
+              {t('about.mission.description')}
             </p>
           </motion.div>
         </div>
@@ -93,11 +93,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Socios <span className="text-emerald-400">Fundadores</span>
+              {t('about.founders.title')}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Líderes con experiencia comprobada en desarrollo de proyectos de infraestructura 
-              y gestión de inversiones en el sector minero y energético.
+              {t('about.founders.subtitle')}
             </p>
           </motion.div>
 
@@ -120,10 +119,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Nuestro <span className="text-emerald-400">Enfoque</span>
+              {t('about.approach.title')}
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Metodología y estrategia de inversión en sectores innovadores y tecnológicos
+              {t('about.approach.subtitle')}
             </p>
           </motion.div>
 
@@ -166,7 +165,7 @@ const About: React.FC = () => {
                         </div>
                         <div className="ml-4">
                           <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
-                            {approach.title}
+                            {t(`about.approach.items.${approach.key}.title`)}
                           </h3>
                           <div className={`w-16 h-1 bg-gradient-to-r ${colors[index]} rounded-full mt-2`}></div>
                         </div>
@@ -174,7 +173,7 @@ const About: React.FC = () => {
                       
                       {/* Description */}
                       <p className="text-slate-300 leading-relaxed text-base">
-                        {approach.description}
+                        {t(`about.approach.items.${approach.key}.description`)}
                       </p>
                     </div>
                     
