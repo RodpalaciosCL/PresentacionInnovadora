@@ -117,16 +117,16 @@ export default function Layout({
             </div>
             
             {/* Botones de acción - Derecha */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-3">
               {/* Search Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setSearchOpen(true)}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+                className="p-2.5 rounded-lg bg-slate-800/70 hover:bg-slate-700 transition-all duration-200 border border-slate-600/50"
                 aria-label="Search"
               >
-                <Search className="h-4 w-4 text-slate-400" />
+                <Search className="h-4 w-4 text-slate-300" />
               </motion.button>
               
               {/* Language Toggle */}
