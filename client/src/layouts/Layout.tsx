@@ -87,11 +87,11 @@ export default function Layout({
               <motion.div 
                 whileHover={{ scale: 1.05 }}
                 animate={{ 
-                  opacity: [1, 0.7, 1],
-                  scale: [1, 1.02, 1]
+                  opacity: [1, 0.3, 1],
+                  scale: [1, 1.1, 1]
                 }}
                 transition={{ 
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
