@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div variants={fadeIn} className="mb-4 md:mb-0">
-            <h3 className="text-white font-bold text-xl">Invenor</h3>
+            <h3 className="text-white font-bold text-xl">Inversiones del Norte</h3>
             <p className="text-sm text-slate-400 mt-1">
               Transformando infraestructura en oportunidades de inversión
             </p>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           className="mt-6 pt-4 border-t border-white/10 text-center"
         >
           <p className="text-xs text-slate-400">
-            © 2024 Invenor. Todos los derechos reservados.
+            © 2024 Inversiones del Norte. Todos los derechos reservados.
           </p>
         </motion.div>
       </div>
