@@ -70,17 +70,10 @@ const Opportunities: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{opportunity.name}</h3>
-                  <div className="text-2xl font-bold text-emerald-400">{opportunity.roi}%</div>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-white mb-4">{opportunity.name}</h3>
                 </div>
-                <p className="text-slate-300 text-sm mb-4">{opportunity.description}</p>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-slate-400">Inversión mín.</span>
-                  <span className="text-emerald-400 font-semibold">
-                    US${(opportunity.investment / 1000)}K
-                  </span>
-                </div>
+                <p className="text-slate-300 text-sm">{opportunity.description}</p>
               </motion.div>
             ))}
           </div>

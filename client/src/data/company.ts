@@ -74,12 +74,12 @@ export const businessMetrics: BusinessMetric[] = [
 export const investmentOpportunities: ProjectData[] = [
   {
     id: 'estaciones',
-    name: '500+ Estaciones',
+    name: '500+ Terrenos',
     category: 'Infraestructura Logística',
     status: 'active',
     investment: 500000,
     roi: 22,
-    description: 'Red de estaciones estratégicas en el norte de Chile'
+    description: 'Red de ubicaciones estratégicas en el norte de Chile'
   },
   {
     id: 'puchuncavi',
@@ -88,7 +88,7 @@ export const investmentOpportunities: ProjectData[] = [
     status: 'development',
     investment: 2000000,
     roi: 67,
-    description: '250 hectáreas para desarrollo industrial'
+    description: '300 hectáreas para desarrollo inmobiliario, industrial, energía y otros. Venta o arriendo'
   },
   {
     id: 'hub-norte',
