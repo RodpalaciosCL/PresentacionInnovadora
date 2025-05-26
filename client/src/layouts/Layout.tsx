@@ -82,42 +82,40 @@ export default function Layout({
         className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700"
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center h-16 relative">
-            {/* Logo y menú centrados */}
-            <div className="flex items-center space-x-8">
-              <Link href="/">
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="cursor-pointer"
-                >
-                  <img 
-                    src={logoImage}
-                    alt="Invenor Logo"
-                    className="h-12 w-auto"
-                  />
-                </motion.div>
-              </Link>
-              
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                {navItems.map((item) => (
-                  <Link key={item.href} href={item.href}>
-                    <motion.span
-                      whileHover={{ y: -2 }}
-                      className={`cursor-pointer transition-colors duration-200 ${
-                        location === item.href 
-                          ? "text-emerald-400 font-semibold" 
-                          : "text-slate-300 hover:text-emerald-400"
-                      }`}
-                    >
-                      {item.label}
-                    </motion.span>
-                  </Link>
-                ))}
-              </div>
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link href="/">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="cursor-pointer"
+              >
+                <img 
+                  src={logoImage}
+                  alt="Invenor Logo"
+                  className="h-12 w-auto"
+                />
+              </motion.div>
+            </Link>
+            
+            {/* Desktop Navigation - Centrado */}
+            <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  <motion.span
+                    whileHover={{ y: -2 }}
+                    className={`cursor-pointer transition-colors duration-200 ${
+                      location === item.href 
+                        ? "text-emerald-400 font-semibold" 
+                        : "text-slate-300 hover:text-emerald-400"
+                    }`}
+                  >
+                    {item.label}
+                  </motion.span>
+                </Link>
+              ))}
             </div>
             
-            {/* Botones de acción */}
+            {/* Botones de acción - Derecha */}
             <div className="hidden md:flex items-center space-x-2">
               {/* Search Button */}
               <motion.button

@@ -6,6 +6,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Users, Target, Lightbulb, Handshake, Globe, Zap, Network, TrendingUp } from "lucide-react";
+import { Link } from "wouter";
 import { FounderCard } from "@/components/ui/FounderCard";
 import { founders, companyApproach } from "@/data/company";
 
@@ -250,13 +251,15 @@ const About: React.FC = () => {
             <p className="text-xl text-slate-300 mb-8">
               Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
-            >
-              Agendar Reunión
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+              >
+                Agendar Reunión
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
