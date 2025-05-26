@@ -1,132 +1,155 @@
 {
-  "nav.home": "Inicio",
-  "nav.about": "Quiénes Somos",
-  "nav.opportunities": "Oportunidades",
-  "nav.projections": "Proyecciones",
-  "nav.contact": "Contacto",
-  "home.hero.title": "Infraestructura que se convierte en rentabilidad",
-  "home.hero.subtitle": "Desarrollamos activos estratégicos en el norte de Chile, transformando infraestructura ferroviaria en oportunidades de inversión sostenibles y rentables.",
-  "home.cta": "Explorar Oportunidades",
-  "home.purpose.title": "Nuestro <span class=\"text-emerald-400\">Propósito</span>",
-  "home.purpose.subtitle": "Conectamos infraestructura estratégica con inversionistas visionarios, creando valor sostenible en el ecosistema económico del norte de Chile.",
-  "home.features.strategic.title": "Activos Estratégicos",
-  "home.features.strategic.description": "Seleccionamos cuidadosamente activos con potencial de crecimiento y valor agregado.",
-  "home.features.profitable.title": "Inversiones Rentables",
-  "home.features.profitable.description": "Retornos atractivos con modelo de negocio probado y escalable.",
-  "home.features.innovative.title": "Tecnología Innovadora",
-  "home.features.innovative.description": "Integración de soluciones tecnológicas para maximizar eficiencia.",
-  "home.stats.title": "En Números",
-  "home.stats.subtitle": "Nuestro track record habla por sí solo",
-  "home.projects.title": "Proyectos Destacados",
-  "home.projects.subtitle": "Descubre nuestros activos estratégicos en desarrollo",
-  "home.projects.show": "Ver Galería de Proyectos",
-  "home.projects.hide": "Ocultar Galería",
-  "home.team.title": "¿Quieres conocer más sobre nuestro equipo?",
-  "home.team.subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
-  "home.team.cta": "Agendar Reunión",
-  "about.hero.title": "Quiénes Somos",
-  "about.hero.subtitle": "Somos un equipo de profesionales con más de 20 años de experiencia en desarrollo de infraestructura, inversiones y gestión de activos estratégicos.",
-  "about.mission.title": "Nuestra Misión",
-  "about.mission.description": "Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, conectando capital con activos de alto potencial en el norte de Chile para generar valor compartido entre inversionistas, comunidades y el desarrollo económico regional.",
-  "about.founders.title": "Nuestro Equipo Fundador",
-  "about.founders.subtitle": "Líderes con experiencia comprobada en desarrollo de infraestructura e inversiones estratégicas",
-  "about.approach.title": "Nuestro Enfoque",
-  "about.approach.subtitle": "Metodología probada para maximizar el valor de cada inversión",
-  "about.approach.items.analysis.title": "Análisis Estratégico",
-  "about.approach.items.analysis.description": "Evaluación integral de activos y oportunidades de mercado con metodologías avanzadas de valoración.",
-  "about.approach.items.execution.title": "Ejecución Eficiente",
-  "about.approach.items.execution.description": "Gestión de proyectos con estándares internacionales y seguimiento continuo de KPIs críticos.",
-  "about.approach.items.innovation.title": "Innovación Tecnológica",
-  "about.approach.items.innovation.description": "Integración de tecnologías emergentes para optimizar operaciones y crear ventajas competitivas.",
-  "about.approach.items.growth.title": "Crecimiento Sostenible",
-  "about.approach.items.growth.description": "Estrategias de escalabilidad que garantizan retornos consistentes y expansión ordenada del portafolio.",
-  "about.values.title": "Nuestros <span class=\"text-emerald-400\">Valores</span>",
-  "about.values.subtitle": "Los principios que guían cada decisión y definen nuestra cultura corporativa",
-  "about.values.items.integrity.title": "Integridad",
-  "about.values.items.integrity.description": "Actuamos con transparencia y honestidad en todas nuestras relaciones comerciales.",
-  "about.values.items.excellence.title": "Excelencia",
-  "about.values.items.excellence.description": "Buscamos la excelencia operacional en cada proyecto que desarrollamos.",
-  "about.values.items.innovation.title": "Innovación",
-  "about.values.items.innovation.description": "Aplicamos soluciones innovadoras para maximizar el valor de los activos.",
-  "about.values.items.commitment.title": "Compromiso",
-  "about.values.items.commitment.description": "Mantenemos un compromiso inquebrantable con nuestros inversionistas y socios.",
-  "about.values.items.collaboration.title": "Colaboración",
-  "about.values.items.collaboration.description": "Trabajamos en equipo para alcanzar objetivos comunes y crear valor compartido.",
-  "about.values.items.sustainability.title": "Sostenibilidad",
-  "about.values.items.sustainability.description": "Desarrollamos proyectos que generan impacto positivo a largo plazo.",
-  "about.cta.title": "¿Quieres conocer más sobre nuestro equipo?",
-  "about.cta.subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
-  "about.cta.button": "Agendar Reunión",
-  "opportunities.hero.title": "Negocios & Oportunidades",
-  "opportunities.hero.subtitle": "Descubre proyectos de inversión con alto potencial de retorno en infraestructura estratégica del norte de Chile.",
-  "opportunities.portfolio.title": "Portafolio de Oportunidades",
-  "opportunities.portfolio.subtitle": "Proyectos seleccionados con alto potencial de retorno",
-  "opportunities.investment.min": "Inversión mín.",
-  "opportunities.cta.title": "¿Listo para explorar estas oportunidades?",
-  "opportunities.cta.subtitle": "Agenda una reunión personalizada para revisar en detalle los proyectos disponibles.",
-  "opportunities.cta.button": "Ver Terrenos",
-  "opportunities.tabs.terrains.label": "Ver Terrenos",
-  "opportunities.tabs.terrains.description": "500+ terrenos estratégicos en el norte de Chile",
-  "opportunities.tabs.puchuncavi.label": "Puchuncaví",
-  "opportunities.tabs.puchuncavi.description": "250 hectáreas para desarrollo industrial",
-  "opportunities.tabs.hub.label": "Hub Norte",
-  "opportunities.tabs.hub.description": "Centro tecnológico para empresas mineras",
-  "opportunities.tabs.fiber.label": "Fibra Oscura",
-  "opportunities.tabs.fiber.description": "1,200 km de red de telecomunicaciones",
-  "projections.title": "Proyecciones Financieras",
-  "projections.subtitle": "Análisis detallado de retornos y proyecciones de inversión",
-  "projections.calculator.title": "Calculadora de Inversión",
-  "projections.calculator.subtitle": "Configura los parámetros y obtén proyecciones en tiempo real",
-  "projections.parameters.title": "Parámetros de Inversión",
-  "projections.parameters.terrains": "Número de Terrenos",
-  "projections.parameters.uf": "Valor UF (CLP)",
-  "projections.parameters.surface": "Superficie (m²)",
-  "projections.parameters.rate": "Tasa VAN (%)",
-  "projections.results.title": "Resultados Financieros",
-  "projections.results.van": "VAN",
-  "projections.results.tir": "TIR",
-  "projections.results.payback": "Payback",
-  "projections.results.monthly.gross": "Ingreso Bruto Mensual",
-  "projections.results.monthly.profit": "Utilidad Invenor",
-  "projections.results.monthly.investor": "Utilidad Inversionista",
-  "projections.results.monthly.net": "Flujo Neto Mensual",
-  "contact.hero.title": "Contacto",
-  "contact.hero.subtitle": "Conecta con nuestro equipo de expertos en inversiones inmobiliarias. Estamos aquí para ayudarte a maximizar tu patrimonio.",
-  "contact.methods.email.title": "Email Corporativo",
-  "contact.methods.email.description": "Respuesta en 24 horas",
-  "contact.methods.phone.title": "Teléfono",
-  "contact.methods.phone.description": "Lun-Vie 9:00-18:00",
-  "contact.methods.office.title": "Oficina Principal",
-  "contact.methods.office.description": "Reuniones presenciales",
-  "contact.form.title": "Envía tu consulta",
-  "contact.form.name": "Nombre completo",
-  "contact.form.email": "Email",
-  "contact.form.phone": "Teléfono",
-  "contact.form.company": "Empresa (opcional)",
-  "contact.form.investment": "Rango de inversión",
-  "contact.form.project": "Proyecto de interés",
-  "contact.form.message": "Mensaje",
-  "contact.form.preferred": "Método de contacto preferido",
-  "contact.form.submit": "Enviar Mensaje",
-  "contact.form.success": "¡Mensaje enviado exitosamente!",
-  "contact.form.success.message": "Nos pondremos en contacto contigo en menos de 24 horas.",
-  "contact.form.success.title": "¡Mensaje enviado!",
-  "contact.form.success.description": "Nos pondremos en contacto contigo en menos de 24 horas.",
-  "contact.form.error.title": "Error al enviar",
-  "contact.form.error.description": "Por favor intenta nuevamente o contáctanos directamente.",
-  "contact.form.sendAnother": "Enviar Otro Mensaje",
-  "footer.description": "Transformando infraestructura en oportunidades de inversión",
-  "footer.contact": "Contacto",
-  "footer.location": "Santiago, Chile",
-  "footer.email": "contacto@invenor.cl",
-  "footer.rights": "Todos los derechos reservados.",
-  "common.loading": "Cargando...",
-  "common.error": "Error",
-  "common.success": "Éxito",
-  "common.cancel": "Cancelar",
-  "common.confirm": "Confirmar",
-  "common.save": "Guardar",
-  "common.edit": "Editar",
-  "common.delete": "Eliminar",
-  "common.close": "Cerrar"
+  "nav": {
+    "home": "Inicio",
+    "about": "Quiénes Somos",
+    "opportunities": "Oportunidades",
+    "projections": "Proyecciones",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "title": "infraestructura que se convierte en rentabilidad",
+      "subtitle": "Desarrollamos activos estratégicos en el norte de Chile que generan valor sostenible para inversionistas y comunidades."
+    },
+    "cta": "Explorar Oportunidades",
+    "metrics": {
+      "managed": "En Activos Gestionados",
+      "roi": "ROI Promedio Anual",
+      "projects": "Proyectos Activos",
+      "growth": "Crecimiento Proyectado"
+    },
+    "features": {
+      "strategic": {
+        "title": "Activos Estratégicos",
+        "description": "Infraestructura clave ubicada en zonas de alto potencial de crecimiento."
+      },
+      "profitable": {
+        "title": "Inversiones Rentables",
+        "description": "Retornos atractivos con modelo de negocio probado y escalable."
+      },
+      "innovative": {
+        "title": "Tecnología Innovadora",
+        "description": "Integración de soluciones tecnológicas para maximizar eficiencia."
+      }
+    },
+    "team": {
+      "title": "¿Quieres conocer más sobre nuestro equipo?",
+      "subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
+      "cta": "Agendar Reunión"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Quiénes Somos",
+      "subtitle": "Somos un equipo de profesionales con más de 20 años de experiencia en desarrollo de infraestructura, inversiones y gestión de activos estratégicos."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, conectando capital con activos de alto potencial en el norte de Chile para generar valor compartido entre inversionistas, comunidades y el desarrollo económico regional."
+    },
+    "founders": {
+      "title": "Socios Fundadores",
+      "subtitle": "Líderes con experiencia comprobada en desarrollo de proyectos de infraestructura y gestión de inversiones en el sector minero y energético."
+    },
+    "approach": {
+      "title": "Nuestro Enfoque",
+      "subtitle": "Metodología y estrategia de inversión en sectores innovadores y tecnológicos",
+      "items": {
+        "strategic": {
+          "title": "Identificación Estratégica",
+          "description": "Análisis de mercado para identificar activos con alto potencial de crecimiento en sectores clave como Mining, Oil&Gas, y energías renovables."
+        },
+        "innovation": {
+          "title": "Innovación Tecnológica",
+          "description": "Integración de tecnologías emergentes: IoT, data centers, desalinizadoras, y sistemas de conectividad avanzada para maximizar el valor de los activos."
+        },
+        "connectivity": {
+          "title": "Conectividad Inteligente",
+          "description": "Desarrollo de infraestructura de piping, fibra óptica y logística inteligente que conecta sectores estratégicos del norte de Chile."
+        },
+        "scalability": {
+          "title": "Escalabilidad Sostenible",
+          "description": "Modelo de crecimiento basado en energías limpias, eficiencia operacional y tecnologías que impulsan la transformación digital del sector industrial."
+        }
+      }
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "subtitle": "Los principios que guían cada decisión y definen nuestra cultura corporativa",
+      "items": {
+        "transparency": {
+          "title": "Transparencia",
+          "description": "Comunicación clara y honesta en todas nuestras operaciones e interacciones con inversionistas."
+        },
+        "excellence": {
+          "title": "Excelencia Operacional",
+          "description": "Búsqueda constante de la mejora continua en la gestión y desarrollo de nuestros activos."
+        },
+        "innovation": {
+          "title": "Innovación",
+          "description": "Adopción de tecnologías emergentes para crear valor adicional en nuestros proyectos."
+        },
+        "sustainability": {
+          "title": "Sostenibilidad",
+          "description": "Desarrollo responsable que considera el impacto ambiental y social de largo plazo."
+        },
+        "partnership": {
+          "title": "Alianzas Estratégicas",
+          "description": "Construcción de relaciones sólidas con stakeholders clave del ecosistema industrial."
+        },
+        "impact": {
+          "title": "Impacto Regional",
+          "description": "Contribución activa al desarrollo económico y social del norte de Chile."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Quieres conocer más sobre nuestro equipo?",
+      "subtitle": "Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.",
+      "button": "Agendar Reunión"
+    }
+  },
+  "opportunities": {
+    "title": "Negocios & Oportunidades",
+    "subtitle": "Descubre las oportunidades de inversión en infraestructura estratégica del norte de Chile"
+  },
+  "projections": {
+    "title": "Proyecciones Financieras",
+    "subtitle": "Análisis detallado de retornos y proyecciones de inversión"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Ponte en contacto con nosotros para conocer más sobre nuestras oportunidades de inversión",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Email",
+      "company": "Empresa",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "Mensaje enviado correctamente",
+      "error": "Error al enviar el mensaje"
+    }
+  },
+  "footer": {
+    "description": "Transformando infraestructura en oportunidades de inversión",
+    "contact": "Contacto",
+    "location": "Santiago, Chile",
+    "email": "contacto@inversionesdelnorte.cl",
+    "copyright": "© 2024 Invenor. Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "view": "Ver",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar"
+  }
 }

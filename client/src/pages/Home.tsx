@@ -8,14 +8,12 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
-import { useTranslation } from 'react-i18next';
 import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Home: React.FC = () => {
-  const { t } = useTranslation();
   const [showImageGallery, setShowImageGallery] = React.useState(false);
 
   return (
@@ -84,12 +82,14 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="text-center">
-                {t('home.hero.title')}
+                infraestructura que se<br />
+                convierte en <span className="text-emerald-400">rentabilidad</span>
               </div>
             </div>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto">
-              {t('home.hero.subtitle')}
+              Desarrollamos activos estratégicos en el norte de Chile, 
+              transformando infraestructura en oportunidades de inversión sostenibles y rentables.
             </p>
             
             {/* Fix 1: CTA único centrado */}
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-10 py-5 rounded-lg transition-colors flex items-center space-x-3 text-xl shadow-2xl shadow-emerald-500/25"
                 >
-                  <span>{t('home.cta')}</span>
+                  <span>Explorar Oportunidades</span>
                   <ChevronRight className="h-6 w-6" />
                 </motion.button>
               </Link>
@@ -136,12 +136,12 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-white mb-6"
-              dangerouslySetInnerHTML={{ __html: t('home.purpose.title') }}
-            />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Nuestro <span className="text-emerald-400">Propósito</span>
+            </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {t('home.purpose.subtitle')}
+              Conectamos infraestructura estratégica con inversionistas visionarios, 
+              creando valor sostenible en el ecosistema económico del norte de Chile.
             </p>
           </motion.div>
 
@@ -149,15 +149,18 @@ const Home: React.FC = () => {
             {[
               {
                 icon: Target,
-                key: "strategic"
+                title: "Visión Estratégica",
+                description: "Identificamos y desarrollamos activos de alto potencial en ubicaciones estratégicas del norte de Chile."
               },
               {
                 icon: TrendingUp,
-                key: "profitable"
+                title: "Rentabilidad Sostenible",
+                description: "Generamos retornos consistentes a través de modelos de negocio probados y diversificados."
               },
               {
                 icon: Building,
-                key: "innovative"
+                title: "Infraestructura Clave",
+                description: "Desarrollamos activos esenciales para el crecimiento económico regional y nacional."
               }
             ].map((item, index) => {
               const Icon = item.icon;
@@ -174,10 +177,10 @@ const Home: React.FC = () => {
                     <Icon className="h-8 w-8 text-emerald-400" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4 text-center">
-                    {t(`home.features.${item.key}.title`)}
+                    {item.title}
                   </h3>
                   <p className="text-slate-300 text-center">
-                    {t(`home.features.${item.key}.description`)}
+                    {item.description}
                   </p>
                 </motion.div>
               );
@@ -197,10 +200,10 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('home.stats.title')}
+              En <span className="text-emerald-400">Números</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {t('home.stats.subtitle')}
+              Nuestro track record habla por sí solo
             </p>
           </motion.div>
 
@@ -254,10 +257,10 @@ const Home: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('home.projects.title')}
+              Proyectos <span className="text-emerald-400">Destacados</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              {t('home.projects.subtitle')}
+              Descubre nuestros activos estratégicos en desarrollo
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -265,7 +268,7 @@ const Home: React.FC = () => {
               onClick={() => setShowImageGallery(!showImageGallery)}
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg transition-colors"
             >
-              {showImageGallery ? t('home.projects.hide') : t('home.projects.show')}
+              {showImageGallery ? 'Ocultar Galería' : 'Ver Galería de Proyectos'}
             </motion.button>
           </motion.div>
 
@@ -338,10 +341,10 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('home.team.title')}
+              ¿Listo para formar parte del futuro?
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              {t('home.team.subtitle')}
+              Descubre cómo nuestros activos estratégicos pueden transformar tu portafolio de inversiones.
             </p>
             <Link href="/contact">
               <motion.button
@@ -349,7 +352,7 @@ const Home: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
               >
-                {t('home.team.cta')}
+                Contacta con Nosotros
               </motion.button>
             </Link>
           </motion.div>

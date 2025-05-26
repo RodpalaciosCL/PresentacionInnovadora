@@ -1,132 +1,155 @@
 {
-  "nav.home": "Home",
-  "nav.about": "About Us",
-  "nav.opportunities": "Opportunities",
-  "nav.projections": "Projections",
-  "nav.contact": "Contact",
-  "home.hero.title": "Infrastructure that becomes profitability",
-  "home.hero.subtitle": "We develop strategic assets in northern Chile, transforming railway infrastructure into sustainable and profitable investment opportunities.",
-  "home.cta": "Explore Opportunities",
-  "home.purpose.title": "Our <span class=\"text-emerald-400\">Purpose</span>",
-  "home.purpose.subtitle": "We connect strategic infrastructure with visionary investors, creating sustainable value in the economic ecosystem of northern Chile.",
-  "home.features.strategic.title": "Strategic Assets",
-  "home.features.strategic.description": "We carefully select assets with growth potential and added value.",
-  "home.features.profitable.title": "Profitable Investments",
-  "home.features.profitable.description": "Attractive returns with proven and scalable business model.",
-  "home.features.innovative.title": "Innovative Technology",
-  "home.features.innovative.description": "Integration of technological solutions to maximize efficiency.",
-  "home.stats.title": "In Numbers",
-  "home.stats.subtitle": "Our track record speaks for itself",
-  "home.projects.title": "Featured Projects",
-  "home.projects.subtitle": "Discover our strategic assets in development",
-  "home.projects.show": "View Project Gallery",
-  "home.projects.hide": "Hide Gallery",
-  "home.team.title": "Want to know more about our team?",
-  "home.team.subtitle": "Schedule a meeting to learn about our experience and business vision in detail.",
-  "home.team.cta": "Schedule Meeting",
-  "about.hero.title": "About Us",
-  "about.hero.subtitle": "We are a team of professionals with more than 20 years of experience in infrastructure development, investments and strategic asset management.",
-  "about.mission.title": "Our Mission",
-  "about.mission.description": "Transform strategic infrastructure into profitable and sustainable investment opportunities, connecting capital with high-potential assets in northern Chile to generate shared value between investors, communities and regional economic development.",
-  "about.founders.title": "Our Founding Team",
-  "about.founders.subtitle": "Leaders with proven experience in infrastructure development and strategic investments",
-  "about.approach.title": "Our Approach",
-  "about.approach.subtitle": "Proven methodology to maximize the value of each investment",
-  "about.approach.items.analysis.title": "Strategic Analysis",
-  "about.approach.items.analysis.description": "Comprehensive evaluation of assets and market opportunities with advanced valuation methodologies.",
-  "about.approach.items.execution.title": "Efficient Execution",
-  "about.approach.items.execution.description": "Project management with international standards and continuous monitoring of critical KPIs.",
-  "about.approach.items.innovation.title": "Technological Innovation",
-  "about.approach.items.innovation.description": "Integration of emerging technologies to optimize operations and create competitive advantages.",
-  "about.approach.items.growth.title": "Sustainable Growth",
-  "about.approach.items.growth.description": "Scalability strategies that guarantee consistent returns and orderly portfolio expansion.",
-  "about.values.title": "Our <span class=\"text-emerald-400\">Values</span>",
-  "about.values.subtitle": "The principles that guide every decision and define our corporate culture",
-  "about.values.items.integrity.title": "Integrity",
-  "about.values.items.integrity.description": "We act with transparency and honesty in all our business relationships.",
-  "about.values.items.excellence.title": "Excellence",
-  "about.values.items.excellence.description": "We seek operational excellence in every project we develop.",
-  "about.values.items.innovation.title": "Innovation",
-  "about.values.items.innovation.description": "We apply innovative solutions to maximize asset value.",
-  "about.values.items.commitment.title": "Commitment",
-  "about.values.items.commitment.description": "We maintain an unwavering commitment to our investors and partners.",
-  "about.values.items.collaboration.title": "Collaboration",
-  "about.values.items.collaboration.description": "We work as a team to achieve common goals and create shared value.",
-  "about.values.items.sustainability.title": "Sustainability",
-  "about.values.items.sustainability.description": "We develop projects that generate positive long-term impact.",
-  "about.cta.title": "Want to know more about our team?",
-  "about.cta.subtitle": "Schedule a meeting to learn about our experience and business vision in detail.",
-  "about.cta.button": "Schedule Meeting",
-  "opportunities.hero.title": "Business & Opportunities",
-  "opportunities.hero.subtitle": "Discover investment projects with high return potential in strategic infrastructure of northern Chile.",
-  "opportunities.portfolio.title": "Opportunities Portfolio",
-  "opportunities.portfolio.subtitle": "Selected projects with high return potential",
-  "opportunities.investment.min": "Min. investment",
-  "opportunities.cta.title": "Ready to explore these opportunities?",
-  "opportunities.cta.subtitle": "Schedule a personalized meeting to review available projects in detail.",
-  "opportunities.cta.button": "View Land",
-  "opportunities.tabs.terrains.label": "View Land",
-  "opportunities.tabs.terrains.description": "500+ strategic land plots in northern Chile",
-  "opportunities.tabs.puchuncavi.label": "Puchuncaví",
-  "opportunities.tabs.puchuncavi.description": "250 hectares for industrial development",
-  "opportunities.tabs.hub.label": "Northern Hub",
-  "opportunities.tabs.hub.description": "Technology center for mining companies",
-  "opportunities.tabs.fiber.label": "Dark Fiber",
-  "opportunities.tabs.fiber.description": "1,200 km telecommunications network",
-  "projections.title": "Financial Projections",
-  "projections.subtitle": "Detailed analysis of returns and investment projections",
-  "projections.calculator.title": "Investment Calculator",
-  "projections.calculator.subtitle": "Configure parameters and get real-time projections",
-  "projections.parameters.title": "Investment Parameters",
-  "projections.parameters.terrains": "Number of Terrains",
-  "projections.parameters.uf": "UF Value (CLP)",
-  "projections.parameters.surface": "Surface (m²)",
-  "projections.parameters.rate": "NPV Rate (%)",
-  "projections.results.title": "Financial Results",
-  "projections.results.van": "NPV",
-  "projections.results.tir": "IRR",
-  "projections.results.payback": "Payback",
-  "projections.results.monthly.gross": "Monthly Gross Income",
-  "projections.results.monthly.profit": "Invenor Profit",
-  "projections.results.monthly.investor": "Investor Profit",
-  "projections.results.monthly.net": "Monthly Net Flow",
-  "contact.hero.title": "Contact",
-  "contact.hero.subtitle": "Connect with our team of real estate investment experts. We're here to help you maximize your wealth.",
-  "contact.methods.email.title": "Corporate Email",
-  "contact.methods.email.description": "Response within 24 hours",
-  "contact.methods.phone.title": "Phone",
-  "contact.methods.phone.description": "Mon-Fri 9:00-18:00",
-  "contact.methods.office.title": "Main Office",
-  "contact.methods.office.description": "In-person meetings",
-  "contact.form.title": "Send your inquiry",
-  "contact.form.name": "Full name",
-  "contact.form.email": "Email",
-  "contact.form.phone": "Phone",
-  "contact.form.company": "Company (optional)",
-  "contact.form.investment": "Investment range",
-  "contact.form.project": "Project of interest",
-  "contact.form.message": "Message",
-  "contact.form.preferred": "Preferred contact method",
-  "contact.form.submit": "Send Message",
-  "contact.form.success": "Message sent successfully!",
-  "contact.form.success.message": "We will contact you within 24 hours.",
-  "contact.form.success.title": "Message sent!",
-  "contact.form.success.description": "We will contact you within 24 hours.",
-  "contact.form.error.title": "Error sending",
-  "contact.form.error.description": "Please try again or contact us directly.",
-  "contact.form.sendAnother": "Send Another Message",
-  "footer.description": "Transforming infrastructure into investment opportunities",
-  "footer.contact": "Contact",
-  "footer.location": "Santiago, Chile",
-  "footer.email": "contacto@invenor.cl",
-  "footer.rights": "All rights reserved.",
-  "common.loading": "Loading...",
-  "common.error": "Error",
-  "common.success": "Success",
-  "common.cancel": "Cancel",
-  "common.confirm": "Confirm",
-  "common.save": "Save",
-  "common.edit": "Edit",
-  "common.delete": "Delete",
-  "common.close": "Close"
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "opportunities": "Opportunities",
+    "projections": "Projections",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "infrastructure that becomes profitability",
+      "subtitle": "We develop strategic assets in northern Chile that generate sustainable value for investors and communities."
+    },
+    "cta": "Explore Opportunities",
+    "metrics": {
+      "managed": "In Managed Assets",
+      "roi": "Average Annual ROI",
+      "projects": "Active Projects",
+      "growth": "Projected Growth"
+    },
+    "features": {
+      "strategic": {
+        "title": "Strategic Assets",
+        "description": "Key infrastructure located in high-growth potential areas."
+      },
+      "profitable": {
+        "title": "Profitable Investments",
+        "description": "Attractive returns with proven and scalable business model."
+      },
+      "innovative": {
+        "title": "Innovative Technology",
+        "description": "Integration of technological solutions to maximize efficiency."
+      }
+    },
+    "team": {
+      "title": "Want to learn more about our team?",
+      "subtitle": "Schedule a meeting to learn in detail about our experience and business vision.",
+      "cta": "Schedule Meeting"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "We are a team of professionals with over 20 years of experience in infrastructure development, investments and strategic asset management."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Transform strategic infrastructure into profitable and sustainable investment opportunities, connecting capital with high-potential assets in northern Chile to generate shared value between investors, communities and regional economic development."
+    },
+    "founders": {
+      "title": "Founding Partners",
+      "subtitle": "Leaders with proven experience in infrastructure project development and investment management in the mining and energy sector."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "subtitle": "Investment methodology and strategy in innovative and technological sectors",
+      "items": {
+        "strategic": {
+          "title": "Strategic Identification",
+          "description": "Market analysis to identify assets with high growth potential in key sectors such as Mining, Oil&Gas, and renewable energy."
+        },
+        "innovation": {
+          "title": "Technological Innovation",
+          "description": "Integration of emerging technologies: IoT, data centers, desalination plants, and advanced connectivity systems to maximize asset value."
+        },
+        "connectivity": {
+          "title": "Smart Connectivity",
+          "description": "Development of piping, fiber optic and smart logistics infrastructure that connects strategic sectors in northern Chile."
+        },
+        "scalability": {
+          "title": "Sustainable Scalability",
+          "description": "Growth model based on clean energy, operational efficiency and technologies that drive digital transformation of the industrial sector."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide every decision and define our corporate culture",
+      "items": {
+        "transparency": {
+          "title": "Transparency",
+          "description": "Clear and honest communication in all our operations and interactions with investors."
+        },
+        "excellence": {
+          "title": "Operational Excellence",
+          "description": "Constant pursuit of continuous improvement in the management and development of our assets."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Adoption of emerging technologies to create additional value in our projects."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "description": "Responsible development that considers the long-term environmental and social impact."
+        },
+        "partnership": {
+          "title": "Strategic Partnerships",
+          "description": "Building strong relationships with key stakeholders in the industrial ecosystem."
+        },
+        "impact": {
+          "title": "Regional Impact",
+          "description": "Active contribution to the economic and social development of northern Chile."
+        }
+      }
+    },
+    "cta": {
+      "title": "Want to learn more about our team?",
+      "subtitle": "Schedule a meeting to learn in detail about our experience and business vision.",
+      "button": "Schedule Meeting"
+    }
+  },
+  "opportunities": {
+    "title": "Business & Opportunities",
+    "subtitle": "Discover investment opportunities in strategic infrastructure in northern Chile"
+  },
+  "projections": {
+    "title": "Financial Projections",
+    "subtitle": "Detailed analysis of returns and investment projections"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us to learn more about our investment opportunities",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully",
+      "error": "Error sending message"
+    }
+  },
+  "footer": {
+    "description": "Transforming infrastructure into investment opportunities",
+    "contact": "Contact",
+    "location": "Santiago, Chile",
+    "email": "contacto@inversionesdelnorte.cl",
+    "copyright": "© 2024 Invenor. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close"
+  }
 }

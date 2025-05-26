@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useTranslation } from 'react-i18next';
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Calendar, CheckCircle, Linkedin } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 import { useToast } from "@/hooks/use-toast";
@@ -16,20 +15,19 @@ import { apiRequest } from "@/lib/queryClient";
 
 // Contact form validation schema
 const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email"),
-  phone: z.string().min(8, "Invalid phone"),
+  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
+  email: z.string().email("Email inválido"),
+  phone: z.string().min(8, "Teléfono inválido"),
   company: z.string().optional(),
-  investmentRange: z.string().min(1, "Select an investment range"),
-  projectInterest: z.string().min(1, "Select a project of interest"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  investmentRange: z.string().min(1, "Selecciona un rango de inversión"),
+  projectInterest: z.string().min(1, "Selecciona un proyecto de interés"),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
   preferredContact: z.enum(["email", "phone", "both"])
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact: React.FC = () => {
-  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -57,13 +55,13 @@ const Contact: React.FC = () => {
       setIsSubmitted(true);
       form.reset();
       toast({
-        title: t('contact.form.success.title'),
-        description: t('contact.form.success.description'),
+        title: "¡Mensaje enviado!",
+        description: "Nos pondremos en contacto contigo en menos de 24 horas.",
       });
     } catch (error) {
       toast({
-        title: t('contact.form.error.title'),
-        description: t('contact.form.error.description'),
+        title: "Error al enviar",
+        description: "Por favor intenta nuevamente o contáctanos directamente.",
         variant: "destructive"
       });
     }
@@ -72,23 +70,23 @@ const Contact: React.FC = () => {
   const contactMethods = [
     {
       icon: Mail,
-      titleKey: "email",
+      title: "Email Corporativo",
       value: COMPANY_INFO.email,
-      descriptionKey: "email",
+      description: "Respuesta en 24 horas",
       action: `mailto:${COMPANY_INFO.email}`
     },
     {
       icon: Phone,
-      titleKey: "phone",
+      title: "Teléfono",
       value: "+56 2 2XXX XXXX",
-      descriptionKey: "phone", 
+      description: "Lun-Vie 9:00-18:00",
       action: "tel:+56222XXXXXX"
     },
     {
       icon: MapPin,
-      titleKey: "office",
+      title: "Oficina Principal",
       value: "Santiago, Chile",
-      descriptionKey: "office",
+      description: "Reuniones presenciales",
       action: "#"
     }
   ];
@@ -115,9 +113,9 @@ const Contact: React.FC = () => {
           className="text-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-12 border border-slate-700"
         >
           <CheckCircle className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">{t('contact.form.success')}</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h2>
           <p className="text-slate-300 mb-8">
-            {t('contact.form.success.message')}
+            Gracias por tu interés en Invenor. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -125,7 +123,7 @@ const Contact: React.FC = () => {
             onClick={() => setIsSubmitted(false)}
             className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
-            {t('contact.form.sendAnother')}
+            Enviar Otro Mensaje
           </motion.button>
         </motion.div>
       </div>
@@ -143,10 +141,11 @@ const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">
-            {t('contact.hero.title')}
+            Contacto
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            {t('contact.hero.subtitle')}
+            Conecta con nuestro equipo de expertos en inversiones inmobiliarias. 
+            Estamos aquí para ayudarte a maximizar tu patrimonio.
           </p>
         </motion.div>
 
@@ -179,9 +178,9 @@ const Contact: React.FC = () => {
                     <method.icon className="h-6 w-6 text-emerald-400" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-white font-semibold">{t(`contact.methods.${method.titleKey}.title`)}</h3>
+                    <h3 className="text-white font-semibold">{method.title}</h3>
                     <p className="text-emerald-400">{method.value}</p>
-                    <p className="text-slate-400 text-sm">{t(`contact.methods.${method.descriptionKey}.description`)}</p>
+                    <p className="text-slate-400 text-sm">{method.description}</p>
                   </div>
                 </motion.a>
               ))}
@@ -225,7 +224,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    {t('contact.form.name')} *
+                    Nombre Completo *
                   </label>
                   <input
                     {...form.register("name")}
@@ -240,7 +239,7 @@ const Contact: React.FC = () => {
                 
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    {t('contact.form.email')} *
+                    Email *
                   </label>
                   <input
                     {...form.register("email")}
@@ -257,7 +256,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    {t('contact.form.phone')} *
+                    Teléfono *
                   </label>
                   <input
                     {...form.register("phone")}
@@ -272,7 +271,7 @@ const Contact: React.FC = () => {
                 
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    {t('contact.form.company')}
+                    Empresa
                   </label>
                   <input
                     {...form.register("company")}
@@ -287,7 +286,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
-                    {t('contact.form.project')} *
+                    Proyecto de Interés *
                   </label>
                   <select
                     {...form.register("projectInterest")}
@@ -308,7 +307,7 @@ const Contact: React.FC = () => {
               {/* Message */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-2">
-                  {t('contact.form.message')} *
+                  Mensaje *
                 </label>
                 <textarea
                   {...form.register("message")}
@@ -324,7 +323,7 @@ const Contact: React.FC = () => {
               {/* Contact Preference */}
               <div>
                 <label className="block text-slate-300 text-sm font-medium mb-3">
-                  {t('contact.form.preferred')}
+                  Método de Contacto Preferido
                 </label>
                 <div className="flex flex-wrap gap-4">
                   <label className="flex items-center">
@@ -370,7 +369,7 @@ const Contact: React.FC = () => {
                 ) : (
                   <>
                     <Send className="h-5 w-5" />
-                    <span>{t('contact.form.submit')}</span>
+                    <span>Enviar Consulta</span>
                   </>
                 )}
               </motion.button>

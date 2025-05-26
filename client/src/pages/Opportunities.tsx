@@ -6,39 +6,37 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3 } from "lucide-react";
-import { useTranslation } from 'react-i18next';
 import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
 import { investmentOpportunities } from "@/data/company";
 
 const Opportunities: React.FC = () => {
-  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("estaciones");
 
   // Tab configuration
   const tabs = [
     { 
       id: "estaciones", 
-      label: t('opportunities.tabs.terrains.label'), 
+      label: "Ver Terrenos", 
       icon: MapPin,
-      description: t('opportunities.tabs.terrains.description')
+      description: "500+ terrenos estratégicos en el norte de Chile"
     },
     { 
       id: "puchuncavi", 
-      label: t('opportunities.tabs.puchuncavi.label'), 
+      label: "Puchuncaví", 
       icon: Factory,
-      description: t('opportunities.tabs.puchuncavi.description')
+      description: "250 hectáreas para desarrollo industrial"
     },
     { 
       id: "hub-norte", 
-      label: t('opportunities.tabs.hub.label'), 
+      label: "Hub Norte", 
       icon: Building,
-      description: t('opportunities.tabs.hub.description')
+      description: "Centro tecnológico para empresas mineras"
     },
     { 
       id: "fibra-oscura", 
-      label: t('opportunities.tabs.fiber.label'), 
+      label: "Fibra Oscura", 
       icon: Network,
-      description: t('opportunities.tabs.fiber.description')
+      description: "1,200 km de red de telecomunicaciones"
     }
   ];
 
@@ -54,10 +52,11 @@ const Opportunities: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {t('opportunities.hero.title')}
+              Negocios & <span className="text-emerald-400">Oportunidades</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              {t('opportunities.hero.subtitle')}
+              Portafolio diversificado de activos estratégicos con potencial de crecimiento 
+              sostenible y retornos atractivos para inversionistas
             </p>
           </motion.div>
 
@@ -77,7 +76,7 @@ const Opportunities: React.FC = () => {
                 </div>
                 <p className="text-slate-300 text-sm mb-4">{opportunity.description}</p>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-slate-400">{t('opportunities.investment.min')}</span>
+                  <span className="text-slate-400">Inversión mín.</span>
                   <span className="text-emerald-400 font-semibold">
                     US${(opportunity.investment / 1000)}K
                   </span>

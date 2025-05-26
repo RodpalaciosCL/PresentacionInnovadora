@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from "@/context/LanguageContext";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { Linkedin, Twitter, Mail, MapPin, Phone, AtSign } from "lucide-react";
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   const { ref, isIntersecting } = useIntersectionObserver({ triggerOnce: true });
 
   return (
@@ -23,20 +23,20 @@ const Footer: React.FC = () => {
           <motion.div variants={fadeIn} className="mb-4 md:mb-0">
             <h3 className="text-white font-bold text-xl">Invenor</h3>
             <p className="text-sm text-slate-400 mt-1">
-              {t('footer.description')}
+              Transformando infraestructura en oportunidades de inversión
             </p>
           </motion.div>
           
           <motion.div variants={fadeIn}>
-            <h4 className="text-white font-medium text-lg mb-2">{t('footer.contact')}</h4>
+            <h4 className="text-white font-medium text-lg mb-2">Contacto</h4>
             <div className="space-y-1 text-sm">
               <div className="flex items-center">
                 <MapPin className="mr-2 h-4 w-4" />
-                <span>{t('footer.location')}</span>
+                <span>Santiago, Chile</span>
               </div>
               <div className="flex items-center">
                 <AtSign className="mr-2 h-4 w-4" />
-                <span>{t('footer.email')}</span>
+                <span>contacto@inversionesdelnorte.cl</span>
               </div>
             </div>
           </motion.div>
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           className="mt-6 pt-4 border-t border-white/10 text-center"
         >
           <p className="text-xs text-slate-400">
-            © {new Date().getFullYear()} Invenor. {t('footer.rights')}
+            © 2024 Invenor. Todos los derechos reservados.
           </p>
         </motion.div>
       </div>

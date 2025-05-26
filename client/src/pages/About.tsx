@@ -18,27 +18,33 @@ const About: React.FC = () => {
   const companyValues = [
     {
       icon: Shield,
-      key: "integrity"
+      title: "Integridad",
+      description: "Actuamos con transparencia y honestidad en todas nuestras relaciones comerciales."
     },
     {
       icon: Target,
-      key: "excellence"
+      title: "Excelencia",
+      description: "Buscamos la excelencia operacional en cada proyecto que desarrollamos."
     },
     {
       icon: Lightbulb,
-      key: "innovation"
+      title: "Innovación",
+      description: "Aplicamos soluciones innovadoras para maximizar el valor de los activos."
     },
     {
       icon: Handshake,
-      key: "commitment"
+      title: "Compromiso",
+      description: "Mantenemos un compromiso inquebrantable con nuestros inversionistas y socios."
     },
     {
       icon: Users,
-      key: "collaboration"
+      title: "Colaboración",
+      description: "Trabajamos en equipo para alcanzar objetivos comunes y crear valor compartido."
     },
     {
       icon: Globe,
-      key: "sustainability"
+      title: "Sostenibilidad",
+      description: "Desarrollamos proyectos que generan impacto positivo a largo plazo."
     }
   ];
 
@@ -193,10 +199,9 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-white mb-6"
-              dangerouslySetInnerHTML={{ __html: t('about.values.title') }}
-            />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              {t('about.values.title')}
+            </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {t('about.values.subtitle')}
             </p>
@@ -218,10 +223,10 @@ const About: React.FC = () => {
                     <Icon className="h-8 w-8 text-emerald-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4 text-center">
-                    {t(`about.values.items.${value.key}.title`)}
+                    {value.title}
                   </h3>
                   <p className="text-slate-300 text-center leading-relaxed">
-                    {t(`about.values.items.${value.key}.description`)}
+                    {value.description}
                   </p>
                 </motion.div>
               );
