@@ -7,6 +7,8 @@ import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Search, Menu, X } from "lucide-react";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { useTranslation } from 'react-i18next';
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
@@ -25,16 +27,17 @@ export default function Layout({
   title = "Invenor | Inversiones Estratégicas en el Norte de Chile",
   description = "Desarrollamos activos estratégicos en el norte de Chile, transformando infraestructura en oportunidades de inversión sostenibles y rentables."
 }: LayoutProps) {
+  const { t } = useTranslation();
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
-    { label: "Inicio", href: "/" },
-    { label: "Nosotros", href: "/about" },
-    { label: "Oportunidades", href: "/opportunities" },
-    { label: "Proyecciones", href: "/projections" },
-    { label: "Contacto", href: "/contact" }
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.opportunities"), href: "/opportunities" },
+    { label: t("nav.projections"), href: "/projections" },
+    { label: t("nav.contact"), href: "/contact" }
   ];
 
   // Cerrar menú mobile al cambiar de ruta
@@ -125,6 +128,9 @@ export default function Layout({
               >
                 <Search className="h-4 w-4 text-slate-300" />
               </motion.button>
+              
+              {/* Language Toggle */}
+              <LanguageToggle />
             </div>
             
             {/* Mobile menu button */}
@@ -138,6 +144,8 @@ export default function Layout({
               >
                 <Search className="h-4 w-4 text-slate-400" />
               </motion.button>
+              
+              <LanguageToggle />
               
               <motion.button
                 whileHover={{ scale: 1.1 }}

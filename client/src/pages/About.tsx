@@ -9,11 +9,8 @@ import { Shield, Users, Target, Lightbulb, Handshake, Globe, Zap, Network, Trend
 import { Link } from "wouter";
 import { FounderCard } from "@/components/ui/FounderCard";
 import { founders, companyApproach } from "@/data/company";
-import { useLanguage } from "@/context/LanguageContext";
 
 const About: React.FC = () => {
-  const { t } = useLanguage();
-  
   // Company values
   const companyValues = [
     {
@@ -60,10 +57,11 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {t('about.hero.title')}
+              Quiénes <span className="text-emerald-400">Somos</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              {t('about.hero.subtitle')}
+              Somos un equipo de profesionales con más de 20 años de experiencia 
+              en desarrollo de infraestructura, inversiones y gestión de activos estratégicos.
             </p>
           </motion.div>
 
@@ -74,9 +72,11 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 max-w-5xl mx-auto"
           >
-            <h2 className="text-2xl font-bold text-emerald-400 mb-4 text-center">{t('about.mission.title')}</h2>
+            <h2 className="text-2xl font-bold text-emerald-400 mb-4 text-center">Nuestra Misión</h2>
             <p className="text-lg text-slate-300 text-center leading-relaxed">
-              {t('about.mission.description')}
+              Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, 
+              conectando capital con activos de alto potencial en el norte de Chile para generar valor 
+              compartido entre inversionistas, comunidades y el desarrollo económico regional.
             </p>
           </motion.div>
         </div>
@@ -93,10 +93,11 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('about.founders.title')}
+              Socios <span className="text-emerald-400">Fundadores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {t('about.founders.subtitle')}
+              Líderes con experiencia comprobada en desarrollo de proyectos de infraestructura 
+              y gestión de inversiones en el sector minero y energético.
             </p>
           </motion.div>
 
@@ -119,10 +120,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('about.approach.title')}
+              Nuestro <span className="text-emerald-400">Enfoque</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {t('about.approach.subtitle')}
+              Metodología y estrategia de inversión en sectores innovadores y tecnológicos
             </p>
           </motion.div>
 
@@ -165,7 +166,7 @@ const About: React.FC = () => {
                         </div>
                         <div className="ml-4">
                           <h3 className="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
-                            {t(`about.approach.items.${approach.key}.title`)}
+                            {approach.title}
                           </h3>
                           <div className={`w-16 h-1 bg-gradient-to-r ${colors[index]} rounded-full mt-2`}></div>
                         </div>
@@ -173,7 +174,7 @@ const About: React.FC = () => {
                       
                       {/* Description */}
                       <p className="text-slate-300 leading-relaxed text-base">
-                        {t(`about.approach.items.${approach.key}.description`)}
+                        {approach.description}
                       </p>
                     </div>
                     
@@ -200,10 +201,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t('about.values.title')}
+              Nuestros <span className="text-emerald-400">Valores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              {t('about.values.subtitle')}
+              Los principios que guían cada decisión y definen nuestra cultura corporativa
             </p>
           </motion.div>
 
@@ -245,10 +246,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('about.cta.title')}
+              ¿Quieres conocer más sobre nuestro equipo?
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              {t('about.cta.subtitle')}
+              Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.
             </p>
             <Link href="/contact">
               <motion.button
@@ -256,7 +257,7 @@ const About: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
               >
-                {t('about.cta.button')}
+                Agendar Reunión
               </motion.button>
             </Link>
           </motion.div>
