@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Building, TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
+import hubNorteProjectImage from "@assets/Captura de pantalla 2025-05-26 a la(s) 15.46.12.png";
 
 const OpportunitiesClean: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
@@ -64,32 +65,81 @@ const OpportunitiesClean: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* Investment Opportunities Grid */}
       <section className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
-            >
-              <img
-                src="https://media.licdn.com/dms/image/v2/C4E12AQHTZ7pyTmCfEw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1541423067327?e=2147483647&v=beta&t=9abkfOQ8EpfquDBzmeLUFCXCEUxTEm2GtpvaBMOOEnw"
-                alt="Hub Norte"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">Hub Norte</h3>
-                <p className="text-slate-300 text-sm mb-4">Centro de Innovación Minera</p>
-                <button
-                  onClick={() => setSelectedProject("Hub Norte")}
-                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Ver Detalle
-                </button>
-              </div>
-            </motion.div>
+            {[
+              { 
+                title: "Hub Norte", 
+                description: "Centro de Innovación Minera",
+                image: hubNorteProjectImage
+              },
+              { 
+                title: "Terrenos disponibles", 
+                description: "Lotes industriales estratégicos",
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Centro Logístico Norte", 
+                description: "Hub de distribución regional",
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Parque Tecnológico", 
+                description: "Ecosistema de innovación",
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Terminal Portuario", 
+                description: "Conexión marítima estratégica",
+                image: "https://images.unsplash.com/photo-1494003284902-647fb9498ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Zona Franca", 
+                description: "Beneficios tributarios especiales",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Planta Solar", 
+                description: "Energía renovable a gran escala",
+                image: "https://images.unsplash.com/photo-1613391277941-0e2851b5730f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Complejo Habitacional", 
+                description: "Viviendas para trabajadores",
+                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              },
+              { 
+                title: "Centro de Datos", 
+                description: "Infraestructura digital avanzada",
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              }
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <p className="text-slate-300 text-sm mb-4">{project.description}</p>
+                  <button
+                    onClick={() => setSelectedProject(project.title)}
+                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+                  >
+                    Ver Detalle
+                  </button>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
