@@ -260,12 +260,8 @@ const Home: React.FC = () => {
               { title: "Zona Franca", description: "Complejo comercial internacional" },
               { title: "Puerto Seco", description: "Terminal multimodal" }
             ].map((project, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-slate-700/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
               >
                 <LazyImage
@@ -281,7 +277,7 @@ const Home: React.FC = () => {
                     {project.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
