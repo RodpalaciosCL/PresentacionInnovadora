@@ -23,7 +23,7 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Invenor | Inversiones Estratégicas en el Norte de Chile",
+  title = "Inversiones del Norte | Inversiones Estratégicas en el Norte de Chile",
   description = "Desarrollamos activos estratégicos en el norte de Chile, transformando infraestructura en oportunidades de inversión sostenibles y rentables."
 }: LayoutProps) {
   const [location] = useLocation();
@@ -90,7 +90,7 @@ export default function Layout({
               >
                 <img 
                   src={logoImage}
-                  alt="Invenor Logo"
+                  alt="Inversiones del Norte Logo"
                   className="h-12 w-auto"
                 />
               </motion.div>

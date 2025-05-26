@@ -40,9 +40,9 @@ export const BREAKPOINTS = {
 } as const;
 
 export const COMPANY_INFO = {
-  name: 'Invenor',
+  name: 'Inversiones del Norte',
   tagline: 'infraestructura que se convierte en rentabilidad',
-  email: 'contacto@inversionesdelnorte.cl',
+  email: 'contacto@invenor.group',
   phone: '+56 2 2XXX XXXX',
   address: 'Santiago, Chile',
 } as const;

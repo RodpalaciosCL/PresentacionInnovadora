@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
           <CheckCircle className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h2>
           <p className="text-slate-300 mb-8">
-            Gracias por tu interés en Invenor. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
+            Gracias por tu interés en Inversiones del Norte. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
