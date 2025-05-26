@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
-import logoInvenor from "@assets/Invenor (Instagram Post (45)).png";
+import logoInvenor from "@assets/Invenor (Instagram Post (45)) (4).png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 import dataCenterImage from "@assets/image_1748283427285.png";
 import { businessMetrics } from "@/data/company";

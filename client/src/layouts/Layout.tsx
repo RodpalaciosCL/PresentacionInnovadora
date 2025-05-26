@@ -13,7 +13,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ChatWidget } from "@/components/ui/ChatWidget";
-import logoImage from "@assets/Invenor (Instagram Post (45)) (4).png";
+import logoImage from "@assets/N - LOGO.png";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -91,7 +91,7 @@ export default function Layout({
                 <img 
                   src={logoImage}
                   alt="Invenor Logo"
-                  className="h-10 w-auto"
+                  className="h-12 w-auto"
                 />
                 {/* Punto que recorre horizontalmente el medio del logo */}
                 <motion.div
