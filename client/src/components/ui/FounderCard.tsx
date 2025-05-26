@@ -9,8 +9,8 @@ import { Linkedin, CheckCircle } from "lucide-react";
 import { LazyImage } from "./LazyImage";
 import { Skeleton } from "./skeleton";
 import type { Founder } from "@/data/company";
-import robertoPhoto from "@assets/roberto.jpeg";
-import rodrigoPhoto from "@assets/Rodrigo_Palacios_Foto.jpg";
+import robertoPhoto from "../../assets/roberto.jpeg";
+import rodrigoPhoto from "../../assets/Rodrigo_Palacios_Foto.jpg";
 
 interface FounderCardProps {
   founder: Founder;
