@@ -19,35 +19,34 @@ const Opportunities: React.FC = () => {
   const getProjectDetails = (projectTitle: string) => {
     const projectData = {
       "Hub Norte": {
-        title: "Mapa Interactivo - Norte de Chile",
-        subtitle: "Detalles por Estación",
-        fee: "US$8,300",
-        feeLabel: "Fee Promedio/Mes",
-        area: "14,100",
-        areaLabel: "m² Totales",
+        title: "Centro de Innovación Minera",
+        subtitle: "Hub Norte - Tecnología",
+        fee: "US$25,000",
+        feeLabel: "Arriendo/Módulo/Mes",
+        area: "5,000",
+        areaLabel: "m² Centro",
         stations: [
-          { name: "Terreno Antofagasta Norte", location: "Antofagasta", area: "2,500", fee: "US$8,500", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Calama Industrial", location: "Antofagasta", area: "3,200", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
-          { name: "Terreno Iquique Puerto", location: "Tarapacá", area: "1,800", fee: "US$6,500", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Atacama Central", location: "Atacama", area: "2,800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
-          { name: "Terreno Coquimbo Hub", location: "Coquimbo", area: "2,200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Arica Frontera", location: "Arica y Parinacota", area: "1,600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
+          { name: "Laboratorio I+D Minero", location: "Antofagasta", area: "1,200", fee: "US$28,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Centro de Pruebas", location: "Antofagasta", area: "800", fee: "US$22,000", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Oficinas Corporativas", location: "Antofagasta", area: "1,500", fee: "US$26,000", status: "Disponible", statusColor: "emerald" },
+          { name: "Área de Capacitación", location: "Antofagasta", area: "900", fee: "US$20,000", status: "Arrendado", statusColor: "yellow" },
+          { name: "Centro de Innovación", location: "Antofagasta", area: "600", fee: "US$30,000", status: "Disponible", statusColor: "emerald" }
         ]
       },
       "Terrenos disponibles": {
-        title: "Mapa Interactivo - Norte de Chile",
-        subtitle: "Detalles por Estación",
+        title: "Red de Terrenos Estratégicos",
+        subtitle: "500+ Predios Norte de Chile",
         fee: "US$8,300",
-        feeLabel: "Fee Promedio/Mes",
-        area: "14,100",
-        areaLabel: "m² Totales",
+        feeLabel: "Arriendo Promedio/Mes",
+        area: "300.000",
+        areaLabel: "Hectáreas Totales",
         stations: [
-          { name: "Terreno Antofagasta Norte", location: "Antofagasta", area: "2,500", fee: "US$8,500", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Calama Industrial", location: "Antofagasta", area: "3,200", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
-          { name: "Terreno Iquique Puerto", location: "Tarapacá", area: "1,800", fee: "US$6,500", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Atacama Central", location: "Atacama", area: "2,800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
-          { name: "Terreno Coquimbo Hub", location: "Coquimbo", area: "2,200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
-          { name: "Terreno Arica Frontera", location: "Arica y Parinacota", area: "1,600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
+          { name: "Terreno Antofagasta Norte", location: "Antofagasta", area: "2.500", fee: "US$8,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Calama Industrial", location: "Calama", area: "3.200", fee: "US$12,000", status: "Arrendado", statusColor: "yellow" },
+          { name: "Terreno Iquique Puerto", location: "Iquique", area: "1.800", fee: "US$6,500", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Atacama Central", location: "Copiapó", area: "2.800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
+          { name: "Terreno Coquimbo Hub", location: "La Serena", area: "2.200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
+          { name: "Terreno Arica Frontera", location: "Arica", area: "1.600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
         ]
       },
       "Puchuncaví": {
