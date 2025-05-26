@@ -93,21 +93,22 @@ export default function Layout({
                   alt="Inversiones del Norte Logo"
                   className="h-12 w-auto"
                 />
-                {/* Punto que da vueltas alrededor del centro del logo */}
+                {/* Punto que recorre horizontalmente el medio del logo */}
                 <motion.div
                   className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-sm"
                   style={{
-                    left: 'calc(50% + 12px)',
                     top: '50%',
-                    transformOrigin: '-12px 0'
+                    transform: 'translateY(-50%)'
                   }}
                   animate={{
-                    rotate: 360
+                    x: [44, 8],
+                    opacity: [0, 1, 1, 0]
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 3,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "easeInOut",
+                    times: [0, 0.2, 0.8, 1]
                   }}
                 />
               </motion.div>
