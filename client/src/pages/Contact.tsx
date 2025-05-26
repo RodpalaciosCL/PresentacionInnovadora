@@ -29,6 +29,7 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -114,9 +115,9 @@ const Contact: React.FC = () => {
           className="text-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-12 border border-slate-700"
         >
           <CheckCircle className="h-16 w-16 text-emerald-400 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">¡Mensaje Enviado!</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('contact.form.success')}</h2>
           <p className="text-slate-300 mb-8">
-            Gracias por tu interés en Invenor. Nuestro equipo se pondrá en contacto contigo en menos de 24 horas.
+            {t('contact.form.success.message')}
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
