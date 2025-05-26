@@ -10,7 +10,7 @@ import { LazyImage } from "./LazyImage";
 import { Skeleton } from "./skeleton";
 import type { Founder } from "@/data/company";
 import robertoPhoto from "../../assets/roberto.jpeg";
-import rodrigoPhoto from "../../../attached_assets/Sin título.png";
+import rodrigoPhoto from "../../assets/Rodrigo_Palacios_Foto.jpg";
 
 interface FounderCardProps {
   founder: Founder;

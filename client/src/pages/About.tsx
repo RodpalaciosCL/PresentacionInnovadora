@@ -148,10 +148,10 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileHover={{ y: -3, scale: 1.01 }}
                   className="group relative"
                 >
-                  <div className="relative bg-slate-800/70 backdrop-blur-sm rounded-3xl p-8 border border-slate-600/50 shadow-2xl group-hover:border-emerald-400/60 transition-all duration-500 overflow-hidden">
+                  <div className="relative bg-slate-800/70 backdrop-blur-sm rounded-3xl p-8 border border-slate-600/50 shadow-2xl hover:border-emerald-400/60 hover:shadow-emerald-500/20 hover:transform hover:-translate-y-1 transition-all duration-300 ease-out overflow-hidden">
                     {/* Background gradient on hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                     
