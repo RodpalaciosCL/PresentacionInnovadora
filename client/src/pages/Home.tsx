@@ -348,56 +348,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Proyectos Principales Section */}
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Ver Terrenos Card */}
-            <Link href="/opportunities">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-emerald-500 hover:bg-emerald-600 rounded-2xl p-8 text-center cursor-pointer transition-all duration-300"
-              >
-                <div className="text-white mb-4">
-                  <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Ver Terrenos</h3>
-                <p className="text-emerald-100">
-                  Red de ubicaciones estratégicas en el norte de Chile
-                </p>
-              </motion.div>
-            </Link>
 
-            {/* Puchuncaví Card */}
-            <Link href="/puchuncavi">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-slate-700 hover:bg-slate-600 rounded-2xl p-8 text-center cursor-pointer transition-all duration-300"
-              >
-                <div className="text-slate-300 mb-4">
-                  <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.12 2 2 3.12 2 4.5v15C2 20.88 3.12 22 4.5 22h15c1.38 0 2.5-1.12 2.5-2.5v-15C22 3.12 20.88 2 19.5 2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Puchuncaví</h3>
-                <p className="text-slate-300">
-                  300 hectáreas para desarrollo inmobiliario, industrial, energía y otros. Venta o arriendo
-                </p>
-              </motion.div>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-900/20 to-slate-800">
