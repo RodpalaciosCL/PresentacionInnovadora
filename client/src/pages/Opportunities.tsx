@@ -60,20 +60,75 @@ const Opportunities: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Investment Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {investmentOpportunities.map((opportunity, index) => (
+          {/* Investment Summary Cards - All projects from home page */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              { 
+                title: "Hub Norte", 
+                description: "Centro de Innovación Minera",
+                image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
+              },
+              { 
+                title: "Terrenos disponibles", 
+                description: "Red de +500 predios disponibles en 1.200kms de extensión",
+                image: "https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
+              },
+              { 
+                title: "Puchuncaví", 
+                description: "+300 hectáreas para desarrollo Inmobiliario Premium",
+                image: "/assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png"
+              },
+              { 
+                title: "Fibra Oscura", 
+                description: "Infraestructura de telecomunicaciones",
+                image: "https://www.kei-ind.com/wp-content/uploads/2023/05/underground-power-cable-blog.jpg"
+              },
+              { 
+                title: "Data Center", 
+                description: "Centro de datos de alta tecnología",
+                image: "/assets/image_1748283427285.png"
+              },
+              { 
+                title: "Energía Solar", 
+                description: "Proyectos de energía renovable",
+                image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
+              },
+              { 
+                title: "Storage de Baterías Industriales", 
+                description: "Almacenamiento de energía a gran escala",
+                image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
+              },
+              { 
+                title: "Puerto Seco", 
+                description: "Terminal ferroviaria multimodal",
+                image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
+              },
+              { 
+                title: "Estaciones de Servicio", 
+                description: "Red de estaciones combustible",
+                image: "https://creagermerc.com/wp-content/uploads/2021/02/33808902_s.jpg"
+              }
+            ].map((project, index) => (
               <motion.div
-                key={opportunity.id}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-emerald-400/50 transition-all duration-300"
+                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
               >
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold text-white mb-4">{opportunity.name}</h3>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-300">
+                    {project.description}
+                  </p>
                 </div>
-                <p className="text-slate-300 text-sm">{opportunity.description}</p>
               </motion.div>
             ))}
           </div>
