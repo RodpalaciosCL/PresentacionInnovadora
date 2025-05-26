@@ -16,13 +16,13 @@ import { apiRequest } from "@/lib/queryClient";
 
 // Contact form validation schema
 const contactFormSchema = z.object({
-  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
-  email: z.string().email("Email inválido"),
-  phone: z.string().min(8, "Teléfono inválido"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email"),
+  phone: z.string().min(8, "Invalid phone"),
   company: z.string().optional(),
-  investmentRange: z.string().min(1, "Selecciona un rango de inversión"),
-  projectInterest: z.string().min(1, "Selecciona un proyecto de interés"),
-  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
+  investmentRange: z.string().min(1, "Select an investment range"),
+  projectInterest: z.string().min(1, "Select a project of interest"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
   preferredContact: z.enum(["email", "phone", "both"])
 });
 
@@ -57,13 +57,13 @@ const Contact: React.FC = () => {
       setIsSubmitted(true);
       form.reset();
       toast({
-        title: "¡Mensaje enviado!",
-        description: "Nos pondremos en contacto contigo en menos de 24 horas.",
+        title: t('contact.form.success.title'),
+        description: t('contact.form.success.description'),
       });
     } catch (error) {
       toast({
-        title: "Error al enviar",
-        description: "Por favor intenta nuevamente o contáctanos directamente.",
+        title: t('contact.form.error.title'),
+        description: t('contact.form.error.description'),
         variant: "destructive"
       });
     }
@@ -72,23 +72,23 @@ const Contact: React.FC = () => {
   const contactMethods = [
     {
       icon: Mail,
-      title: "Email Corporativo",
+      titleKey: "email",
       value: COMPANY_INFO.email,
-      description: "Respuesta en 24 horas",
+      descriptionKey: "email",
       action: `mailto:${COMPANY_INFO.email}`
     },
     {
       icon: Phone,
-      title: "Teléfono",
+      titleKey: "phone",
       value: "+56 2 2XXX XXXX",
-      description: "Lun-Vie 9:00-18:00",
+      descriptionKey: "phone", 
       action: "tel:+56222XXXXXX"
     },
     {
       icon: MapPin,
-      title: "Oficina Principal",
+      titleKey: "office",
       value: "Santiago, Chile",
-      description: "Reuniones presenciales",
+      descriptionKey: "office",
       action: "#"
     }
   ];
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
             onClick={() => setIsSubmitted(false)}
             className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
-            Enviar Otro Mensaje
+            {t('contact.form.sendAnother')}
           </motion.button>
         </motion.div>
       </div>
@@ -143,11 +143,10 @@ const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">
-            Contacto
+            {t('contact.hero.title')}
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Conecta con nuestro equipo de expertos en inversiones inmobiliarias. 
-            Estamos aquí para ayudarte a maximizar tu patrimonio.
+            {t('contact.hero.subtitle')}
           </p>
         </motion.div>
 
@@ -180,9 +179,9 @@ const Contact: React.FC = () => {
                     <method.icon className="h-6 w-6 text-emerald-400" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-white font-semibold">{method.title}</h3>
+                    <h3 className="text-white font-semibold">{t(`contact.methods.${method.titleKey}.title`)}</h3>
                     <p className="text-emerald-400">{method.value}</p>
-                    <p className="text-slate-400 text-sm">{method.description}</p>
+                    <p className="text-slate-400 text-sm">{t(`contact.methods.${method.descriptionKey}.description`)}</p>
                   </div>
                 </motion.a>
               ))}
