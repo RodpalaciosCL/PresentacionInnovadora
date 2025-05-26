@@ -12,7 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 // Lazy-loaded pages for code splitting
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
-const Opportunities = lazy(() => import("@/pages/Opportunities"));
+const Opportunities = lazy(() => import("@/pages/OpportunitiesClean"));
 const Projections = lazy(() => import("@/pages/Projections"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const NotFound = lazy(() => import("@/pages/not-found"));
