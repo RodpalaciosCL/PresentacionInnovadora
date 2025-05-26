@@ -101,7 +101,7 @@ export default function Layout({
                     transform: 'translateY(-50%)'
                   }}
                   animate={{
-                    x: [8, 44, 8]
+                    x: [8, 52, 8]
                   }}
                   transition={{
                     duration: 4,
