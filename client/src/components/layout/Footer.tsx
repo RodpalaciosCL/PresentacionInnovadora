@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           className="mt-6 pt-4 border-t border-white/10 text-center"
         >
           <p className="text-xs text-slate-400">
-            © 2024 Invenor. Todos los derechos reservados.
+            {t('footer.copyright')}
           </p>
         </motion.div>
       </div>
