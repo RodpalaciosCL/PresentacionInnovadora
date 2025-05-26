@@ -34,14 +34,14 @@ export const founders: Founder[] = [
     id: 'founder-1',
     name: 'Roberto Pirazzoli Bunster',
     role: 'CEO & Co-Fundador',
-    bio: 'Más de 15 años de experiencia en desarrollo de infraestructura y gestión de activos estratégicos.',
+    bio: 'Más de 10 años de experiencia en desarrollo empresas, productos y soluciones rentables de alta escalabilidad.',
     achievements: []
   },
   {
     id: 'founder-2', 
     name: 'Rodrigo Palacios del Campo',
     role: 'COO & Co-Fundador',
-    bio: 'Especialista en finanzas corporativas e inversiones con track record en el sector minero y energético.',
+    bio: 'Más de 20 años creando valor para las empresas más grandes del fortune 500 en todo el mundo.',
     achievements: []
   }
 ];
