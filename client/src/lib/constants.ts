@@ -42,7 +42,7 @@ export const BREAKPOINTS = {
 export const COMPANY_INFO = {
   name: 'Invenor',
   tagline: 'infraestructura que se convierte en rentabilidad',
-  email: 'contacto@invenor.cl',
+  email: 'contacto@inversionesdelnorte.cl',
   phone: '+56 2 2XXX XXXX',
   address: 'Santiago, Chile',
 } as const;
