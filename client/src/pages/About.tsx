@@ -18,33 +18,27 @@ const About: React.FC = () => {
   const companyValues = [
     {
       icon: Shield,
-      title: "Integridad",
-      description: "Actuamos con transparencia y honestidad en todas nuestras relaciones comerciales."
+      key: "integrity"
     },
     {
       icon: Target,
-      title: "Excelencia",
-      description: "Buscamos la excelencia operacional en cada proyecto que desarrollamos."
+      key: "excellence"
     },
     {
       icon: Lightbulb,
-      title: "Innovación",
-      description: "Aplicamos soluciones innovadoras para maximizar el valor de los activos."
+      key: "innovation"
     },
     {
       icon: Handshake,
-      title: "Compromiso",
-      description: "Mantenemos un compromiso inquebrantable con nuestros inversionistas y socios."
+      key: "commitment"
     },
     {
       icon: Users,
-      title: "Colaboración",
-      description: "Trabajamos en equipo para alcanzar objetivos comunes y crear valor compartido."
+      key: "collaboration"
     },
     {
       icon: Globe,
-      title: "Sostenibilidad",
-      description: "Desarrollamos proyectos que generan impacto positivo a largo plazo."
+      key: "sustainability"
     }
   ];
 

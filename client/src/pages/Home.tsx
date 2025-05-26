@@ -140,8 +140,7 @@ const Home: React.FC = () => {
               Nuestro <span className="text-emerald-400">Propósito</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Conectamos infraestructura estratégica con inversionistas visionarios, 
-              creando valor sostenible en el ecosistema económico del norte de Chile.
+              {t('home.purpose.subtitle')}
             </p>
           </motion.div>
 
