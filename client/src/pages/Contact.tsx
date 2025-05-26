@@ -283,26 +283,7 @@ const Contact: React.FC = () => {
               </div>
               
               {/* Investment Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-slate-300 text-sm font-medium mb-2">
-                    Rango de Inversión *
-                  </label>
-                  <select
-                    {...form.register("investmentRange")}
-                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-emerald-400 focus:outline-none transition-colors"
-                  >
-                    <option value="">Seleccionar rango</option>
-                    <option value="100k-500k">US$100K - US$500K</option>
-                    <option value="500k-1m">US$500K - US$1M</option>
-                    <option value="1m-5m">US$1M - US$5M</option>
-                    <option value="5m+">US$5M+</option>
-                  </select>
-                  {form.formState.errors.investmentRange && (
-                    <p className="text-red-400 text-sm mt-1">{form.formState.errors.investmentRange.message}</p>
-                  )}
-                </div>
-                
+              <div className="grid grid-cols-1 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">
                     Proyecto de Interés *
