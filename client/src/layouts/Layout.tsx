@@ -84,7 +84,7 @@ export default function Layout({
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo */}
+            {/* Logo - Izquierda */}
             <Link href="/">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
@@ -98,8 +98,8 @@ export default function Layout({
               </motion.div>
             </Link>
             
-            {/* Desktop Navigation - Centrado */}
-            <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+            {/* Desktop Navigation - Centro */}
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <motion.span
@@ -117,7 +117,7 @@ export default function Layout({
             </div>
             
             {/* Botones de acción - Derecha */}
-            <div className="hidden md:flex items-center space-x-3">
+            <div className="flex items-center space-x-3">
               {/* Search Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
