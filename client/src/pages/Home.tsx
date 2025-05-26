@@ -136,9 +136,10 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Nuestro <span className="text-emerald-400">Propósito</span>
-            </h2>
+            <h2 
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+              dangerouslySetInnerHTML={{ __html: t('home.purpose.title') }}
+            />
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               {t('home.purpose.subtitle')}
             </p>

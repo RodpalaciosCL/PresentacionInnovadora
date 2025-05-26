@@ -1,0 +1,117 @@
+Hola equipo, aquí va **el post único y completo**. **Por favor implementen cada cambio de a uno**, avisando cuando terminen cada punto antes de continuar con el siguiente. Si intentan saltarse pasos o agrupar cambios, el sitio puede romperse.
+
+---
+
+# 📌 REDISEÑO INTEGRAL DE INTERNACIONALIZACIÓN y TEXTOS
+
+## 1. Restaurar textos originales en `es.json`
+
+* Extraer **todos** los textos en español que había antes de la internacionalización.
+* Crear o completar `src/locales/es.json` con estas claves y valores, por ejemplo:
+
+  ```json
+  {
+    "home.hero.title": "Infraestructura que se convierte en rentabilidad",
+    "home.hero.subtitle": "Desarrollamos activos estratégicos en el norte de Chile...",
+    "about.hero.title": "Infraestructura que se convierte en rentabilidad",
+    "about.hero.subtitle": "Desarrollamos activos estratégicos en el norte de Chile...",
+    /* …continúa con toda la estructura de home, about, opportunities, projections, contact… */
+    "footer.rights": "Todos los derechos reservados."
+  }
+  ```
+
+> **Implementa este punto, haz un commit y avísame.**
+
+---
+
+## 2. Crear `en.json` con traducciones reales
+
+* Para cada clave de `es.json`, añade su traducción correcta al inglés en `src/locales/en.json`:
+
+  ```json
+  {
+    "home.hero.title": "Infrastructure Turned into Profitability",
+    "home.hero.subtitle": "We develop strategic assets in northern Chile...",
+    /* …y así para todo… */
+    "footer.rights": "All rights reserved."
+  }
+  ```
+
+> **Cuando termines este paso, dime y seguimos.**
+
+---
+
+## 3. Configurar i18next correctamente
+
+En tu inicialización (por ejemplo `src/main.tsx`):
+
+```ts
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import es from './locales/es.json';
+import en from './locales/en.json';
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: { es: { translation: es }, en: { translation: en } },
+    lng: 'es',
+    fallbackLng: 'es',
+    keySeparator: false,
+    interpolation: { escapeValue: false }
+  });
+```
+
+> **Confirma cuando este paso esté operativo.**
+
+---
+
+## 4. Reemplazar todos los textos por `t('clave')`
+
+* En **cada** componente y página (home, about, opportunities, projections, contact, footer…):
+
+  1. Importar `useTranslation` y extraer `t`.
+  2. Sustituir **todos** los strings visibles por `t('clave')`.
+  3. Verificar que **no queden strings hardcoded**.
+
+> **Realiza este cambio completo, commit y avísame.**
+
+---
+
+## 5. Corregir claves rotas y evitar `undefined`
+
+* Revisar arrays dinámicos (p. ej. approach.items) y asegurar claves concretas:
+
+  ```tsx
+  t(item?.key ?? 'fallback.key')
+  ```
+* No usar interpolación con IDs que puedan faltar.
+
+> **Terminado este paso, indícame para seguir.**
+
+---
+
+## 6. Footer dinámico y traducido
+
+* En `Footer.tsx`:
+
+  ```tsx
+  © {new Date().getFullYear()} Invenor. {t('footer.rights')}
+  ```
+
+> **Implementa y confirma cuando esté listo.**
+
+---
+
+## 7. Pruebas exhaustivas ES/EN
+
+* Arranca la app, navega a **todas** las rutas.
+* Cambia de ES a EN con el selector.
+* Verifica que **todos** los textos cambien y que no aparezcan claves (`about.hero.title`) ni `undefined`.
+
+> **Cuando hayas validado todo, concluye con**
+> 🟢 “Internacionalización restaurada y completa: ES original y EN funcionando al 100%.”
+
+---
+
+¡Gracias y a implementar paso a paso!
