@@ -346,7 +346,7 @@ const OpportunitiesClean: React.FC = () => {
                   <img 
                     src="https://kimberly.cl/wp-content/uploads/2023/07/ESCONDIDA-BHP-LOGO.webp"
                     alt="BHP Escondida inversión"
-                    className="w-full h-64 lg:h-full object-cover"
+                    className="w-full h-64 lg:h-full object-contain bg-slate-900"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-500/90 text-white text-sm font-medium rounded-full">
@@ -393,7 +393,7 @@ const OpportunitiesClean: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
-                    src="https://pbs.twimg.com/media/Fy6dBwxXgAE2whG?format=jpg&name=large"
+                    src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/FzmG3MyWwAA0EJf.jpeg"
                     alt="Mapa minero del norte de Chile"
                     className="w-full h-64 lg:h-full object-cover"
                   />
