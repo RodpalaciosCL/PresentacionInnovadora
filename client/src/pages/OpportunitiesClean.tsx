@@ -300,7 +300,7 @@ const OpportunitiesClean: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
-                    src="https://elceo.com/wp-content/uploads/2025/09/Anglo_American_y_Teck_Resources_se_fucionan-1.jpg"
+                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
                     alt="Fusión Anglo American y Teck Resources"
                     className="w-full h-64 lg:h-full object-cover"
                   />
@@ -347,7 +347,7 @@ const OpportunitiesClean: React.FC = () => {
                   <img 
                     src="https://kimberly.cl/wp-content/uploads/2023/07/ESCONDIDA-BHP-LOGO.webp"
                     alt="BHP Escondida inversión"
-                    className="w-full h-64 lg:h-full object-contain bg-slate-900"
+                    className="w-full h-64 lg:h-full object-contain bg-slate-900 p-6"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-500/90 text-white text-sm font-medium rounded-full">
@@ -447,31 +447,34 @@ const OpportunitiesClean: React.FC = () => {
 
       {/* Modal del Mapa Minero */}
       {mapModalOpen && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="relative max-w-6xl max-h-[90vh] bg-slate-900 rounded-2xl overflow-hidden"
+            className="relative w-full max-w-7xl h-full max-h-[95vh] bg-slate-900 rounded-xl overflow-hidden"
           >
             <button
               onClick={() => setMapModalOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200"
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center transition-all duration-200"
             >
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="p-6">
+            <div className="p-4 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-4 text-center">
                 Mapa Minero del Norte de Chile
               </h3>
-              <img
-                src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
-                alt="Mapa Minero Detallado del Norte de Chile"
-                className="w-full max-h-[70vh] object-contain"
-              />
-              <div className="text-center mt-4">
+              <div className="flex-1 flex items-center justify-center">
+                <img
+                  src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
+                  alt="Mapa Minero Detallado del Norte de Chile"
+                  className="max-w-full max-h-full object-contain"
+                  style={{ maxHeight: 'calc(95vh - 120px)' }}
+                />
+              </div>
+              <div className="text-center mt-2">
                 <p className="text-slate-300 text-sm">
                   Fuente: COCHILCO - Comisión Chilena del Cobre
                 </p>
