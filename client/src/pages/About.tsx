@@ -16,27 +16,27 @@ const About: React.FC = () => {
     {
       icon: Shield,
       title: "Integridad",
-      description: "Actuamos con transparencia y honestidad en todas nuestras relaciones comerciales."
+      description: "Actuamos con transparencia y honestidad en nuestras relaciones comerciales."
     },
     {
       icon: Target,
       title: "Excelencia",
-      description: "Buscamos la excelencia operacional en cada proyecto que desarrollamos."
+      description: "Buscamos la excelencia operacional en cada proyecto desarrollado."
     },
     {
       icon: Lightbulb,
       title: "Innovación",
-      description: "Aplicamos soluciones innovadoras para maximizar el valor de los activos."
+      description: "Aplicamos soluciones innovadoras para maximizar el valor de activos."
     },
     {
       icon: Handshake,
       title: "Compromiso",
-      description: "Mantenemos un compromiso inquebrantable con nuestros inversionistas y socios."
+      description: "Mantenemos compromiso inquebrantable con inversionistas y socios."
     },
     {
       icon: Users,
       title: "Colaboración",
-      description: "Trabajamos en equipo para alcanzar objetivos comunes y crear valor compartido."
+      description: "Trabajamos en equipo para alcanzar objetivos y crear valor compartido."
     },
     {
       icon: Globe,
@@ -74,9 +74,8 @@ const About: React.FC = () => {
           >
             <h2 className="text-2xl font-bold text-emerald-400 mb-4 text-center">Nuestra Misión</h2>
             <p className="text-lg text-slate-300 text-center leading-relaxed">
-              Transformar infraestructura estratégica en oportunidades de inversión rentables y sostenibles, 
-              conectando capital con activos de alto potencial en el norte de Chile para generar valor 
-              compartido entre inversionistas, comunidades y el desarrollo económico regional.
+              Transformar infraestructura estratégica en oportunidades de inversión rentables,
+              conectando capital con activos de alto potencial en el norte de Chile.
             </p>
           </motion.div>
         </div>
@@ -96,7 +95,8 @@ const About: React.FC = () => {
               Socios <span className="text-emerald-400">Fundadores</span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Un equipo de primer nivel para escalar de manera estratégica la cartera de inversiones de grupos de Chile, la región y el mundo, en oportunidades controladas y únicas en el mercado.
+              Un equipo de primer nivel para escalar estratégicamente inversiones
+              en oportunidades controladas y únicas del mercado chileno.
             </p>
           </motion.div>
 
