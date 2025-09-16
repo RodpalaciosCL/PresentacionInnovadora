@@ -300,7 +300,7 @@ const OpportunitiesClean: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
-                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
+                    src="https://elceo.com/wp-content/uploads/2025/09/Anglo_American_y_Teck_Resources_se_fucionan-1.jpg"
                     alt="Fusión Anglo American y Teck Resources"
                     className="w-full h-64 lg:h-full object-cover"
                   />
