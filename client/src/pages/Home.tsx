@@ -6,7 +6,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
+import { ChevronRight, ArrowDown, Target, TrendingUp, Building, Zap, Globe, Users, MapPin } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
 import logoInvenor from "@assets/logo1.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
@@ -215,6 +215,107 @@ const Home: React.FC = () => {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestro Foco Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Nuestro <span className="text-emerald-400">Foco</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Demandas Disruptivas */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-emerald-500/20 p-4 rounded-xl mr-4">
+                  <Zap className="h-8 w-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Enfoque Disruptivo</h3>
+              </div>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Abordar de manera disruptiva y asertiva las demandas de las industrias más exigentes del mundo, 
+                posicionándonos como pioneros en soluciones innovadoras.
+              </p>
+            </motion.div>
+
+            {/* Portfolio Estratégico */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-emerald-500/20 p-4 rounded-xl mr-4">
+                  <MapPin className="h-8 w-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Portfolio Estratégico</h3>
+              </div>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Parte esencial de nuestro portfolio de predios disponibles se encuentra en el centro 
+                y especialmente el norte de Chile, región clave para el desarrollo económico nacional.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Scope Diversificado */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-emerald-500/20 p-4 rounded-xl mr-4">
+                  <Globe className="h-8 w-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Scope Diversificado</h3>
+              </div>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Diversificamos nuestro alcance de posibilidades para desarrollar lo que se necesita y requiere, 
+                no sólo a nivel industria, sino a nivel nacional.
+              </p>
+            </motion.div>
+
+            {/* Conexión y Crecimiento */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-emerald-500/20 p-4 rounded-xl mr-4">
+                  <Users className="h-8 w-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Conexión y Crecimiento</h3>
+              </div>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Conexión no sólo de negocios, sino también de personas, aportando a optimizar, mejorar 
+                y disponibilizar oportunidades de crecimiento para el país y quienes viven en él.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
