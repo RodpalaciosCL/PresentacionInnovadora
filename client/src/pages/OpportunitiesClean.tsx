@@ -466,8 +466,7 @@ const OpportunitiesClean: React.FC = () => {
               <img
                 src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
                 alt="Mapa Minero Detallado del Norte de Chile"
-                className="w-auto h-[90vh] max-w-[90vw] object-contain cursor-pointer"
-                onClick={() => window.open('https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png', '_blank')}
+                className="w-auto h-[90vh] max-w-[90vw] object-contain"
               />
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 px-4 py-2 rounded-lg">
                 <p className="text-slate-300 text-sm text-center">
