@@ -11,6 +11,7 @@ import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.
 
 const OpportunitiesClean: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [mapModalOpen, setMapModalOpen] = useState(false);
 
   // Data del Hub Norte sin menciones de dinero
   const hubNorteData = {
@@ -391,12 +392,25 @@ const OpportunitiesClean: React.FC = () => {
               className="bg-slate-800/60 rounded-2xl border border-slate-700 overflow-hidden hover:border-amber-500/50 transition-all duration-300"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative">
-                  <img 
-                    src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/FzmG3MyWwAA0EJf.jpeg"
-                    alt="Mapa minero del norte de Chile"
-                    className="w-full h-64 lg:h-full object-cover"
-                  />
+                <div className="relative cursor-pointer group" onClick={() => setMapModalOpen(true)}>
+                  <div 
+                    className="w-full h-64 lg:h-full bg-cover bg-center relative"
+                    style={{ 
+                      backgroundImage: `url('https://www.nsenergybusiness.com/wp-content/uploads/sites/4/2019/11/Olimpiada-gold-mine-Polyus.png')`
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <svg className="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6l4 2" />
+                          </svg>
+                        </div>
+                        <div className="text-white font-semibold">Ver Mapa Minero</div>
+                        <div className="text-amber-300 text-sm">Click para expandir</div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-amber-500/90 text-white text-sm font-medium rounded-full">
                       ECOSISTEMA MINERO
@@ -430,6 +444,42 @@ const OpportunitiesClean: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal del Mapa Minero */}
+      {mapModalOpen && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="relative max-w-6xl max-h-[90vh] bg-slate-900 rounded-2xl overflow-hidden"
+          >
+            <button
+              onClick={() => setMapModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                Mapa Minero del Norte de Chile
+              </h3>
+              <img
+                src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
+                alt="Mapa Minero Detallado del Norte de Chile"
+                className="w-full max-h-[70vh] object-contain"
+              />
+              <div className="text-center mt-4">
+                <p className="text-slate-300 text-sm">
+                  Fuente: COCHILCO - Comisión Chilena del Cobre
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
