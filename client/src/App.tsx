@@ -24,105 +24,82 @@ const InvenorHome = lazy(() => import("@/pages/InvenorHome"));
 import { ProgressBar } from "./components/ui/ProgressBar";
 import { AnimatePresence } from "framer-motion";
 
-// Loader distintivo tipo "corredor/ruta" para infraestructura
-const PageLoader = () => {
-  // Definir los estilos de animación
-  const loaderStyles = `
-    .trace-path {
-      animation: tracePath 1.8s ease-in-out infinite;
-    }
-    
-    .move-node-1 {
-      animation: moveNode1 2s ease-in-out infinite;
-    }
-    
-    .move-node-2 {
-      animation: moveNode2 2.2s ease-in-out infinite 0.3s;
-    }
-    
-    @keyframes tracePath {
-      0% { stroke-dashoffset: 60; opacity: 0.3; }
-      50% { stroke-dashoffset: 0; opacity: 1; }
-      100% { stroke-dashoffset: -60; opacity: 0.3; }
-    }
-    
-    @keyframes moveNode1 {
-      0% { transform: translateX(0) translateY(0); opacity: 0.6; }
-      25% { transform: translateX(8px) translateY(-2px); opacity: 1; }
-      50% { transform: translateX(16px) translateY(0); opacity: 1; }
-      75% { transform: translateX(24px) translateY(2px); opacity: 0.8; }
-      100% { transform: translateX(32px) translateY(0); opacity: 0.4; }
-    }
-    
-    @keyframes moveNode2 {
-      0% { transform: translateX(0) translateY(0); opacity: 0.4; }
-      25% { transform: translateX(6px) translateY(-1px); opacity: 0.8; }
-      50% { transform: translateX(12px) translateY(0); opacity: 1; }
-      75% { transform: translateX(18px) translateY(1px); opacity: 0.6; }
-      100% { transform: translateX(24px) translateY(0); opacity: 0.3; }
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .trace-path, .move-node-1, .move-node-2 {
-        animation: none !important;
-      }
-    }
-  `;
-
-  return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-      <style dangerouslySetInnerHTML={{ __html: loaderStyles }} />
+// Loader con barras tipo escalador/pilares - distintivo y elegante
+const PageLoader = () => (
+  <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+    <div className="flex flex-col items-center space-y-6">
+      {/* Pilares animados */}
+      <div className="flex items-end space-x-2">
+        <div 
+          className="w-2 bg-emerald-400 rounded-t-sm"
+          style={{
+            height: '12px',
+            animation: 'pillar1 1.4s ease-in-out infinite'
+          }}
+        ></div>
+        <div 
+          className="w-2 bg-emerald-400 rounded-t-sm"
+          style={{
+            height: '18px',
+            animation: 'pillar2 1.4s ease-in-out infinite 0.2s'
+          }}
+        ></div>
+        <div 
+          className="w-2 bg-emerald-400 rounded-t-sm"
+          style={{
+            height: '24px',
+            animation: 'pillar3 1.4s ease-in-out infinite 0.4s'
+          }}
+        ></div>
+        <div 
+          className="w-2 bg-emerald-400 rounded-t-sm"
+          style={{
+            height: '18px',
+            animation: 'pillar4 1.4s ease-in-out infinite 0.6s'
+          }}
+        ></div>
+        <div 
+          className="w-2 bg-emerald-400 rounded-t-sm"
+          style={{
+            height: '12px',
+            animation: 'pillar5 1.4s ease-in-out infinite 0.8s'
+          }}
+        ></div>
+      </div>
       
-      <div className="flex flex-col items-center space-y-6">
-        {/* Corredor SVG animado */}
-        <div className="w-24 h-16 relative">
-          <svg viewBox="0 0 96 64" className="w-full h-full">
-            {/* Línea base del corredor */}
-            <path
-              d="M8 32 Q32 16, 56 32 Q80 48, 88 32"
-              stroke="rgb(52, 211, 153)"
-              strokeWidth="1.5"
-              fill="none"
-              strokeDasharray="4 2"
-              className="opacity-40"
-            />
-            {/* Línea principal que se traza */}
-            <path
-              d="M8 32 Q32 16, 56 32 Q80 48, 88 32"
-              stroke="rgb(52, 211, 153)"
-              strokeWidth="2"
-              fill="none"
-              strokeDasharray="60"
-              strokeDashoffset="60"
-              className="trace-path"
-            />
-            {/* Nodos que avanzan */}
-            <circle
-              cx="20"
-              cy="28"
-              r="2"
-              fill="rgb(52, 211, 153)"
-              className="move-node-1"
-            />
-            <circle
-              cx="35"
-              cy="25"
-              r="1.5"
-              fill="rgb(52, 211, 153)"
-              className="opacity-70 move-node-2"
-            />
-          </svg>
-        </div>
-        
-        {/* Texto con espaciado elegante */}
-        <div className="text-emerald-400 text-sm font-medium tracking-wide">
-          Cargando
-          <span className="inline-block animate-pulse ml-1">...</span>
-        </div>
+      <div className="text-emerald-400 text-sm font-medium tracking-wider">
+        CARGANDO
       </div>
     </div>
-  );
-};
+
+    <style>{`
+      @keyframes pillar1 {
+        0%, 40%, 100% { transform: scaleY(1); opacity: 0.6; }
+        20% { transform: scaleY(1.5); opacity: 1; }
+      }
+      
+      @keyframes pillar2 {
+        0%, 40%, 100% { transform: scaleY(1); opacity: 0.6; }
+        20% { transform: scaleY(1.3); opacity: 1; }
+      }
+      
+      @keyframes pillar3 {
+        0%, 40%, 100% { transform: scaleY(1); opacity: 0.6; }
+        20% { transform: scaleY(1.2); opacity: 1; }
+      }
+      
+      @keyframes pillar4 {
+        0%, 40%, 100% { transform: scaleY(1); opacity: 0.6; }
+        20% { transform: scaleY(1.3); opacity: 1; }
+      }
+      
+      @keyframes pillar5 {
+        0%, 40%, 100% { transform: scaleY(1); opacity: 0.6; }
+        20% { transform: scaleY(1.5); opacity: 1; }
+      }
+    `}</style>
+  </div>
+);
 
 function Router() {
   return (
