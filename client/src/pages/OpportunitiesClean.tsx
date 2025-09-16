@@ -287,60 +287,46 @@ const OpportunitiesClean: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Noticia 1: Fusión Anglo American - Teck */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+              className="bg-slate-800/60 rounded-2xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
             >
-              <div className="p-8">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                      <TrendingUp className="h-10 w-10 text-emerald-400" />
-                    </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="relative">
+                  <img 
+                    src="https://elceo.com/wp-content/uploads/2025/09/Anglo_American_y_Teck_Resources_se_fucionan-1.jpg"
+                    alt="Fusión Anglo American y Teck Resources"
+                    className="w-full h-64 lg:h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-emerald-500/90 text-white text-sm font-medium rounded-full">
+                      FUSIÓN HISTÓRICA
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-sm font-medium rounded-full">
-                        FUSIÓN HISTÓRICA
-                      </span>
-                      <span className="text-slate-400 text-sm">•</span>
-                      <span className="text-slate-400 text-sm">Enero 2025</span>
+                </div>
+                <div className="p-8">
+                  <div className="text-slate-400 text-sm mb-2">Enero 2025</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Anglo American y Teck Resources: La mayor transacción minera de la década
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    La confirmada fusión busca consolidar la producción de Collahuasi y Quebrada Blanca en el norte de Chile, 
+                    configurando un complejo que podría convertirse en la operación de cobre más grande del planeta hacia 
+                    inicios de la década de 2030, superando las <strong className="text-emerald-400">1,35 millones de toneladas anuales</strong>.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-700/50 rounded-lg p-4">
+                      <div className="text-emerald-400 font-bold text-lg">$800M</div>
+                      <div className="text-slate-400 text-sm">Sinergias anuales</div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      Anglo American y Teck Resources: La mayor transacción minera de la década
-                    </h3>
-                    <p className="text-slate-300 leading-relaxed mb-6">
-                      La confirmada fusión busca consolidar la producción de Collahuasi y Quebrada Blanca en el norte de Chile, 
-                      configurando un complejo que podría convertirse en la operación de cobre más grande del planeta hacia 
-                      inicios de la década de 2030, superando las <strong className="text-emerald-400">1,35 millones de toneladas anuales</strong>.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                      <img 
-                        src="https://elceo.com/wp-content/uploads/2025/09/Anglo_American_y_Teck_Resources_se_fucionan-1.jpg"
-                        alt="Anglo American y Teck Resources fusión"
-                        className="w-full h-24 object-cover rounded-lg"
-                      />
-                      <img 
-                        src="https://kimberly.cl/wp-content/uploads/2023/07/ESCONDIDA-BHP-LOGO.webp"
-                        alt="Escondida BHP"
-                        className="w-full h-24 object-cover rounded-lg"
-                      />
-                      <div className="bg-slate-700/50 rounded-lg p-4 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="text-2xl font-bold text-emerald-400">$800M</div>
-                          <div className="text-xs text-slate-300">Sinergias anuales</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4 text-sm text-slate-400">
-                      <span>🏗️ Cinta transportadora de 15km</span>
-                      <span>📈 +175.000 ton/año adicionales</span>
-                      <span>💰 $1.400M EBITDA adicional</span>
+                    <div className="bg-slate-700/50 rounded-lg p-4">
+                      <div className="text-emerald-400 font-bold text-lg">15km</div>
+                      <div className="text-slate-400 text-sm">Cinta transportadora</div>
                     </div>
                   </div>
                 </div>
@@ -349,64 +335,47 @@ const OpportunitiesClean: React.FC = () => {
 
             {/* Noticia 2: BHP - 14.000 millones */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+              className="bg-slate-800/60 rounded-2xl border border-slate-700 overflow-hidden hover:border-blue-500/50 transition-all duration-300"
             >
-              <div className="p-8">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                      <Building className="h-10 w-10 text-blue-400" />
-                    </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="relative">
+                  <img 
+                    src="https://kimberly.cl/wp-content/uploads/2023/07/ESCONDIDA-BHP-LOGO.webp"
+                    alt="BHP Escondida inversión"
+                    className="w-full h-64 lg:h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-blue-500/90 text-white text-sm font-medium rounded-full">
+                      MEGA INVERSIÓN
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm font-medium rounded-full">
-                        MEGA INVERSIÓN
-                      </span>
-                      <span className="text-slate-400 text-sm">•</span>
-                      <span className="text-slate-400 text-sm">Noviembre 2024</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      BHP anuncia inversión récord de US$14.000 millones en Chile
-                    </h3>
-                    <p className="text-slate-300 leading-relaxed mb-6">
-                      La minera australiana confirmó que Chile es un "país estable para la inversión" y planea aumentar 
-                      su producción de cobre a <strong className="text-blue-400">1,4 millones de toneladas anuales</strong>, 
-                      con proyectos en Escondida, Laguna Seca y Pampa Norte hasta 2032.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                      <div className="space-y-3">
-                        <div className="bg-slate-700/50 rounded-lg p-4">
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-300">Escondida</span>
-                            <span className="text-blue-400 font-bold">$7.300M - $9.800M</span>
-                          </div>
-                          <div className="text-xs text-slate-400 mt-1">Nueva concentradora • 220-260k ton/año</div>
-                        </div>
-                        <div className="bg-slate-700/50 rounded-lg p-4">
-                          <div className="flex justify-between items-center">
-                            <span className="text-slate-300">Laguna Seca</span>
-                            <span className="text-blue-400 font-bold">$2.000M - $2.600M</span>
-                          </div>
-                          <div className="text-xs text-slate-400 mt-1">Expansión • 50-70k ton/año</div>
-                        </div>
-                      </div>
-                      <div className="bg-gradient-to-br from-blue-500/10 to-emerald-500/10 rounded-lg p-6 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="text-4xl font-bold text-white mb-2">$14.000M</div>
-                          <div className="text-slate-300 font-medium">Inversión Total</div>
-                          <div className="text-xs text-slate-400 mt-1">Pampa Norte: $2.800M - $3.900M</div>
-                        </div>
+                </div>
+                <div className="p-8">
+                  <div className="text-slate-400 text-sm mb-2">Noviembre 2024</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    BHP anuncia inversión récord de US$14.000 millones en Chile
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    La minera australiana confirmó que Chile es un "país estable para la inversión" y planea aumentar 
+                    su producción de cobre a <strong className="text-blue-400">1,4 millones de toneladas anuales</strong>, 
+                    con proyectos en Escondida, Laguna Seca y Pampa Norte hasta 2032.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-slate-700/50 rounded-lg p-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-300 text-sm">Escondida</span>
+                        <span className="text-blue-400 font-bold">$7.300M - $9.800M</span>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm text-slate-400">
-                      <span>🇨🇱 Primer país sudamericano en OCDE</span>
-                      <span>📊 +100.000 ton/año de incremento</span>
-                      <span>⚡ Operativo hasta 2029</span>
+                    <div className="bg-slate-700/50 rounded-lg p-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-300 text-sm">Pampa Norte</span>
+                        <span className="text-blue-400 font-bold">$2.800M - $3.900M</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -415,57 +384,45 @@ const OpportunitiesClean: React.FC = () => {
 
             {/* Noticia 3: Ecosistema minero */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 rounded-2xl border border-slate-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+              className="bg-slate-800/60 rounded-2xl border border-slate-700 overflow-hidden hover:border-amber-500/50 transition-all duration-300"
             >
-              <div className="p-8">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-amber-500/20 rounded-xl flex items-center justify-center">
-                      <MapPin className="h-10 w-10 text-amber-400" />
-                    </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="relative">
+                  <img 
+                    src="https://pbs.twimg.com/media/Fy6dBwxXgAE2whG?format=jpg&name=large"
+                    alt="Mapa minero del norte de Chile"
+                    className="w-full h-64 lg:h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-amber-500/90 text-white text-sm font-medium rounded-full">
+                      ECOSISTEMA MINERO
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <span className="px-3 py-1 bg-amber-500/20 text-amber-300 text-sm font-medium rounded-full">
-                        ECOSISTEMA MINERO
-                      </span>
-                      <span className="text-slate-400 text-sm">•</span>
-                      <span className="text-slate-400 text-sm">Próximos 10 años</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      El epicentro de billones: Gigantes mineros convergen en el norte
-                    </h3>
-                    <p className="text-slate-300 leading-relaxed mb-6">
-                      Minera Sierra Gorda, Capstone, Codelco, Anglo American y BHP están ubicados estratégicamente 
-                      cerca de nuestros proyectos. En los próximos 10 años se moverán <strong className="text-amber-400">billones de dólares</strong> 
-                      en esta zona, convirtiendo el norte de Chile en el centro neurálgico de la minería mundial.
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-                      {['Sierra Gorda', 'Capstone', 'Codelco', 'Anglo American', 'BHP'].map((company, index) => (
-                        <div key={index} className="bg-slate-700/50 rounded-lg p-3 text-center">
-                          <div className="w-8 h-8 bg-amber-400/20 rounded-full mx-auto mb-2 flex items-center justify-center">
-                            <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                          </div>
-                          <div className="text-sm text-white font-medium">{company}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-gradient-to-r from-amber-500/10 to-emerald-500/10 rounded-lg p-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-lg font-bold text-white">Zona de Oportunidad Estratégica</div>
-                          <div className="text-slate-300">Convergencia de las mayores inversiones mineras del mundo</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-amber-400">$XXX.XXX M</div>
-                          <div className="text-xs text-slate-400">Próxima década</div>
-                        </div>
+                </div>
+                <div className="p-8">
+                  <div className="text-slate-400 text-sm mb-2">Próximos 10 años</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    El epicentro de billones: Gigantes mineros convergen en el norte
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-6">
+                    Minera Sierra Gorda, Capstone, Codelco, Anglo American y BHP están ubicados estratégicamente 
+                    cerca de nuestros proyectos. En los próximos 10 años se moverán <strong className="text-amber-400">billones de dólares</strong> 
+                    en esta zona, convirtiendo el norte de Chile en el centro neurálgico de la minería mundial.
+                  </p>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {['Sierra Gorda', 'Capstone', 'Codelco', 'Anglo American'].map((company, index) => (
+                      <div key={index} className="bg-slate-700/50 rounded-lg p-2 text-center">
+                        <div className="text-sm text-white font-medium">{company}</div>
                       </div>
-                    </div>
+                    ))}
+                  </div>
+                  <div className="bg-amber-500/20 rounded-lg p-4">
+                    <div className="text-amber-400 font-bold text-xl">Zona de Oportunidad Estratégica</div>
+                    <div className="text-slate-300 text-sm">Mayor concentración de inversión minera mundial</div>
                   </div>
                 </div>
               </div>
