@@ -75,9 +75,8 @@ const OpportunitiesClean: React.FC = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Negocios & <span className="text-emerald-400">Oportunidades</span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Portafolio diversificado de activos estratégicos con potencial de crecimiento
-              sostenible en el norte de Chile
+            <p className="text-xl text-slate-300 max-w-5xl mx-auto">
+              Portafolio diversificado de activos estratégicos con potencial de crecimiento sostenible en el norte de Chile
             </p>
           </motion.div>
         </div>
