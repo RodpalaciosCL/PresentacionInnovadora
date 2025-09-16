@@ -447,12 +447,12 @@ const OpportunitiesClean: React.FC = () => {
 
       {/* Modal del Mapa Minero */}
       {mapModalOpen && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2">
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="relative w-[95vw] h-[95vh] bg-black overflow-hidden"
+            className="relative w-screen h-screen bg-black overflow-hidden"
           >
             <button
               onClick={() => setMapModalOpen(false)}
@@ -466,7 +466,7 @@ const OpportunitiesClean: React.FC = () => {
               <img
                 src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
                 alt="Mapa Minero Detallado del Norte de Chile"
-                className="w-auto h-[90vh] max-w-[90vw] object-contain"
+                className="w-full h-full object-contain"
               />
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 px-4 py-2 rounded-lg">
                 <p className="text-slate-300 text-sm text-center">
