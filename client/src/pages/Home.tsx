@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronRight, ArrowDown, Target, TrendingUp, Building } from "lucide-react";
 import { useCounter } from "@/hooks/use-counter";
+import { useTypewriter } from "@/hooks/use-typewriter";
 import logoInvenor from "@assets/logo1.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 import dataCenterImage from "@assets/image_1748283427285.png";
@@ -17,6 +18,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const Home: React.FC = () => {
   const [showImageGallery, setShowImageGallery] = React.useState(false);
+  
+  // Efecto máquina de escribir para el texto principal
+  const { displayText: typewriterText, isComplete } = useTypewriter({
+    text: "> ./build-infrastructure.sh\n\n## infraestructura que se\n## convierte en rentabilidad",
+    speed: 70,
+    delay: 1200
+  });
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -83,9 +91,41 @@ const Home: React.FC = () => {
                   className="h-48 md:h-56"
                 />
               </div>
-              <div className="text-center">
-                infraestructura que se<br />
-                convierte en <span className="text-emerald-400">rentabilidad</span>
+              <div className="text-center font-mono bg-black/80 rounded-lg px-6 py-4 border border-slate-700/50 backdrop-blur-sm max-w-2xl mx-auto">
+                <div className="text-left space-y-1">
+                  {typewriterText.split('\n').map((line, index) => {
+                    if (line.startsWith('>')) {
+                      return (
+                        <div key={index} className="text-emerald-400">
+                          <span className="text-emerald-400">{'>'}</span>
+                          <span className="text-slate-300"> ./build-infrastructure.sh</span>
+                        </div>
+                      );
+                    } else if (line.startsWith('##')) {
+                      if (line.includes('rentabilidad')) {
+                        return (
+                          <div key={index} className="text-yellow-400">
+                            <span className="text-yellow-400">##</span>
+                            <span className="text-slate-200"> convierte en </span>
+                            <span className="text-emerald-400">rentabilidad</span>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div key={index} className="text-yellow-400">
+                            <span className="text-yellow-400">##</span>
+                            <span className="text-slate-200"> {line.replace('##', '').trim()}</span>
+                          </div>
+                        );
+                      }
+                    } else if (line === '') {
+                      return <div key={index} className="h-2" />;
+                    } else {
+                      return <div key={index} className="text-slate-300">{line}</div>;
+                    }
+                  })}
+                  {!isComplete && <span className="animate-pulse text-emerald-400">▋</span>}
+                </div>
               </div>
             </div>
             
