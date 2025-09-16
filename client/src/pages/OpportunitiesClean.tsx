@@ -280,7 +280,7 @@ const OpportunitiesClean: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Donde las papas <span className="text-emerald-400">queman</span>
+              "¡Donde las papas <span className="text-emerald-400">queman</span>!"
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               En el epicentro de la inversión minera mundial
