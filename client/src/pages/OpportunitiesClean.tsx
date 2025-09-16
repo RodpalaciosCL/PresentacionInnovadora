@@ -452,7 +452,7 @@ const OpportunitiesClean: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full max-w-7xl h-full max-h-[95vh] bg-slate-900 rounded-xl overflow-hidden"
+            className="relative w-[95vw] h-[95vh] bg-black overflow-hidden"
           >
             <button
               onClick={() => setMapModalOpen(false)}
@@ -462,20 +462,15 @@ const OpportunitiesClean: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="p-4 h-full flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-4 text-center">
-                Mapa Minero del Norte de Chile
-              </h3>
-              <div className="flex-1 flex items-center justify-center">
-                <img
-                  src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
-                  alt="Mapa Minero Detallado del Norte de Chile"
-                  className="max-w-full max-h-full object-contain"
-                  style={{ maxHeight: 'calc(95vh - 120px)' }}
-                />
-              </div>
-              <div className="text-center mt-2">
-                <p className="text-slate-300 text-sm">
+            <div className="w-full h-full flex items-center justify-center relative">
+              <img
+                src="https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png"
+                alt="Mapa Minero Detallado del Norte de Chile"
+                className="w-auto h-[90vh] max-w-[90vw] object-contain cursor-pointer"
+                onClick={() => window.open('https://www.cochilco.cl/web/wp-content/uploads/2024/04/Mapa_Minero_2023_001.png', '_blank')}
+              />
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 px-4 py-2 rounded-lg">
+                <p className="text-slate-300 text-sm text-center">
                   Fuente: COCHILCO - Comisión Chilena del Cobre
                 </p>
               </div>
