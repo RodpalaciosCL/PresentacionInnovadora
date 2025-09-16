@@ -24,15 +24,12 @@ const InvenorHome = lazy(() => import("@/pages/InvenorHome"));
 import { ProgressBar } from "./components/ui/ProgressBar";
 import { AnimatePresence } from "framer-motion";
 
-// Page loader component
+// Page loader component - sutil y elegante
 const PageLoader = () => (
-  <div className="min-h-screen flex flex-col space-y-4 p-8">
-    <Skeleton className="h-12 w-1/3" />
-    <Skeleton className="h-64 w-full" />
-    <div className="space-y-2">
-      <Skeleton className="h-4 w-full" />
-      <Skeleton className="h-4 w-3/4" />
-      <Skeleton className="h-4 w-1/2" />
+  <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+    <div className="flex flex-col items-center space-y-4">
+      <div className="w-8 h-8 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
+      <div className="text-emerald-400 text-sm font-medium">Cargando...</div>
     </div>
   </div>
 );
