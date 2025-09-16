@@ -252,98 +252,40 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Hub Norte", 
-                description: "Centro de Innovación Minera",
-                image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
-              },
-              { title: "Terrenos disponibles", description: "Red de +500 predios disponibles en 1.200kms de extensión" },
-              { title: "Puchuncaví", description: "+300 hectáreas para desarrollo Inmobiliario Premium" },
-              { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
-              { title: "Data Center", description: "Centro de datos de alta tecnología" },
-              { title: "Energía Solar", description: "Proyectos de energía renovable" },
-              { title: "Storage de Baterías Industriales", description: "Almacenamiento de energía a gran escala" },
-              { title: "Puerto Seco", description: "Terminal ferroviaria multimodal" },
-              { title: "Estaciones de Servicio", description: "Red de estaciones combustible" }
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300"
-              >
-                {project.title === "Hub Norte" ? (
-                  <img
-                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Terrenos disponibles" ? (
-                  <img
-                    src="https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Puchuncaví" ? (
-                  <img
-                    src={puchuncaviMap}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Fibra Oscura" ? (
-                  <img
-                    src="https://www.kei-ind.com/wp-content/uploads/2023/05/underground-power-cable-blog.jpg"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Data Center" ? (
-                  <img
-                    src={dataCenterImage}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Energía Solar" ? (
-                  <img
-                    src="https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Storage de Baterías Industriales" ? (
-                  <img
-                    src="https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Puerto Seco" ? (
-                  <img
-                    src="https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : project.title === "Estaciones de Servicio" ? (
-                  <img
-                    src="https://creagermerc.com/wp-content/uploads/2021/02/33808902_s.jpg"
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                ) : (
-                  <LazyImage
-                    src={`https://picsum.photos/400/300?random=${index + 1}`}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-300">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+          {/* Horizontal Bullets List */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Hub Norte", description: "Centro de Innovación Minera" },
+                { title: "Terrenos disponibles", description: "Red de +500 predios disponibles en 1.200kms de extensión" },
+                { title: "Centro logístico multimodal", description: "Terminal ferroviaria y centro de distribución" },
+                { title: "Fibra Oscura", description: "Infraestructura de telecomunicaciones" },
+                { title: "Data Center", description: "Centro de datos de alta tecnología" },
+                { title: "Energía Solar", description: "Proyectos de energía renovable" },
+                { title: "Storage de Baterías Industriales", description: "Almacenamiento de energía a gran escala" },
+                { title: "Puerto Seco", description: "Terminal ferroviaria multimodal" },
+                { title: "Estaciones de Servicio", description: "Red de estaciones combustible" }
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start space-x-4 p-4 rounded-lg bg-slate-700/30 border border-slate-600/50 hover:border-emerald-400/50 transition-all duration-300"
+                >
+                  <div className="flex-shrink-0 w-2 h-2 bg-emerald-400 rounded-full mt-3"></div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-300 text-sm">
+                      {project.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
