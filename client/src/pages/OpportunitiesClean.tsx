@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Building, TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
-import hubNorteProjectImage from "@assets/Captura de pantalla 2025-05-26 a la(s) 15.46.12.png";
+// import hubNorteProjectImage from "@assets/Captura de pantalla 2025-05-26 a la(s) 15.46.12.png";
 import dataCenterImage from "@assets/image_1748283427285.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 
@@ -76,7 +76,7 @@ const OpportunitiesClean: React.FC = () => {
               { 
                 title: "Hub Norte", 
                 description: "Centro de Innovación Minera",
-                image: hubNorteProjectImage
+                image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
               },
               { 
                 title: "Terrenos disponibles", 
