@@ -1,0 +1,44 @@
+# Cloudflare Workers configuration for Invenor 2.0
+name = "invenor"
+main = "server/worker.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Variables de entorno (usar wrangler secret para valores sensibles)
+[vars]
+NODE_ENV = "production"
+
+# Configuración de assets estáticos (moderna)
+[assets]
+directory = "./client/dist"
+# SPA fallback para client-side routing (Wouter, React Router, etc.)
+not_found_handling = "single-page-app"
+
+# Configuración de dominio personalizado (opcional)
+# [route]
+# pattern = "invenor.group"
+# zone_name = "invenor.group"
+
+# Configuración de development (para wrangler dev)
+[env.development]
+name = "invenor-dev"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[env.development.vars]
+NODE_ENV = "development"
+
+[env.development.assets]
+directory = "./client/dist"
+
+# Configuración de staging (opcional)
+[env.staging]
+name = "invenor-staging"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[env.staging.vars]
+NODE_ENV = "production"
+
+[env.staging.assets]
+directory = "./client/dist"

@@ -75,4 +75,39 @@ Preferred communication style: Simple, everyday language.
 - **i18next**: Internationalization framework with React integration
 - **react-i18next**: React bindings for i18next with hooks and components
 
-The application is configured for deployment on Replit with automatic HTTPS redirection and www subdomain handling in production. The development environment uses in-memory storage while production connects to a PostgreSQL database via environment variables.
+## Deployment Configuration
+
+### Current Support
+The application supports deployment to multiple platforms with platform-specific optimizations:
+
+#### Cloudflare Workers (Primary Deployment Target)
+- **Full-stack Support**: Express.js backend runs natively on Cloudflare Workers with Node.js compatibility
+- **Edge Distribution**: Global deployment with zero cold starts and automatic scaling
+- **Configuration**: Uses `wrangler.toml` with `nodejs_compat` compatibility flag
+- **Database**: PostgreSQL connections via environment variables (supports Neon, PlanetScale, etc.)
+- **Variables**: Environment variables accessible via `process.env` with Cloudflare secrets management
+- **Build Process**: Frontend builds to `client/dist`, backend uses `httpServerHandler` wrapper with Node HTTP server
+- **Performance**: 5-minute CPU time limit, supports WebSockets and server-sent events
+
+#### Replit (Development Environment)
+- **Development Tools**: Includes Replit-specific plugins for debugging and error overlays
+- **Automatic Restarts**: Development workflow with hot module replacement
+- **Configuration**: Uses development-specific middleware and in-memory storage
+- **Environment**: HTTPS redirection and www subdomain handling for production previews
+
+### Environment Variables Required
+- `DATABASE_URL`: PostgreSQL connection string for production database
+- `NODE_ENV`: Environment setting (development/production)
+- `SESSION_SECRET`: Secret key for session management
+- Platform-specific variables handled through respective secret management systems
+
+The development environment uses in-memory storage while production connects to a PostgreSQL database via environment variables. The application includes automatic platform detection and environment-specific optimizations.
+
+### Cloudflare Workers Deployment Steps
+1. **Build Frontend**: `cd client && npm run build` (outputs to `client/dist`)
+2. **Install Wrangler**: `npm install -g wrangler` or use `npx wrangler`
+3. **Configure Secrets**: `wrangler secret put DATABASE_URL` and `wrangler secret put SESSION_SECRET`
+4. **Deploy**: `wrangler deploy` (builds and deploys both Express backend and static assets)
+5. **Development**: `wrangler dev` for local Workers environment testing
+
+Static assets are served by Wrangler's [assets] configuration, while API routes are handled by the Express server running in Workers with Node.js compatibility.

@@ -77,7 +77,7 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Siempre puerto 5000
+  // Siempre puerto 5000 para deployment tradicional
   const port = 5000;
   server.listen(
     {

@@ -77,6 +77,7 @@ export class MemStorage implements IStorage {
     const contact: Contact = { 
       ...insertContact, 
       id, 
+      consent: insertContact.consent ?? false,
       createdAt: new Date() 
     };
     this.contacts.set(id, contact);
@@ -98,7 +99,12 @@ export class MemStorage implements IStorage {
   
   async createStation(insertStation: InsertStation): Promise<Station> {
     const id = this.stationId++;
-    const station: Station = { ...insertStation, id };
+    const station: Station = { 
+      ...insertStation, 
+      id,
+      status: insertStation.status ?? 'available',
+      description: insertStation.description ?? null
+    };
     this.stations.set(id, station);
     return station;
   }
@@ -145,7 +151,12 @@ export class MemStorage implements IStorage {
     
     sampleStations.forEach(station => {
       const id = this.stationId++;
-      this.stations.set(id, { ...station, id });
+      this.stations.set(id, { 
+        ...station, 
+        id,
+        status: station.status ?? 'available',
+        description: station.description ?? null
+      });
     });
   }
   
