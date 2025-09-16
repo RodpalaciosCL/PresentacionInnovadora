@@ -186,7 +186,7 @@ const OpportunitiesClean: React.FC = () => {
                   <div className="lg:col-span-1">
                     <div className="relative rounded-xl overflow-hidden">
                       <img 
-                        src="https://media.licdn.com/dms/image/v2/C4E12AQHTZ7pyTmCfEw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1541423067327?e=2147483647&v=beta&t=9abkfOQ8EpfquDBzmeLUFCXCEUxTEm2GtpvaBMOOEnw"
+                        src="https://lgedesignbuild.com/wp-content/uploads/2023/09/LGE-Airpark-Logistics-Center-5-1.jpg"
                         alt="Hub de Innovación Minera"
                         className="w-full h-80 object-cover"
                       />
