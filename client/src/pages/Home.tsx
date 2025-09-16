@@ -14,6 +14,49 @@ import dataCenterImage from "@assets/image_1748283427285.png";
 import { businessMetrics } from "@/data/company";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTypewriter } from "@/hooks/useTypewriter";
+
+const TypewriterText: React.FC = () => {
+  const { displayText } = useTypewriter({
+    text: "infraestructura que se convierte en rentabilidad",
+    speed: 120,
+    delay: 1000
+  });
+
+  const renderText = () => {
+    // Dividir el texto para mostrar el salto de línea original
+    const fullText = displayText;
+    
+    if (fullText.includes('convierte en ')) {
+      const beforeConvierte = fullText.split('convierte en ')[0];
+      const afterConvierte = fullText.slice((beforeConvierte + 'convierte en ').length);
+      
+      return (
+        <>
+          {beforeConvierte} se<br />
+          convierte en <span className="text-emerald-400">{afterConvierte}</span>
+        </>
+      );
+    }
+    
+    if (fullText.includes(' se')) {
+      return (
+        <>
+          {fullText}<br />
+        </>
+      );
+    }
+    
+    return fullText;
+  };
+
+  return (
+    <div className="text-center">
+      {renderText()}
+      <span className="animate-pulse text-emerald-400 ml-1">|</span>
+    </div>
+  );
+};
 
 const Home: React.FC = () => {
   const [showImageGallery, setShowImageGallery] = React.useState(false);
@@ -83,9 +126,8 @@ const Home: React.FC = () => {
                   className="h-48 md:h-56"
                 />
               </div>
-              <div className="text-center">
-                infraestructura que se<br />
-                convierte en <span className="text-emerald-400">rentabilidad</span>
+              <div className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                <TypewriterText />
               </div>
             </div>
             
