@@ -83,9 +83,9 @@ const OpportunitiesClean: React.FC = () => {
                 image: "https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
               },
               { 
-                title: "Puchuncaví", 
-                description: "+300 hectáreas para desarrollo inmobiliario Premium",
-                image: puchuncaviMap
+                title: "Centro logístico multimodal", 
+                description: "Terminal ferroviaria y centro de distribución",
+                image: "https://lgedesignbuild.com/wp-content/uploads/2023/09/LGE-Airpark-Logistics-Center-5-1.jpg"
               },
               { 
                 title: "Fibra Oscura", 
