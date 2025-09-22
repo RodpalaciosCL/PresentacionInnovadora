@@ -357,10 +357,10 @@ const Home: React.FC = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {metric.value.includes('US$') ? `US$${Math.round(count)}M` : 
-                     metric.value.includes('+') ? `${Math.round(count)}+` :
-                     metric.value.includes('km') ? `${Math.round(count)} km` :
-                     Math.round(count)}
+                    {metric.value.includes('US$') ? `US$${Math.round(count).toLocaleString()}M` : 
+                     metric.value.includes('+') ? `${Math.round(count).toLocaleString()}+` :
+                     metric.value.includes('km') ? `${Math.round(count).toLocaleString()} km` :
+                     Math.round(count).toLocaleString()}
                   </motion.div>
                   <div className="text-slate-300 font-medium mb-2">
                     {metric.label}
@@ -462,6 +462,7 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

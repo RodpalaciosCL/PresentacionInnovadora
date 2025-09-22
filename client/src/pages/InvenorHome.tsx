@@ -69,18 +69,70 @@ const InvenorHome: React.FC = () => {
             
             {/* Navigation Links */}
             <div className="hidden md:flex space-x-8">
-              <Link href="#quienes-somos" className="text-slate-300 hover:text-emerald-400 transition-colors duration-200">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('quienes-somos');
+                  if (element) {
+                    const headerHeight = 64; // h-16 = 64px
+                    const elementPosition = element.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              >
                 Quiénes Somos
-              </Link>
-              <Link href="#oportunidades" className="text-slate-300 hover:text-emerald-400 transition-colors duration-200">
+              </button>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('oportunidades');
+                  if (element) {
+                    const headerHeight = 64; // h-16 = 64px
+                    const elementPosition = element.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              >
                 Oportunidades
-              </Link>
-              <Link href="#proyecciones" className="text-slate-300 hover:text-emerald-400 transition-colors duration-200">
+              </button>
+              {/* <button 
+                onClick={() => {
+                  const element = document.getElementById('proyecciones');
+                  if (element) {
+                    const headerHeight = 64; // h-16 = 64px
+                    const elementPosition = element.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              >
                 Proyecciones
-              </Link>
-              <Link href="#contacto" className="text-slate-300 hover:text-emerald-400 transition-colors duration-200">
+              </button> */}
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('contacto');
+                  if (element) {
+                    const headerHeight = 64; // h-16 = 64px
+                    const elementPosition = element.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                className="text-slate-300 hover:text-emerald-400 transition-colors duration-200"
+              >
                 Contacto
-              </Link>
+              </button>
             </div>
             
             {/* Mobile menu button */}
@@ -503,6 +555,177 @@ const InvenorHome: React.FC = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Nuestros <span className="text-emerald-400">Servicios</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Soluciones integrales para el desarrollo y gestión de activos estratégicos
+            </p>
+          </motion.div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Asset Management & Consulting Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-3xl blur-3xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-slate-800/80 backdrop-blur-xl rounded-3xl p-8 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300 h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Asset Management & Consulting Services</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Gestión de activos inmobiliarios</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Gestión de inversiones inmobiliarias</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Consultoría estratégica de inversión</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Consultoría estratégica de desarrollo de negocio</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Implementación, gestión y soporte de soluciones basadas en assets tácticos</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* AI First Business & Prototyping Factory */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-slate-800/80 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 h-full">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">AI First Business & Prototyping Factory</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Desarrollo de soluciones basadas en AI para gestión eficiente de operación, recursos, revenue y performance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Factory de testeo de oportunidades para logística, comercio, operación de activos y movilización operativa multi punto</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <span className="text-slate-300">Dronesolutions con naves no tripuladas para operaciones de cientos de kilómetros</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Energy, Mining, Logistics, Utilities & Smart Cities Envisioning Center */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative group lg:col-span-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-3xl blur-3xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-slate-800/80 backdrop-blur-xl rounded-3xl p-8 border border-blue-500/20 hover:border-blue-400/50 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Energy, Mining, Logistics, Utilities & Smart Cities Envisioning Center</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-slate-300">Centro de prueba de soluciones, MVPs y nuevas tecnologías</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-slate-300">Early testing para tecnologías emergentes, en terreno</span>
+                    </li>
+                  </ul>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-slate-300">Centro de pruebas en el norte de Chile</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-slate-300">Omni Logistic, con capacidad ferroviaria, aérea y terrestre, con high & advanced tracking</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Capital Injection & Unicorn Boost */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="relative group lg:col-span-2"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-3xl blur-3xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative bg-slate-800/80 backdrop-blur-xl rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Capital Injection & Unicorn Boost</h3>
+                </div>
+                <div className="bg-slate-700/50 rounded-2xl p-6 border border-yellow-500/20">
+                  <p className="text-slate-300 text-lg leading-relaxed">
+                    Conversamos, proponemos, ideamos, implementamos y operamos negocios desde su concepción, hasta su máxima amplificación
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

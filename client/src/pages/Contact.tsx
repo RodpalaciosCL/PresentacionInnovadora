@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Calendar, CheckCircle, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Calendar, CheckCircle, Users } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
@@ -70,23 +70,23 @@ const Contact: React.FC = () => {
   const contactMethods = [
     {
       icon: Mail,
-      title: "Email Corporativo",
+      title: "Email",
       value: COMPANY_INFO.email,
-      description: "Respuesta en 24 horas",
+      description: "",
       action: `mailto:${COMPANY_INFO.email}`
     },
     {
       icon: Phone,
       title: "Teléfono",
-      value: "+56 2 2XXX XXXX",
-      description: "Lun-Vie 9:00-18:00",
-      action: "tel:+56222XXXXXX"
+      value: "+565223210980",
+      description: "Lun-Vie 9:00-19:00",
+      action: "tel:+565223210980"
     },
     {
       icon: MapPin,
-      title: "Oficina Principal",
-      value: "Santiago, Chile",
-      description: "Reuniones presenciales",
+      title: "Oficina",
+      value: "Luis Carrera 1263 oficina 301, Vitacura",
+      description: "",
       action: "#"
     }
   ];
@@ -94,13 +94,11 @@ const Contact: React.FC = () => {
   const teamMembers = [
     {
       name: "Carlos Mendoza",
-      role: "CEO & Fundador",
-      linkedin: "https://linkedin.com/in/carlos-mendoza"
+      role: "CEO & Fundador"
     },
     {
       name: "Ana Rodríguez",
-      role: "Directora de Inversiones",
-      linkedin: "https://linkedin.com/in/ana-rodriguez"
+      role: "Directora de Inversiones"
     }
   ];
 
@@ -141,7 +139,7 @@ const Contact: React.FC = () => {
           className="text-center mb-8"
         >
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-3">
-            Información de Contacto
+            Contacto
           </h1>
 
         </motion.div>
@@ -177,36 +175,33 @@ const Contact: React.FC = () => {
                   <div className="ml-4">
                     <h3 className="text-white font-semibold">{method.title}</h3>
                     <p className="text-emerald-400">{method.value}</p>
-                    <p className="text-slate-400 text-sm">{method.description}</p>
+                    {method.description && <p className="text-slate-400 text-sm">{method.description}</p>}
                   </div>
                 </motion.a>
               ))}
             </div>
 
-            {/* Team Members */}
-            <div>
+            {/* Team Members - Removed */}
+            {/* <div>
               <h3 className="text-xl font-semibold text-white mb-4">Nuestro Equipo</h3>
               <div className="space-y-4">
                 {teamMembers.map((member, index) => (
-                  <motion.a
+                  <motion.div
                     key={index}
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center p-4 bg-slate-800/30 rounded-lg border border-slate-700 hover:border-emerald-400 transition-all group"
                   >
                     <div className="bg-emerald-500/20 p-2 rounded-lg group-hover:bg-emerald-500/30 transition-colors">
-                      <Linkedin className="h-5 w-5 text-emerald-400" />
+                      <Users className="h-5 w-5 text-emerald-400" />
                     </div>
                     <div className="ml-4">
                       <h4 className="text-white font-medium">{member.name}</h4>
                       <p className="text-slate-400 text-sm">{member.role}</p>
                     </div>
-                  </motion.a>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Contact Form */}
@@ -216,6 +211,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700"
           >
+            <h2 className="text-2xl font-bold text-white mb-6">Envíanos un Mensaje</h2>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               {/* Personal Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

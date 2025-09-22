@@ -44,5 +44,5 @@ export const COMPANY_INFO = {
   tagline: 'infraestructura que se convierte en rentabilidad',
   email: 'contacto@invenor.group',
   phone: '+56 2 2XXX XXXX',
-  address: 'Santiago, Chile',
+  address: 'Luis Carrera 1263 oficina 301, Vitacura',
 } as const;

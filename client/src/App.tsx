@@ -12,7 +12,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 // Lazy-loaded pages for code splitting
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
+const Services = lazy(() => import("@/pages/Services"));
 const Opportunities = lazy(() => import("@/pages/OpportunitiesClean"));
+const CentroLogistico = lazy(() => import("@/pages/CentroLogistico"));
 const Projections = lazy(() => import("@/pages/Projections"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const NotFound = lazy(() => import("@/pages/not-found"));
@@ -124,6 +126,15 @@ function Router() {
             </Layout>
           )}
         </Route>
+        <Route path="/services">
+          {() => (
+            <Layout>
+              <Suspense fallback={<PageLoader />}>
+                <Services />
+              </Suspense>
+            </Layout>
+          )}
+        </Route>
         <Route path="/opportunities">
           {() => (
             <Layout>
@@ -133,6 +144,7 @@ function Router() {
             </Layout>
           )}
         </Route>
+        {/* Ruta de proyecciones comentada temporalmente
         <Route path="/projections">
           {() => (
             <Layout>
@@ -142,11 +154,21 @@ function Router() {
             </Layout>
           )}
         </Route>
+        */}
         <Route path="/contact">
           {() => (
             <Layout>
               <Suspense fallback={<PageLoader />}>
                 <Contact />
+              </Suspense>
+            </Layout>
+          )}
+        </Route>
+        <Route path="/centro-logistico">
+          {() => (
+            <Layout>
+              <Suspense fallback={<PageLoader />}>
+                <CentroLogistico />
               </Suspense>
             </Layout>
           )}

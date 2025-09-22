@@ -19,11 +19,14 @@ const Footer: React.FC = () => {
       className="bg-slate-900 text-white/70 py-6"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <motion.div variants={fadeIn} className="mb-4 md:mb-0">
             <h3 className="text-white font-bold text-xl">Inversiones del Norte</h3>
-            <p className="text-sm text-slate-400 mt-1">
+            <p className="text-sm text-slate-400 mt-1 mb-2">
               Transformando infraestructura en oportunidades de inversión
+            </p>
+            <p className="text-xs text-slate-400">
+              © 2024 Inversiones del Norte. Todos los derechos reservados.
             </p>
           </motion.div>
           
@@ -32,7 +35,7 @@ const Footer: React.FC = () => {
             <div className="space-y-1 text-sm">
               <div className="flex items-center">
                 <MapPin className="mr-2 h-4 w-4" />
-                <span>Santiago, Chile</span>
+                <span>Luis Carrera 1263 oficina 301, Vitacura</span>
               </div>
               <div className="flex items-center">
                 <AtSign className="mr-2 h-4 w-4" />
@@ -41,15 +44,6 @@ const Footer: React.FC = () => {
             </div>
           </motion.div>
         </div>
-        
-        <motion.div 
-          variants={fadeIn}
-          className="mt-6 pt-4 border-t border-white/10 text-center"
-        >
-          <p className="text-xs text-slate-400">
-            © 2024 Inversiones del Norte. Todos los derechos reservados.
-          </p>
-        </motion.div>
       </div>
     </motion.footer>
   );

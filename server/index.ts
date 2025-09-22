@@ -77,16 +77,9 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Siempre puerto 5000 para deployment tradicional
-  const port = 5000;
-  server.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`🚀 App servida en puerto ${port}`);
-    }
-  );
+  // Puerto 4000 para desarrollo local (evitando conflictos con otros servicios)
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 4000;
+  server.listen(port, "127.0.0.1", () => {
+    log(`🚀 App servida en puerto ${port}`);
+  });
 })();

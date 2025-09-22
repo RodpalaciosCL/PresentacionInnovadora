@@ -35,6 +35,7 @@ export const founders: Founder[] = [
     name: 'Roberto Pirazzoli Bunster',
     role: 'CEO & Co-Fundador',
     bio: 'Más de 10 años de experiencia en desarrollo empresas, productos y soluciones rentables de alta escalabilidad.',
+    linkedin: 'https://www.linkedin.com/in/roberto-pirazzoli-bunster-695b94205/?originalSubdomain=cl',
     achievements: []
   },
   {
@@ -42,6 +43,7 @@ export const founders: Founder[] = [
     name: 'Rodrigo Palacios del Campo',
     role: 'COO & Co-Fundador',
     bio: 'Más de 20 años creando valor para las empresas más grandes del fortune 500 en todo el mundo.',
+    linkedin: 'https://www.linkedin.com/in/rodpalacios/',
     achievements: []
   }
 ];
@@ -54,12 +56,12 @@ export const businessMetrics: BusinessMetric[] = [
     description: 'Puntos estratégicos en operación'
   },
   {
-    value: '300.000+',
+    value: '300,000+',
     label: 'hectáreas', 
     description: 'Superficie total en gestión'
   },
   {
-    value: '1.200 km',
+    value: '1,200 km',
     label: 'para piping y fibra',
     description: 'Red de telecomunicaciones'
   },

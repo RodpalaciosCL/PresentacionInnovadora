@@ -4,17 +4,19 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { MapPin, Building, TrendingUp, CheckCircle, Clock, AlertCircle } from "lucide-react";
 // import hubNorteProjectImage from "@assets/Captura de pantalla 2025-05-26 a la(s) 15.46.12.png";
 import dataCenterImage from "@assets/image_1748283427285.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
+import { AccessModal } from "@/components/ui/AccessModal";
 
 const OpportunitiesClean: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [mapModalOpen, setMapModalOpen] = useState(false);
-  const [accessCodeModal, setAccessCodeModal] = useState(false);
-  const [accessCode, setAccessCode] = useState('');
+  const [accessModalOpen, setAccessModalOpen] = useState(false);
   const [pendingProject, setPendingProject] = useState<string | null>(null);
+  const [, setLocation] = useLocation();
 
   // Data del Hub Norte sin menciones de dinero
   const hubNorteData = {
@@ -42,14 +44,22 @@ const OpportunitiesClean: React.FC = () => {
   };
 
   const handleProjectClick = (projectTitle: string) => {
-    setPendingProject(projectTitle);
-    setAccessCodeModal(true);
+    if (projectTitle === "Centro logístico multimodal") {
+      setPendingProject(projectTitle);
+      setAccessModalOpen(true);
+    } else {
+      setSelectedProject(projectTitle);
+    }
   };
 
-  const handleAccessCodeSubmit = () => {
-    // Por ahora solo cerramos el modal, luego agregarás la lógica del código
-    setAccessCodeModal(false);
-    setAccessCode('');
+  const handleAccessSuccess = () => {
+    setAccessModalOpen(false);
+    setPendingProject(null);
+    setLocation("/centro-logistico");
+  };
+
+  const handleAccessClose = () => {
+    setAccessModalOpen(false);
     setPendingProject(null);
   };
 
@@ -492,59 +502,15 @@ const OpportunitiesClean: React.FC = () => {
         </div>
       )}
 
-      {/* Modal de Código de Acceso */}
-      {accessCodeModal && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="bg-slate-800 rounded-xl border border-slate-700 p-8 max-w-md w-full"
-          >
-            <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Acceso Restringido</h3>
-              <p className="text-slate-300">
-                Ingresa el código de acceso para ver los detalles de <span className="text-emerald-400 font-semibold">{pendingProject}</span>
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <input
-                type="password"
-                value={accessCode}
-                onChange={(e) => setAccessCode(e.target.value)}
-                placeholder="Código de acceso"
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
-                autoFocus
-              />
-              
-              <div className="flex space-x-3">
-                <button
-                  onClick={() => {
-                    setAccessCodeModal(false);
-                    setAccessCode('');
-                    setPendingProject(null);
-                  }}
-                  className="flex-1 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={handleAccessCodeSubmit}
-                  className="flex-1 px-4 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
-                >
-                  Ingresar
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      )}
+
+      {/* Access Modal */}
+      <AccessModal
+        isOpen={accessModalOpen}
+        onClose={handleAccessClose}
+        onSuccess={handleAccessSuccess}
+        title="Acceso al Centro Logístico"
+        description="Ingresa la clave de acceso para ver información detallada del proyecto"
+      />
     </div>
   );
 };

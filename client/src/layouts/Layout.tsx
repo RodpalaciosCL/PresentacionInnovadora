@@ -33,8 +33,9 @@ export default function Layout({
   const navItems = [
     { label: "Inicio", href: "/" },
     { label: "Quiénes Somos", href: "/about" },
+    { label: "Servicios", href: "/services" },
     { label: "Oportunidades", href: "/opportunities" },
-    { label: "Proyecciones", href: "/projections" },
+    // { label: "Proyecciones", href: "/projections" }, // Comentado temporalmente
     { label: "Contacto", href: "/contact" }
   ];
 
