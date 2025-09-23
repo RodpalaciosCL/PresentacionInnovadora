@@ -1298,8 +1298,21 @@ const CentroLogistico = () => {
                     <span className="text-slate-900 font-bold">1</span>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-emerald-400 mb-2">Fase 1: Primer Asset</h4>
-                    <p className="text-slate-300 text-sm">Construcción, ocupación, información</p>
+                    <h4 className="text-lg font-semibold text-emerald-400 mb-3">Fase 1: Primer Asset</h4>
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Construcción</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Ocupación</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Información</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -1308,8 +1321,21 @@ const CentroLogistico = () => {
                     <span className="text-slate-900 font-bold">2</span>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-blue-400 mb-2">Fase 2: Segundo Asset</h4>
-                    <p className="text-slate-300 text-sm">Expansión<br />Re distribución<br />Consolidación</p>
+                    <h4 className="text-lg font-semibold text-blue-400 mb-3">Fase 2: Segundo Asset</h4>
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Expansión</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Re distribución</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Consolidación</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -1318,8 +1344,17 @@ const CentroLogistico = () => {
                     <span className="text-slate-900 font-bold">3</span>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-purple-400 mb-2">Fase 3: Tercer Asset</h4>
-                    <p className="text-slate-300 text-sm">Masificación multi zonas<br />Diversificación de actividades</p>
+                    <h4 className="text-lg font-semibold text-purple-400 mb-3">Fase 3: Tercer Asset</h4>
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Masificación multi zonas</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
+                        <span className="text-slate-300 text-sm">Diversificación de actividades</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1362,70 +1397,9 @@ const CentroLogistico = () => {
         </div>
       </section>
 
-      {/* Investment Opportunity */}
-      <section className="py-16 bg-slate-900">
+      {/* What we're looking for */}
+      <section className="py-16 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-white mb-6">Oportunidad de Inversión</h2>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Proyecciones financieras atractivas con retornos consistentes y crecimiento sostenible
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-slate-800/50 p-8 rounded-lg border border-slate-700 text-center"
-            >
-              <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-slate-900" />
-              </div>
-              <h3 className="text-2xl font-bold text-emerald-400 mb-2">ROI Proyectado</h3>
-              <p className="text-4xl font-bold text-white mb-2">24%</p>
-              <p className="text-slate-400">anual</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-slate-800/50 p-8 rounded-lg border border-slate-700 text-center"
-            >
-              <div className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Calendar className="w-8 h-8 text-slate-900" />
-              </div>
-              <h3 className="text-2xl font-bold text-blue-400 mb-2">Payback Period</h3>
-              <p className="text-4xl font-bold text-white mb-2">4.2</p>
-              <p className="text-slate-400">años</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-slate-800/50 p-8 rounded-lg border border-slate-700 text-center"
-            >
-              <div className="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                <DollarSign className="w-8 h-8 text-slate-900" />
-              </div>
-              <h3 className="text-2xl font-bold text-purple-400 mb-2">Revenue Anual</h3>
-              <p className="text-4xl font-bold text-white mb-2">$2.8M</p>
-              <p className="text-slate-400">USD (año 3)</p>
-            </motion.div>
-          </div>
-
-          {/* What we're looking for */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
