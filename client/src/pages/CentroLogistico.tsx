@@ -67,47 +67,212 @@ const CentroLogistico = () => {
   }
   return (
     <div className="min-h-screen bg-slate-900">
-      {/* Header */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/20">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23334155" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+          
+          {/* Floating Elements */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="absolute top-20 left-10 w-20 h-20 bg-emerald-400/10 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{ 
+              y: [0, 20, 0],
+              rotate: [0, -5, 0]
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 2
+            }}
+            className="absolute top-40 right-20 w-32 h-32 bg-blue-400/10 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{ 
+              y: [0, -15, 0],
+              rotate: [0, 3, 0]
+            }}
+            transition={{ 
+              duration: 7, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 4
+            }}
+            className="absolute bottom-40 left-1/4 w-16 h-16 bg-purple-400/10 rounded-full blur-xl"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-center mb-12"
           >
             <Link href="/opportunities">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, x: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors mb-8"
+                className="inline-flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-all duration-300 mb-8 group"
               >
-                <ArrowLeft className="w-5 h-5" />
-                <span>Volver a Oportunidades</span>
+                <motion.div
+                  animate={{ x: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </motion.div>
+                <span className="font-medium">Volver a Oportunidades</span>
               </motion.button>
             </Link>
-            
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Centro <span className="text-emerald-400">Logísticos</span>
-              <br />
-              <span className="text-3xl md:text-4xl text-slate-300">Estratégicos</span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 max-w-3xl mb-8">
-              Ubicaciones para desarrollar Centros de logística, acopio, parking, puerto seco y mucho más.
-            </p>
+          </motion.div>
 
-            <div className="max-w-4xl space-y-6">
-              <p className="text-lg text-slate-300 leading-relaxed">
-                Disponemos de ubicaciones altamente estratégicas y muy demandadas, dado el alto flujo operacional minero y la dificultad de poder obtener predios, permisos y aprobaciones para operar en ellos.
-              </p>
-              
-              <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <p className="text-slate-300 leading-relaxed">
-                  Lo anterior, sumado a que todos tienen no sólo acceso vía carretera, sino también vía ferrocarril, lo cual le entrega un atributo extra, sin dejar de lado que el socio principal del proyecto es <span className="text-emerald-400 font-semibold">Ferronor</span>, una pieza clave para la validación del proyecto, la seriedad del mismo y el know how de la operación del negocio.
-                </p>
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Title and Description */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="space-y-8"
+            >
+              {/* Main Title */}
+              <div className="space-y-4">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="text-6xl md:text-7xl font-black text-white leading-tight"
+                >
+                  Centro{' '}
+                  <span className="relative inline-block">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500">
+                      Logísticos
+                    </span>
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.8, delay: 1 }}
+                      className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full"
+                    />
+                  </span>
+                </motion.h1>
+                
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="text-3xl md:text-4xl font-bold text-slate-300"
+                >
+                  Estratégicos
+                </motion.h2>
               </div>
-            </div>
+
+              {/* Description */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="space-y-6"
+              >
+                <p className="text-xl text-slate-300 leading-relaxed font-medium">
+                  Ubicaciones para desarrollar Centros de logística, acopio, parking, puerto seco y mucho más.
+                </p>
+                
+                <p className="text-lg text-slate-400 leading-relaxed">
+                  Disponemos de ubicaciones altamente estratégicas y muy demandadas, dado el alto flujo operacional minero y la dificultad de poder obtener predios, permisos y aprobaciones para operar en ellos.
+                </p>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Feature Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="space-y-6"
+            >
+              {/* Main Feature Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-emerald-400/50 transition-all duration-500">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                      <Train className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Alianza Estratégica</h3>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed">
+                    <span className="text-emerald-400 font-semibold">Ferronor</span> como socio principal del proyecto, una pieza clave para la validación del proyecto, la seriedad del mismo y el know how de la operación del negocio.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Feature Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/30 p-6 rounded-xl hover:border-emerald-400/30 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 bg-blue-400/20 rounded-lg flex items-center justify-center mb-4">
+                    <MapPin className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <h4 className="text-white font-semibold mb-2">Acceso Dual</h4>
+                  <p className="text-slate-400 text-sm">Carretera + Ferrocarril</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.6 }}
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/30 p-6 rounded-xl hover:border-purple-400/30 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 bg-purple-400/20 rounded-lg flex items-center justify-center mb-4">
+                    <Building className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <h4 className="text-white font-semibold mb-2">Permisos</h4>
+                  <p className="text-slate-400 text-sm">Pre-aprobados</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-emerald-400/50 rounded-full flex justify-center"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-1 h-3 bg-emerald-400 rounded-full mt-2"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
