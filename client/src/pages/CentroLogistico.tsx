@@ -491,8 +491,17 @@ const CentroLogistico = () => {
                 
                 <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
                   <h4 className="text-xl font-semibold text-white mb-4">Mapa de Ubicación</h4>
-                  <div className="w-full h-64 bg-slate-600 rounded-lg flex items-center justify-center">
-                    <span className="text-slate-400">Mapa de Baquedano</span>
+                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.1234567890!2d-69.839571!3d-23.337774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96a5c123456789ab%3A0x1234567890abcdef!2sBaquedano%2C%20Antofagasta%2C%20Chile!5e0!3m2!1ses!2sus!4v1234567890123!5m2!1ses!2sus"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Ubicación de Baquedano, Antofagasta, Chile"
+                    />
                   </div>
                 </div>
               </div>
