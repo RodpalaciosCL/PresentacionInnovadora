@@ -617,7 +617,7 @@ const CentroLogistico = () => {
                   </div>
                   <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-xs">Freeport</span>
+                    <span className="text-slate-300 text-xs">Codelco Freeport (*)</span>
                   </div>
                   <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
