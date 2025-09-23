@@ -561,11 +561,11 @@ const CentroLogistico = () => {
                   <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
                     <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
                     <div className="space-y-3 text-slate-300">
-                      <p>• <strong className="text-blue-400">Proximidad a la mina</strong> de cobre más grande del mundo</p>
-                      <p>• <strong className="text-blue-400">Terminal de carga</strong> especializado</p>
-                      <p>• <strong className="text-blue-400">Centro de distribución</strong> estratégico</p>
-                      <p>• <strong className="text-blue-400">Servicios logísticos</strong> especializados</p>
-                      <p>• <strong className="text-blue-400">Acceso directo</strong> a infraestructura minera</p>
+                      <p>• <strong className="text-emerald-400">A 10km de la mina de cobre</strong> más grande del mundo</p>
+                      <p>• <strong className="text-emerald-400">Ruta Exclusiva</strong> para Minera Escondida</p>
+                      <p>• <strong className="text-emerald-400">Universo de 17 mil millones</strong> de dólares</p>
+                      <p>• <strong className="text-emerald-400">Viabilidad acople Ferroviario</strong> (actual)</p>
+                      <p>• <strong className="text-emerald-400">Únicos con capacidad operativa</strong> en esta ruta</p>
                     </div>
                   </div>
                 </div>
