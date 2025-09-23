@@ -422,7 +422,7 @@ const CentroLogistico = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">Nuestras Estaciones Estratégicas</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">Nuestras Estaciones</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Tres ubicaciones clave que definen el futuro de la logística minera en Chile
             </p>
