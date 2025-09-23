@@ -667,11 +667,11 @@ const CentroLogistico = () => {
                   <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
                     <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
                     <div className="space-y-3 text-slate-300">
-                      <p>• <strong className="text-emerald-400">Ubicación en Iquique</strong> para operaciones logísticas</p>
-                      <p>• <strong className="text-emerald-400">Puertos secos</strong> entre Puerto de Iquique y faenas mineras</p>
-                      <p>• <strong className="text-emerald-400">Conexión con Collahuasi</strong> y Quebrada Blanca</p>
-                      <p>• <strong className="text-emerald-400">Ruta estratégica</strong> de la minería chilena</p>
-                      <p>• <strong className="text-emerald-400">Acceso portuario</strong> directo al Pacífico</p>
+                      <p>• <strong className="text-emerald-400">Ubicación única</strong> en nuevo nodo mundial</p>
+                      <p>• <strong className="text-emerald-400">Ubicación estratégica</strong> ruta minera y 5 norte</p>
+                      <p>• <strong className="text-emerald-400">Hub en medio del trayecto</strong> a puerto-mina</p>
+                      <p>• <strong className="text-emerald-400">Muy baja presencia</strong> de competencia</p>
+                      <p>• <strong className="text-emerald-400">Universo de 20 mil millones</strong> de dólares</p>
                     </div>
                   </div>
 
