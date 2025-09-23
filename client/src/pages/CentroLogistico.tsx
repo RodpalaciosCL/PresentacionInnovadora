@@ -1077,23 +1077,23 @@ const CentroLogistico = () => {
       </section>
 
       {/* Terrain Composition */}
-      <section className="py-16 bg-slate-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-slate-900 min-h-screen w-full">
+        <div className="w-full px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">Composición de Terrenos y Posibilidades</h2>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Composición de Terrenos y Posibilidades</h2>
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto">
               Terrenos estratégicamente ubicados con máxima factibilidad para desarrollo logístico
             </p>
           </motion.div>
 
-          {/* Compact Layout */}
-          <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+          {/* Full Width Layout */}
+          <div className="bg-slate-800/50 p-10 rounded-2xl border border-slate-700">
             
             {/* Terrain Stats - Horizontal Row */}
             <motion.div
@@ -1101,55 +1101,96 @@ const CentroLogistico = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mb-8"
+              className="mb-12"
             >
-              <h3 className="text-xl font-bold text-emerald-400 mb-6">Composición de Terrenos</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-slate-700/30 rounded-lg">
-                  <Building className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                  <div className="text-emerald-400 font-bold text-lg">100%</div>
-                  <div className="text-slate-300 text-sm">Área Construible</div>
+              <h3 className="text-2xl font-bold text-white mb-8">Composición de Terrenos</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-slate-700/30 rounded-xl border border-slate-600">
+                  <Building className="w-10 h-10 text-white mx-auto mb-3" />
+                  <div className="text-emerald-400 font-bold text-2xl mb-1">100%</div>
+                  <div className="text-slate-300 text-base">Área Construible</div>
                 </div>
-                <div className="text-center p-4 bg-slate-700/30 rounded-lg">
-                  <Truck className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                  <div className="text-emerald-400 font-bold text-lg">Todos</div>
-                  <div className="text-slate-300 text-sm">Accesos Viales</div>
+                <div className="text-center p-6 bg-slate-700/30 rounded-xl border border-slate-600">
+                  <Truck className="w-10 h-10 text-white mx-auto mb-3" />
+                  <div className="text-emerald-400 font-bold text-2xl mb-1">Todos</div>
+                  <div className="text-slate-300 text-base">Accesos Viales</div>
                 </div>
-                <div className="text-center p-4 bg-slate-700/30 rounded-lg">
-                  <svg className="w-8 h-8 text-emerald-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-center p-6 bg-slate-700/30 rounded-xl border border-slate-600">
+                  <svg className="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
-                  <div className="text-emerald-400 font-bold text-lg">100%</div>
-                  <div className="text-slate-300 text-sm">Luz y Agua</div>
+                  <div className="text-emerald-400 font-bold text-2xl mb-1">100%</div>
+                  <div className="text-slate-300 text-base">Luz y Agua</div>
                 </div>
-                <div className="text-center p-4 bg-slate-700/30 rounded-lg">
-                  <svg className="w-8 h-8 text-emerald-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="text-center p-6 bg-slate-700/30 rounded-xl border border-slate-600">
+                  <svg className="w-10 h-10 text-white mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <div className="text-emerald-400 font-bold text-lg">Todos</div>
-                  <div className="text-slate-300 text-sm">Permisología</div>
+                  <div className="text-emerald-400 font-bold text-2xl mb-1">Todos</div>
+                  <div className="text-slate-300 text-base">Permisología</div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Possibilities - Tag Style */}
+            {/* Possibilities - Grid with Icons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-emerald-400 mb-6">Posibilidades de Desarrollo</h3>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Centros de acopio</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Parking de maquinaria</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Puertos secos</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Abastecimiento eléctrico</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Almacenamiento de baterías</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Hub de gestión operacional</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Manejo de residuos</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Cowork</span>
-                <span className="px-4 py-2 bg-emerald-400/20 text-emerald-300 rounded-full border border-emerald-400/30 text-sm">Hotelería</span>
+              <h3 className="text-2xl font-bold text-white mb-8">Posibilidades de Desarrollo</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <Building className="w-6 h-6 text-white flex-shrink-0" />
+                  <span className="text-slate-200 text-sm font-medium">Centros de acopio</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <Truck className="w-6 h-6 text-white flex-shrink-0" />
+                  <span className="text-slate-200 text-sm font-medium">Parking de maquinaria</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Puertos secos</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Abastecimiento eléctrico</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Almacenamiento de baterías</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Hub de gestión operacional</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Manejo de residuos</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Cowork</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Hotelería</span>
+                </div>
               </div>
             </motion.div>
           </div>
