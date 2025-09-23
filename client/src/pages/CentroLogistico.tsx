@@ -564,96 +564,93 @@ const CentroLogistico = () => {
               </div>
 
               {/* Mineras que Operan */}
-              <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                <h4 className="text-2xl font-semibold text-white mb-6">Mineras que Operan</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Codelco Chuquicamata</span>
+              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Codelco Chuquicamata</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Codelco Ministro Hales</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Codelco Ministro Hales</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Codelco Radomiro Tomic</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Codelco Radomiro Tomic</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Codelco Gabriela Mistral</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Codelco Gabriela Mistral</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Sierra Gorda SCM</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Sierra Gorda SCM</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Antofagasta Minerals Centinela</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Antofagasta Minerals Centinela</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">BHP Spence</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">BHP Spence</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">BHP Escondida</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">BHP Escondida</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Capstone</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Capstone</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">SQM</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">SQM</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Albemarle</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Albemarle</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-4 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 font-medium">Glencore Alto Norte</span>
+                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-sm">Glencore Alto Norte</span>
                   </div>
                 </div>
               </div>
 
               {/* Noticia destacada */}
-              <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                <h4 className="text-2xl font-semibold text-white mb-6">Noticia Destacada</h4>
+              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                <h4 className="text-xl font-semibold text-white mb-4">Noticia Destacada</h4>
                 
                 {/* Imagen principal */}
-                <div className="relative mb-6 rounded-lg overflow-hidden">
+                <div className="mb-4 rounded-lg overflow-hidden">
                   <img 
                     src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
                     alt="Anglo Teck fusión minera"
-                    className="w-full h-64 object-cover"
+                    className="w-full h-48 object-cover"
                   />
-                  <div className="absolute top-4 left-4 bg-emerald-400 text-slate-900 px-4 py-2 rounded-full text-sm font-bold">
-                    NOTICIA DESTACADA
-                  </div>
                 </div>
 
                 {/* Contenido de la noticia */}
-                <div className="space-y-4">
-                  <h5 className="text-2xl font-bold text-white leading-tight">
+                <div className="space-y-3">
+                  <h5 className="text-lg font-bold text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                     Anglo Teck: la segunda mayor fusión minera de la historia que ubica a Chile como su piedra angular
                   </h5>
                   
-                  <p className="text-slate-300 text-lg leading-relaxed">
+                  <p className="text-slate-300 text-sm leading-relaxed">
                     La nueva compañía tendrá una exposición al cobre superior al 70% y más de la mitad de su producción en territorio nacional. 
                     La operación más relevante de la última década en el sector deberá ser visada por una serie de organismos, entre ellos la FNE.
                   </p>
                   
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <a 
                       href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-emerald-300 transition-all duration-300 shadow-lg hover:shadow-emerald-400/20"
+                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-emerald-300 transition-all duration-300"
                     >
                       Leer artículo completo
-                      <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
