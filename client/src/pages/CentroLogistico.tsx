@@ -493,7 +493,7 @@ const CentroLogistico = () => {
                   <h4 className="text-xl font-semibold text-white mb-4">Mapa de Ubicación</h4>
                   <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.1234567890!2d-69.839571!3d-23.337774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96a5c123456789ab%3A0x1234567890abcdef!2sBaquedano%2C%20Antofagasta%2C%20Chile!5e0!3m2!1ses!2sus!4v1234567890123!5m2!1ses!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d16237.676537537296!2d-69.850486!3d-23.3340895!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDIwJzE2LjAiUyA2OcKwNTAnMjIuNSJX!5e1!3m2!1ses-419!2scl!4v1758648394456!5m2!1ses-419!2scl"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
