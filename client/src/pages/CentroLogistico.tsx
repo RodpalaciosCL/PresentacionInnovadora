@@ -20,17 +20,32 @@ const CentroLogistico = () => {
   });
 
   useEffect(() => {
-    // Check if user has access (in a real app, this would check localStorage or session)
-    const storedAccess = sessionStorage.getItem('centro-logistico-access');
-    if (storedAccess === '2026') {
-      setHasAccess(true);
+    // Check if user has access with expiration
+    const storedAccess = localStorage.getItem('centro-logistico-access');
+    const accessTimestamp = localStorage.getItem('centro-logistico-timestamp');
+    
+    if (storedAccess === '2026' && accessTimestamp) {
+      const now = Date.now();
+      const accessTime = parseInt(accessTimestamp);
+      const sessionDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
+      
+      if (now - accessTime < sessionDuration) {
+        setHasAccess(true);
+      } else {
+        // Access expired, clear storage and show modal
+        localStorage.removeItem('centro-logistico-access');
+        localStorage.removeItem('centro-logistico-timestamp');
+        setShowAccessModal(true);
+      }
     } else {
       setShowAccessModal(true);
     }
   }, []);
 
   const handleAccessSuccess = () => {
-    sessionStorage.setItem('centro-logistico-access', '2026');
+    const timestamp = Date.now().toString();
+    localStorage.setItem('centro-logistico-access', '2026');
+    localStorage.setItem('centro-logistico-timestamp', timestamp);
     setHasAccess(true);
     setShowAccessModal(false);
   };
