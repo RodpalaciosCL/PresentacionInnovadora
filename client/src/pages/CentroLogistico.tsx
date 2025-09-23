@@ -672,6 +672,16 @@ const CentroLogistico = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Ver detalle de inversión */}
+              <div className="text-center pt-6">
+                <button className="inline-flex items-center bg-slate-600 hover:bg-slate-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  Ver detalle de inversión
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
             </motion.div>
 
@@ -759,6 +769,16 @@ const CentroLogistico = () => {
                     />
                   </div>
                 </div>
+              </div>
+
+              {/* Ver detalle de inversión */}
+              <div className="text-center pt-6">
+                <button className="inline-flex items-center bg-slate-600 hover:bg-slate-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  Ver detalle de inversión
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </motion.div>
 
@@ -849,6 +869,16 @@ const CentroLogistico = () => {
                     />
                   </div>
                 </div>
+              </div>
+
+              {/* Ver detalle de inversión */}
+              <div className="text-center pt-6">
+                <button className="inline-flex items-center bg-slate-600 hover:bg-slate-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  Ver detalle de inversión
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </motion.div>
           </div>
