@@ -31,13 +31,16 @@ const CentroLogistico = () => {
       
       if (now - accessTime < sessionDuration) {
         setHasAccess(true);
+        setShowAccessModal(false);
       } else {
         // Access expired, clear storage and show modal
         localStorage.removeItem('centro-logistico-access');
         localStorage.removeItem('centro-logistico-timestamp');
+        setHasAccess(false);
         setShowAccessModal(true);
       }
     } else {
+      setHasAccess(false);
       setShowAccessModal(true);
     }
   }, []);
