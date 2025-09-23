@@ -638,37 +638,27 @@ const CentroLogistico = () => {
                 </div>
               </div>
 
-              {/* Noticia destacada */}
+              {/* Noticia destacada - PLACEHOLDER */}
               <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
                 <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
                 
-                {/* Imagen principal */}
+                {/* Imagen principal - PLACEHOLDER */}
                 <div className="mb-3">
-                  <img 
-                    src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
-                    alt="Anglo Teck fusión minera"
-                    className="h-40 object-contain"
-                  />
+                  <div className="h-40 bg-slate-600/50 rounded-lg flex items-center justify-center border border-slate-500">
+                    <p className="text-slate-400 text-sm">Imagen de noticia pendiente</p>
+                  </div>
                 </div>
 
-                {/* Contenido de la noticia */}
+                {/* Contenido de la noticia - PLACEHOLDER */}
                 <div className="space-y-2">
                   <h5 className="text-base font-bold text-white leading-tight">
-                    Anglo Teck, Los ojos del mundo en la segunda mayor fusión minera de la historia
+                    Título de noticia pendiente para Baquedano
                   </h5>
                   
                   <div className="pt-1">
-                    <a 
-                      href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
-                    >
-                      Leer artículo completo
-                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
+                    <div className="inline-flex items-center bg-slate-500 text-slate-300 px-3 py-2 rounded-lg font-semibold text-xs">
+                      Link de artículo pendiente
+                    </div>
                   </div>
                 </div>
               </div>
@@ -749,6 +739,41 @@ const CentroLogistico = () => {
                     <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
                     <div className="grid grid-cols-1 gap-3 text-slate-300">
                       <p>• <strong className="text-emerald-400">BHP Escondida</strong></p>
+                    </div>
+                  </div>
+
+                  {/* Noticia destacada */}
+                  <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                    <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
+                    
+                    {/* Imagen principal */}
+                    <div className="mb-3">
+                      <img 
+                        src="https://www.bhp.com/es/-/media/project/bhp1ip/bhp-com-en/images/_secondary-banner/2021/210628_escondidapit.jpg?w=1920&hash=00253F71FFA9D50DA66500B0D7A010C6"
+                        alt="BHP Escondida mina de cobre"
+                        className="h-40 object-contain"
+                      />
+                    </div>
+
+                    {/* Contenido de la noticia */}
+                    <div className="space-y-2">
+                      <h5 className="text-base font-bold text-white leading-tight">
+                        BHP anuncia histórica inversión en Chile: US$13.700 millones para Pampa Norte y Escondida
+                      </h5>
+                      
+                      <div className="pt-1">
+                        <a 
+                          href="https://www.elmostrador.cl/mercados/2024/11/19/bhp-anuncia-historica-inversion-en-chile-us13-700-millones-para-pampa-norte-y-escondida/" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
+                        >
+                          Leer artículo completo
+                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -849,6 +874,41 @@ const CentroLogistico = () => {
                       <p>• <strong className="text-emerald-400">Glencore Collahuasi</strong></p>
                       <p>• <strong className="text-emerald-400">Teck Quebrada Blanca</strong></p>
                       <p>• <strong className="text-emerald-400">Nuevo AngloTeck</strong></p>
+                    </div>
+                  </div>
+
+                  {/* Noticia destacada */}
+                  <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                    <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
+                    
+                    {/* Imagen principal */}
+                    <div className="mb-3">
+                      <img 
+                        src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
+                        alt="Anglo Teck fusión minera"
+                        className="h-40 object-contain"
+                      />
+                    </div>
+
+                    {/* Contenido de la noticia */}
+                    <div className="space-y-2">
+                      <h5 className="text-base font-bold text-white leading-tight">
+                        Anglo Teck, Los ojos del mundo en la segunda mayor fusión minera de la historia
+                      </h5>
+                      
+                      <div className="pt-1">
+                        <a 
+                          href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
+                        >
+                          Leer artículo completo
+                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
