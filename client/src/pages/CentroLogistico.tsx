@@ -438,76 +438,76 @@ const CentroLogistico = () => {
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
             {/* Header amplio de la estación */}
-            <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600 mb-8">
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <div className="w-20 h-20 bg-emerald-400 rounded-full flex items-center justify-center mr-6">
-                    <Target className="w-10 h-10 text-slate-900" />
+                  <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-5">
+                    <Target className="w-8 h-8 text-slate-900" />
                   </div>
                   <div>
-                    <h3 className="text-4xl font-bold text-emerald-400 mb-2">Baquedano</h3>
-                    <p className="text-xl text-slate-300">Epicentro Actual</p>
+                    <h3 className="text-3xl font-bold text-emerald-400 mb-1">Baquedano</h3>
+                    <p className="text-lg text-slate-300">Epicentro Actual</p>
                   </div>
                 </div>
                 
                 {/* Estadísticas en el header */}
-                <div className="grid grid-cols-4 gap-8">
-                  <div className="text-center p-4 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-3xl font-bold text-emerald-400 mb-1">22-60</div>
-                    <div className="text-sm text-slate-300 font-medium">Hectáreas</div>
+                <div className="grid grid-cols-4 gap-6">
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">22-60</div>
+                    <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                   </div>
-                  <div className="text-center p-4 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-3xl font-bold text-emerald-400 mb-1">12</div>
-                    <div className="text-sm text-slate-300 font-medium">Mineras</div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">12</div>
+                    <div className="text-xs text-slate-300 font-medium">Mineras</div>
                   </div>
-                  <div className="text-center p-4 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-3xl font-bold text-emerald-400 mb-1">2</div>
-                    <div className="text-sm text-slate-300 font-medium">Accesos</div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
+                    <div className="text-xs text-slate-300 font-medium">Accesos</div>
                   </div>
-                  <div className="text-center p-4 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-3xl font-bold text-emerald-400 mb-1">100%</div>
-                    <div className="text-sm text-slate-300 font-medium">Operativo</div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                    <div className="text-xs text-slate-300 font-medium">Operativo</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Información básica - 3 cards horizontales */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex items-center space-x-4 p-6 bg-slate-700/50 rounded-lg">
-                <Building className="w-10 h-10 text-emerald-400" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Building className="w-8 h-8 text-emerald-400" />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
-                  <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
+                  <h4 className="text-base font-semibold text-white">Superficie Total</h4>
+                  <p className="text-slate-300 text-sm">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-slate-700/50 rounded-lg">
-                <MapPin className="w-10 h-10 text-emerald-400" />
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <MapPin className="w-8 h-8 text-emerald-400" />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Ubicación</h4>
-                  <p className="text-slate-300">Baquedano, Región de Antofagasta</p>
+                  <h4 className="text-base font-semibold text-white">Ubicación</h4>
+                  <p className="text-slate-300 text-sm">Baquedano, Región de Antofagasta</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-slate-700/50 rounded-lg">
-                <Train className="w-10 h-10 text-emerald-400" />
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Train className="w-8 h-8 text-emerald-400" />
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
-                  <p className="text-slate-300">Conexión directa a la red ferroviaria nacional</p>
+                  <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
                 </div>
               </div>
             </div>
 
             {/* Mapa principal - más prominente */}
-            <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600 mb-8">
-              <div className="flex items-center justify-between mb-6">
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
+              <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h4 className="text-2xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
-                  <p className="text-emerald-400 text-lg font-medium">📍 Estación Baquedano</p>
+                  <h4 className="text-xl font-semibold text-white mb-1">Mapa de Ubicación</h4>
+                  <p className="text-emerald-400 text-base font-medium">📍 Estación Baquedano</p>
                 </div>
               </div>
-              <div className="w-full h-96 rounded-lg overflow-hidden border border-slate-600">
+              <div className="w-full h-80 rounded-lg overflow-hidden border border-slate-600">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16237.640266912316!2d-69.85061943875016!3d-23.334386186420744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ae5ac5197f02fb%3A0xab725243e9e8aff7!2sMunicipalidad%20Estaci%C3%B3n%20Baquedano!5e1!3m2!1ses-419!2scl!4v1758649714942!5m2!1ses-419!2scl"
                   width="100%"
@@ -522,135 +522,135 @@ const CentroLogistico = () => {
             </div>
 
             {/* Sección inferior - 3 secciones horizontales */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               
               {/* Ubicación Estratégica */}
-              <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                <h4 className="text-2xl font-semibold text-white mb-6">Ubicación Estratégica</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
+              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Confluye la mayor cantidad</strong> de mineras de Chile</p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Confluye la mayor cantidad</strong> de mineras de Chile</p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Alto flujo</strong> de contratistas y terceros</p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Alto flujo</strong> de contratistas y terceros</p>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Ubicación en ruta minera</strong></p>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Ubicación en ruta minera</strong></p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">Próximo a Sierra Gorda</strong></p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Próximo a Sierra Gorda</strong></p>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full flex-shrink-0"></div>
-                      <p className="text-slate-300"><strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Mineras que Operan */}
-              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Codelco Chuquicamata</span>
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Mineras que Operan</h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Codelco Chuquicamata</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Codelco Ministro Hales</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Codelco Ministro Hales</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Codelco Radomiro Tomic</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Codelco Radomiro Tomic</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Codelco Gabriela Mistral</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Codelco Gabriela Mistral</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Sierra Gorda SCM</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Sierra Gorda SCM</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Antofagasta Minerals Centinela</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Antofagasta Minerals Centinela</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">BHP Spence</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">BHP Spence</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">BHP Escondida</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">BHP Escondida</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Capstone</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Capstone</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">SQM</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">SQM</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Albemarle</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Albemarle</span>
                   </div>
-                  <div className="flex items-center space-x-2 p-3 bg-slate-600/30 rounded-lg border border-slate-500/20">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                    <span className="text-slate-300 text-sm">Glencore Alto Norte</span>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Glencore Alto Norte</span>
                   </div>
                 </div>
               </div>
 
               {/* Noticia destacada */}
-              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                <h4 className="text-xl font-semibold text-white mb-4">Noticia Destacada</h4>
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
                 
                 {/* Imagen principal */}
-                <div className="mb-4 rounded-lg overflow-hidden">
+                <div className="mb-3 rounded-lg overflow-hidden">
                   <img 
                     src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
                     alt="Anglo Teck fusión minera"
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 object-cover"
                   />
                 </div>
 
                 {/* Contenido de la noticia */}
-                <div className="space-y-3">
-                  <h5 className="text-lg font-bold text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                <div className="space-y-2">
+                  <h5 className="text-base font-bold text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                     Anglo Teck: la segunda mayor fusión minera de la historia que ubica a Chile como su piedra angular
                   </h5>
                   
-                  <p className="text-slate-300 text-sm leading-relaxed">
+                  <p className="text-slate-300 text-xs leading-relaxed">
                     La nueva compañía tendrá una exposición al cobre superior al 70% y más de la mitad de su producción en territorio nacional. 
                     La operación más relevante de la última década en el sector deberá ser visada por una serie de organismos, entre ellos la FNE.
                   </p>
                   
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <a 
                       href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-emerald-300 transition-all duration-300"
+                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
                     >
                       Leer artículo completo
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
