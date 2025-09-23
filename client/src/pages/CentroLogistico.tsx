@@ -489,6 +489,25 @@ const CentroLogistico = () => {
                     <p>• <strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
                   </div>
                 </div>
+
+                {/* Mineras que Operan */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                  <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-300">
+                    <p>• <strong className="text-emerald-400">Codelco Chuquicamata</strong></p>
+                    <p>• <strong className="text-emerald-400">Codelco Ministro Hales</strong></p>
+                    <p>• <strong className="text-emerald-400">Codelco Radomiro Tomic</strong></p>
+                    <p>• <strong className="text-emerald-400">Codelco Gabriela Mistral</strong></p>
+                    <p>• <strong className="text-emerald-400">Sierra Gorda SCM</strong></p>
+                    <p>• <strong className="text-emerald-400">Antofagasta Minerals Centinela</strong></p>
+                    <p>• <strong className="text-emerald-400">BHP Spence</strong></p>
+                    <p>• <strong className="text-emerald-400">BHP Escondida</strong></p>
+                    <p>• <strong className="text-emerald-400">Capstone</strong></p>
+                    <p>• <strong className="text-emerald-400">SQM</strong></p>
+                    <p>• <strong className="text-emerald-400">Albemarle</strong></p>
+                    <p>• <strong className="text-emerald-400">Glencore Alto Norte</strong></p>
+                  </div>
+                </div>
               </div>
                 
                 <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
@@ -566,6 +585,14 @@ const CentroLogistico = () => {
                       <p>• <strong className="text-emerald-400">Universo de 17 mil millones</strong> de dólares</p>
                       <p>• <strong className="text-emerald-400">Viabilidad acople Ferroviario</strong> (actual)</p>
                       <p>• <strong className="text-emerald-400">Únicos con capacidad operativa</strong> en esta ruta</p>
+                    </div>
+                  </div>
+
+                  {/* Mineras que Operan */}
+                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                    <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
+                    <div className="grid grid-cols-1 gap-3 text-slate-300">
+                      <p>• <strong className="text-emerald-400">BHP Escondida</strong></p>
                     </div>
                   </div>
                 </div>
