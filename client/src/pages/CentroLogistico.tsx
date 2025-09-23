@@ -627,20 +627,15 @@ const CentroLogistico = () => {
                   <img 
                     src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
                     alt="Anglo Teck fusión minera"
-                    className="w-full h-40 object-cover"
+                    className="w-full h-40 object-contain bg-white rounded"
                   />
                 </div>
 
                 {/* Contenido de la noticia */}
                 <div className="space-y-2">
-                  <h5 className="text-base font-bold text-white leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
-                    Anglo Teck: la segunda mayor fusión minera de la historia que ubica a Chile como su piedra angular
+                  <h5 className="text-base font-bold text-white leading-tight">
+                    Anglo Teck, Los ojos del mundo en la segunda mayor fusión minera de la historia
                   </h5>
-                  
-                  <p className="text-slate-300 text-xs leading-relaxed">
-                    La nueva compañía tendrá una exposición al cobre superior al 70% y más de la mitad de su producción en territorio nacional. 
-                    La operación más relevante de la última década en el sector deberá ser visada por una serie de organismos, entre ellos la FNE.
-                  </p>
                   
                   <div className="pt-1">
                     <a 
