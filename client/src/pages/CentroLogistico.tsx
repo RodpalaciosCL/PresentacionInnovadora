@@ -532,7 +532,7 @@ const CentroLogistico = () => {
                 <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
                   <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
                   <p className="text-emerald-400 text-sm mb-4 font-medium">📍 Estación Baquedano</p>
-                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
+                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600 mb-6">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16237.640266912316!2d-69.85061943875016!3d-23.334386186420744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ae5ac5197f02fb%3A0xab725243e9e8aff7!2sMunicipalidad%20Estaci%C3%B3n%20Baquedano!5e1!3m2!1ses-419!2scl!4v1758649714942!5m2!1ses-419!2scl"
                       width="100%"
@@ -543,6 +543,26 @@ const CentroLogistico = () => {
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Estación Baquedano - Centro Logístico"
                     />
+                  </div>
+                  
+                  {/* Información adicional del mapa */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
+                      <div className="text-emerald-400 font-semibold text-lg">22-60</div>
+                      <div className="text-slate-300 text-xs">Hectáreas</div>
+                    </div>
+                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
+                      <div className="text-emerald-400 font-semibold text-lg">12</div>
+                      <div className="text-slate-300 text-xs">Mineras</div>
+                    </div>
+                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
+                      <div className="text-emerald-400 font-semibold text-lg">2</div>
+                      <div className="text-slate-300 text-xs">Accesos</div>
+                    </div>
+                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
+                      <div className="text-emerald-400 font-semibold text-lg">100%</div>
+                      <div className="text-slate-300 text-xs">Operativo</div>
+                    </div>
                   </div>
                 </div>
               </div>
