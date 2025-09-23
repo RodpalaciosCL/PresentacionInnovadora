@@ -1281,7 +1281,7 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-lg border border-slate-700"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Inversión Requerida</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Distribución de la Inversión</h3>
               <p className="text-3xl font-bold text-emerald-400 mb-6">$1.7M USD</p>
               
               <div className="space-y-4">
