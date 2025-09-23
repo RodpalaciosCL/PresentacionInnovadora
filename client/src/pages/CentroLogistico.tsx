@@ -1086,43 +1086,119 @@ const CentroLogistico = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-6">Composición del Terreno</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Composición de Terrenos y Posibilidades</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Terreno optimizado para desarrollo logístico con acceso directo a infraestructura ferroviaria
+              Terrenos estratégicamente ubicados con máxima factibilidad para desarrollo logístico
             </p>
           </motion.div>
 
-          {/* Placeholder for terrain map */}
-          <div className="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
-            <div className="h-64 bg-slate-700 rounded-lg flex items-center justify-center mb-6">
-              <p className="text-slate-400">Mapa de composición del terreno</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Building className="w-8 h-8 text-slate-900" />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Área Construible</h3>
-                <p className="text-slate-300">85% del terreno</p>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Composición de Terrenos */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
+            >
+              <h3 className="text-2xl font-bold text-emerald-400 mb-6">Composición de Terrenos</h3>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Truck className="w-8 h-8 text-slate-900" />
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="flex items-center space-x-3">
+                    <Building className="w-6 h-6 text-emerald-400" />
+                    <span className="text-white font-medium">Área Construible</span>
+                  </div>
+                  <span className="text-emerald-400 font-bold">100%</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Accesos Viales</h3>
-                <p className="text-slate-300">Múltiples puntos de entrada</p>
+                
+                <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="flex items-center space-x-3">
+                    <Truck className="w-6 h-6 text-emerald-400" />
+                    <span className="text-white font-medium">Accesos Viales</span>
+                  </div>
+                  <span className="text-emerald-400 font-bold">Todos operativos</span>
+                </div>
+                
+                <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    <span className="text-white font-medium">Factibilidad Luz y Agua</span>
+                  </div>
+                  <span className="text-emerald-400 font-bold">100%</span>
+                </div>
+                
+                <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="flex items-center space-x-3">
+                    <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-white font-medium">Permisología</span>
+                  </div>
+                  <span className="text-emerald-400 font-bold">Todos aptos</span>
+                </div>
               </div>
+            </motion.div>
+
+            {/* Posibilidades */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
+            >
+              <h3 className="text-2xl font-bold text-emerald-400 mb-6">Posibilidades</h3>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Train className="w-8 h-8 text-slate-900" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Centros de acopio</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Rieles</h3>
-                <p className="text-slate-300">Acceso directo</p>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Parking de maquinaria</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Puertos secos</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Abastecimiento eléctrico</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Almacenamiento de baterías</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Hub de gestión operacional</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Manejo de residuos</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Cowork</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-3 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                  <span className="text-slate-300 text-sm">Hotelería</span>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
