@@ -253,8 +253,8 @@ const CentroLogistico = () => {
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-400/30 to-purple-500/30 rounded-lg flex items-center justify-center mb-3">
                       <Building className="w-4 h-4 text-purple-400" />
                     </div>
-                    <h4 className="text-white font-semibold text-sm mb-1">Permisos</h4>
-                    <p className="text-slate-400 text-xs">Pre-aprobados</p>
+                    <h4 className="text-white font-semibold text-sm mb-1">Factibilidad Operativa</h4>
+                    <p className="text-slate-400 text-xs">Aprobado</p>
                   </div>
                 </motion.div>
               </div>
@@ -270,10 +270,10 @@ const CentroLogistico = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-green-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
                   <div className="relative bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 p-4 rounded-xl hover:border-emerald-400/40 transition-all duration-300">
                     <div className="w-8 h-8 bg-gradient-to-br from-emerald-400/30 to-emerald-500/30 rounded-lg flex items-center justify-center mb-3">
-                      <TrendingUp className="w-4 h-4 text-emerald-400" />
+                      <Target className="w-4 h-4 text-emerald-400" />
                     </div>
-                    <h4 className="text-white font-semibold text-sm mb-1">ROI Alto</h4>
-                    <p className="text-slate-400 text-xs">24% anual</p>
+                    <h4 className="text-white font-semibold text-sm mb-1">Ubicaciones Estratégicas</h4>
+                    <p className="text-slate-400 text-xs">Epicentros Mineros</p>
                   </div>
                 </motion.div>
 
@@ -286,10 +286,10 @@ const CentroLogistico = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-red-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
                   <div className="relative bg-slate-800/50 backdrop-blur-sm border border-orange-400/20 p-4 rounded-xl hover:border-orange-400/40 transition-all duration-300">
                     <div className="w-8 h-8 bg-gradient-to-br from-orange-400/30 to-orange-500/30 rounded-lg flex items-center justify-center mb-3">
-                      <DollarSign className="w-4 h-4 text-orange-400" />
+                      <TrendingUp className="w-4 h-4 text-orange-400" />
                     </div>
-                    <h4 className="text-white font-semibold text-sm mb-1">Inversión</h4>
-                    <p className="text-slate-400 text-xs">$1.7M USD</p>
+                    <h4 className="text-white font-semibold text-sm mb-1">Escalabilidad</h4>
+                    <p className="text-slate-400 text-xs">Ecosistema Cruzado</p>
                   </div>
                 </motion.div>
               </div>
