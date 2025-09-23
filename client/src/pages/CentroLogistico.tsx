@@ -68,7 +68,7 @@ const CentroLogistico = () => {
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative pt-20 pb-16 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/20">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23334155%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
@@ -116,16 +116,16 @@ const CentroLogistico = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
           >
             <Link href="/opportunities">
               <motion.button
                 whileHover={{ scale: 1.05, x: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-all duration-300 mb-8 group"
+                className="inline-flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-all duration-300 mb-6 group"
               >
                 <motion.div
                   animate={{ x: [0, -5, 0] }}
@@ -139,7 +139,7 @@ const CentroLogistico = () => {
           </motion.div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Column - Title and Description */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -155,7 +155,7 @@ const CentroLogistico = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-6xl md:text-7xl font-black text-white leading-tight"
                 >
-                  Centro{' '}
+                  Centros{' '}
                   <span className="relative inline-block">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-500">
                       Logísticos
@@ -211,45 +211,86 @@ const CentroLogistico = () => {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 p-8 rounded-2xl hover:border-emerald-400/50 transition-all duration-500">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                      <Train className="w-6 h-6 text-white" />
+                <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-emerald-400/20 p-6 rounded-2xl hover:border-emerald-400/40 transition-all duration-500 shadow-2xl">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center mr-3 shadow-lg">
+                      <Train className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Alianza Estratégica</h3>
+                    <h3 className="text-xl font-bold text-white">Alianza Estratégica</h3>
                   </div>
-                  <p className="text-slate-300 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed text-sm">
                     <span className="text-emerald-400 font-semibold">Ferronor</span> como socio principal del proyecto, una pieza clave para la validación del proyecto, la seriedad del mismo y el know how de la operación del negocio.
                   </p>
                 </div>
               </motion.div>
 
               {/* Feature Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.4 }}
-                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/30 p-6 rounded-xl hover:border-emerald-400/30 transition-all duration-300"
+                  className="relative group"
                 >
-                  <div className="w-10 h-10 bg-blue-400/20 rounded-lg flex items-center justify-center mb-4">
-                    <MapPin className="w-5 h-5 text-blue-400" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative bg-slate-800/50 backdrop-blur-sm border border-blue-400/20 p-4 rounded-xl hover:border-blue-400/40 transition-all duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-400/30 to-blue-500/30 rounded-lg flex items-center justify-center mb-3">
+                      <MapPin className="w-4 h-4 text-blue-400" />
+                    </div>
+                    <h4 className="text-white font-semibold text-sm mb-1">Acceso Dual</h4>
+                    <p className="text-slate-400 text-xs">Carretera + Ferrocarril</p>
                   </div>
-                  <h4 className="text-white font-semibold mb-2">Acceso Dual</h4>
-                  <p className="text-slate-400 text-sm">Carretera + Ferrocarril</p>
                 </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.6 }}
-                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/30 p-6 rounded-xl hover:border-purple-400/30 transition-all duration-300"
+                  className="relative group"
                 >
-                  <div className="w-10 h-10 bg-purple-400/20 rounded-lg flex items-center justify-center mb-4">
-                    <Building className="w-5 h-5 text-purple-400" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative bg-slate-800/50 backdrop-blur-sm border border-purple-400/20 p-4 rounded-xl hover:border-purple-400/40 transition-all duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-400/30 to-purple-500/30 rounded-lg flex items-center justify-center mb-3">
+                      <Building className="w-4 h-4 text-purple-400" />
+                    </div>
+                    <h4 className="text-white font-semibold text-sm mb-1">Permisos</h4>
+                    <p className="text-slate-400 text-xs">Pre-aprobados</p>
                   </div>
-                  <h4 className="text-white font-semibold mb-2">Permisos</h4>
-                  <p className="text-slate-400 text-sm">Pre-aprobados</p>
+                </motion.div>
+              </div>
+
+              {/* Additional Feature Cards */}
+              <div className="grid grid-cols-2 gap-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.8 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-green-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative bg-slate-800/50 backdrop-blur-sm border border-emerald-400/20 p-4 rounded-xl hover:border-emerald-400/40 transition-all duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-br from-emerald-400/30 to-emerald-500/30 rounded-lg flex items-center justify-center mb-3">
+                      <TrendingUp className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <h4 className="text-white font-semibold text-sm mb-1">ROI Alto</h4>
+                    <p className="text-slate-400 text-xs">24% anual</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 2.0 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400/10 to-red-400/10 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative bg-slate-800/50 backdrop-blur-sm border border-orange-400/20 p-4 rounded-xl hover:border-orange-400/40 transition-all duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-br from-orange-400/30 to-orange-500/30 rounded-lg flex items-center justify-center mb-3">
+                      <DollarSign className="w-4 h-4 text-orange-400" />
+                    </div>
+                    <h4 className="text-white font-semibold text-sm mb-1">Inversión</h4>
+                    <p className="text-slate-400 text-xs">$1.7M USD</p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
