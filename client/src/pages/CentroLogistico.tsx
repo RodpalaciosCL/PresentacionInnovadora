@@ -713,8 +713,8 @@ const CentroLogistico = () => {
                     <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">1</div>
-                    <div className="text-xs text-slate-300 font-medium">Minera</div>
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">3</div>
+                    <div className="text-xs text-slate-300 font-medium">Mineras</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
                     <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
@@ -818,6 +818,14 @@ const CentroLogistico = () => {
                   <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
                     <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
                     <span className="text-slate-300 text-xs">BHP Escondida</span>
+                  </div>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Antofagasta Minerals</span>
+                  </div>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Minera Zaldivar</span>
                   </div>
                 </div>
               </div>
