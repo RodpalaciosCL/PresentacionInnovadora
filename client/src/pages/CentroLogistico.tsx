@@ -494,7 +494,7 @@ const CentroLogistico = () => {
                 <Train className="w-8 h-8 text-emerald-400" />
                 <div>
                   <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
-                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red de Ferronor</p>
                 </div>
               </div>
             </div>
@@ -750,7 +750,7 @@ const CentroLogistico = () => {
                 <Train className="w-8 h-8 text-emerald-400" />
                 <div>
                   <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
-                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red de Ferronor</p>
                 </div>
               </div>
             </div>
@@ -905,8 +905,8 @@ const CentroLogistico = () => {
                     <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">4</div>
-                    <div className="text-xs text-slate-300 font-medium">Mineras</div>
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">1</div>
+                    <div className="text-xs text-slate-300 font-medium">Minera</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
                     <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
@@ -942,7 +942,7 @@ const CentroLogistico = () => {
                 <Train className="w-8 h-8 text-emerald-400" />
                 <div>
                   <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
-                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red de Ferronor</p>
                 </div>
               </div>
             </div>
