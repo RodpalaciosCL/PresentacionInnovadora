@@ -492,20 +492,39 @@ const CentroLogistico = () => {
 
                 {/* Mineras que Operan */}
                 <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-300">
-                    <p>• <strong className="text-emerald-400">Codelco Chuquicamata</strong></p>
-                    <p>• <strong className="text-emerald-400">Codelco Ministro Hales</strong></p>
-                    <p>• <strong className="text-emerald-400">Codelco Radomiro Tomic</strong></p>
-                    <p>• <strong className="text-emerald-400">Codelco Gabriela Mistral</strong></p>
-                    <p>• <strong className="text-emerald-400">Sierra Gorda SCM</strong></p>
-                    <p>• <strong className="text-emerald-400">Antofagasta Minerals Centinela</strong></p>
-                    <p>• <strong className="text-emerald-400">BHP Spence</strong></p>
-                    <p>• <strong className="text-emerald-400">BHP Escondida</strong></p>
-                    <p>• <strong className="text-emerald-400">Capstone</strong></p>
-                    <p>• <strong className="text-emerald-400">SQM</strong></p>
-                    <p>• <strong className="text-emerald-400">Albemarle</strong></p>
-                    <p>• <strong className="text-emerald-400">Glencore Alto Norte</strong></p>
+                  <h4 className="text-xl font-semibold text-white mb-6">Mineras que Operan</h4>
+                  
+                  {/* Grupo Codelco */}
+                  <div className="mb-6">
+                    <h5 className="text-sm font-semibold text-emerald-400 mb-3 uppercase tracking-wide">Codelco</h5>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Chuquicamata</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Ministro Hales</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Radomiro Tomic</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Gabriela Mistral</span>
+                    </div>
+                  </div>
+
+                  {/* Grupo BHP */}
+                  <div className="mb-6">
+                    <h5 className="text-sm font-semibold text-emerald-400 mb-3 uppercase tracking-wide">BHP</h5>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Spence</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Escondida</span>
+                    </div>
+                  </div>
+
+                  {/* Otras Mineras */}
+                  <div className="mb-4">
+                    <h5 className="text-sm font-semibold text-emerald-400 mb-3 uppercase tracking-wide">Otras Mineras</h5>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Sierra Gorda SCM</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Antofagasta Minerals</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Capstone</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">SQM</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Albemarle</span>
+                      <span className="px-3 py-1 bg-emerald-400/20 text-emerald-300 rounded-full text-sm border border-emerald-400/30">Glencore</span>
+                    </div>
                   </div>
                 </div>
               </div>
