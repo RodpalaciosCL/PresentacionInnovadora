@@ -638,27 +638,37 @@ const CentroLogistico = () => {
                 </div>
               </div>
 
-              {/* Noticia destacada - PLACEHOLDER */}
+              {/* Noticia destacada */}
               <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
                 <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
                 
-                {/* Imagen principal - PLACEHOLDER */}
+                {/* Imagen principal */}
                 <div className="mb-3">
-                  <div className="h-40 bg-slate-600/50 rounded-lg flex items-center justify-center border border-slate-500">
-                    <p className="text-slate-400 text-sm">Imagen de noticia pendiente</p>
-                  </div>
+                  <img 
+                    src="https://gerens.pe/blog/wp-content/uploads/2017/10/gestion-logistica-minera.jpg"
+                    alt="Gestión logística minera"
+                    className="h-40 object-contain"
+                  />
                 </div>
 
-                {/* Contenido de la noticia - PLACEHOLDER */}
+                {/* Contenido de la noticia */}
                 <div className="space-y-2">
                   <h5 className="text-base font-bold text-white leading-tight">
-                    Título de noticia pendiente para Baquedano
+                    Minería lidera crecimiento de PIB regional en 2024 con Antofagasta a la cabeza
                   </h5>
                   
                   <div className="pt-1">
-                    <div className="inline-flex items-center bg-slate-500 text-slate-300 px-3 py-2 rounded-lg font-semibold text-xs">
-                      Link de artículo pendiente
-                    </div>
+                    <a 
+                      href="https://mundomineria.cl/2025/04/23/mineria-lidera-crecimiento-de-pib-regional-en-2024-con-antofagasta-a-la-cabeza/?utm_source=chatgpt.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
+                    >
+                      Leer artículo completo
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
