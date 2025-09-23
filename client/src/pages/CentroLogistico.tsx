@@ -693,118 +693,170 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
-                      <Target className="w-8 h-8 text-slate-900" />
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-emerald-400">Escondida</h3>
-                      <p className="text-lg text-slate-300">Estación Imilac</p>
-                    </div>
+            {/* Header amplio de la estación */}
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-5">
+                    <Target className="w-8 h-8 text-slate-900" />
                   </div>
-                  
-                  {/* Información del Proyecto */}
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <Building className="w-8 h-8 text-blue-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
-                        <p className="text-slate-300">15 hectáreas especializadas en logística minera</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <MapPin className="w-8 h-8 text-blue-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Ubicación</h4>
-                        <p className="text-slate-300">Escondida, Región de Antofagasta</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <Train className="w-8 h-8 text-purple-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
-                        <p className="text-slate-300">Conexión directa a la red ferroviaria del norte</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Ubicación Estratégica */}
-                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                    <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
-                    <div className="space-y-3 text-slate-300">
-                      <p>• <strong className="text-emerald-400">A 10km de la mina de cobre</strong> más grande del mundo</p>
-                      <p>• <strong className="text-emerald-400">Ruta Exclusiva</strong> para Minera Escondida</p>
-                      <p>• <strong className="text-emerald-400">Universo de 17 mil millones</strong> de dólares</p>
-                      <p>• <strong className="text-emerald-400">Viabilidad acople Ferroviario</strong> (actual)</p>
-                      <p>• <strong className="text-emerald-400">Únicos con capacidad operativa</strong> en esta ruta</p>
-                    </div>
-                  </div>
-
-                  {/* Mineras que Operan */}
-                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                    <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
-                    <div className="grid grid-cols-1 gap-3 text-slate-300">
-                      <p>• <strong className="text-emerald-400">BHP Escondida</strong></p>
-                    </div>
-                  </div>
-
-                  {/* Noticia destacada */}
-                  <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
-                    <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
-                    
-                    {/* Imagen principal */}
-                    <div className="mb-3">
-                      <img 
-                        src="https://www.bhp.com/es/-/media/project/bhp1ip/bhp-com-en/images/_secondary-banner/2021/210628_escondidapit.jpg?w=1920&hash=00253F71FFA9D50DA66500B0D7A010C6"
-                        alt="BHP Escondida mina de cobre"
-                        className="h-40 object-contain"
-                      />
-                    </div>
-
-                    {/* Contenido de la noticia */}
-                    <div className="space-y-2">
-                      <h5 className="text-base font-bold text-white leading-tight">
-                        BHP anuncia histórica inversión en Chile: US$13.700 millones para Pampa Norte y Escondida
-                      </h5>
-                      
-                      <div className="pt-1">
-                        <a 
-                          href="https://www.elmostrador.cl/mercados/2024/11/19/bhp-anuncia-historica-inversion-en-chile-us13-700-millones-para-pampa-norte-y-escondida/" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
-                        >
-                          Leer artículo completo
-                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-emerald-400 mb-1">Escondida</h3>
+                    <p className="text-lg text-slate-300">Estación Imilac</p>
                   </div>
                 </div>
                 
-                <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
-                  <p className="text-blue-400 text-sm mb-4 font-medium">📍 Estación Imilac</p>
-                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d129010.09680777308!2d-69.02717546272761!3d-24.22926827692446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96a600b19a229733%3A0x3e6061ff01b19a75!2sImilac%2C%20Antofagasta!5e1!3m2!1ses-419!2scl!4v1758649034040!5m2!1ses-419!2scl"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Estación Imilac - Centro Logístico"
-                    />
+                {/* Estadísticas en el header */}
+                <div className="grid grid-cols-4 gap-6">
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">15-45</div>
+                    <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">1</div>
+                    <div className="text-xs text-slate-300 font-medium">Minera</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
+                    <div className="text-xs text-slate-300 font-medium">Accesos</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                    <div className="text-xs text-slate-300 font-medium">Operativo</div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Información básica - 3 cards horizontales */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Building className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Superficie Total</h4>
+                  <p className="text-slate-300 text-sm">15 hectáreas iniciales, ampliable a 45 hectáreas</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <MapPin className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Ubicación</h4>
+                  <p className="text-slate-300 text-sm">Imilac, Región de Antofagasta</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Train className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mapa principal - más prominente */}
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-1">Mapa de Ubicación</h4>
+                  <p className="text-emerald-400 text-base font-medium">📍 Estación Imilac</p>
+                </div>
+              </div>
+              <div className="w-full h-80 rounded-lg overflow-hidden border border-slate-600">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d129010.09680777308!2d-69.02717546272761!3d-24.22926827692446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96a600b19a229733%3A0x3e6061ff01b19a75!2sImilac%2C%20Antofagasta!5e1!3m2!1ses-419!2scl!4v1758649034040!5m2!1ses-419!2scl"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Estación Imilac - Centro Logístico"
+                />
+              </div>
+            </div>
+
+            {/* Sección inferior - 3 secciones horizontales */}
+            <div className="space-y-6">
+              
+              {/* Ubicación Estratégica */}
+              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">A 10km de la mina de cobre más grande del mundo</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Ruta Exclusiva para Minera Escondida</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Universo de 17 mil millones de dólares</strong></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Viabilidad acople Ferroviario (actual)</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Únicos con capacidad operativa en esta ruta</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mineras que Operan */}
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Mineras que Operan</h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">BHP Escondida</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Noticia destacada */}
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
+                
+                {/* Imagen principal */}
+                <div className="mb-3">
+                  <img 
+                    src="https://www.bhp.com/es/-/media/project/bhp1ip/bhp-com-en/images/_secondary-banner/2021/210628_escondidapit.jpg?w=1920&hash=00253F71FFA9D50DA66500B0D7A010C6"
+                    alt="BHP Escondida mina de cobre"
+                    className="h-40 object-contain"
+                  />
+                </div>
+
+                {/* Contenido de la noticia */}
+                <div className="space-y-2">
+                  <h5 className="text-base font-bold text-white leading-tight">
+                    BHP anuncia histórica inversión en Chile: US$13.700 millones para Pampa Norte y Escondida
+                  </h5>
+                  
+                  <div className="pt-1">
+                    <a 
+                      href="https://www.elmostrador.cl/mercados/2024/11/19/bhp-anuncia-historica-inversion-en-chile-us13-700-millones-para-pampa-norte-y-escondida/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
+                    >
+                      Leer artículo completo
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
               {/* Ver detalle de inversión */}
               <div className="text-center pt-6">
@@ -825,121 +877,182 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
-                      <Target className="w-8 h-8 text-slate-900" />
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-emerald-400">Anglo-Teck</h3>
-                      <p className="text-lg text-slate-300">Estación Pintados</p>
-                    </div>
+            {/* Header amplio de la estación */}
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-5">
+                    <Target className="w-8 h-8 text-slate-900" />
                   </div>
-                  
-                  {/* Información del Proyecto */}
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <Building className="w-8 h-8 text-purple-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
-                        <p className="text-slate-300">20 hectáreas para operaciones logísticas</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <MapPin className="w-8 h-8 text-blue-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Ubicación</h4>
-                        <p className="text-slate-300">Iquique, Región de Tarapacá</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                      <Train className="w-8 h-8 text-purple-400" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
-                        <p className="text-slate-300">Conexión estratégica a red ferroviaria</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Ubicación Estratégica */}
-                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                    <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
-                    <div className="space-y-3 text-slate-300">
-                      <p>• <strong className="text-emerald-400">Ubicación única</strong> en nuevo nodo mundial</p>
-                      <p>• <strong className="text-emerald-400">Ubicación estratégica</strong> ruta minera y 5 norte</p>
-                      <p>• <strong className="text-emerald-400">Hub en medio del trayecto</strong> a puerto-mina</p>
-                      <p>• <strong className="text-emerald-400">Muy baja presencia</strong> de competencia</p>
-                      <p>• <strong className="text-emerald-400">Universo de 20 mil millones</strong> de dólares</p>
-                    </div>
-                  </div>
-
-                  {/* Mineras que Operan */}
-                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                    <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-300">
-                      <p>• <strong className="text-emerald-400">Angloamerican Collahuasi</strong></p>
-                      <p>• <strong className="text-emerald-400">Glencore Collahuasi</strong></p>
-                      <p>• <strong className="text-emerald-400">Teck Quebrada Blanca</strong></p>
-                      <p>• <strong className="text-emerald-400">Nuevo AngloTeck</strong></p>
-                    </div>
-                  </div>
-
-                  {/* Noticia destacada */}
-                  <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
-                    <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
-                    
-                    {/* Imagen principal */}
-                    <div className="mb-3">
-                      <img 
-                        src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
-                        alt="Anglo Teck fusión minera"
-                        className="h-40 object-contain"
-                      />
-                    </div>
-
-                    {/* Contenido de la noticia */}
-                    <div className="space-y-2">
-                      <h5 className="text-base font-bold text-white leading-tight">
-                        Anglo Teck, Los ojos del mundo en la segunda mayor fusión minera de la historia
-                      </h5>
-                      
-                      <div className="pt-1">
-                        <a 
-                          href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
-                        >
-                          Leer artículo completo
-                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-emerald-400 mb-1">Anglo-Teck</h3>
+                    <p className="text-lg text-slate-300">Estación Pintados</p>
                   </div>
                 </div>
                 
-                <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
-                  <p className="text-purple-400 text-sm mb-4 font-medium">📍 Estación Pintados</p>
-                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66210.4720490293!2d-69.65975109148984!3d-20.60639764358868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9153006ddbc9fc87%3A0xcaf87e58f916e5a!2sPintados%2C%20Pozo%20Almonte%2C%20Tarapac%C3%A1!5e1!3m2!1ses-419!2scl!4v1758648983058!5m2!1ses-419!2scl"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Estación Pintados - Centro Logístico"
-                    />
+                {/* Estadísticas en el header */}
+                <div className="grid grid-cols-4 gap-6">
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">20-60</div>
+                    <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">4</div>
+                    <div className="text-xs text-slate-300 font-medium">Mineras</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
+                    <div className="text-xs text-slate-300 font-medium">Accesos</div>
+                  </div>
+                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                    <div className="text-xs text-slate-300 font-medium">Operativo</div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Información básica - 3 cards horizontales */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Building className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Superficie Total</h4>
+                  <p className="text-slate-300 text-sm">20 hectáreas iniciales, ampliable a 60 hectáreas</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <MapPin className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Ubicación</h4>
+                  <p className="text-slate-300 text-sm">Pintados, Región de Tarapacá</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-5 bg-slate-700/50 rounded-lg">
+                <Train className="w-8 h-8 text-emerald-400" />
+                <div>
+                  <h4 className="text-base font-semibold text-white">Acceso Ferroviario</h4>
+                  <p className="text-slate-300 text-sm">Conexión directa a la red ferroviaria nacional</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mapa principal - más prominente */}
+            <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mb-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-1">Mapa de Ubicación</h4>
+                  <p className="text-emerald-400 text-base font-medium">📍 Estación Pintados</p>
+                </div>
+              </div>
+              <div className="w-full h-80 rounded-lg overflow-hidden border border-slate-600">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66210.4720490293!2d-69.65975109148984!3d-20.60639764358868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9153006ddbc9fc87%3A0xcaf87e58f916e5a!2sPintados%2C%20Pozo%20Almonte%2C%20Tarapac%C3%A1!5e1!3m2!1ses-419!2scl!4v1758648983058!5m2!1ses-419!2scl"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Estación Pintados - Centro Logístico"
+                />
+              </div>
+            </div>
+
+            {/* Sección inferior - 3 secciones horizontales */}
+            <div className="space-y-6">
+              
+              {/* Ubicación Estratégica */}
+              <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Ubicación única en nuevo nodo mundial</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Ubicación estratégica ruta minera y 5 norte</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Hub en medio del trayecto a puerto-mina</strong></p>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Muy baja presencia de competencia</strong></p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Universo de 20 mil millones de dólares</strong></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mineras que Operan */}
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Mineras que Operan</h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Angloamerican Collahuasi</span>
+                  </div>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Glencore Collahuasi</span>
+                  </div>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Teck Quebrada Blanca</span>
+                  </div>
+                  <div className="flex items-center space-x-2 p-2 bg-slate-600/30 rounded-lg border border-slate-500/20">
+                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div>
+                    <span className="text-slate-300 text-xs">Nuevo AngloTeck</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Noticia destacada */}
+              <div className="bg-slate-700/30 p-5 rounded-lg border border-slate-600">
+                <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
+                
+                {/* Imagen principal */}
+                <div className="mb-3">
+                  <img 
+                    src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
+                    alt="Anglo Teck fusión minera"
+                    className="h-40 object-contain"
+                  />
+                </div>
+
+                {/* Contenido de la noticia */}
+                <div className="space-y-2">
+                  <h5 className="text-base font-bold text-white leading-tight">
+                    Anglo Teck, Los ojos del mundo en la segunda mayor fusión minera de la historia
+                  </h5>
+                  
+                  <div className="pt-1">
+                    <a 
+                      href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-emerald-400 text-slate-900 px-3 py-2 rounded-lg font-semibold text-xs hover:bg-emerald-300 transition-all duration-300"
+                    >
+                      Leer artículo completo
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
               {/* Ver detalle de inversión */}
               <div className="text-center pt-6">
