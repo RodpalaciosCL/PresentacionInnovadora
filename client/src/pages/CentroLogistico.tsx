@@ -481,10 +481,12 @@ const CentroLogistico = () => {
                   <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
                   <div className="space-y-3 text-slate-300">
                     <p>• <strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
-                    <p>• <strong className="text-emerald-400">Acceso directo</strong> a la red ferroviaria del norte</p>
+                    <p>• <strong className="text-emerald-400">Confluye la mayor cantidad</strong> de mineras de Chile</p>
                     <p>• <strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
-                    <p>• <strong className="text-emerald-400">Conectividad</strong> con la red vial nacional</p>
-                    <p>• <strong className="text-emerald-400">Centro de distribución</strong> para la industria minera</p>
+                    <p>• <strong className="text-emerald-400">Alto flujo</strong> de contratistas y terceros</p>
+                    <p>• <strong className="text-emerald-400">Ubicación en ruta minera</strong></p>
+                    <p>• <strong className="text-emerald-400">Próximo a Sierra Gorda</strong></p>
+                    <p>• <strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
                   </div>
                 </div>
               </div>
