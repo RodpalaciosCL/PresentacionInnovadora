@@ -517,7 +517,7 @@ const CentroLogistico = () => {
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="lg:order-2">
+                <div>
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mr-4">
                       <Building className="w-8 h-8 text-slate-900" />
@@ -528,30 +528,53 @@ const CentroLogistico = () => {
                     </div>
                   </div>
                   
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Proximidad a la mina de cobre más grande del mundo</p>
+                  {/* Información del Proyecto */}
+                  <div className="space-y-6 mb-8">
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <Building className="w-8 h-8 text-blue-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
+                        <p className="text-slate-300">15 hectáreas especializadas en logística minera</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Terminal de carga especializado</p>
+                    
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <MapPin className="w-8 h-8 text-blue-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Ubicación</h4>
+                        <p className="text-slate-300">Escondida, Región de Antofagasta</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Centro de distribución estratégico</p>
+                    
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <Train className="w-8 h-8 text-purple-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
+                        <p className="text-slate-300">Conexión directa a la red ferroviaria del norte</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Servicios logísticos especializados</p>
+                  </div>
+
+                  {/* Ubicación Estratégica */}
+                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                    <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                    <div className="space-y-3 text-slate-300">
+                      <p>• <strong className="text-blue-400">Proximidad a la mina</strong> de cobre más grande del mundo</p>
+                      <p>• <strong className="text-blue-400">Terminal de carga</strong> especializado</p>
+                      <p>• <strong className="text-blue-400">Centro de distribución</strong> estratégico</p>
+                      <p>• <strong className="text-blue-400">Servicios logísticos</strong> especializados</p>
+                      <p>• <strong className="text-blue-400">Acceso directo</strong> a infraestructura minera</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="lg:order-1 bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-4">Mapa de Ubicación</h4>
-                  <div className="w-full h-64 bg-slate-600 rounded-lg flex items-center justify-center">
-                    <span className="text-slate-400">Mapa de Escondida</span>
+                <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
+                  <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
+                  <p className="text-blue-400 text-sm mb-4 font-medium">📍 Estación Escondida</p>
+                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
+                    <div className="w-full h-full bg-slate-600 rounded-lg flex items-center justify-center">
+                      <span className="text-slate-400">Mapa de Escondida</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -577,30 +600,53 @@ const CentroLogistico = () => {
                     </div>
                   </div>
                   
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Ubicación en Iquique para operaciones logísticas</p>
+                  {/* Información del Proyecto */}
+                  <div className="space-y-6 mb-8">
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <Building className="w-8 h-8 text-purple-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
+                        <p className="text-slate-300">20 hectáreas para operaciones logísticas</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Puertos secos entre Puerto de Iquique y faenas mineras</p>
+                    
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <MapPin className="w-8 h-8 text-blue-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Ubicación</h4>
+                        <p className="text-slate-300">Iquique, Región de Tarapacá</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Conexión con Collahuasi y Quebrada Blanca</p>
+                    
+                    <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                      <Train className="w-8 h-8 text-purple-400" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
+                        <p className="text-slate-300">Conexión estratégica a red ferroviaria</p>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Ruta estratégica de la minería chilena</p>
+                  </div>
+
+                  {/* Ubicación Estratégica */}
+                  <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                    <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                    <div className="space-y-3 text-slate-300">
+                      <p>• <strong className="text-purple-400">Ubicación en Iquique</strong> para operaciones logísticas</p>
+                      <p>• <strong className="text-purple-400">Puertos secos</strong> entre Puerto de Iquique y faenas mineras</p>
+                      <p>• <strong className="text-purple-400">Conexión con Collahuasi</strong> y Quebrada Blanca</p>
+                      <p>• <strong className="text-purple-400">Ruta estratégica</strong> de la minería chilena</p>
+                      <p>• <strong className="text-purple-400">Acceso portuario</strong> directo al Pacífico</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-4">Mapa de Ubicación</h4>
-                  <div className="w-full h-64 bg-slate-600 rounded-lg flex items-center justify-center">
-                    <span className="text-slate-400">Mapa de Anglo-Teck Iquique</span>
+                  <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
+                  <p className="text-purple-400 text-sm mb-4 font-medium">📍 Estación Anglo-Teck</p>
+                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600">
+                    <div className="w-full h-full bg-slate-600 rounded-lg flex items-center justify-center">
+                      <span className="text-slate-400">Mapa de Anglo-Teck Iquique</span>
+                    </div>
                   </div>
                 </div>
               </div>
