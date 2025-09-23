@@ -437,121 +437,54 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Header de la estación */}
+            <div className="flex items-center mb-8">
+              <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
+                <Target className="w-8 h-8 text-slate-900" />
+              </div>
               <div>
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
-                    <Target className="w-8 h-8 text-slate-900" />
-                  </div>
+                <h3 className="text-3xl font-bold text-emerald-400">Baquedano</h3>
+                <p className="text-lg text-slate-300">Epicentro Actual</p>
+              </div>
+            </div>
+
+            {/* Layout principal: 3 columnas */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Columna 1: Información básica */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                  <Building className="w-8 h-8 text-emerald-400" />
                   <div>
-                    <h3 className="text-3xl font-bold text-emerald-400">Baquedano</h3>
-                    <p className="text-lg text-slate-300">Epicentro Actual</p>
+                    <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
+                    <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
                   </div>
                 </div>
                 
-                {/* Información del Proyecto */}
-                <div className="space-y-6 mb-8">
-                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                    <Building className="w-8 h-8 text-emerald-400" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
-                      <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                    <MapPin className="w-8 h-8 text-blue-400" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-white">Ubicación</h4>
-                      <p className="text-slate-300">Baquedano, Región de Antofagasta</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                    <Train className="w-8 h-8 text-purple-400" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
-                      <p className="text-slate-300">Conexión directa a la red ferroviaria nacional</p>
-                    </div>
+                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                  <MapPin className="w-8 h-8 text-emerald-400" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">Ubicación</h4>
+                    <p className="text-slate-300">Baquedano, Región de Antofagasta</p>
                   </div>
                 </div>
-
-                {/* Ubicación Estratégica */}
-                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
-                  <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
-                  <div className="space-y-3 text-slate-300">
-                    <p>• <strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
-                    <p>• <strong className="text-emerald-400">Confluye la mayor cantidad</strong> de mineras de Chile</p>
-                    <p>• <strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
-                    <p>• <strong className="text-emerald-400">Alto flujo</strong> de contratistas y terceros</p>
-                    <p>• <strong className="text-emerald-400">Ubicación en ruta minera</strong></p>
-                    <p>• <strong className="text-emerald-400">Próximo a Sierra Gorda</strong></p>
-                    <p>• <strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
-                  </div>
-                </div>
-
-                {/* Mineras que Operan */}
-                <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600 mt-8">
-                  <h4 className="text-xl font-semibold text-white mb-8 text-center">Mineras que Operan</h4>
-                  
-                  {/* Lista vertical con separadores */}
-                  <div className="space-y-4">
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Codelco Chuquicamata</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Codelco Ministro Hales</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Codelco Radomiro Tomic</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Codelco Gabriela Mistral</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Sierra Gorda SCM</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Antofagasta Minerals Centinela</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">BHP Spence</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">BHP Escondida</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Capstone</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">SQM</span>
-                    </div>
-                    <div className="flex items-center py-3 border-b border-slate-600/50">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Albemarle</span>
-                    </div>
-                    <div className="flex items-center py-3">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mr-4"></div>
-                      <span className="text-emerald-300 font-medium">Glencore Alto Norte</span>
-                    </div>
+                
+                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                  <Train className="w-8 h-8 text-emerald-400" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
+                    <p className="text-slate-300">Conexión directa a la red ferroviaria nacional</p>
                   </div>
                 </div>
               </div>
-                
-                <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
+
+              {/* Columna 2: Mapa y noticia */}
+              <div className="space-y-6">
+                {/* Mapa */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
                   <h4 className="text-xl font-semibold text-white mb-2">Mapa de Ubicación</h4>
                   <p className="text-emerald-400 text-sm mb-4 font-medium">📍 Estación Baquedano</p>
-                  <div className="w-full h-64 rounded-lg overflow-hidden border border-slate-600 mb-6">
+                  <div className="w-full h-48 rounded-lg overflow-hidden border border-slate-600 mb-4">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16237.640266912316!2d-69.85061943875016!3d-23.334386186420744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ae5ac5197f02fb%3A0xab725243e9e8aff7!2sMunicipalidad%20Estaci%C3%B3n%20Baquedano!5e1!3m2!1ses-419!2scl!4v1758649714942!5m2!1ses-419!2scl"
                       width="100%"
@@ -564,57 +497,143 @@ const CentroLogistico = () => {
                     />
                   </div>
                   
-                  {/* Información adicional del mapa */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
-                      <div className="text-emerald-400 font-semibold text-lg">22-60</div>
-                      <div className="text-slate-300 text-xs">Hectáreas</div>
+                  {/* Estadísticas compactas */}
+                  <div className="grid grid-cols-4 gap-2">
+                    <div className="text-center p-2 bg-slate-600/50 rounded">
+                      <div className="text-emerald-400 font-semibold text-sm">22-60</div>
+                      <div className="text-slate-300 text-xs">Ha</div>
                     </div>
-                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
-                      <div className="text-emerald-400 font-semibold text-lg">12</div>
+                    <div className="text-center p-2 bg-slate-600/50 rounded">
+                      <div className="text-emerald-400 font-semibold text-sm">12</div>
                       <div className="text-slate-300 text-xs">Mineras</div>
                     </div>
-                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
-                      <div className="text-emerald-400 font-semibold text-lg">2</div>
+                    <div className="text-center p-2 bg-slate-600/50 rounded">
+                      <div className="text-emerald-400 font-semibold text-sm">2</div>
                       <div className="text-slate-300 text-xs">Accesos</div>
                     </div>
-                    <div className="text-center p-3 bg-slate-600/50 rounded-lg">
-                      <div className="text-emerald-400 font-semibold text-lg">100%</div>
+                    <div className="text-center p-2 bg-slate-600/50 rounded">
+                      <div className="text-emerald-400 font-semibold text-sm">100%</div>
                       <div className="text-slate-300 text-xs">Operativo</div>
                     </div>
                   </div>
                 </div>
 
-                {/* Recuadro de Noticia */}
-                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mt-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-emerald-400/20 rounded-lg flex items-center justify-center">
-                        <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                        </svg>
+                {/* Noticia rediseñada */}
+                <div className="bg-slate-700/30 p-4 rounded-lg border border-slate-600">
+                  <div className="relative overflow-hidden rounded-lg mb-3">
+                    <img 
+                      src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
+                      alt="Anglo Teck fusión minera"
+                      className="w-full h-32 object-cover"
+                    />
+                    <div className="absolute top-2 left-2 bg-emerald-400 text-slate-900 px-2 py-1 rounded text-xs font-semibold">
+                      NOTICIA
+                    </div>
+                  </div>
+                  <h4 className="text-white font-semibold text-sm mb-2 line-clamp-2">
+                    Anglo Teck: la segunda mayor fusión minera de la historia
+                  </h4>
+                  <a 
+                    href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-emerald-400 hover:text-emerald-300 text-xs font-medium transition-colors"
+                  >
+                    Leer artículo completo
+                    <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Columna 3: Ubicación estratégica y mineras */}
+              <div className="space-y-6">
+                {/* Ubicación Estratégica */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                  <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                  <div className="space-y-3 text-slate-300">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Confluye la mayor cantidad</strong> de mineras de Chile</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Alto flujo</strong> de contratistas y terceros</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Ubicación en ruta minera</strong></p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">Próximo a Sierra Gorda</strong></p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-sm"><strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mineras rediseñadas */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                  <h4 className="text-xl font-semibold text-white mb-4">Mineras que Operan</h4>
+                  
+                  {/* Grid de mineras */}
+                  <div className="grid grid-cols-1 gap-3">
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Codelco</span>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-white mb-2">Noticia Destacada</h4>
-                      <p className="text-slate-300 text-sm mb-3">
-                        Anglo Teck: la segunda mayor fusión minera de la historia que ubica a Chile como su piedra angular
-                      </p>
-                      <a 
-                        href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
-                      >
-                        Leer más
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">BHP</span>
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Sierra Gorda SCM</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Antofagasta Minerals</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Capstone</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">SQM</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Albemarle</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <div className="flex items-center justify-between p-3 bg-slate-600/30 rounded-lg">
+                      <span className="text-emerald-300 text-sm font-medium">Glencore</span>
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
             </motion.div>
 
             {/* Escondida */}
