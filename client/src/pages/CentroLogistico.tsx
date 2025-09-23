@@ -559,6 +559,10 @@ const CentroLogistico = () => {
                       <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
                       <p className="text-slate-300 text-sm"><strong className="text-emerald-400">A 12kms de 2 Estaciones nuestras</strong> (extra)</p>
                     </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-slate-300 text-sm"><strong className="text-emerald-400">Codelco-Freeport universo</strong> 10 mil millones de dólares</p>
+                    </div>
                   </div>
                 </div>
               </div>
