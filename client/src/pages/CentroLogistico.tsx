@@ -623,11 +623,11 @@ const CentroLogistico = () => {
                 <h4 className="text-lg font-semibold text-white mb-3">Noticia Destacada</h4>
                 
                 {/* Imagen principal */}
-                <div className="mb-3 rounded-lg overflow-hidden">
+                <div className="mb-3">
                   <img 
                     src="https://pub-219f6331c6cb413294f3adaedca405df.r2.dev/Captura%20de%20pantalla%202025-09-23%20a%20la(s)%2015.10.16.png"
                     alt="Anglo Teck fusión minera"
-                    className="w-full h-40 object-contain bg-white rounded"
+                    className="h-40 object-contain"
                   />
                 </div>
 
