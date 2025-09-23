@@ -88,81 +88,30 @@ const CentroLogistico = () => {
             </Link>
             
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Centro <span className="text-emerald-400">Logístico</span>
+              Centro <span className="text-emerald-400">Logísticos</span>
               <br />
-              <span className="text-3xl md:text-4xl text-slate-300">Baquedano</span>
+              <span className="text-3xl md:text-4xl text-slate-300">Estratégicos</span>
             </h1>
             
-            <p className="text-xl text-slate-300 max-w-3xl">
-              Terminal ferroviaria y centro de distribución estratégico en el corazón del norte de Chile
+            <p className="text-xl text-slate-300 max-w-3xl mb-8">
+              Ubicaciones para desarrollar Centros de logística, acopio, parking, puerto seco y mucho más.
             </p>
+
+            <div className="max-w-4xl space-y-6">
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Disponemos de ubicaciones altamente estratégicas y muy demandadas, dado el alto flujo operacional minero y la dificultad de poder obtener predios, permisos y aprobaciones para operar en ellos.
+              </p>
+              
+              <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                <p className="text-slate-300 leading-relaxed">
+                  Lo anterior, sumado a que todos tienen no sólo acceso vía carretera, sino también vía ferrocarril, lo cual le entrega un atributo extra, sin dejar de lado que el socio principal del proyecto es <span className="text-emerald-400 font-semibold">Ferronor</span>, una pieza clave para la validación del proyecto, la seriedad del mismo y el know how de la operación del negocio.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Project Overview */}
-      <section className="py-16 bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold text-white mb-6">Información del Proyecto</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                  <Building className="w-8 h-8 text-emerald-400" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">Superficie Total</h3>
-                    <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-blue-400" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">Ubicación</h3>
-                    <p className="text-slate-300">Baquedano, Región de Antofagasta</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
-                  <Train className="w-8 h-8 text-purple-400" />
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">Acceso Ferroviario</h3>
-                    <p className="text-slate-300">Conexión directa a la red ferroviaria nacional</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-slate-800/50 p-8 rounded-lg border border-slate-700"
-            >
-              <h3 className="text-2xl font-bold text-white mb-6">Ubicación Estratégica</h3>
-              <div className="space-y-4 text-slate-300">
-                <p>• <strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
-                <p>• <strong className="text-emerald-400">Acceso directo</strong> a la red ferroviaria del norte</p>
-                <p>• <strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
-                <p>• <strong className="text-emerald-400">Conectividad</strong> con la red vial nacional</p>
-                <p>• <strong className="text-emerald-400">Centro de distribución</strong> para la industria minera</p>
-              </div>
-              
-              {/* Placeholder for map */}
-              <div className="mt-6 h-48 bg-slate-700 rounded-lg flex items-center justify-center">
-                <p className="text-slate-400">Mapa de ubicación estratégica</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Mining Companies Carousel */}
       <section className="py-16 bg-slate-900">
@@ -282,37 +231,57 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-xl border border-slate-700"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
-                      <Target className="w-8 h-8 text-slate-900" />
-                    </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mr-4">
+                    <Target className="w-8 h-8 text-slate-900" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-emerald-400">Baquedano</h3>
+                    <p className="text-lg text-slate-300">Epicentro Actual</p>
+                  </div>
+                </div>
+                
+                {/* Información del Proyecto */}
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                    <Building className="w-8 h-8 text-emerald-400" />
                     <div>
-                      <h3 className="text-3xl font-bold text-emerald-400">Baquedano</h3>
-                      <p className="text-lg text-slate-300">Epicentro Actual</p>
+                      <h4 className="text-lg font-semibold text-white">Superficie Total</h4>
+                      <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">22 hectáreas iniciales, ampliable a 60 hectáreas</p>
+                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                    <MapPin className="w-8 h-8 text-blue-400" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Ubicación</h4>
+                      <p className="text-slate-300">Baquedano, Región de Antofagasta</p>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Acceso directo a la red ferroviaria del norte</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Nodo logístico clave entre Antofagasta y Calama</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-slate-300">Centro de distribución para la industria minera</p>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4 p-4 bg-slate-700/50 rounded-lg">
+                    <Train className="w-8 h-8 text-purple-400" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Acceso Ferroviario</h4>
+                      <p className="text-slate-300">Conexión directa a la red ferroviaria nacional</p>
                     </div>
                   </div>
                 </div>
+
+                {/* Ubicación Estratégica */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600">
+                  <h4 className="text-xl font-semibold text-white mb-4">Ubicación Estratégica</h4>
+                  <div className="space-y-3 text-slate-300">
+                    <p>• <strong className="text-emerald-400">Nodo logístico clave</strong> entre Antofagasta y Calama</p>
+                    <p>• <strong className="text-emerald-400">Acceso directo</strong> a la red ferroviaria del norte</p>
+                    <p>• <strong className="text-emerald-400">Proximidad</strong> a los principales puertos del norte</p>
+                    <p>• <strong className="text-emerald-400">Conectividad</strong> con la red vial nacional</p>
+                    <p>• <strong className="text-emerald-400">Centro de distribución</strong> para la industria minera</p>
+                  </div>
+                </div>
+              </div>
                 
                 <div className="bg-slate-700/30 p-8 rounded-lg border border-slate-600">
                   <h4 className="text-xl font-semibold text-white mb-4">Mapa de Ubicación</h4>
