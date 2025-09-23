@@ -329,7 +329,7 @@ const CentroLogistico = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-3">Tenemos assets estratégicos</h2>
+            <h2 className="text-3xl font-bold text-white mb-3">Tenemos Assets Únicos!</h2>
             <p className="text-lg text-emerald-400 max-w-3xl mx-auto">
               {typewriterText}
             </p>
