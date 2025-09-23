@@ -33,9 +33,12 @@ export const AccessModal: React.FC<AccessModalProps> = ({
 
     // Immediate validation
     if (accessKey === "2026") {
-      onSuccess();
       setAccessKey("");
       setIsLoading(false);
+      // Small delay to ensure state updates
+      setTimeout(() => {
+        onSuccess();
+      }, 100);
     } else {
       setError("Clave de acceso incorrecta");
       setIsLoading(false);

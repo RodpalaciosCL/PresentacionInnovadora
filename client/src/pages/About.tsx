@@ -315,44 +315,10 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-900/20 to-slate-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              ¿Quieres conocer más sobre nuestro equipo?
-            </h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Agenda una reunión para conocer en detalle nuestra experiencia y visión de negocio.
-            </p>
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
-              >
-                Agendar Reunión
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Why Us Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/30 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -361,10 +327,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              ¿Por qué <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">nosotros</span>?
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              ¿Por qué <span className="text-emerald-400">nosotros</span>?
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-emerald-400 mx-auto rounded-full"></div>
           </motion.div>
 
           {/* Main Content */}
@@ -387,23 +353,27 @@ const About: React.FC = () => {
                   {/* Left Content */}
                   <div>
                     <div className="mb-8">
-                      <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-400 text-sm font-semibold mb-4">
+                      <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-400 text-sm font-semibold mb-12">
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         20+ años de experiencia
                       </div>
                       
-                      <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-6">
-                        Porque llevamos <span className="text-emerald-400 font-semibold">más de 20 años</span> gestionando negocios, implementando soluciones y monetizando oportunidades para las <span className="text-blue-400 font-semibold">industrias más desafiantes</span> actualmente existentes.
+                      <p className="text-xl text-slate-200 leading-relaxed mb-6">
+                        Porque llevamos <span className="text-emerald-400 font-semibold">más de 20 años</span> gestionando negocios, implementando soluciones y monetizando oportunidades para las industrias más desafiantes actualmente existentes.
                       </p>
 
                       <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                        Trabajamos para los <span className="text-purple-400 font-semibold">clientes más grandes del mundo</span>, y hoy tenemos una oportunidad de explotación única, de assets altamente cualificados para transformar cualquier income que se tenga en mente.
+                        Trabajamos para los clientes más grandes del mundo, y hoy tenemos una oportunidad de explotación única, de assets altamente cualificados para transformar cualquier income.
                       </p>
 
-                      <p className="text-lg text-slate-300 leading-relaxed">
-                        Nos transformamos en el <span className="text-emerald-400 font-semibold">main revenue</span> del negocio al cual aportemos o nos acoplemos.
+                      <p className="text-lg text-slate-300 leading-relaxed mb-6">
+                        Nos transformamos en el main revenue del negocio al cual aportemos o nos acoplemos, desde el inicio.
+                      </p>
+
+                      <p className="text-base text-slate-300 leading-relaxed">
+                        Hablamos de participar en la industria de las comunicaciones, la logística transcendental, la operación minera 24/7, la energía del presente (no del futuro), y la forma de operar 100% sostenible y sustentable en el tiempo.
                       </p>
                     </div>
                   </div>
@@ -414,11 +384,11 @@ const About: React.FC = () => {
                     
                     <div className="grid grid-cols-1 gap-4">
                       <motion.div
-                        whileHover={{ scale: 1.02, x: 10 }}
-                        className="flex items-center p-4 bg-slate-700/50 rounded-2xl border border-emerald-500/20 hover:border-emerald-400/50 transition-all"
+                        whileHover={{ scale: 1.02 }}
+                        className="flex items-center p-4 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-emerald-400/50 transition-all"
                       >
-                        <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mr-4">
+                          <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                           </svg>
                         </div>
@@ -429,11 +399,11 @@ const About: React.FC = () => {
                       </motion.div>
 
                       <motion.div
-                        whileHover={{ scale: 1.02, x: 10 }}
-                        className="flex items-center p-4 bg-slate-700/50 rounded-2xl border border-blue-500/20 hover:border-blue-400/50 transition-all"
+                        whileHover={{ scale: 1.02 }}
+                        className="flex items-center p-4 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-emerald-400/50 transition-all"
                       >
-                        <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mr-4">
+                          <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                           </svg>
                         </div>
@@ -444,11 +414,11 @@ const About: React.FC = () => {
                       </motion.div>
 
                       <motion.div
-                        whileHover={{ scale: 1.02, x: 10 }}
-                        className="flex items-center p-4 bg-slate-700/50 rounded-2xl border border-yellow-500/20 hover:border-yellow-400/50 transition-all"
+                        whileHover={{ scale: 1.02 }}
+                        className="flex items-center p-4 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-emerald-400/50 transition-all"
                       >
-                        <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mr-4">
+                          <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                           </svg>
                         </div>
@@ -459,11 +429,11 @@ const About: React.FC = () => {
                       </motion.div>
 
                       <motion.div
-                        whileHover={{ scale: 1.02, x: 10 }}
-                        className="flex items-center p-4 bg-slate-700/50 rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all"
+                        whileHover={{ scale: 1.02 }}
+                        className="flex items-center p-4 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-emerald-400/50 transition-all"
                       >
-                        <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mr-4">
+                          <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
@@ -476,20 +446,6 @@ const About: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom Statement */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  className="mt-12 text-center"
-                >
-                  <div className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-2xl p-8 border border-emerald-500/20">
-                    <p className="text-xl md:text-2xl text-slate-200 leading-relaxed font-light">
-                      Hablamos de participar en la <span className="text-emerald-400 font-semibold">industria de las comunicaciones</span>, la <span className="text-blue-400 font-semibold">logística transcendental</span>, la <span className="text-yellow-400 font-semibold">operación minera 24/7</span>, la <span className="text-purple-400 font-semibold">energía del presente</span> (no del futuro), y la forma de operar <span className="text-emerald-400 font-semibold">100% sostenible y sustentable en el tiempo</span>.
-                    </p>
-                  </div>
-                </motion.div>
               </div>
             </div>
           </motion.div>

@@ -296,25 +296,6 @@ const CentroLogistico = () => {
             </motion.div>
           </div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-emerald-400/50 rounded-full flex justify-center"
-            >
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-emerald-400 rounded-full mt-2"
-              />
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 
@@ -451,24 +432,24 @@ const CentroLogistico = () => {
                 </div>
                 
                 {/* Estadísticas en el header */}
-                <div className="grid grid-cols-4 gap-6">
-                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">22-60</div>
-                    <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">16</div>
-                    <div className="text-xs text-slate-300 font-medium">Mineras</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
-                    <div className="text-xs text-slate-300 font-medium">Accesos</div>
-                  </div>
-                  <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
-                    <div className="text-xs text-slate-300 font-medium">Operativo</div>
-                  </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                  <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">22-60</div>
+                  <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                 </div>
+                <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                  <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">16</div>
+                  <div className="text-xs text-slate-300 font-medium">Mineras</div>
+                </div>
+                <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                  <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">2</div>
+                  <div className="text-xs text-slate-300 font-medium">Accesos</div>
+                </div>
+                <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
+                  <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                  <div className="text-xs text-slate-300 font-medium">Operativo</div>
+                </div>
+              </div>
               </div>
             </div>
 
@@ -707,21 +688,21 @@ const CentroLogistico = () => {
                 </div>
                 
                 {/* Estadísticas en el header */}
-                <div className="grid grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">15-45</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">15-45</div>
                     <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">3</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">3</div>
                     <div className="text-xs text-slate-300 font-medium">Mineras</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">2</div>
                     <div className="text-xs text-slate-300 font-medium">Accesos</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">100%</div>
                     <div className="text-xs text-slate-300 font-medium">Operativo</div>
                   </div>
                 </div>
@@ -899,21 +880,21 @@ const CentroLogistico = () => {
                 </div>
                 
                 {/* Estadísticas en el header */}
-                <div className="grid grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">20-60</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">20-60</div>
                     <div className="text-xs text-slate-300 font-medium">Hectáreas</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">1</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">1</div>
                     <div className="text-xs text-slate-300 font-medium">Minera</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">2</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">2</div>
                     <div className="text-xs text-slate-300 font-medium">Accesos</div>
                   </div>
                   <div className="text-center p-3 bg-slate-600/20 rounded-lg border border-slate-500/30">
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
+                    <div className="text-xl md:text-2xl font-bold text-emerald-400 mb-1">100%</div>
                     <div className="text-xs text-slate-300 font-medium">Operativo</div>
                   </div>
                 </div>
@@ -1077,23 +1058,23 @@ const CentroLogistico = () => {
       </section>
 
       {/* Terrain Composition */}
-      <section className="py-20 bg-slate-900 min-h-screen w-full">
-        <div className="w-full px-6 sm:px-8 lg:px-12">
+      <section className="py-16 bg-slate-900 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Composición de Terrenos y Posibilidades</h2>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Composición de Terrenos y Posibilidades</h2>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Terrenos estratégicamente ubicados con máxima factibilidad para desarrollo logístico
             </p>
           </motion.div>
 
-          {/* Full Width Layout */}
-          <div className="bg-slate-800/50 p-10 rounded-2xl border border-slate-700">
+          {/* Compact Layout */}
+          <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
             
             {/* Terrain Stats - Horizontal Row */}
             <motion.div
@@ -1103,7 +1084,7 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h3 className="text-2xl font-bold text-white mb-8">Composición de Terrenos</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Composición de Terrenos</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center p-6 bg-slate-700/30 rounded-xl border border-slate-600">
                   <Building className="w-10 h-10 text-white mx-auto mb-3" />
@@ -1140,7 +1121,7 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold text-white mb-8">Posibilidades de Desarrollo</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
                   <Building className="w-6 h-6 text-white flex-shrink-0" />
                   <span className="text-slate-200 text-sm font-medium">Centros de acopio</span>
@@ -1456,7 +1437,7 @@ const CentroLogistico = () => {
                 viewport={{ once: true }}
                 className="inline-block"
               >
-                <h3 className="text-2xl font-semibold text-white mb-4">¿Qué Buscamos?</h3>
+                <h3 className="text-4xl font-bold text-white mb-6">¿Qué Buscamos?</h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-emerald-600 mx-auto rounded-full"></div>
               </motion.div>
             </div>
@@ -1485,15 +1466,15 @@ const CentroLogistico = () => {
                     </div>
                     <div className="flex items-start space-x-4 p-3 bg-slate-700/30 rounded-md border-l-2 border-emerald-400 hover:bg-slate-700/50 transition-all duration-300">
                       <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                      <p className="text-slate-200 font-medium text-base">Experiencia en desarrollo logístico</p>
+                      <p className="text-slate-200 font-medium text-base">Experiencia en logística y/o minería</p>
                     </div>
                     <div className="flex items-start space-x-4 p-3 bg-slate-700/30 rounded-md border-l-2 border-emerald-400 hover:bg-slate-700/50 transition-all duration-300">
                       <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                      <p className="text-slate-200 font-medium text-base">Red de contactos en la industria</p>
+                      <p className="text-slate-200 font-medium text-base">Visión a largo plazo y capacidad expansiva</p>
                     </div>
                     <div className="flex items-start space-x-4 p-3 bg-slate-700/30 rounded-md border-l-2 border-emerald-400 hover:bg-slate-700/50 transition-all duration-300">
                       <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                      <p className="text-slate-200 font-medium text-base">Visión a largo plazo</p>
+                      <p className="text-slate-200 font-medium text-base">Apoyo estratégico y estructura</p>
                     </div>
                   </div>
                 </div>
@@ -1525,7 +1506,7 @@ const CentroLogistico = () => {
                     <div className="flex items-start space-x-4 p-3.5 bg-slate-700/20 rounded-md hover:bg-slate-700/40 transition-all duration-300 group">
                       <div className="w-2.5 h-2.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
                       <p className="text-slate-200 text-base">
-                        <span className="text-blue-400 font-semibold">Valorización del activo</span> a largo plazo
+                        <span className="text-blue-400 font-semibold">Negocio en una de las industrias</span> más relevantes del mundo
                       </p>
                     </div>
                     <div className="flex items-start space-x-4 p-3.5 bg-slate-700/20 rounded-md hover:bg-slate-700/40 transition-all duration-300 group">
@@ -1543,13 +1524,13 @@ const CentroLogistico = () => {
                     <div className="flex items-start space-x-4 p-3.5 bg-slate-700/20 rounded-md hover:bg-slate-700/40 transition-all duration-300 group">
                       <div className="w-2.5 h-2.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
                       <p className="text-slate-200 text-base">
-                        <span className="text-blue-400 font-semibold">Expansión a 60 hectáreas</span> en fase 2
+                        <span className="text-blue-400 font-semibold">Interacción y relación directa</span> con mineras y proveedores clave
                       </p>
                     </div>
                     <div className="flex items-start space-x-4 p-3.5 bg-slate-700/20 rounded-md hover:bg-slate-700/40 transition-all duration-300 group">
                       <div className="w-2.5 h-2.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
                       <p className="text-slate-200 text-base">
-                        <span className="text-blue-400 font-semibold">Réplica en 30+ estaciones</span> estratégicas
+                        <span className="text-blue-400 font-semibold">Diversificación y expansión real</span> del negocio
                       </p>
                     </div>
                     <div className="flex items-start space-x-4 p-3.5 bg-slate-700/20 rounded-md hover:bg-slate-700/40 transition-all duration-300 group">
@@ -1570,7 +1551,7 @@ const CentroLogistico = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-center mt-12 space-y-6"
+            className="text-center mt-40 mb-20 space-y-6"
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact">

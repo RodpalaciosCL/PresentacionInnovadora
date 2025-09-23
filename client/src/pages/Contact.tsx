@@ -78,9 +78,9 @@ const Contact: React.FC = () => {
     {
       icon: Phone,
       title: "Teléfono",
-      value: "+565223210980",
+      value: "+56223210980",
       description: "Lun-Vie 9:00-19:00",
-      action: "tel:+565223210980"
+      action: "tel:+56223210980"
     },
     {
       icon: MapPin,
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8"
+          className="text-center mb-6"
         >
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-3">
             Contacto
@@ -150,11 +150,11 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Información de Contacto</h2>
-              <p className="text-slate-300 mb-8">
+              <p className="text-slate-300 mb-6">
                 Nuestro equipo está disponible para responder todas tus consultas sobre 
                 inversiones inmobiliarias estratégicas.
               </p>

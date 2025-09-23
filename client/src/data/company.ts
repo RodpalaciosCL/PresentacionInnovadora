@@ -51,12 +51,12 @@ export const founders: Founder[] = [
 // Key business metrics
 export const businessMetrics: BusinessMetric[] = [
   {
-    value: '500+',
+    value: '200+',
     label: 'predios disponibles',
     description: 'Puntos estratégicos en operación'
   },
   {
-    value: '300,000+',
+    value: '2,000',
     label: 'hectáreas', 
     description: 'Superficie total en gestión'
   },

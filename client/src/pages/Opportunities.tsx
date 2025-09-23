@@ -3,10 +3,11 @@
  * Interactive tabs for different business opportunities
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3, ChevronRight } from "lucide-react";
+import { MapPin, Factory, Building, Network, DollarSign, TrendingUp, Users, BarChart3, ChevronRight, Lock } from "lucide-react";
 import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
+import { AccessModal } from "@/components/ui/AccessModal";
 import { investmentOpportunities } from "@/data/company";
 import dataCenterImage from "@assets/image_1748283427285.png";
 import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
@@ -14,6 +15,37 @@ import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.
 const Opportunities: React.FC = () => {
   const [activeTab, setActiveTab] = useState("estaciones");
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [showAccessModal, setShowAccessModal] = useState(false);
+  const [modalProject, setModalProject] = useState<string | null>(null);
+  const [hasAccess, setHasAccess] = useState(false);
+
+  useEffect(() => {
+    // Check if user has access to opportunities page
+    const storedAccess = localStorage.getItem('opportunities-access');
+    const accessTimestamp = localStorage.getItem('opportunities-timestamp');
+    
+    if (storedAccess === '2026' && accessTimestamp) {
+      const now = Date.now();
+      const accessTime = parseInt(accessTimestamp);
+      const sessionDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
+      
+      if (now - accessTime < sessionDuration) {
+        setHasAccess(true);
+      } else {
+        // Access expired, clear storage
+        localStorage.removeItem('opportunities-access');
+        localStorage.removeItem('opportunities-timestamp');
+        setHasAccess(true); // Allow access but require new key for projects
+      }
+    } else {
+      setHasAccess(true); // Allow access but require key for projects
+    }
+  }, []);
+
+  // Debug effect to track modal state changes
+  useEffect(() => {
+    console.log('Modal state changed:', showAccessModal);
+  }, [showAccessModal]);
 
   // Project details data
   const getProjectDetails = (projectTitle: string) => {
@@ -154,6 +186,23 @@ const Opportunities: React.FC = () => {
     return projectData[projectTitle as keyof typeof projectData] || projectData["Hub Norte"];
   };
 
+  if (!hasAccess && !showAccessModal) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-emerald-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Lock className="w-8 h-8 text-emerald-400" />
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2">Acceso Requerido</h2>
+          <p className="text-slate-400">Verificando credenciales...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Debug info
+  console.log('Rendering with access:', hasAccess, 'Modal open:', showAccessModal, 'Selected:', selectedProject);
+
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
@@ -189,12 +238,17 @@ const Opportunities: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { 
                 title: "Hub Norte", 
                 description: "Centro de Innovación Minera",
                 image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1748282529/hub_norte_websab.jpg"
+              },
+              { 
+                title: "Centro logístico multimodal", 
+                description: "Terminal ferroviaria y centro de distribución",
+                image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
               },
               { 
                 title: "Terrenos disponibles", 
@@ -242,7 +296,7 @@ const Opportunities: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-700/50 rounded-xl overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 flex flex-col"
+                className="bg-slate-700/50 rounded-lg overflow-hidden border border-slate-600 hover:border-emerald-400/50 transition-all duration-300 flex flex-col"
               >
                 <img
                   src={project.image}
@@ -259,17 +313,8 @@ const Opportunities: React.FC = () => {
                   <button 
                     onClick={(e) => {
                       e.stopPropagation();
-                      setSelectedProject(project.title);
-                      // Scroll suave hacia la sección de detalles
-                      setTimeout(() => {
-                        const detailsSection = document.getElementById('project-details');
-                        if (detailsSection) {
-                          detailsSection.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start' 
-                          });
-                        }
-                      }, 100);
+                      setShowAccessModal(true);
+                      setModalProject(project.title);
                     }}
                     className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
                   >
@@ -422,161 +467,27 @@ const Opportunities: React.FC = () => {
           </div>
         </section>
       )}
-    </div>
-  );
-};
 
-export default Opportunities;
-                  <div className="flex items-center space-x-3 mb-6">
-                    <MapPin className="h-6 w-6 text-emerald-400" />
-                    <h3 className="text-2xl font-bold text-white">
-                      {getProjectDetails(selectedProject).title}
-                    </h3>
-                  </div>
-                  
-                  {/* Interactive Map Area */}
-                  <div className="bg-slate-700 rounded-xl p-6 min-h-[400px] relative">
-                    <div className="text-center">
-                      <img 
-                        src={selectedProject === "Hub Norte" 
-                          ? "https://media.licdn.com/dms/image/v2/C4E12AQHTZ7pyTmCfEw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1541423067327?e=2147483647&v=beta&t=9abkfOQ8EpfquDBzmeLUFCXCEUxTEm2GtpvaBMOOEnw"
-                          : "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                        }
-                        alt={selectedProject === "Hub Norte" ? "Hub de Innovación Minera" : "Mapa del Norte de Chile"}
-                        className="w-full h-60 object-cover rounded-lg opacity-80"
-                      />
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div className="flex space-x-4">
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
-                            <span className="text-sm text-slate-300">Estaciones Disponibles</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <div className="w-3 h-3 bg-slate-500 rounded-full"></div>
-                            <span className="text-sm text-slate-300">Otras Regiones</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Summary Cards */}
-                    <div className="grid grid-cols-2 gap-4 mt-6">
-                      <div className="bg-slate-600 rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-emerald-400">
-                          {getProjectDetails(selectedProject).stations.length}
-                        </div>
-                        <div className="text-sm text-slate-300">Estaciones Total</div>
-                      </div>
-                      <div className="bg-slate-600 rounded-lg p-4 text-center">
-                        <div className="text-2xl font-bold text-emerald-400">
-                          {getProjectDetails(selectedProject).stations.filter(s => s.status === "Disponible").length}
-                        </div>
-                        <div className="text-sm text-slate-300">Disponibles</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Side - Details */}
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <BarChart3 className="h-6 w-6 text-emerald-400" />
-                    <h3 className="text-2xl font-bold text-white">
-                      {getProjectDetails(selectedProject).subtitle}
-                    </h3>
-                  </div>
-                  
-                  {/* Description and Special Note */}
-                  {getProjectDetails(selectedProject).description && (
-                    <div className="bg-slate-800/50 rounded-xl p-6 mb-6">
-                      <p className="text-slate-300 leading-relaxed mb-4">
-                        {getProjectDetails(selectedProject).description}
-                      </p>
-                      {getProjectDetails(selectedProject).specialNote && (
-                        <div className="border-l-4 border-emerald-400 pl-4">
-                          <p className="text-emerald-300 italic">
-                            {getProjectDetails(selectedProject).specialNote}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* Summary Stats */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-slate-700 rounded-xl p-6">
-                      <div className="text-3xl font-bold text-emerald-400 mb-2">
-                        {getProjectDetails(selectedProject).fee}
-                      </div>
-                      <div className="text-sm text-slate-300">
-                        {getProjectDetails(selectedProject).feeLabel}
-                      </div>
-                    </div>
-                    <div className="bg-slate-700 rounded-xl p-6">
-                      <div className="text-3xl font-bold text-emerald-400 mb-2">
-                        {getProjectDetails(selectedProject).area}
-                      </div>
-                      <div className="text-sm text-slate-300">
-                        {getProjectDetails(selectedProject).areaLabel}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Stations Table */}
-                  <div className="bg-slate-700 rounded-xl overflow-hidden">
-                    <div className="px-6 py-4 border-b border-slate-600">
-                      <div className="grid grid-cols-4 gap-4 text-sm font-medium text-slate-300 uppercase tracking-wider">
-                        <div>Estación</div>
-                        <div className="text-center">Área (M²)</div>
-                        <div className="text-center">Fee/Mes</div>
-                        <div className="text-center">Estado</div>
-                      </div>
-                    </div>
-                    <div className="divide-y divide-slate-600">
-                      {getProjectDetails(selectedProject).stations.map((station, index) => (
-                        <div key={index} className="px-6 py-4">
-                          <div className="grid grid-cols-4 gap-4 items-center">
-                            <div>
-                              <div className="text-white font-medium">{station.name}</div>
-                              <div className="text-sm text-slate-400">{station.location}</div>
-                            </div>
-                            <div className="text-center text-slate-300">{station.area}</div>
-                            <div className="text-center text-emerald-400 font-semibold">{station.fee}</div>
-                            <div className="text-center">
-                              <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                                station.statusColor === "emerald" 
-                                  ? "bg-emerald-100 text-emerald-800" 
-                                  : station.statusColor === "yellow"
-                                  ? "bg-yellow-100 text-yellow-800"
-                                  : station.statusColor === "blue"
-                                  ? "bg-blue-100 text-blue-800"
-                                  : "bg-orange-100 text-orange-800"
-                              }`}>
-                                {station.status}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Button */}
-                  <div className="pt-4">
-                    <button 
-                      onClick={() => setSelectedProject(null)}
-                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                    >
-                      Volver a Oportunidades
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
-
+      {/* Access Modal */}
+      <AccessModal
+        isOpen={showAccessModal}
+        onClose={() => {
+          setShowAccessModal(false);
+          setModalProject(null);
+        }}
+        onSuccess={() => {
+          // Solo el centro logístico es accesible
+          const timestamp = Date.now().toString();
+          localStorage.setItem('opportunities-access', '2026');
+          localStorage.setItem('opportunities-timestamp', timestamp);
+          
+          setHasAccess(true);
+          setShowAccessModal(false);
+          window.location.href = '/centro-logistico';
+        }}
+        title="Acceso a Proyectos"
+        description="Esta información requiere autorización previa. Solo algunos proyectos están disponibles actualmente."
+      />
     </div>
   );
 };

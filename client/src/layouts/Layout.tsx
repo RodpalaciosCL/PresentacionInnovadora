@@ -11,7 +11,6 @@ import { Search, Menu, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
-import { GlobalSearch } from "@/components/ui/GlobalSearch";
 import { ChatWidget } from "@/components/ui/ChatWidget";
 import logoImage from "@assets/N - LOGO.png";
 
@@ -28,7 +27,6 @@ export default function Layout({
 }: LayoutProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   const navItems = [
     { label: "Inicio", href: "/" },
@@ -47,12 +45,7 @@ export default function Layout({
   // Manejar teclas de acceso rápido
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        setSearchOpen(true);
-      }
       if (e.key === 'Escape') {
-        setSearchOpen(false);
         setMobileMenuOpen(false);
       }
     };
@@ -119,7 +112,7 @@ export default function Layout({
                 <Link key={item.href} href={item.href}>
                   <motion.span
                     whileHover={{ y: -2 }}
-                    className={`cursor-pointer transition-colors duration-200 ${
+                    className={`cursor-pointer transition-colors duration-200 text-lg ${
                       location === item.href 
                         ? "text-emerald-400 font-semibold" 
                         : "text-slate-300 hover:text-emerald-400"
@@ -134,30 +127,12 @@ export default function Layout({
             {/* Botones de acción - Derecha */}
             <div className="flex items-center space-x-3">
               {/* Search Button */}
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setSearchOpen(true)}
-                className="p-2.5 rounded-lg bg-slate-800/70 hover:bg-slate-700 transition-all duration-200 border border-slate-600/50"
-                aria-label="Search"
-              >
-                <Search className="h-4 w-4 text-slate-300" />
-              </motion.button>
               
 
             </div>
             
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-2">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setSearchOpen(true)}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
-                aria-label="Search"
-              >
-                <Search className="h-4 w-4 text-slate-400" />
-              </motion.button>
               
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -213,10 +188,6 @@ export default function Layout({
       
       {/* Global Components */}
       <ScrollToTop />
-      <GlobalSearch 
-        isOpen={searchOpen} 
-        onClose={() => setSearchOpen(false)} 
-      />
       <ChatWidget />
     </div>
   );

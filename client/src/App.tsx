@@ -13,7 +13,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
 const Services = lazy(() => import("@/pages/Services"));
-const Opportunities = lazy(() => import("@/pages/OpportunitiesClean"));
+const Opportunities = lazy(() => import("@/pages/Opportunities"));
 const CentroLogistico = lazy(() => import("@/pages/CentroLogistico"));
 const Projections = lazy(() => import("@/pages/Projections"));
 const Contact = lazy(() => import("@/pages/Contact"));
