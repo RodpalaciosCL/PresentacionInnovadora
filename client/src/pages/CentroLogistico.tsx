@@ -584,6 +584,36 @@ const CentroLogistico = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Recuadro de Noticia */}
+                <div className="bg-slate-700/30 p-6 rounded-lg border border-slate-600 mt-8">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-emerald-400/20 rounded-lg flex items-center justify-center">
+                        <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-white mb-2">Noticia Destacada</h4>
+                      <p className="text-slate-300 text-sm mb-3">
+                        Anglo Teck: la segunda mayor fusión minera de la historia que ubica a Chile como su piedra angular
+                      </p>
+                      <a 
+                        href="https://www.df.cl/empresas/mineria/anglo-teck-la-segunda-mayor-fusion-minera-de-la-historia-que-ubica-a-chile" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
+                      >
+                        Leer más
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
