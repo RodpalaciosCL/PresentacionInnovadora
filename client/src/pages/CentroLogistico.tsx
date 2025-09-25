@@ -30,19 +30,20 @@ const CentroLogistico = () => {
       const sessionDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
       
       if (now - accessTime < sessionDuration) {
+        // Access is valid
         setHasAccess(true);
         setShowAccessModal(false);
+        return; // Exit early to prevent showing modal
       } else {
-        // Access expired, clear storage and show modal
+        // Access expired, clear storage
         localStorage.removeItem('centro-logistico-access');
         localStorage.removeItem('centro-logistico-timestamp');
-        setHasAccess(false);
-        setShowAccessModal(true);
       }
-    } else {
-      setHasAccess(false);
-      setShowAccessModal(true);
     }
+    
+    // If we get here, either no access or access expired
+    setHasAccess(false);
+    setShowAccessModal(true);
   }, []);
 
   const handleAccessSuccess = () => {
