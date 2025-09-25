@@ -12,7 +12,6 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 
 const CentroLogistico = () => {
   const [hasAccess, setHasAccess] = useState(false);
-  const [showAccessModal, setShowAccessModal] = useState(false);
   const [, setLocation] = useLocation();
   const { displayText: typewriterText } = useTypewriter({ 
     text: "Donde opera lo mejor de la minería global", 
@@ -32,7 +31,6 @@ const CentroLogistico = () => {
       if (now - accessTime < sessionDuration) {
         // Access is valid
         setHasAccess(true);
-        setShowAccessModal(false);
         return; // Exit early to prevent showing modal
       } else {
         // Access expired, clear storage
@@ -43,7 +41,6 @@ const CentroLogistico = () => {
     
     // If we get here, either no access or access expired
     setHasAccess(false);
-    setShowAccessModal(true);
   }, []);
 
   const handleAccessSuccess = () => {
@@ -51,17 +48,17 @@ const CentroLogistico = () => {
     localStorage.setItem('centro-logistico-access', '2026');
     localStorage.setItem('centro-logistico-timestamp', timestamp);
     setHasAccess(true);
-    setShowAccessModal(false);
   };
 
   const handleAccessClose = () => {
     setLocation('/opportunities');
   };
 
+  // Show access modal if no access
   if (!hasAccess) {
     return (
       <AccessModal
-        isOpen={showAccessModal}
+        isOpen={true}
         onClose={handleAccessClose}
         onSuccess={handleAccessSuccess}
         title="Acceso al Centro Logístico"
