@@ -37,9 +37,11 @@ export default function Layout({
     { label: "Contacto", href: "/contact" }
   ];
 
-  // Cerrar menú mobile al cambiar de ruta
+  // Cerrar menú mobile y scroll al inicio al cambiar de ruta
   useEffect(() => {
     setMobileMenuOpen(false);
+    // Scroll al inicio de la página cuando cambie la ruta
+    window.scrollTo(0, 0);
   }, [location]);
 
   // Manejar teclas de acceso rápido

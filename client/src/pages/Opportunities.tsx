@@ -233,7 +233,7 @@ const Opportunities: React.FC = () => {
               },
               { 
                 title: "Centro logístico multimodal", 
-                description: "Terminal ferroviaria y centro de distribución",
+                description: "Parking, Almacenamiento y Operación",
                 image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
               },
               { 
@@ -259,12 +259,12 @@ const Opportunities: React.FC = () => {
               { 
                 title: "Storage de Baterías Industriales", 
                 description: "Almacenamiento de energía a gran escala",
-                image: "https://media.cnn.com/api/v1/images/stellar/prod/210908100821-solar-farm-california-0711-file-restricted.jpg?q=x_3,y_153,h_1368,w_2431,c_crop/h_833,w_1480"
+                image: "https://www.nexteraenergyservices.com/content/dam/nees/us/en/images/nes---large-business/NES-battery-storage-header.jpg"
               },
               { 
                 title: "Puerto Seco", 
                 description: "Terminal ferroviaria multimodal",
-                image: "https://noriegagrupologistico.com/wp-content/uploads/terminal-ferroviaria.jpg"
+                image: "https://www.precintia.com/wp-content/uploads/2019/08/carga-contenedores.jpg"
               },
               { 
                 title: "Estaciones de Servicio", 

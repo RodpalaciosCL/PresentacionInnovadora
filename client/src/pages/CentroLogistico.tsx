@@ -1134,13 +1134,11 @@ const CentroLogistico = () => {
                   <Truck className="w-6 h-6 text-white flex-shrink-0" />
                   <span className="text-slate-200 text-sm font-medium">Parking de maquinaria</span>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
-                  <img 
-                    src="https://www.precintia.com/wp-content/uploads/2019/08/carga-contenedores.jpg" 
-                    alt="Puerto seco" 
-                    className="w-6 h-6 object-cover rounded flex-shrink-0"
-                  />
-                  <span className="text-slate-200 text-sm font-medium">Puertos secos</span>
+                <div className="flex items-center space-x-3 p-8 bg-red-600 border-4 border-yellow-400 hover:border-white/20 transition-all duration-300">
+                  <div className="w-32 h-32 bg-yellow-500 rounded flex items-center justify-center text-black text-2xl font-bold">
+                    ¡TEST VISIBLE!
+                  </div>
+                  <span className="text-yellow-300 text-2xl font-bold">Puertos secos - CAMBIO VISIBLE</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
                   <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1149,11 +1147,9 @@ const CentroLogistico = () => {
                   <span className="text-slate-200 text-sm font-medium">Abastecimiento eléctrico</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
-                  <img 
-                    src="https://www.nexteraenergyservices.com/content/dam/nees/us/en/images/nes---large-business/NES-battery-storage-header.jpg" 
-                    alt="Almacenamiento de baterías" 
-                    className="w-6 h-6 object-cover rounded flex-shrink-0"
-                  />
+                  <div className="w-16 h-16 bg-blue-500 rounded flex items-center justify-center text-white text-xs">
+                    TEST
+                  </div>
                   <span className="text-slate-200 text-sm font-medium">Almacenamiento de baterías</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
