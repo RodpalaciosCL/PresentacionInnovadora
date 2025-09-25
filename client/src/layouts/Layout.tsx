@@ -22,8 +22,8 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Inversiones del Norte | Inversiones Estratégicas en el Norte de Chile",
-  description = "Desarrollamos activos estratégicos en el norte de Chile, transformando infraestructura en oportunidades de inversión sostenibles y rentables."
+  title = "INVENOR - Activos estratégicos en infraestructura, tecnología, comunicaciones y operación",
+  description = "Transformando las industrias que mueven el mundo"
 }: LayoutProps) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
