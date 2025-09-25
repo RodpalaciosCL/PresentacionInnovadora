@@ -1135,9 +1135,11 @@ const CentroLogistico = () => {
                   <span className="text-slate-200 text-sm font-medium">Parking de maquinaria</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
-                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+                  <img 
+                    src="https://www.precintia.com/wp-content/uploads/2019/08/carga-contenedores.jpg" 
+                    alt="Puerto seco" 
+                    className="w-6 h-6 object-cover rounded flex-shrink-0"
+                  />
                   <span className="text-slate-200 text-sm font-medium">Puertos secos</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
@@ -1147,9 +1149,11 @@ const CentroLogistico = () => {
                   <span className="text-slate-200 text-sm font-medium">Abastecimiento eléctrico</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
-                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-                  </svg>
+                  <img 
+                    src="https://www.nexteraenergyservices.com/content/dam/nees/us/en/images/nes---large-business/NES-battery-storage-header.jpg" 
+                    alt="Almacenamiento de baterías" 
+                    className="w-6 h-6 object-cover rounded flex-shrink-0"
+                  />
                   <span className="text-slate-200 text-sm font-medium">Almacenamiento de baterías</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
@@ -1252,7 +1256,7 @@ const CentroLogistico = () => {
               </div>
             </motion.div>
 
-            {/* Investment Breakdown */}
+            {/* High Level Case */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -1260,33 +1264,48 @@ const CentroLogistico = () => {
               viewport={{ once: true }}
               className="bg-slate-800/50 p-8 rounded-lg border border-slate-700"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Distribución de la Inversión</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Revenue proyectado</h3>
+              <p className="text-slate-300 mb-6">Revenue proyectado según estructura de precios utilizada</p>
               
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Permisos</span>
-                  <span className="font-semibold text-white">15%</span>
+                <div className="flex justify-between items-center p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div>
+                    <span className="text-slate-300 font-medium">50% Ocupación</span>
+                    <p className="text-sm text-slate-400">100,000 m² arrendados</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-bold text-emerald-400 text-lg">$235,200,000</span>
+                    <p className="text-sm text-slate-400">millones CLP/mes</p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Construcción</span>
-                  <span className="font-semibold text-white">35%</span>
+                
+                <div className="flex justify-between items-center p-4 bg-emerald-400/10 rounded-lg border border-emerald-400/30">
+                  <div>
+                    <span className="text-emerald-400 font-bold">80% Ocupación</span>
+                    <p className="text-sm text-slate-300">160,000 m² arrendados</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-bold text-emerald-400 text-xl">$376,320,000</span>
+                    <p className="text-sm text-slate-300">millones CLP/mes</p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Operación</span>
-                  <span className="font-semibold text-white">25%</span>
+                
+                <div className="flex justify-between items-center p-4 bg-slate-700/30 rounded-lg border border-slate-600">
+                  <div>
+                    <span className="text-slate-300 font-medium">100% Ocupación</span>
+                    <p className="text-sm text-slate-400">200,000 m² arrendados</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-bold text-white text-lg">$470,400,000</span>
+                    <p className="text-sm text-slate-400">millones CLP/mes</p>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Marketing</span>
-                  <span className="font-semibold text-white">10%</span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Desarrollo TI</span>
-                  <span className="font-semibold text-white">8%</span>
-                </div>
-                <div className="flex justify-between items-center p-3 bg-slate-700/30 rounded">
-                  <span className="text-slate-300">Sueldos</span>
-                  <span className="font-semibold text-white">7%</span>
-                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-slate-700/40 rounded-lg">
+                <p className="text-sm text-slate-400 text-center">
+                  Basado en $2,352 CLP/m²/mes • UF $39,200
+                </p>
               </div>
             </motion.div>
           </div>

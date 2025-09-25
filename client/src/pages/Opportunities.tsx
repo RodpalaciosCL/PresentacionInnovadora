@@ -10,7 +10,6 @@ import { EstacionesTab } from "@/components/opportunities/EstacionesTab";
 import { AccessModal } from "@/components/ui/AccessModal";
 import { investmentOpportunities } from "@/data/company";
 import dataCenterImage from "@assets/image_1748283427285.png";
-import puchuncaviMap from "@assets/Captura de pantalla 2025-05-26 a la(s) 14.11.31.png";
 
 const Opportunities: React.FC = () => {
   const [activeTab, setActiveTab] = useState("estaciones");
@@ -82,19 +81,6 @@ const Opportunities: React.FC = () => {
           { name: "Terreno Atacama Central", location: "Copiapó", area: "2.800", fee: "US$9,500", status: "En Desarrollo", statusColor: "orange" },
           { name: "Terreno Coquimbo Hub", location: "La Serena", area: "2.200", fee: "US$7,800", status: "Disponible", statusColor: "emerald" },
           { name: "Terreno Arica Frontera", location: "Arica", area: "1.600", fee: "US$5,500", status: "Arrendado", statusColor: "yellow" }
-        ]
-      },
-      "Puchuncaví": {
-        title: "Terreno Puchuncaví Premium",
-        subtitle: "Desarrollo Inmobiliario",
-        fee: "US$15,000",
-        feeLabel: "Precio por Hectárea/Mes",
-        area: "300",
-        areaLabel: "Hectáreas Totales",
-        stations: [
-          { name: "Sector Norte Premium", location: "Puchuncaví", area: "80", fee: "US$18,000", status: "Disponible", statusColor: "emerald" },
-          { name: "Sector Central Industrial", location: "Puchuncaví", area: "120", fee: "US$15,000", status: "En Desarrollo", statusColor: "orange" },
-          { name: "Sector Sur Residencial", location: "Puchuncaví", area: "100", fee: "US$12,000", status: "Disponible", statusColor: "emerald" }
         ]
       },
       "Data Center": {
@@ -254,11 +240,6 @@ const Opportunities: React.FC = () => {
                 title: "Terrenos disponibles", 
                 description: "Red de +500 predios disponibles en 1.200kms de extensión",
                 image: "https://static.twproject.com/blog/wp-content/uploads/2020/12/master-plan-scaled.jpg"
-              },
-              { 
-                title: "Puchuncaví", 
-                description: "+300 hectáreas para desarrollo Inmobiliario Premium",
-                image: puchuncaviMap
               },
               { 
                 title: "Fibra Oscura", 
