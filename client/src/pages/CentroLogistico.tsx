@@ -1088,7 +1088,7 @@ const CentroLogistico = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Composición de Terrenos y Posibilidades</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Composición de Terrenos y Posibilidades - ACTUALIZADO</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Terrenos estratégicamente ubicados con máxima factibilidad para desarrollo logístico
             </p>
