@@ -9,7 +9,6 @@ import { Link, useLocation } from "wouter";
 import { MapPin, ArrowLeft, Building, Truck, Train, DollarSign, TrendingUp, Calendar, Users, BarChart3, Download, Expand, Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { AccessModal } from "@/components/ui/AccessModal";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import { FlujoCajaCLShowcase } from "@/components/financial/FlujoCajaCLShowcase";
 
 const CentroLogistico = () => {
   const [hasAccess, setHasAccess] = useState(false);
