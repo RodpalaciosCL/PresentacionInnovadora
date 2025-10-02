@@ -9,6 +9,7 @@ import { Link, useLocation } from "wouter";
 import { MapPin, ArrowLeft, Building, Truck, Train, DollarSign, TrendingUp, Calendar, Users, BarChart3, Download, Expand, Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { AccessModal } from "@/components/ui/AccessModal";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { FlujoCajaCLShowcase } from "@/components/financial/FlujoCajaCLShowcase";
 
 const CentroLogistico = () => {
   const [hasAccess, setHasAccess] = useState(false);
@@ -391,6 +392,13 @@ const CentroLogistico = () => {
               ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Flujo de Caja Centro Logístico */}
+      <section className="py-24 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FlujoCajaCLShowcase />
         </div>
       </section>
 
@@ -1131,11 +1139,11 @@ const CentroLogistico = () => {
                   <Truck className="w-6 h-6 text-white flex-shrink-0" />
                   <span className="text-slate-200 text-sm font-medium">Parking de maquinaria</span>
                 </div>
-                <div className="flex items-center space-x-3 p-8 bg-red-600 border-4 border-yellow-400 hover:border-white/20 transition-all duration-300">
-                  <div className="w-32 h-32 bg-yellow-500 rounded flex items-center justify-center text-black text-2xl font-bold">
-                    ¡TEST VISIBLE!
-                  </div>
-                  <span className="text-yellow-300 text-2xl font-bold">Puertos secos - CAMBIO VISIBLE</span>
+                <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                  <span className="text-slate-200 text-sm font-medium">Puertos secos</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
                   <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1144,9 +1152,9 @@ const CentroLogistico = () => {
                   <span className="text-slate-200 text-sm font-medium">Abastecimiento eléctrico</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
-                  <div className="w-16 h-16 bg-blue-500 rounded flex items-center justify-center text-white text-xs">
-                    TEST
-                  </div>
+                  <svg className="w-6 h-6 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                   <span className="text-slate-200 text-sm font-medium">Almacenamiento de baterías</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-slate-700/40 border border-slate-600 hover:border-white/20 transition-all duration-300">
