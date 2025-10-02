@@ -13,6 +13,7 @@ import { FlujoCajaCLShowcase } from "@/components/financial/FlujoCajaCLShowcase"
 
 const CentroLogistico = () => {
   const [hasAccess, setHasAccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [, setLocation] = useLocation();
   const { displayText: typewriterText } = useTypewriter({ 
     text: "Donde opera lo mejor de la minería global", 
@@ -32,6 +33,7 @@ const CentroLogistico = () => {
       if (now - accessTime < sessionDuration) {
         // Access is valid
         setHasAccess(true);
+        setIsLoading(false);
         return; // Exit early to prevent showing modal
       } else {
         // Access expired, clear storage
@@ -42,6 +44,7 @@ const CentroLogistico = () => {
     
     // If we get here, either no access or access expired
     setHasAccess(false);
+    setIsLoading(false);
   }, []);
 
   const handleAccessSuccess = () => {
@@ -54,6 +57,15 @@ const CentroLogistico = () => {
   const handleAccessClose = () => {
     setLocation('/opportunities');
   };
+
+  // Show loading while checking access
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="text-white text-lg">Cargando...</div>
+      </div>
+    );
+  }
 
   // Show access modal if no access
   if (!hasAccess) {
