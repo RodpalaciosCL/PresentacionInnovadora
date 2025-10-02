@@ -12,40 +12,36 @@ import { useTypewriter } from "@/hooks/useTypewriter";
 import { FlujoCajaCLShowcase } from "@/components/financial/FlujoCajaCLShowcase";
 
 const CentroLogistico = () => {
-  const [hasAccess, setHasAccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [hasAccess, setHasAccess] = useState(() => {
+    // Initialize with localStorage check to prevent double modal
+    if (typeof window !== 'undefined') {
+      const storedAccess = localStorage.getItem('centro-logistico-access');
+      const accessTimestamp = localStorage.getItem('centro-logistico-timestamp');
+      
+      if (storedAccess === '2026' && accessTimestamp) {
+        const now = Date.now();
+        const accessTime = parseInt(accessTimestamp);
+        const sessionDuration = 30 * 60 * 1000; // 30 minutes
+        
+        if (now - accessTime < sessionDuration) {
+          return true; // Access is valid
+        } else {
+          // Access expired, clear storage
+          localStorage.removeItem('centro-logistico-access');
+          localStorage.removeItem('centro-logistico-timestamp');
+        }
+      }
+    }
+    return false;
+  });
+  const [isLoading, setIsLoading] = useState(false);
   const [, setLocation] = useLocation();
   const { displayText: typewriterText } = useTypewriter({ 
     text: "Donde opera lo mejor de la minería global", 
     speed: 100 
   });
 
-  useEffect(() => {
-    // Check if user has access with expiration
-    const storedAccess = localStorage.getItem('centro-logistico-access');
-    const accessTimestamp = localStorage.getItem('centro-logistico-timestamp');
-    
-    if (storedAccess === '2026' && accessTimestamp) {
-      const now = Date.now();
-      const accessTime = parseInt(accessTimestamp);
-      const sessionDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
-      
-      if (now - accessTime < sessionDuration) {
-        // Access is valid
-        setHasAccess(true);
-        setIsLoading(false);
-        return; // Exit early to prevent showing modal
-      } else {
-        // Access expired, clear storage
-        localStorage.removeItem('centro-logistico-access');
-        localStorage.removeItem('centro-logistico-timestamp');
-      }
-    }
-    
-    // If we get here, either no access or access expired
-    setHasAccess(false);
-    setIsLoading(false);
-  }, []);
+  // No need for useEffect since we initialize hasAccess correctly in useState
 
   const handleAccessSuccess = () => {
     const timestamp = Date.now().toString();
@@ -58,14 +54,6 @@ const CentroLogistico = () => {
     setLocation('/opportunities');
   };
 
-  // Show loading while checking access
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <div className="text-white text-lg">Cargando...</div>
-      </div>
-    );
-  }
 
   // Show access modal if no access
   if (!hasAccess) {
@@ -1088,7 +1076,7 @@ const CentroLogistico = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-green-500 mb-4">✅ CLOUDFLARE PAGES FUNCIONANDO - {new Date().toLocaleTimeString()} ✅</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Composición de Terrenos y Posibilidades</h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
               Terrenos estratégicamente ubicados con máxima factibilidad para desarrollo logístico
             </p>
